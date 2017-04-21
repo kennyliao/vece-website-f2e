@@ -1,0 +1,307 @@
+@charset "UTF-8";
+/*購物頁 */
+body[products] section.content {
+  letter-spacing: 1.9px;
+  color: #4e5156;
+  margin: 90px 0;
+  padding-top: 152px;
+  padding-bottom: 70px;
+}
+body[products] section.content h2 {
+  color: #4e5156;
+}
+body[products] section.content .full_a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+body[products] section.content #app {
+  margin-bottom: 124px;
+}
+body[products] section.content .product_img {
+  width: 100%;
+}
+body[products] section.content .product_img img {
+  width: 100%;
+  height: auto;
+}
+body[products] section.content .sub-text {
+  position: absolute;
+  top: 100%;
+}
+body[products] section.content .sub-text p {
+  margin: 0px;
+  font-size: 17px;
+  line-height: 34px;
+  letter-spacing: 1.9px;
+  color: #9fa3a8;
+}
+body[products] section.content .sub-text .link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 17px;
+  color: #ab8eda;
+}
+body[products] section.content .sub-text .link * {
+  vertical-align: middle;
+  display: inline-block;
+}
+body[products] section.content .sub-text .link .icon {
+  width: 18px;
+  margin-left: 5px;
+}
+body[products] section.content .product_box h2, body[products] section.content .product_box h3 {
+  text-align: left;
+  display: inline-block;
+}
+body[products] section.content .product_box h2 {
+  margin-right: 46px;
+  font-size: 24px;
+  color: #4e5156;
+}
+body[products] section.content .product_box h3 {
+  margin-bottom: 71px;
+  line-height: 1.67;
+  font-size: 18px;
+  color: #6b6f77;
+}
+body[products] section.content .product_box .size {
+  font-size: 20px;
+  color: #4e5156;
+}
+body[products] section.content .product_box .size:after {
+  content: "ml";
+}
+body[products] section.content .product_box .title {
+  margin-bottom: 21px;
+}
+body[products] section.content .product_box .price {
+  margin-bottom: 92px;
+  font-size: 24px;
+  line-height: 30px;
+}
+body[products] section.content .product_box .price:before {
+  content: "NT";
+  margin-right: 12px;
+}
+body[products] section.content .product_box .count_box {
+  margin-bottom: 42px;
+}
+body[products] section.content .product_box .count_box * {
+  display: inline-block;
+  vertical-align: middle;
+}
+body[products] section.content .product_box .count_box .size {
+  display: inline-block;
+  border: none;
+  border: solid 1px #9fa3a8;
+  width: 60px;
+  height: 40px;
+  padding: 4px;
+  margin: 0px 28px;
+  font-size: 20px;
+  text-align: center;
+}
+body[products] section.content .product_box .count_box .sub, body[products] section.content .product_box .count_box .add {
+  width: 30px;
+  height: 30px;
+  background: url("../images/buy_products.svg") no-repeat;
+  background-size: 120px 30px;
+  text-align: center;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+body[products] section.content .product_box .count_box .sub {
+  background-position: -30px 0px;
+  background-position-x: -30px;
+}
+body[products] section.content .product_box .count_box .sub:active {
+  background-position: -90px 0px;
+  background-position-x: -30px;
+}
+body[products] section.content .product_box .count_box .add {
+  background-position: 0px 0px;
+  background-position-x: 0px;
+}
+body[products] section.content .product_box .count_box .add:active {
+  background-position: -60px 0px;
+  background-position-x: -60px;
+}
+body[products] section.content .product_box .add-bag {
+  width: 191px;
+  height: 52px;
+  letter-spacing: 0;
+  margin-bottom: 70px;
+  padding: 12px 52px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4e5156;
+  border: solid 1px #9fa3a8;
+  cursor: pointer;
+}
+body[products] section.content .show_box .menu {
+  list-style: none;
+  display: inline-block;
+  margin-bottom: 43px;
+}
+body[products] section.content .show_box .menu .item {
+  display: inline-block;
+  width: 100px;
+  margin-right: 53px;
+  color: #9fa3a8;
+  cursor: pointer;
+}
+body[products] section.content .show_box .menu .item.active {
+  color: #4e5156;
+}
+body[products] section.content .show_box .page_wrap {
+  max-width: 600px;
+  width: 100%;
+}
+body[products] section.content .show_box .page_box {
+  display: none;
+}
+body[products] section.content .show_box .application .video-box {
+  position: relative;
+  max-width: 485px;
+  width: 100%;
+  max-height: 270px;
+  margin-bottom: 38px;
+  overflow: hidden;
+  cursor: pointer;
+}
+body[products] section.content .show_box .application .video-box:before {
+  content: "";
+  padding-top: 60%;
+}
+body[products] section.content .show_box .application .video-box:hover .cover_icon {
+  background-color: #ffffff;
+}
+body[products] section.content .show_box .application .video-box:hover .cover_icon .triangle {
+  border-left: solid 28px #0a0a0a;
+}
+body[products] section.content .show_box .application .video-box .cover_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.6;
+  z-index: 10;
+  width: 82px;
+  height: 82px;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #0a0a0a;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body[products] section.content .show_box .application .video-box .cover_icon .triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  -moz-transform: translate(calc(-50% + 5px), -50%);
+  -ms-transform: translate(calc(-50% + 5px), -50%);
+  -webkit-transform: translate(calc(-50% + 5px), -50%);
+  transform: translate(calc(-50% + 5px), -50%);
+  border-left: solid 28px #ffffff;
+  border-top: solid 15px transparent;
+  border-bottom: solid 15px transparent;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body[products] section.content .show_box .application .video-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+body[products] section.content .show_box .application .guide li {
+  font-size: 17px;
+  line-height: 34px;
+  letter-spacing: 1px;
+  color: #4e5156;
+}
+body[products] section.content .show_box .ingredients, body[products] section.content .show_box .effect {
+  position: relative;
+  font-size: 18px;
+  line-height: 40px;
+  color: #6b6f77;
+  padding-bottom: 40px;
+}
+body[products] section.content .show_box .ingredients span, body[products] section.content .show_box .effect span {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+}
+body[products] section.content .photo {
+  min-height: 394px;
+  width: 100%;
+  margin-bottom: 124px;
+}
+body[products] section.content .photo * {
+  padding: 0;
+  height: 394px;
+}
+body[products] section.content .photo img {
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+body[products] section.content #promot {
+  padding: 20px;
+  margin-top: 90px;
+  text-align: center;
+}
+body[products] section.content #promot .container {
+  display: inline-block;
+}
+body[products] section.content #promot .container .item_wrap {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  max-width: 320px;
+  padding: 0 20px;
+}
+body[products] section.content #promot .container .item_wrap h4 {
+  color: #9fa3a8;
+  font-weight: 100;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+body[products] section.content #promot .container .item_wrap .price {
+  color: #9fa3a8;
+  display: inline-block;
+  font-size: 20px;
+  left: 30px;
+  letter-spacing: 1px;
+}
+body[products] section.content #promot .container .item_wrap .price:before {
+  content: "NT";
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  body[products] section.content {
+    padding-top: 0px;
+  }
+  body[products] section.content .sub-text {
+    position: relative;
+  }
+  body[products] section.content .container {
+    padding: 0 25px;
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+    <meta name="author" content="LanVece">
+    <meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+	<meta property="og:title" content="【LanVece 新鮮保養】"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="http://www.lanvece.com"/>
+	<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+	<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+	</script>
+	<script src="css/owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/base.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="bookmark" href="images/favicon.ico"/>
+	<link rel="stylesheet" href="css/product.css">
+	<title>LanVece</title>
+</head>
+<body products>
+	<header></header>
+	<section class="content">
+<!--產品操作-->
+		<div id="app" class="container">
+			<div class="row">
+			
+				<div class="col-sm-5">
+					<div class="sub-text">
+						<p>此商品為製作出來後 90 天內的，</p>
+						<p>您還有更新鮮的選擇</p>
+						<a class="link" href="#">
+							<span>瞧瞧訂製</span>
+							<img class="svg icon" src="images/arrow.svg" alt="">
+						</a>
+					</div>
+					<div class="product_img">
+						<img v-bind:src="product.image" alt="">
+					</div>
+	
+				</div>
+				<div class="col-sm-offset-1 col-sm-6">
+					<div class="product_box">
+						<div class="title">
+							<h2>{{product.name}}</h2>
+							<span class="size">{{product.capacity}}</span>
+						</div>
+						<h3>{{product.discript}}</h3>
+						<div class="price">{{product.price}}</div>
+						<div class="count_box">
+							<div class="sub" v-on:click="sub()" unselectable="on"></div>
+							<input class="size" v-model="product.size" type="text">
+							<div class="add" v-on:click="add()" unselectable="on"></div>
+						</div>
+						<div class="add-bag">
+							放入購物袋
+						</div>
+					</div>
+					<div class="show_box">
+						<ul class="menu">
+							<li class="item" v-bind:class="(p.value == active_page)?'active':''" v-for="p in page_item" v-bind:data-id="p.value" v-on:click="changepage">{{p.name}}</li>
+						</ul>
+						<div class="page_wrap">
+							<div class="page_box application" data-id="application" style="display:block">
+								<div class="video-box">
+									<div class="cover_icon">
+										<div class="triangle"></div>
+									</div>
+									<img src="https://unsplash.it/1400/?image=823" alt="">
+									<video src=""></video>
+								</div>
+								<ol class="guide">
+									<li v-for="(g,id) in product.application">{{id+1}}. {{g}}</li>
+								</ol>
+							</div>
+							<div class="page_box ingredients" data-id="ingredients">
+								{{product.ingredients.main}}
+								<span>
+									{{product.ingredients.sub}}
+								</span>
+							</div>
+							<div class="page_box effect" data-id="effect">effect</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--中間圖片-->
+		<div class="container-fiuld photo">
+			<div class="col-sm-6 ">
+				<img src="https://unsplash.it/1400/?image=823" alt="">
+			</div>
+			<div class="col-sm-3">
+				<img src="https://unsplash.it/1400/?image=823" alt="">
+			</div>
+			<div class="col-sm-3">
+				<img src="https://unsplash.it/1400/?image=823" alt="">
+			</div>
+		</div>
+<!--推介產品-->
+		<h2>逆齡時空肌系列</h2>
+		<div id="promot">
+			<div class="container">
+				<div v-for="p in promo_product" class="item_wrap">
+					<img v-bind:src="p.image" alt="">
+					<h4>{{p.name}}</h4>
+					<div class="price">{{p.price}}</div>
+					<a class="full_a" v-bind:href="p.url"></a>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<footer></footer>
+	
+	
+	<script>
+		$.get("components/header.html", function(data, status){
+        	$('header').html(data);
+    	});
+		$.get("components/footer.html", function(data, status){
+        	$('footer').html(data);
+    	});  
+
+		var product_data = {
+			name: "逆齡時空肌蘭萃菁華液",
+			discript: "高雅淡紫色的菁華液，為珍貴抗老、抗自由基成份",
+			price: 3500,
+			capacity: 30,
+			size: 1,
+			image: "images/products/product-demo.png",
+			application: ["取約一顆珍珠大小的菁華液","點在前額、臉頰及下巴位置","從中央向外慢慢推開至全臉"],
+			ingredients: {main:"Water、Caprylic / Capric Triglyceride、Glycerin、Propylheptyl Caprylate、Hydrogenated Polyisobutene、Anthemis Nobilis Water *、Stearyl Alcohol、Isododecane、Glyceryl Stearate、PEG-100 Stearate、PEG-4 Olivate、Undaria Pinnatifida Extract、Laminaria Digitata Extract、Dextrin、Phenoxyethanol、Ethylhexylglycerin",sub:"ingredient with “ * ” means its organic"}
+		};
+
+		var vm = new Vue({
+			el: "#app",
+			data:{
+				product: product_data,
+				
+				active_page: "application",
+				page_item: [{name:"使用方式",value:"application"},{name:"成份",value:"ingredients"},{name:"功效",value:"effect"}]
+			},
+			methods:{
+				sub: function(){
+					if(this.product.size>1){this.product.size--;}
+				},
+				add: function(){
+					this.product.size++;
+//					console.log(this.product.size);
+				},
+				changepage: function(e){
+					this.active_page = e.target.getAttribute("data-id");
+					console.log();
+					$(".page_box").hide();
+					$(".page_box."+this.active_page).show();
+				}
+			}
+		});
+		var vm2 = new Vue({
+			el: "#promot",
+			data: {
+				promo_product: [
+					{name:"逆齡時空肌蘭萃水菁華",price:"2000", image: "images/products/product-demo.png", url: "#"},
+					{name:"逆齡時空肌蘭萃水菁華",price:"2000", image: "images/products/product-demo.png", url: "#"},
+					{name:"逆齡時空肌蘭萃水菁華",price:"2000", image: "images/products/product-demo.png", url: "#"},
+					{name:"逆齡時空肌蘭萃美肌皂",price:"3000", image: "images/products/product-demo.png", url: "#"}
+				],
+			}
+		})
+	</script>
+</body>
+</html>
