@@ -1,0 +1,111 @@
+<div class="logo"><a href="home.html"><img src="images/lanvece.svg" alt="lanvece"></a></div>
+<ul class="menu">
+	<li><a href="#">產品</a>
+		<ul class="product-menu">
+			<li>
+				<a href="#">
+					<div class="series-color" style="background-color:#d1bfee;"></div>
+					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="逆齡時空肌系列"></div>
+					<h5>逆齡時空肌系列</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="series-color" style="background-color:#f8e2e5;"></div>
+					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="舒敏平衡肌系列"></div>
+					<h5>舒敏平衡肌系列</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="series-color" style="background-color:#fce8cd;"></div>
+					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="晶透綻白肌系列"></div>
+					<h5>晶透綻白肌系列</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="series-color" style="background-color:#fdfacd;"></div>
+					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="導水瞬透肌系列"></div>
+					<h5>導水瞬透肌系列</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="series-color" style="background-color:#ecf4ce;"></div>
+					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="全效系列"></div>
+					<h5>全效系列</h5>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">訂製</a></li>
+	<li><a href="#">關於我們</a>
+		<ul class="aboutus-menu">
+			<li>
+				<a href="#">
+					<div><img src="https://api.fnkr.net/testimg/296x180/cccccc/fff/?text=photo"></div>
+					<h5>獨家成分</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="https://api.fnkr.net/testimg/296x180/cccccc/fff/?text=photo"></div>
+					<h5>品牌故事</h5>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="https://api.fnkr.net/testimg/296x180/cccccc/fff/?text=photo"></div>
+					<h5>阿里山與蘭花</h5>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">概念店</a></li>
+</ul>
+<ul class="side-menu">
+	<li class="search-btn"><div class="icon">search</div></li>
+	<li class="shopping-bag">
+		<a href="shopping-bag.html">
+			<div class="icon">shopping bag</div>
+			<span class="quantity">2</span>
+		</a>
+	</li>
+	<li class="login"><a href="login.html">登入</a></li>
+	<li class="member">
+		<!-- <img src="https://placeholdit.imgix.net/~text?w=50&h=50&txtsize=18&txt=劉" alt="user"> -->
+		<a href="member-center.html"><img src="https://api.fnkr.net/testimg/50x50/d1bfee/FFF/?text=Liu" alt="user"></a>
+		<ul>
+			<h4><a href="member-center.html#account">會員中心</a></h4>
+			<li><a href="member-center.html#account">帳戶資訊</a></li>
+			<li><a href="member-center.html#recipient">收件人資訊</a></li>
+			<li><a href="member-center.html#membership">會員身份</a></li>
+			<li><a href="member-center.html#newsletter">電子報設定</a></li>
+			<h4><a href="member-center.html#order">訂單查詢</a></h4>
+			<li><a href="member-center.html#order">訂單</a></li>
+			<li><a href="member-center.html#past-order">已取貨</a></li>
+			<h4><a href="member-center.html#traceability">生產履歷</a></h4>
+			<button class="log-out"><a href="#">登出</a></button>
+		</ul>
+	</li>
+</ul>
+<div class="search-area">
+	<div class="logo"><a href="index.html"><img src="images/lanvece.svg" alt="lanvece"></a></div>
+	<div class="search-form">
+		<form action="">
+			<input type="text" id="searchInput" placeholder="Search" />
+			<button type="submit">Search</button>
+		</form>
+	</div>
+	<button class="search-close">close</button>
+</div>
+<script>
+	//search-area
+	$('.search-btn').click(function(){
+		$('.search-area').addClass('active');
+	}); 
+	$('.search-close').click(function(){
+		$('.search-area').removeClass('active');
+	});
+</script>
