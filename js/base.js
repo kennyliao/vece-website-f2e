@@ -109,6 +109,15 @@ $(document).ready(function(){
 		$(this).children('i').toggleClass('close-items');
 		$(this).next().next().next().slideToggle();
 	});
+	//歷史訂單收合
+	$('body[member-center] section.content #order h3').click(function(){
+		$(this).children('i').toggleClass('close-items');
+		$(this).parent().next().next().slideToggle();
+	});
+	$('body[member-center] section.content #past-order h3').click(function(){
+		$(this).children('i').toggleClass('close-items');
+		$(this).parent().next().next().slideToggle();
+	});
 
 	//結帳下一步按鈕
 	$('a.next-btn').click(function(){
@@ -127,7 +136,37 @@ $(document).ready(function(){
 		$('.breadcrumb>li:nth-of-type(3)').removeClass('active');
 	});
 
+	//變更密碼跳窗
+	$('button.change-password').click(function(e) {
+    	$('.change-password-area').lightbox_me({
+	        centered: true, 
+	        onLoad: function() { 
+	            	$('.change-password-area').find('input:first').focus()
+	            }
+        });
+	    e.preventDefault();
+	});
+	$('button.change-password-close').click(function(){
+		$('.change-password-area').trigger('close');
+	});
+	$(window).resize(function(){
+		$('.change-password-area').trigger('reposition');
+	});
 
+	
+	
+
+
+
+	//地址input
+	$('.input.address select').change(function() {
+      var current = $(this).val();
+      if (current != 'null') {
+          $(this).css('color','#2e2f31');
+      } else {
+          $(this).css('color','#b6b6b8');
+      }
+   }); 
 
 
 });

@@ -471,7 +471,7 @@ body[shopping-bag] section.content h2 i{
 		transform: rotate(180deg);
 	}
 }
-body[shopping-bag] section.content form ul.titles{
+body[shopping-bag] section.content ul.titles{
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -480,19 +480,20 @@ body[shopping-bag] section.content form ul.titles{
 	flex-direction: row;
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.titles{
+	body[shopping-bag] section.content ul.titles{
 		display: none;
 	}
 }
-body[shopping-bag] section.content form ul.titles>li{
+body[shopping-bag] section.content ul.titles>li{
 	width: 18%;
 	margin: 18px 0;
 }
-body[shopping-bag] section.content form ul.titles>li:first-child{
+body[shopping-bag] section.content ul.titles>li:first-child{
 	text-align: left;
 	width: 40%;
+	padding-left: 20px;
 }
-body[shopping-bag] section.content form ul.items>li{
+body[shopping-bag] section.content ul.items>li{
 	width: 100%;
 	min-height: 120px;
 	display: -webkit-flex;
@@ -501,19 +502,16 @@ body[shopping-bag] section.content form ul.items>li{
 	display: -o-flex;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	position: relative;
 }
 @media screen and (max-width: 767px){
-	/* body[shopping-bag] section.content form ul.items{
-		margin-left: -15px;
-		margin-right: -15px;
-	} */
-	body[shopping-bag] section.content form ul.items>li{
+	body[shopping-bag] section.content ul.items>li{
 		flex-direction: column;
 		padding: 10px 0 35px 0;
 	}
 }
-body[shopping-bag] section.content form ul.items>li:before{
+body[shopping-bag] section.content ul.items>li:before{
 	content: "";
 	width: 100%;
 	height: 1pt;
@@ -522,11 +520,11 @@ body[shopping-bag] section.content form ul.items>li:before{
 	left: 0;
 	background-color: #bfc1c5;
 }
-body[shopping-bag] section.content form ul.items:nth-of-type(1)>li:last-child{
+body[shopping-bag] section.content ul.items:nth-of-type(1)>li:last-child{
 	margin-bottom: 95px;
 }
 
-body[shopping-bag] section.content form ul.items>li div.product-item{
+body[shopping-bag] section.content ul.items>li div.product-item{
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -535,58 +533,59 @@ body[shopping-bag] section.content form ul.items>li div.product-item{
 	flex-direction: row;
 	align-items: center;
 	width: 40%;
+	padding: 10px 0;
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li div.product-item{
+	body[shopping-bag] section.content ul.items>li div.product-item{
 		width: 100%;
 	}
 }
-body[shopping-bag] section.content form ul.items>li div.product-item div.item-photo{
+body[shopping-bag] section.content ul.items>li div.product-item div.item-photo{
 	width: 100px;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-photo{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-photo{
 		width: 80px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-photo{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-photo{
 		width: 70px;
 	}
 }
-body[shopping-bag] section.content form ul.items>li div.product-item div.item-name{
+body[shopping-bag] section.content ul.items>li div.product-item div.item-name{
 	padding: 10px;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-name h4{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-name h4{
 		font-size: 16px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-name{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-name{
 		padding: 10px 0;
 	}
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-name h4{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-name h4{
 		font-size: 16px;
 		letter-spacing: 1px;
 	}
 }
-body[shopping-bag] section.content form ul.items>li div.product-item div.item-name div.capacity{
+body[shopping-bag] section.content ul.items>li div.product-item div.item-name div.capacity{
 	font-size: 18px;
 	text-align: left;
 	margin-top: 10px;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-name div.capacity{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-name div.capacity{
 		font-size: 16px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li div.product-item div.item-name div.capacity{
+	body[shopping-bag] section.content ul.items>li div.product-item div.item-name div.capacity{
 		font-size: 16px;
 	}
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price{
+body[shopping-bag] section.content ul.items>li ul.item-price{
 	width: 54%;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -596,33 +595,33 @@ body[shopping-bag] section.content form ul.items>li ul.item-price{
 	flex-direction: row;
 	align-items: center;
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price li{
+body[shopping-bag] section.content ul.items>li ul.item-price li{
 	width: 33.34%;
 	font-size: 18px;
 	color: #4e5156;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price li{
+	body[shopping-bag] section.content ul.items>li ul.item-price li{
 		font-size: 16px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price{
+	body[shopping-bag] section.content ul.items>li ul.item-price{
 		width: 100%;
 		justify-content: flex-end;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price li{
+	body[shopping-bag] section.content ul.items>li ul.item-price li{
 		width: 50%;
 		font-size: 16px;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price li:first-child{
+	body[shopping-bag] section.content ul.items>li ul.item-price li:first-child{
 		display: none;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price li:last-child{
+	body[shopping-bag] section.content ul.items>li ul.item-price li:last-child{
 		width: 30%;
 	}
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price li:nth-child(2){
+body[shopping-bag] section.content ul.items>li ul.item-price li:nth-child(2){
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -632,7 +631,7 @@ body[shopping-bag] section.content form ul.items>li ul.item-price li:nth-child(2
 	align-items: center;
 	justify-content: center;
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price input{
+body[shopping-bag] section.content ul.items>li ul.item-price input{
 	width: 60px;
 	text-align: center;
 	font-size: 18px;
@@ -642,19 +641,19 @@ body[shopping-bag] section.content form ul.items>li ul.item-price input{
 	border-radius: 0;
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price input{
+	body[shopping-bag] section.content ul.items>li ul.item-price input{
 		width: 50px;
 		line-height: 35px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price input{
+	body[shopping-bag] section.content ul.items>li ul.item-price input{
 		width: 40px;
 		line-height: 30px;
 		font-size: 15px;
 	}
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price div.add{
+body[shopping-bag] section.content ul.items>li ul.item-price div.add{
 	width: 30px;
 	height: 30px;
 	background-image: url('../images/buy_products.svg');
@@ -666,7 +665,7 @@ body[shopping-bag] section.content form ul.items>li ul.item-price div.add{
 	margin-left:20px;
 	cursor: pointer;
 }
-body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
+body[shopping-bag] section.content ul.items>li ul.item-price div.minus{
 	width: 30px;
 	height: 30px;
 	background-image: url('../images/buy_products.svg');
@@ -679,15 +678,15 @@ body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
 	cursor: pointer;
 }
 @media screen and (min-width: 992px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.add:hover{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.add:hover{
 		background-position: -60px 50%;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.minus:hover{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.minus:hover{
 		background-position: -90px 50%;
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.add{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.add{
 		width: 24px;
 		height: 24px;
 		-webkit-background-size: 96px 48px;
@@ -695,7 +694,7 @@ body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
 		background-position: -48px 50%;
 		margin-left: 10px;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.minus{
 		width: 24px;
 		height: 24px;
 		-webkit-background-size: 96px 48px;
@@ -705,14 +704,14 @@ body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
 	}
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.add{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.add{
 		width: 22px;
 		height: 22px;
 		background-size: 88px 44px;
 		background-position: -44px 50%;
 		margin-left: 10px;
 	}
-	body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
+	body[shopping-bag] section.content ul.items>li ul.item-price div.minus{
 		width: 22px;
 		height: 22px;
 		background-size: 88px 44px;
@@ -720,7 +719,7 @@ body[shopping-bag] section.content form ul.items>li ul.item-price div.minus{
 		margin-right: 10px;
 	}
 }
-body[shopping-bag] section.content form ul.items>li div.remove{
+body[shopping-bag] section.content ul.items>li div.remove{
 	width: 6%;
 	height: 20px;
 	margin: auto;
@@ -728,13 +727,13 @@ body[shopping-bag] section.content form ul.items>li div.remove{
 	cursor: pointer;
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.items>li div.remove{
+	body[shopping-bag] section.content ul.items>li div.remove{
 		position: absolute;
 		right: -10px;
 		top: 19px;
 	}
 }
-body[shopping-bag] section.content form ul.preorder-time{
+body[shopping-bag] section.content ul.preorder-time{
 	width: 100%;
 	min-height: 140px;
 	display: -webkit-flex;
@@ -747,16 +746,24 @@ body[shopping-bag] section.content form ul.preorder-time{
 	align-items: center;
 	position: relative;
 	padding: 0 30px;
-	margin-bottom: 90px;
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.preorder-time{
+	body[shopping-bag] section.content ul.preorder-time{
 		padding: 0 5px;
 		min-height: 100px;
 		margin-bottom: 0;
 	}
 }
-body[shopping-bag] section.content form ul.preorder-time:after{
+
+body[shopping-bag] section.content ul.items>li:last-child{
+	margin-bottom: 90px;
+}
+@media screen and (max-width: 767px){
+	body[shopping-bag] section.content ul.items>li:last-child{
+		margin-bottom: 0;
+	}
+}
+body[shopping-bag] section.content ul.items>li:last-child:after{
 	content: "";
 	width: 100%;
 	height: 1pt;
@@ -766,7 +773,7 @@ body[shopping-bag] section.content form ul.preorder-time:after{
 	background-color: #bfc1c5;
 }
 @media screen and (max-width: 767px){
-	body[shopping-bag] section.content form ul.preorder-time:after{
+	body[shopping-bag] section.content ul.items>li:last-child:after{
 		height: 0;
 	}
 }
@@ -1984,7 +1991,7 @@ body[member-center] section.content .nav-tabs.submenu > li > a{
 		line-height: 40px;
 	}
 }
-body[member-center] section.content .nav-tabs > li.active > a h3:after, body[member-center] section.content .nav-tabs > li > a:hover h3:after, body[member-center] section.content .nav-tabs > li > a:focus h3:after{
+body[member-center] section.content .nav-tabs > li.active > a h3:after{
 	content: "";
 	width: 100%;
 	height: 2px;
@@ -1992,6 +1999,17 @@ body[member-center] section.content .nav-tabs > li.active > a h3:after, body[mem
 	position: absolute;
 	left: 0;
 	bottom: -10px;
+}
+@media screen and (min-width: 992px){
+	body[member-center] section.content .nav-tabs > li > a:hover h3:after, body[member-center] section.content .nav-tabs > li > a:focus h3:after{
+		content: "";
+		width: 100%;
+		height: 2px;
+		background-color: #ab8edb;
+		position: absolute;
+		left: 0;
+		bottom: -10px;
+	}
 }
 body[member-center] section.content .nav-tabs > li{
 	width: 25%;
@@ -2007,6 +2025,7 @@ body[member-center] section.content .nav-tabs > li h3{
 	position: relative;
 	color: #bfc1c5;
 	margin-top: 0;
+	cursor: pointer;
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content .nav-tabs > li h3{
@@ -2021,6 +2040,7 @@ body[member-center] section.content .nav-tabs > li h3{
 }
 body[member-center] section.content .nav-tabs > li.active h3{
 	color: #2f3031;
+	cursor: default;
 }
 body[member-center] section.content .nav-tabs.submenu > li{
 	width: auto;
@@ -2069,6 +2089,8 @@ body[member-center] section.content .switch {
   display: inline-block;
   width: 115px;
   height: 60px;
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
 body[member-center] section.content .switch input {display:none;}
 body[member-center] section.content .slider {
@@ -2110,9 +2132,6 @@ body[member-center] section.content .slider.round {
 body[member-center] section.content .slider.round:before {
   border-radius: 50%;
 }
-
-
-
 body[member-center] section.content input + .slider:after{
 	content: "已取消訂閱";
 	position: absolute;
@@ -2127,6 +2146,40 @@ body[member-center] section.content input + .slider:after{
 }
 body[member-center] section.content input:checked + .slider:after{
 	content: "訂閱中";
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .switch {
+	  width: 95px;
+	  height: 40px;
+	}
+	body[member-center] section.content .slider:before {
+	  position: absolute;
+	  content: "";
+	  height: 32px;
+	  width: 32px;
+	  left: 4px;
+	  bottom: 4px;
+	  background-color: #fff;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+	body[member-center] section.content input:checked + .slider {
+	  background-color: #c0a6eb;
+	}
+	body[member-center] section.content input:focus + .slider {
+	  box-shadow: 0 0 1px #c0a6eb;
+	}
+	body[member-center] section.content input:checked + .slider:before {
+	  -webkit-transform: translateX(55px);
+	  -ms-transform: translateX(55px);
+	  transform: translateX(55px);
+	}
+	body[member-center] section.content .slider.round {
+	  border-radius: 20px;
+	}
+	body[member-center] section.content input + .slider:after{
+		font-size: 16px;
+	}
 }
 body[member-center] section.content #newsletter h2+div{
 	text-align: left;
@@ -2177,14 +2230,12 @@ body[member-center] section.content .tab-content .input input{
 	width: 100%;
 	border: 1pt solid #dfdfdf;
 	border-radius: 2px;
-	border: 1pt solid #dfdfdf;
 	background: none;
 	font-size: 18px;
 	line-height: 30px;
 	padding: 15px 25px;
 	max-width: 440px;
 }
-
 @media screen and (max-width: 767px){
 	body[member-center] section.content .tab-content .input input{
 		width: 100%;
@@ -2193,39 +2244,269 @@ body[member-center] section.content .tab-content .input input{
 		padding: 10px 15px;
 	}
 }
+body[member-center] section.content .tab-content .input.address select{
+	width: 50%;
+	border: 1pt solid #dfdfdf;
+	border-radius: 2px;
+	background: none;
+	font-size: 18px;
+	line-height: 30px;
+	padding: 15px 25px;
+	max-width: 220px;
+	-webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+}
+body[member-center] section.content .tab-content .input.address select+select{
+	margin-left: 10px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content .input.address select{
+		font-size: 15px;
+		line-height: 23px;
+		padding: 10px 15px;
+	}
+}
+.input.address{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+	max-width: 440px;
+}
+.input.address select{
+	color: #b6b6b8;
+}
+
 body[member-center] section.content .tab-content button.change-password{
 	margin-top: 50px;
 }
+body[member-center] .change-password-area{
+	width: 630px;
+	height: 590px;
+	background-color: #fff;
+	text-align: center;
+	display: none;
+	position: relative;
+	border-radius: 8px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] .change-password-area{
+		width: 100%;
+		height: auto;
+		border-radius: 0;
+	}
+}
+body[member-center] .change-password-area button.change-password-close{
+	position: absolute;
+	right: 40px;
+	top: 40px;
+	width: 18px;
+	height: 18px;
+	background: none;
+	color: #fff;
+}
+@media screen and (max-width: 767px){
+	body[member-center] .change-password-area button.change-password-close{
+		top: 20px;
+		right: 10px;
+	}
+}
+body[member-center] .change-password-area button.change-password-close:after{
+	content: "";
+	width: 21px;
+	height: 1px;
+	background-color: #000;
+	position: absolute;
+	top: 9px;
+	right: 0;
+	transform: rotate(45deg);
+}
+body[member-center] .change-password-area button.change-password-close:before{
+	content: "";
+	width: 21px;
+	height: 1px;
+	background-color: #000;
+	position: absolute;
+	bottom: 8px;
+	right: 0;
+	transform: rotate(-45deg);
+}
+body[member-center] .change-password-area h3{
+	margin: 40px 0 60px 0;
+}
+@media screen and (max-width: 767px){
+	body[member-center] .change-password-area h3{
+		margin: 30px 0;
+	}
+}
+body[member-center] .change-password-area .input{
+	margin: 20px 0;
+}
+body[member-center] .change-password-area .input input{
+	width: 100%;
+	border: 1pt solid #dfdfdf;
+	border-radius: 2px;
+	background: none;
+	font-size: 18px;
+	line-height: 30px;
+	padding: 15px 25px;
+	max-width: 440px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] .change-password-area .input input{
+		width: 80%;
+		font-size: 15px;
+		line-height: 23px;
+		padding: 10px 15px;
+	}
+}
+body[member-center] .change-password-area .input input[type="submit"].save{
+	background-color: #b99ee4;
+	border: none;
+	color: #fff;
+	max-width: 200px;
+	margin-top: 85px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] .change-password-area .input input[type="submit"].save{
+		margin-top: 40px;
+	}
+}
+
+
 body[member-center] section.content .tab-content #account h5{
 	margin-top: 80px;
 }
 
-
-
-
-
-
-
-
+body[member-center] section.content .tab-content div.order-search div.search-form{
+	width: 100%;
+	max-width: 330px;
+	margin-top: 120px;
+	position: relative;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content div.order-search div.search-form{
+		width: 100%;
+		max-width: 100%;
+		height: 35px;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: 60px 0 0 0;
+		padding: 0 40px;	
+	}
+}
+body[member-center] section.content .tab-content div.order-search div.search-form input[type="text"]{
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+	background: #fff;
+    border-bottom: 1px solid #bababa;
+    letter-spacing: .12em;
+    font-size: 16px;
+    padding: 5px 30px 5px 0;
+    text-align: left;
+    /* text-transform: uppercase; */
+    margin-bottom: 0;
+}
+body[member-center] section.content .tab-content div.order-search div.search-form button[type="submit"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    display: block;
+    letter-spacing: normal;
+    padding: 0;
+    cursor: inherit;
+	background-image: url('../images/sidemenu _icons.svg');
+	-webkit-background-size: 220px 22px;
+	background-size: 220px 22px;
+    background-repeat: no-repeat;
+    background-position: -12px -1px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    opacity: .5;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+@media screen and (min-width: 769px){
+	body[member-center] section.content .tab-content div.order-search div.search-form button[type="submit"]:hover{
+		opacity: 1;
+	}
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content div.order-search div.search-form button[type="submit"]{
+		right: 40px;
+	}
+}
+body[member-center] section.content #order-menu .order-info{
+	position: relative;
+}
 body[member-center] section.content #order-menu h3{
-	margin: 115px 0 58px 0;
+	margin: 80px 0 18px 0;
+	line-height: 36px;
 	text-align: left;
 }
-
+body[member-center] section.content #order-menu h3 i{
+	display: none;
+}
 @media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content #order-menu h3{
 		font-size: 28px;
 	}
 }
 @media screen and (max-width: 767px){
-	body[member-center] section.content h3{
-		margin: 115px 0 0 0;
-		font-size: 20px;
+	body[member-center] section.content #order-menu h3{
+		margin: 60px 0 0 0;
+		font-size: 16px;
 		line-height: 50px;
 		position: relative;
+		letter-spacing: 1px;
 	}
-	body[member-center] section.content h3:nth-of-type(2){
+	body[member-center] section.content #order-menu h3 span{
+		font-size: 20px;
+	}
+	body[member-center] section.content #order-menu h3:nth-of-type(2){
 		margin: 70px 0 0 0;
+	}
+	body[member-center] section.content #order-menu h3 i{
+		display: block;
+		position: absolute;
+		font-size: 20px;
+		right: 5px;
+		top: 17px;
+		transition: all .5s;
+	}
+	body[member-center] section.content #order-menu h3 i.close-items{
+		transform: rotate(180deg);
+	}
+}
+body[member-center] section.content #order-menu .order-info h5{
+	text-align: left;
+	line-height: 35px;
+	color: #9fa2a8;
+}
+body[member-center] section.content #order-menu .order-info button{
+	position: absolute;
+	right: 0;
+	top: 54px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content #order-menu .order-info button{
+		position: static;
+		margin: 10px 0 10px auto;
 	}
 }
 body[member-center] section.content #order-menu ul.titles{
@@ -2235,6 +2516,7 @@ body[member-center] section.content #order-menu ul.titles{
 	display: -o-flex;
 	display: flex;
 	flex-direction: row;
+	margin-top: 30px;
 }
 @media screen and (max-width: 767px){
 	body[member-center] section.content #order-menu ul.titles{
@@ -2242,12 +2524,19 @@ body[member-center] section.content #order-menu ul.titles{
 	}
 }
 body[member-center] section.content #order-menu ul.titles>li{
-	width: 18%;
+	width: 15%;
 	margin: 18px 0;
+	text-align: center;
 }
 body[member-center] section.content #order-menu ul.titles>li:first-child{
 	text-align: left;
 	width: 40%;
+	padding-left: 20px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content #order-menu ul.items{
+		display: none;
+	}
 }
 body[member-center] section.content #order-menu ul.items>li{
 	width: 100%;
@@ -2258,6 +2547,7 @@ body[member-center] section.content #order-menu ul.items>li{
 	display: -o-flex;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	position: relative;
 }
 @media screen and (max-width: 767px){
@@ -2287,7 +2577,9 @@ body[member-center] section.content #order-menu ul.items>li div.product-item{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 40%;
+	width: 55%;
+	padding: 10px 0;
+	position: relative;
 }
 @media screen and (max-width: 767px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item{
@@ -2296,8 +2588,25 @@ body[member-center] section.content #order-menu ul.items>li div.product-item{
 }
 body[member-center] section.content #order-menu ul.items>li div.product-item div.item-photo{
 	width: 100px;
+	position: relative;
 }
-@media screen and (min-width: 768px) and (max-width: 992px){
+
+body[member-center] section.content ul.items>li div.product-item div.item-photo span.quantity{
+	display: block;
+	position: absolute;
+	right: -8px;
+	top: -12px;
+	background-color: #6b6f76;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	font-family: HelveticaNeue;
+    display: none;	
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-photo{
 		width: 80px;
 	}
@@ -2305,19 +2614,59 @@ body[member-center] section.content #order-menu ul.items>li div.product-item div
 @media screen and (max-width: 767px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-photo{
 		width: 70px;
+		position: relative;
+		border-radius: 8px;
+		background-color: #fff;
+		border: solid 1pt #e8e8e8;
+
+	}
+	body[member-center] section.content ul.items>li div.product-item div.item-photo span.quantity{
+		display: block;
+		position: absolute;
+		right: -8px;
+		top: -12px;
+		background-color: #6b6f76;
+		width: 25px;
+		line-height: 25px;
+		border-radius: 50%;
+		font-size: 14px;
+		text-align: center;
 	}
 }
 body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name{
 	padding: 10px;
 }
-@media screen and (min-width: 768px) and (max-width: 992px){
+body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name div.item-status{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 27.27%;
+	height: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name h4{
 		font-size: 16px;
 	}
 }
 @media screen and (max-width: 767px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name{
-		padding: 10px 0;
+		padding: 10px 0 10px 20px;
+	}
+	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name div.item-status{
+		position: static;
+		width: 100%;
+		display: block;
+		font-size: 16px;
+		margin-bottom: 10px;
 	}
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name h4{
 		font-size: 16px;
@@ -2329,7 +2678,7 @@ body[member-center] section.content #order-menu ul.items>li div.product-item div
 	text-align: left;
 	margin-top: 10px;
 }
-@media screen and (min-width: 768px) and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-name div.capacity{
 		font-size: 16px;
 	}
@@ -2340,7 +2689,7 @@ body[member-center] section.content #order-menu ul.items>li div.product-item div
 	}
 }
 body[member-center] section.content #order-menu ul.items>li ul.item-price{
-	width: 54%;
+	width: 45%;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -2353,6 +2702,7 @@ body[member-center] section.content #order-menu ul.items>li ul.item-price li{
 	width: 33.34%;
 	font-size: 18px;
 	color: #4e5156;
+	text-align: center;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
 	body[member-center] section.content #order-menu ul.items>li ul.item-price li{
@@ -2368,6 +2718,9 @@ body[member-center] section.content #order-menu ul.items>li ul.item-price li{
 		width: 50%;
 		font-size: 16px;
 	}
+	body[member-center] section.content #order-menu ul.items>li ul.item-price li:nth-child(2){
+		display: none;
+	}
 	body[member-center] section.content #order-menu ul.items>li ul.item-price li:first-child{
 		display: none;
 	}
@@ -2375,118 +2728,9 @@ body[member-center] section.content #order-menu ul.items>li ul.item-price li{
 		width: 30%;
 	}
 }
-body[member-center] section.content #order-menu ul.items>li ul.item-price li:nth-child(2){
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-body[member-center] section.content #order-menu ul.items>li ul.item-price input{
-	width: 60px;
-	text-align: center;
-	font-size: 18px;
-	line-height: 40px;
-	border: 1pt solid #9fa3a8;
-	display: inline-block;
-	border-radius: 0;
-}
-@media screen and (min-width: 768px) and (max-width: 991px){
-	body[member-center] section.content #order-menu ul.items>li ul.item-price input{
-		width: 50px;
-		line-height: 35px;
-	}
-}
-@media screen and (max-width: 767px){
-	body[member-center] section.content #order-menu ul.items>li ul.item-price input{
-		width: 40px;
-		line-height: 30px;
-		font-size: 15px;
-	}
-}
-body[member-center] section.content #order-menu ul.items>li ul.item-price div.add{
-	width: 30px;
-	height: 30px;
-	background-image: url('../images/buy_products.svg');
-	-webkit-background-size: 120px 60px;
-	background-size: 120px 60px;
-	background-position: 0 50%;
-	display: inline-block;
-	background-repeat: no-repeat;
-	margin-left:20px;
-	cursor: pointer;
-}
-body[member-center] section.content #order-menu ul.items>li ul.item-price div.minus{
-	width: 30px;
-	height: 30px;
-	background-image: url('../images/buy_products.svg');
-	-webkit-background-size: 120px 60px;
-	background-size: 120px 60px;
-	background-position: -30px 50%;
-	display: inline-block;
-	background-repeat: no-repeat;
-	margin-right:20px;
-	cursor: pointer;
-}
-@media screen and (min-width: 992px){
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.add:hover{
-		background-position: -60px 50%;
-	}
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.minus:hover{
-		background-position: -90px 50%;
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 991px){
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.add{
-		width: 24px;
-		height: 24px;
-		-webkit-background-size: 96px 48px;
-		background-size: 96px 48px;
-		background-position: -48px 50%;
-		margin-left: 10px;
-	}
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.minus{
-		width: 24px;
-		height: 24px;
-		-webkit-background-size: 96px 48px;
-		background-size: 96px 48px;
-		background-position: -72px 50%;
-		margin-right: 10px;
-	}
-}
-@media screen and (max-width: 767px){
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.add{
-		width: 22px;
-		height: 22px;
-		background-size: 88px 44px;
-		background-position: -44px 50%;
-		margin-left: 10px;
-	}
-	body[member-center] section.content #order-menu ul.items>li ul.item-price div.minus{
-		width: 22px;
-		height: 22px;
-		background-size: 88px 44px;
-		background-position: -66px 50%;
-		margin-right: 10px;
-	}
-}
-body[member-center] section.content #order-menu ul.items>li div.remove{
-	width: 6%;
-	height: 20px;
-	margin: auto;
-	color: #777;
-	cursor: pointer;
-}
-@media screen and (max-width: 767px){
-	body[member-center] section.content #order-menu ul.items>li div.remove{
-		position: absolute;
-		right: -10px;
-		top: 19px;
-	}
-}
+
+
+
 body[member-center] section.content #order-menu ul.preorder-time{
 	width: 100%;
 	min-height: 140px;
@@ -2499,7 +2743,7 @@ body[member-center] section.content #order-menu ul.preorder-time{
 	-ms-align-items: center;
 	align-items: center;
 	position: relative;
-	padding: 0 30px;
+	/* padding: 0 30px; */
 	margin-bottom: 90px;
 }
 @media screen and (max-width: 767px){
@@ -2514,13 +2758,21 @@ body[member-center] section.content #order-menu ul.preorder-time li{
 	text-align: left;
 	font-size: 16px;
 	letter-spacing: 1px;
-	margin: 0 15px;
+	margin: 0 30px;
 	color: #bfc1c5;
+}
+@media screen and (max-width: 991px){
+	body[member-center] section.content #order-menu ul.preorder-time li{
+		margin: 0 15px;
+	}
 }
 body[member-center] section.content #order-menu ul.preorder-time li h5{
 	text-align: left;
 	margin-top: 10px;
 	color: #bfc1c5;
+}
+body[member-center] section.content #order-menu ul.preorder-time li.active,body[member-center] section.content #order-menu ul.preorder-time li.active h5{
+	color: #4e5156;
 }
 body[member-center] section.content #order-menu ul.preorder-time li:first-child{
 	color: #4e5156;
@@ -2537,8 +2789,147 @@ body[member-center] section.content #order-menu ul.preorder-time li:first-child 
 		height: 55px;
 	}
 }
-
-
-
-
-	
+body[member-center] section.content .tab-content #past-order{
+	margin-bottom: 200px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	body[member-center] section.content .tab-content #past-order{
+		margin-bottom: 100px;
+	}
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #past-order{
+		margin-bottom: 70px;
+	}
+}
+body[member-center] section.content .tab-content #traceability .search-form{
+	margin-bottom: 120px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .search-form{
+		margin-bottom: 60px;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item-photo{
+	max-width: 330px;
+}
+body[member-center] section.content .tab-content #traceability h3{
+	max-width: 330px;
+	text-align: center;
+	font-size: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	body[member-center] section.content .tab-content #traceability h3{
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item-photo{
+		max-width: 100px;
+	}
+	body[member-center] section.content .tab-content #traceability h3{
+		font-size: 15px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item{
+		flex-direction: column;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item h3{
+	margin: 20px 0;
+}
+body[member-center] section.content .tab-content #traceability .item>div:first-child{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item>div:first-child{
+		flex-direction: row;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item .traceability-info{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item .traceability-info{
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-top: 20px;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item .traceability-info li{
+	margin: 0 40px;
+	text-align: center;
+	max-width: 150px;
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item .traceability-info li{
+		width: 50%;
+		margin:20px 0;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item .traceability-info h5{
+	line-height: 22px;
+	margin: 20px 0;
+}
+body[member-center] section.content .tab-content #traceability .item .traceability-info .img{
+	width: 100px;
+	display: inline-block;
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	body[member-center] section.content .tab-content #traceability .item .traceability-info h5{
+		font-size: 16px;
+		margin: 10px 0;
+	}
+	body[member-center] section.content .tab-content #traceability .item .traceability-info .img{
+		width: 80px;
+	}
+}
+@media screen and (max-width: 767px){
+	body[member-center] section.content .tab-content #traceability .item .traceability-info h5{
+		font-size: 14px;
+		margin: 10px 0;
+	}
+	body[member-center] section.content .tab-content #traceability .item .traceability-info .img{
+		display: none;
+	}
+}
+body[member-center] section.content .tab-content #traceability .item .traceability-info h4{
+	font-size: 20px;
+	line-height: 27px;
+	margin: 20px 0;
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	body[member-center] section.content .tab-content #traceability .item .traceability-info h4{
+		font-size: 16px;
+		margin: 10px 0;
+	}
+}
