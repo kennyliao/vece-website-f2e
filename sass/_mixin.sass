@@ -1,0 +1,16 @@
+$color_bg: #f9f9f9
+$color_dark: #2f3031
+$color_black: #4e5156
+$color_grey: #6b6f77
+$color_border: #9fa3a8
+$color_purple: #ab8eda
+
+@mixin user-select()
+	-moz-user-select: none
+	-webkit-user-select: none
+
+@mixin ab_center()
+	position: absolute
+	top: 50%
+	left: 50%
+	+transform(translate(-50%,-50%))

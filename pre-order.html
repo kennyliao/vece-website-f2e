@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+		<meta name="author" content="LanVece">
+		<meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+		<meta property="og:title" content="【LanVece 新鮮保養】"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.lanvece.com"/>
+		<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+		<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+		</script>
+		<script src="css/owlcarousel/owl.carousel.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/base.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+		<link rel="bookmark" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/product.css">
+		<title>LanVece</title>
+	</head>
+	<body pre-order>
+		<header></header>
+		<section id="pre-order-app" class="content">
+			<div class="container-fiuld">
+				<div class="title">
+					<h1>{{page_data.title}}</h1>
+					<p>{{page_data.discription}}</p>
+				</div>
+				<div class="intro">
+					<ul class="owl-pre-order-intro owl-carousel owl-theme">
+						<li v-for="i in page_data.intro" class="intro_block">
+							<h2>{{i.title}}</h2>
+							<img v-bind:src="i.img" alt="">
+							<p>{{i.content}}</p>
+						</li>
+					</ul>
+				</div>
+				<div class="pre_order_series">
+					<h2>{{page_data.order_date}}   {{series_1.date.from}}～{{series_1.date.to}}</h2>
+					<ul class="owl-promot owl-carousel owl-theme">
+						<li v-for="p in series_1.product" class="product_block">
+							<img v-bind:src="p.image" alt=""/>
+							<h3>{{p.name}}</h3>
+							<div class="price">{{p.price}}</div>
+							<a class="full_a" v-bind:href="p.url"></a>
+						</li>
+					</ul>
+				</div>
+				<div class="pre_order_series">
+					<h2>{{page_data.order_date}}  {{series_2.date.from}}～{{series_2.date.to}}</h2>
+					<ul class="owl-promot owl-carousel owl-theme">
+						<li v-for="p in series_2.product" class="product_block">
+							<img v-bind:src="p.image" alt=""/>
+							<h3>{{p.name}}</h3>
+							<div class="price">{{p.price}}</div>
+							<a class="full_a" v-bind:href="p.url"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</section>
+
+		<footer></footer>
+
+		<script src="js/products.js"></script>
+		<script>
+$.get("components/header.html", function(data, status){
+	$('header').html(data);
+});
+$.get("components/footer.html", function(data, status){
+	$('footer').html(data);
+});  
+		</script>
+	</body>
+</html>

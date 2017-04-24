@@ -20,8 +20,8 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>
-navTextPrev = '<i class="fa fa fa-chevron-left" aria-hidden="true"></i> 上一波訂製';
-navTextNext = '下一波訂製 <i class="fa fa fa-chevron-right" aria-hidden="true"></i>';
+navTextPrev = '<i class="fa fa-chevron-left" aria-hidden="true"></i> 上一個';
+navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>';
 		</script>
 		<script src="css/owlcarousel/owl.carousel.min.js"></script>
 		<script src="js/vue.min.js"></script>
@@ -31,21 +31,20 @@ navTextNext = '下一波訂製 <i class="fa fa fa-chevron-right" aria-hidden="tr
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
 	</head>
-	<body products-app>
+	<body pre-order-app>
 		<header></header>
 		<section id="product_app" class="content">
 			<!--產品操作-->
 			<div class="container">
+				<div class="row date_wrap">
+					<h2>訂製日 {{product.pre_order_date.from}}～{{product.pre_order_date.to}}</h2>
+					<div class="date_block" v-for="p in product.pre_order_procedure">
+						<div class="date">{{p.date}}</div>
+						<div class="event">{{p.event}}</div>
+					</div>
+				</div>
 				<div class="row product_intro">
 					<div class="col-sm-5">
-						<div class="sub-text">
-							<p>此商品為製作出來後 90 天內的，</p>
-							<p>您還有更新鮮的選擇</p>
-							<a class="link" href="pre-order.html">
-								<span>瞧瞧訂製</span>
-								<img class="svg icon" src="images/arrow_purple.svg" alt="">
-							</a>
-						</div>
 						<img class="product_img" v-bind:src="product.image" alt="">
 					</div>
 					<div class="col-sm-offset-1 col-sm-6">
@@ -114,12 +113,12 @@ navTextNext = '下一波訂製 <i class="fa fa fa-chevron-right" aria-hidden="tr
 			
 			<!--推介產品-->
 			<div id="promot">
-				<h2>{{promot_data.series_title}}</h2>
+				<h2>其他可訂製的菁華液</h2>
 				<div class="owl-promot owl-carousel owl-theme">
 					<div v-for="p in promot_data.product" class="item_wrap">
 						<img v-bind:src="p.image" alt="">
 						<h4>{{p.name}}</h4>
-						<div class="price">{{p.price}}</div>
+						<div class="date">{{p.date.from}}～{{p.date.to}}</div>
 						<a class="full_a" v-bind:href="p.url"></a>
 					</div>
 				</div>
