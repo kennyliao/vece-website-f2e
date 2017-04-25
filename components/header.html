@@ -1,37 +1,37 @@
 <div class="logo"><a href="home.html"><img src="images/lanvece.svg" alt="lanvece"></a></div>
 <ul class="menu">
-	<li><a href="#">產品</a>
+	<li><a href="products.html">產品</a>
 		<ul class="product-menu">
 			<li>
-				<a href="#">
+				<a href="products.html#">
 					<div class="series-color" style="background-color:#d1bfee;"></div>
 					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="逆齡時空肌系列"></div>
 					<h5>逆齡時空肌系列</h5>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="products.html#">
 					<div class="series-color" style="background-color:#f8e2e5;"></div>
 					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="舒敏平衡肌系列"></div>
 					<h5>舒敏平衡肌系列</h5>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="products.html#">
 					<div class="series-color" style="background-color:#fce8cd;"></div>
 					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="晶透綻白肌系列"></div>
 					<h5>晶透綻白肌系列</h5>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="products.html#">
 					<div class="series-color" style="background-color:#fdfacd;"></div>
 					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="導水瞬透肌系列"></div>
 					<h5>導水瞬透肌系列</h5>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="products.html#">
 					<div class="series-color" style="background-color:#ecf4ce;"></div>
 					<div><img src="https://api.fnkr.net/testimg/60x60/ffffff/ccc/?text=icon" alt="全效系列"></div>
 					<h5>全效系列</h5>
@@ -65,7 +65,7 @@
 	<li><a href="#">概念店</a></li>
 </ul>
 <ul class="side-menu">
-	<li class="search-btn"><div class="icon">search</div></li>
+	<li class="search-btn" onclick="searchAreaToggle('1');"><div class="icon">search</div></li>
 	<li class="shopping-bag">
 		<a href="shopping-bag.html">
 			<div class="icon">shopping bag</div>
@@ -98,14 +98,15 @@
 			<button type="submit">Search</button>
 		</form>
 	</div>
-	<button class="search-close">close</button>
+	<button class="search-close" onclick="searchAreaToggle('0');">close</button>
 </div>
 <script>
-	//search-area
-	$('.search-btn').click(function(){
-		$('.search-area').addClass('active');
-	}); 
-	$('.search-close').click(function(){
-		$('.search-area').removeClass('active');
-	});
+	function searchAreaToggle(e){
+		if(e=='1'){
+			$('.search-area').addClass('active');
+			$('.search-area').find('input:first').focus();
+		}else if(e=='0'){
+			$('.search-area').removeClass('active');
+		}
+	}
 </script>
