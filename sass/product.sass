@@ -3,6 +3,7 @@
 @import products
 @import preorder
 @import ingredients
+@import store
 	
 /*購物頁*/
 body[products-app] section.content, body[pre-order-app] section.content
@@ -218,23 +219,41 @@ body[products-app] section.content, body[pre-order-app] section.content
 		*
 			padding: 0
 			height: 394px
-		img
-			object-fit: cover
-			object-position: 50% 20%
-	
-	.owl-carousel .owl-nav 
-		& .owl-next, & .owl-prev
-			position: absolute
-			background-color: transparent
-			color: $color_border
-			+transition(0.2s)
-			&:hover
-				color: $color_grey
-		.owl-prev
-			left: 0
-		.owl-next
-			right: 0
-		
+		.photo_block
+			float: left
+			position: relative
+			width: 25%
+			&:nth-child(1)
+				width: 50%
+			.cover
+				position: absolute
+				width: 100%
+				height: 100%
+				background-color: rgba(0,0,0,0.4)
+				opacity: 0
+				+transition(0.2s)
+				cursor: pointer
+				&:hover
+					opacity: 1
+				color: #efefef
+				.name
+					position: absolute
+					top: 10%
+					left: 8%
+					height: initial
+					font-size: 24px
+					line-height: 30px
+				.comment
+					position: absolute
+					bottom: 20%
+					left: 8%
+					width: 84%
+					height: initial
+					font-size: 15px
+					line-height: 27px
+			img
+				object-fit: cover
+				object-position: 50% 20%
 	
 	#promot
 		text-align: center
@@ -244,6 +263,18 @@ body[products-app] section.content, body[pre-order-app] section.content
 			display: inline-block
 			width: 100%
 			max-width: 1280px
+		.owl-carousel .owl-nav 
+			& .owl-next, & .owl-prev
+				position: absolute
+				background-color: transparent
+				color: $color_border
+				+transition(0.2s)
+				&:hover
+					color: $color_grey
+		.owl-prev
+			left: 30px
+		.owl-next
+			right: 30px
 				
 		.item_wrap
 			position: relative
@@ -361,13 +392,32 @@ body[products-app] section.content, body[pre-order-app] section.content
 		.photo
 			height: 192px
 			margin-bottom: 68.4px
-			.col-sm-6
-				display: none
-			.col-sm-3
+			*
+				padding: 0
+				height: 192px
+			.photo_block
 				width: 50%
-				float: left
+				background: center center / cover no-repeat
+				&:nth-child(1)
+					display: none
+				.cover
+					opacity: 1
+					.name
+						top: 5%
+						left: 5%
+						font-size: 18px
+						line-height: 27px
+					.comment
+						bottom: 5%
+						font-size: 13px
+						line-height: 26px
+						letter-spacing: 1px
 		#promot
 			margin-bottom: 20px
+			.owl-carousel .owl-nav 
+			& .owl-next, & .owl-prev
+				display: none
+			
 			.item_wrap
 				h4
 					font-size: 14px

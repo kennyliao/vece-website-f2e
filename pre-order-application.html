@@ -100,14 +100,16 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 			</div>
 			<!--使用者推薦圖片-->
 			<div class="container-fiuld photo">
-				<div class="col-sm-6">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
-				</div>
-				<div class="col-sm-3">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
-				</div>
-				<div class="col-sm-3">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
+				<div class="photo_block" v-for="u in product.user_comment">
+					<div class="cover">
+						<div class="name">
+							{{u.name}}
+						</div>
+						<p class="comment">
+							{{u.comment}}
+						</p>
+					</div>
+					<img v-bind:src="u.img" alt="">
 				</div>
 			</div>
 			

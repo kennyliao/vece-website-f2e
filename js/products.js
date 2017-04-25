@@ -180,6 +180,12 @@ var product_data = {
 		from: "3／1",
 		to: "3／14"
 	},
+	//使用者回饋和照片
+	user_comment: [
+		{name: "Ledia", comment: "“給了我一個很酷的彩虹色，液體閃光燈很緊，因為它順利進行。 非常童話喜歡.”", img: "https://unsplash.it/1400/?image=823"},
+		{name: "Coco", comment: "“液體閃光燈很緊，因為它順利進行，給了我一個很酷的彩虹色。 非常童話喜歡.”", img: "https://unsplash.it/1400/800?image=64"},
+		{name: "Cena", comment: "“液體閃光燈很緊，因為它順利進行，給了我一個很酷的彩虹色。 非常童話喜歡.”", img: "https://unsplash.it/1400/800?image=65"}
+	],
 	pre_order_procedure: [
 		{event: "採花", date: "3／15"},
 		{event: "萃取", date: "3／17"},

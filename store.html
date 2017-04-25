@@ -20,8 +20,8 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>
-navTextPrev = '<i class="fa fa-chevron-left" aria-hidden="true"></i> 上一頁';
-navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>';
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
 		</script>
 		<script src="css/owlcarousel/owl.carousel.min.js"></script>
 		<script src="js/vue.min.js"></script>
@@ -31,52 +31,17 @@ navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
 	</head>
-	<body pre-order>
+	<body store>
 		<header></header>
-		<section id="pre-order-app" class="content">
-			<div class="container-fiuld">
-				<div class="title">
-					<h1>{{page_data.title}}</h1>
-					<p>{{page_data.discription}}</p>
-				</div>
-				<div class="intro">
-					<ul class="owl-pre-order-intro owl-carousel owl-theme">
-						<li v-for="i in page_data.intro" class="intro_block">
-							<h2>{{i.title}}</h2>
-							<img v-bind:src="i.img" alt="">
-							<p>{{i.content}}</p>
-						</li>
-					</ul>
-				</div>
-				<div class="pre_order_series">
-					<h2>{{page_data.order_date}}   {{series_1.date.from}}～{{series_1.date.to}}</h2>
-					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in series_1.product" class="product_block">
-							<img v-bind:src="p.image" alt=""/>
-							<h3>{{p.name}}</h3>
-							<div class="price">{{p.price}}</div>
-							<a class="full_a" v-bind:href="p.url"></a>
-						</li>
-					</ul>
-				</div>
-				<div class="pre_order_series">
-					<h2>{{page_data.order_date}}  {{series_2.date.from}}～{{series_2.date.to}}</h2>
-					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in series_2.product" class="product_block">
-							<img v-bind:src="p.image" alt=""/>
-							<h3>{{p.name}}</h3>
-							<div class="price">{{p.price}}</div>
-							<a class="full_a" v-bind:href="p.url"></a>
-						</li>
-					</ul>
-				</div>
-			</div>
+		<section id="store" class="content">
+			<div class="head_img"></div>
+			
 			
 		</section>
 
 		<footer></footer>
 
-		<script src="js/products.js"></script>
+
 		<script>
 $.get("components/header.html", function(data, status){
 	$('header').html(data);
@@ -85,5 +50,6 @@ $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
 });  
 		</script>
+		<script src="js/products.js"></script>
 	</body>
 </html>

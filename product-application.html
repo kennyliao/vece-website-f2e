@@ -20,8 +20,8 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>
-navTextPrev = '<i class="fa fa fa-chevron-left" aria-hidden="true"></i> 上一波訂製';
-navTextNext = '下一波訂製 <i class="fa fa fa-chevron-right" aria-hidden="true"></i>';
+navTextPrev = '<i class="fa fa fa-chevron-left" aria-hidden="true"></i> 上一個';
+navTextNext = '下一個 <i class="fa fa fa-chevron-right" aria-hidden="true"></i>';
 		</script>
 		<script src="css/owlcarousel/owl.carousel.min.js"></script>
 		<script src="js/vue.min.js"></script>
@@ -101,14 +101,16 @@ navTextNext = '下一波訂製 <i class="fa fa fa-chevron-right" aria-hidden="tr
 			</div>
 			<!--使用者推薦圖片-->
 			<div class="container-fiuld photo">
-				<div class="col-sm-6">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
-				</div>
-				<div class="col-sm-3">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
-				</div>
-				<div class="col-sm-3">
-					<img src="https://unsplash.it/1400/?image=823" alt="">
+				<div class="photo_block" v-for="u in product.user_comment">
+					<div class="cover">
+						<div class="name">
+							{{u.name}}
+						</div>
+						<p class="comment">
+							{{u.comment}}
+						</p>
+					</div>
+					<img v-bind:src="u.img" alt="">
 				</div>
 			</div>
 			
