@@ -673,206 +673,14 @@ body[about] section.content .pages .intro_block h3, body[about] section.content 
   }
 }
 body[store] section.content {
-  padding-top: 90px;
-  padding-bottom: 80px;
+  margin-top: 90px;
 }
-body[store] section.content .container-fiuld {
-  text-align: center;
-}
-body[store] section.content .container-fiuld .title {
-  padding: 100px 0 38px;
-  background-color: #f9f9f9;
-  color: #4e5156;
-}
-body[store] section.content .container-fiuld .title h1 {
-  margin-bottom: 23px;
-  font-family: "PingFangTC-Light";
-  font-size: 28px;
-  letter-spacing: 2px;
-}
-body[store] section.content .container-fiuld .title p {
-  display: inline-block;
-  margin-bottom: 0;
-  font-family: "PingFangTC-Light";
+body[store] section.content .head_img {
+  background: #000 center center/cover no-repeat;
   width: 100%;
-  max-width: 487px;
-  padding: 0 25px;
-  font-size: 17px;
-  line-height: 31px;
-  text-align: left;
-}
-body[store] section.content .container-fiuld .intro {
-  width: 100%;
-  max-width: 1440px;
-  padding: 34px 8px 117px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-body[store] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-next, body[store] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-prev {
-  position: absolute;
-  background-color: transparent;
-  color: #9fa3a8;
-  -moz-transition: 0.2s;
-  -o-transition: 0.2s;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-body[store] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-next:hover, body[store] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-prev:hover {
-  color: #6b6f77;
-}
-body[store] section.content .container-fiuld .intro .owl-prev {
-  left: 30px;
-}
-body[store] section.content .container-fiuld .intro .owl-next {
-  right: 30px;
-}
-body[store] section.content .container-fiuld .intro .intro_block {
-  padding: 0 47px;
-}
-body[store] section.content .container-fiuld .intro .intro_block h2 {
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 34px;
-  color: #4e5156;
-}
-body[store] section.content .container-fiuld .intro .intro_block img {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 116px;
-  margin-bottom: 15px;
-}
-body[store] section.content .container-fiuld .intro .intro_block p {
-  text-align: left;
-  font-size: 14px;
-  line-height: 28px;
-  letter-spacing: 1px;
-}
-body[store] section.content .container-fiuld .pre_order_series {
-  width: 100%;
-  padding: 140px 0 112px;
-  text-align: center;
-  border-top: solid 1px #e8e8e8;
-}
-body[store] section.content .container-fiuld .pre_order_series h2 {
-  margin-bottom: 80px;
-  font-size: 27px;
-  letter-spacing: 2px;
-  color: #2f3031;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-next, body[store] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-prev {
-  position: absolute;
-  background-color: transparent;
-  color: #9fa3a8;
-  -moz-transition: 0.2s;
-  -o-transition: 0.2s;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-next:hover, body[store] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-prev:hover {
-  color: #6b6f77;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-prev {
-  left: 30px;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-next {
-  right: 30px;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot {
-  padding: 0;
-  width: 100%;
-  max-width: 1057px;
-  display: inline-block;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block {
-  list-style: none;
-  display: inline-block;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block img {
-  display: inline-block;
-  width: 80%;
-  height: auto;
-  margin-bottom: 35px;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block h3 {
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: #6b6f77;
-  margin-bottom: 19px;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block .price, body[store] body[products-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[products-app] body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[store] body[products-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[products-app] body[store] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[store] body[pre-order-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[pre-order-app] body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[store] body[pre-order-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[pre-order-app] body[store] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date {
-  font-family: "Avenir-Book";
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 1px;
-  color: #4e5156;
-}
-body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block .price:before, body[store] body[products-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date:before, body[products-app] body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date:before, body[store] body[products-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date:before, body[products-app] body[store] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date:before, body[store] body[pre-order-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date:before, body[pre-order-app] body[store] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date:before, body[store] body[pre-order-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date:before, body[pre-order-app] body[store] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date:before {
-  content: "NT";
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  margin-right: 5px;
+  height: 547px;
 }
 
-@media screen and (max-width: 767px) {
-  body[pre-order] section.content {
-    padding-top: 55px;
-    padding-bottom: 0px;
-  }
-  body[pre-order] section.content .container-fiuld .title {
-    padding: 37px 0 43px;
-  }
-  body[pre-order] section.content .container-fiuld .title h1 {
-    font-size: 20px;
-  }
-  body[pre-order] section.content .container-fiuld .title p {
-    font-size: 14px;
-    line-height: 26px;
-    padding: 0 20px;
-  }
-  body[pre-order] section.content .container-fiuld .intro {
-    padding: 34px 0 44px;
-    background-color: transparent;
-  }
-  body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav {
-    display: none;
-  }
-  body[pre-order] section.content .container-fiuld .intro .intro_block {
-    padding: 0 25px;
-  }
-  body[pre-order] section.content .container-fiuld .intro .intro_block h2 {
-    text-align: center;
-  }
-  body[pre-order] section.content .container-fiuld .intro .intro_block img {
-    width: 116px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series {
-    padding: 60px 0 65px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series h2 {
-    font-size: 16px;
-    margin-bottom: 45px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-next, body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-prev {
-    display: none;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block {
-    padding: 0 20px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block img {
-    margin-bottom: 10px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block h3 {
-    font-size: 14px;
-    line-height: 26px;
-    margin-bottom: 2px;
-  }
-  body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block .price, body[pre-order] body[products-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[products-app] body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[pre-order] body[products-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[products-app] body[pre-order] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[pre-order] body[pre-order-app] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[pre-order-app] body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .product_block #promot .item_wrap .date, body[pre-order] body[pre-order-app] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date, body[pre-order-app] body[pre-order] section.content #promot .item_wrap .container-fiuld .pre_order_series .owl-promot .product_block .date {
-    font-size: 15px;
-  }
-}
 /*購物頁 */
 body[products-app] section.content, body[pre-order-app] section.content {
   letter-spacing: 1.9px;
@@ -1399,7 +1207,7 @@ body[products-app] section.content #promot .item_wrap .date:before, body[pre-ord
   body[products-app] section.content #promot, body[pre-order-app] section.content #promot {
     margin-bottom: 20px;
   }
-  body[products-app] section.content #promot .owl-next, body[products-app] section.content #promot .owl-prev, body[pre-order-app] section.content #promot .owl-next, body[pre-order-app] section.content #promot .owl-prev {
+  body[products-app] section.content #promot .owl-carousel .owl-nav .owl-next, body[products-app] section.content #promot .owl-carousel .owl-nav .owl-prev, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-next, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-prev {
     display: none;
   }
   body[products-app] section.content #promot .item_wrap h4, body[pre-order-app] section.content #promot .item_wrap h4 {

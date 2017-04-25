@@ -33,12 +33,30 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	</head>
 	<body store>
 		<header></header>
-		<section id="store" class="content">
-			<div class="head_img"></div>
+		<section id="about" class="content">
+			<div class="head_img" v-bind:style=" 'background-image: url('+ location.img +')'"></div>
+			<div class="title_wrap">
+					<h1>LanVece Taipei</h1>
+				<div class="title_box">
+					<div class="time">
+						{{location.open_time}}
+					</div>
+					<div class="address">
+						{{location.address}}
+					</div>
+				</div>
+			</div>
+			<div class="pages">
+				<ul class="owl-pages owl-carousel owl-theme">
+					<li v-for="p in pages" class="intro_block">
+						<div class="img" v-bind:style="'background-image: url('+ p.img +')'"></div>
+						<h3>{{p.content}}</h3>
+					</li>
+				</ul>
+			</div>
+			<div class="map"></div>
 		</section>
-
 		<footer></footer>
-
 
 		<script>
 $.get("components/header.html", function(data, status){
@@ -47,6 +65,21 @@ $.get("components/header.html", function(data, status){
 $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
 });  
+
+
+var about_data = {
+	location: {
+		open_time: "Opening : 9:00 ~ 17:00",
+		tel: "0123456789",
+		address: "Sec. 1, Dunhua S. Rd., Songshan Dist., Taipei City 105, Taiwan",
+		img: "https://unsplash.it/1400/800?image=832"
+	},
+	pages:[
+		{content:"體驗區", img: "https://unsplash.it/1400/800?image=832"},
+		{content:"零售區", img: "https://unsplash.it/1400/?image=823"},
+		{content:"影片區", img: "https://unsplash.it/1400/800?image=64"}
+	]
+};
 		</script>
 		<script src="js/products.js"></script>
 	</body>

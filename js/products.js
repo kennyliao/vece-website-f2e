@@ -62,7 +62,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$(".owl-about").owlCarousel({
+	$(".owl-pages").owlCarousel({
 	    center: true,
 	    items: 1.1,
 	    nav:false,
