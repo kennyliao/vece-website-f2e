@@ -1,8 +1,8 @@
 {
 	"name": "逆齡時空肌蘭萃菁華液",  
 	"discript": "高雅淡紫色的菁華液，為珍貴抗老、抗自由基成份",
-	"price": 3500,
-	"capacity": 30,
+	"price": "3500",
+	"capacity": "30",
 	"image": "images/products/product-demo.png",
 	"application": { 
 		"video":{
