@@ -68,13 +68,13 @@ $(document).ready(function(){
 	});
 
 	//search-area開關
-	$('.search-btn').click(function(){
-		$('.search-area').addClass('active');
-	}); 
-	$('.search-close').click(function(){
-		$('.search-area').removeClass('active');
-	});
-
+	// $('.search-btn').click(function(){
+	// 	$('.search-area').addClass('active');
+	// }); 
+	// $('.search-close').click(function(){
+	// 	$('.search-area').removeClass('active');
+	// });
+	
 
 	//頁面最小高
 	var windowHeight = $(window).height();
@@ -141,7 +141,7 @@ $(document).ready(function(){
     	$('.change-password-area').lightbox_me({
 	        centered: true, 
 	        onLoad: function() { 
-	            	$('.change-password-area').find('input:first').focus()
+	            	$('.change-password-area').find('input:first').focus();
 	            }
         });
 	    e.preventDefault();
