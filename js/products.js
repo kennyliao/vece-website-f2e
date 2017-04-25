@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+	$.get("product_data.json",function(data){
+		console.log(data);
+	})
+	
 	var mobile_items = 1.5; //手機顯示欄位數
 	
 	$(".owl-pre-order-intro").owlCarousel({
@@ -195,7 +199,7 @@ var product_data = {
 	]
 };
 
-// product_app Vue
+// product_app
 var products_app = new Vue({
 	el: "#product_app",
 	data:{
@@ -271,6 +275,16 @@ var products = new Vue({
 //關於
 var about = new Vue({
 	el: "#about",
-	data: about_data || ""
-})
-	
+	data: about_data || "",
+	computed:{
+		telform : function(){
+			return this.location.tel.slice(0,2)+" "+this.location.tel.slice(2,6)+" "+this.location.tel.slice(6);
+		}
+	}
+});
+
+
+
+String.prototype.telform = function(){
+	return this.slice(0,2)+" "+this.slice(2,6)+" "+this.slice(6);
+}
