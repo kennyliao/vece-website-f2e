@@ -24,6 +24,7 @@
 	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
 	</script>
 	<script src="css/owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/jquery.lightbox_me.js"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<link rel="bookmark" href="images/favicon.ico"/>
 	<title>LanVece</title>
@@ -52,6 +53,16 @@
 							<div class="input"><input type="text" value=""></div>
 							<div class="input"><input type="email" value=""></div>
 							<button class="small-btn change-password">變更密碼</button>
+							<div class="change-password-area">
+								<button class="change-password-close">close</button>
+								<form action="">
+									<h3>變更密碼</h3>
+									<div class="input"><input type="password" name="password_current" value="" placeholder="現在的密碼"></div>
+									<div class="input"><input type="password" name="password_new" value="" placeholder="新密碼"></div>
+									<div class="input"><input type="password" name="password_new_confirm" value="" placeholder="再次確認新密碼"></div>
+									<div class="input"><input type="submit" value="變更" class="login-btn save"></div>
+								</form>
+							</div>
 							<h5>您的大頭照</h5>
 							<div class="avator">
 								<img src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
@@ -63,30 +74,32 @@
 							<div class="input"><input type="text" placeholder="收件人姓名"></div>
 							<div class="input"><input type="text" placeholder="手機號碼"></div>
 							<div class="input address">
-								<select>
-									<option value="0">收件地址</option>
+								<select name="recipient_address_city">
+									<option value="null">縣市</option>
 								</select>
-								<select>
-									<option value="0"></option>
+								<select name="recipient_address_district">
+									<option value="null">區</option>
 								</select>
 							</div>
-							<div class="input"><input type="text"></div>
+							<div class="input"><input type="text" name="recipient_address_detail"></div>
 							<h3>帳單地址</h3>
 							<div class="input address">
-								<select>
-									<option value="0">收件地址</option>
+								<select name="billing_address_city">
+									<option value="null">縣市</option>
+									<option value="1">台北市</option>
 								</select>
-								<select>
-									<option value="0"></option>
+								<select name="billing_address_district">
+									<option value="null">區</option>
+									<option value="1">松山區</option>
 								</select>
 							</div>
-							<div class="input"><input type="text"></div>
+							<div class="input"><input type="text" name="billing_address_detail"></div>
 							<div class="save-for-next"><input type="checkbox" checked> <span>與收件人地址相同。</span></div>
 							<div class="input"><input type="button" value="儲存" class="login-btn save"></div>
 						</div>
 						<div id="membership" class="tab-pane fade">
 							<h3>會員制度即將上線</h3>
-							
+
 						</div>
 						<div id="newsletter" class="tab-pane fade">
 							<h3>電子報</h3>
@@ -106,239 +119,247 @@
 					</ul>
 					<div class="tab-content">
 						<div id="order" class="tab-pane fade in active">
-							<h3>進行中訂單</h3>
-							<div class="order-info">
-								<h3>訂單編號：<span>1702261531</span></h3>
-								<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
-								<h5>運送方式：<span>黑貓取貨付款</span></h5>
-								<button class="small-btn">我要退貨</button>
+							<div class="order-search">
+								<div class="search-form">
+									<form action="">
+										<input type="text" id="order_search" placeholder="訂單編號" />
+										<button type="submit">Search</button>
+									</form>
+								</div>
 							</div>
-							<ul class="titles">
-								<li>商品項目</li>
-								<li>價格</li>
-								<li>數量</li>
-								<li>小計</li>
-							</ul>
-							<ul class="items">
+							<ul>
 								<li>
-									<div class="product-item">
-										<div class="item-photo"><img src="images/products/product-demo.png"></div>
-										<div class="item-name">
-											<h4>逆齡時空肌蘭萃菁華液</h4>
-											<div class="capacity">30 ml</div>
-											<input type="hidden" value="1234567" name="product_id[]">
-										</div>
+									<div class="order-info">
+										<h3>訂單編號：<span>1702261531</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>
+										<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
+										<h5>運送方式：<span>黑貓取貨付款</span></h5>
+										<button class="small-btn">申請退貨</button>
 									</div>
-									<ul class="item-price">
-										<li>NT$ 3,500</li>
-										<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-										<li>NT$ 7,000</li>
+									<ul class="titles">
+										<li>商品項目</li>
+										<li>訂單狀態</li>
+										<li>價格</li>
+										<li>數量</li>
+										<li>小計</li>
 									</ul>
-									<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-								</li>
-								<li>
-									<div class="product-item">
-										<div class="item-photo"><img src="images/products/product-demo.png"></div>
-										<div class="item-name">
-											<h4>逆齡時空肌蘭萃菁華液</h4>
-											<div class="capacity">30 ml</div>
-											<input type="hidden" value="1234567" name="product_id[]">
-										</div>
-									</div>
-									<ul class="item-price">
-										<li>NT$ 3,500</li>
-										<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-										<li>NT$ 7,000</li>
+									<ul class="items">
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">運送中</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id[]">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+										</li>
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">運送中</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id[]">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+										</li>
 									</ul>
-									<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
 								</li>
 							</ul>
-							<div class="order-info">
-								<h3>訂製訂單編號：<span>1702261531</span></h3>
-								<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
-								<h5>運送方式：<span>黑貓取貨付款</span></h5>
-								<button class="small-btn">取消訂單</button><!-- 採花期之前顯示 -->
-								<button class="small-btn">我要退貨</button>
-							</div>
+							<ul>
+								<li>
+									<div class="order-info">
+										<h3>訂製訂單編號：<span>1702261531</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>
+										<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
+										<h5>運送方式：<span>黑貓取貨付款</span></h5>
+										<button class="small-btn">取消訂單</button><!-- 採花期之前顯示 -->
+										<button class="small-btn">申請退貨</button>
+									</div>
+									
+									<ul class="titles">
+										<li>商品項目</li>
+										<li>訂單狀態</li>
+										<li>價格</li>
+										<li>數量</li>
+										<li>小計</li>
+									</ul>
+									<ul class="items">
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">運送中</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+											<ul class="preorder-time">
+												<li class="active placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
+												<li class="active flower"><div>4/15</div><h5>手工採花</h5></li>
+												<li class="active extracting"><div>4/17</div><h5>定量萃取</h5></li>
+												<li class="detecting"><div>4/26</div><h5>微生物檢測</h5></li>
+												<li class="bottling"><div>5/1</div><h5>裝瓶</h5></li>
+												<li class="shipping"><div>5/6</div><h5>運送</h5></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 							
-							<ul class="titles">
-								<li>商品項目</li>
-								<li>價格</li>
-								<li>數量</li>
-								<li>小計</li>
-							</ul>
-							<ul class="items">
-								<li>
-									<div class="product-item">
-										<div class="item-photo"><img src="images/products/product-demo.png"></div>
-										<div class="item-name">
-											<h4>逆齡時空肌蘭萃菁華液</h4>
-											<div class="capacity">30 ml</div>
-											<input type="hidden" value="1234567" name="product_id">
-										</div>
-									</div>
-									<ul class="item-price">
-										<li>NT$ 3,500</li>
-										<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-										<li>NT$ 7,000</li>
-									</ul>
-									<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-								</li>
-								<li>
-									<div class="product-item">
-										<div class="item-photo"><img src="images/products/product-demo.png"></div>
-										<div class="item-name">
-											<h4>逆齡時空肌蘭萃菁華液</h4>
-											<div class="capacity">30 ml</div>
-											<input type="hidden" value="1234567" name="product_id">
-										</div>
-									</div>
-									<ul class="item-price">
-										<li>NT$ 3,500</li>
-										<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-										<li>NT$ 7,000</li>
-									</ul>
-									<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-								</li>
-							</ul>
-							<ul class="preorder-time">
-								<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
-								<li class="flower"><div>4/15</div><h5>手工採花</h5></li>
-								<li class="extracting"><div>4/17</div><h5>定量萃取</h5></li>
-								<li class="detecting"><div>4/26</div><h5>微生物檢測</h5></li>
-								<li class="bottling"><div>5/1</div><h5>裝瓶</h5></li>
-								<li class="shipping"><div>5/6</div><h5>運送</h5></li>
-							</ul>
 						</div>
 						<div id="past-order" class="tab-pane fade">
-							<h3>歷史訂單 1</h3>
-							<p>Some content in menu 1.</p>
+							<div class="order-search">
+								<div class="search-form">
+									<form action="">
+										<input type="text" id="past_order_earch" placeholder="訂單編號" />
+										<button type="submit">Search</button>
+									</form>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<div class="order-info">
+										<h3>訂單編號：<span>1702261531</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>
+										<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
+										<h5>運送方式：<span>黑貓取貨付款</span></h5>
+										<button class="small-btn">申請退貨</button>
+									</div>
+									<ul class="titles">
+										<li>商品項目</li>
+										<li>訂單狀態</li>
+										<li>價格</li>
+										<li>數量</li>
+										<li>小計</li>
+									</ul>
+									<ul class="items">
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">已送達</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id[]">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+										</li>
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">已送達</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id[]">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<div class="order-info">
+										<h3>訂製訂單編號：<span>1702261531</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>
+										<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
+										<h5>運送方式：<span>黑貓取貨付款</span></h5>
+										<button class="small-btn">申請退貨</button>
+									</div>
+									
+									<ul class="titles">
+										<li>商品項目</li>
+										<li>訂單狀態</li>
+										<li>價格</li>
+										<li>數量</li>
+										<li>小計</li>
+									</ul>
+									<ul class="items">
+										<li>
+											<div class="product-item">
+												<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
+												<div class="item-name">
+													<div class="item-status">已送達</div>
+													<h4>逆齡時空肌蘭萃菁華液</h4>
+													<div class="capacity">30 ml</div>
+													<input type="hidden" value="1234567" name="product_id">
+												</div>
+											</div>
+											<ul class="item-price">
+												<li class="currency">3,500</li>
+												<li>1</li>
+												<li class="currency">7,000</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 				<div id="traceability" class="tab-pane fade">
-					<h3>Traceability</h3>
-					<p>Some content in menu 2.</p>
+					<div class="order-search">
+						<div class="search-form">
+							<form action="">
+								<input type="text" id="traceability_search" placeholder="訂單編號" />
+								<button type="submit">Search</button>
+							</form>
+						</div>
+						<div class="item">
+							<div>
+								<div class="item-photo"><img src="images/products/product-demo.png"></div>
+								<h3>逆齡時空肌蘭萃菁華液</h3>
+							</div>
+							<ul class="traceability-info">
+								<li>
+									<h5>2013 - 2017</h5>
+									<div class="img"><img src="https://api.fnkr.net/testimg/200x200/00CED1/FFF/?text=A"></div>
+									<h4>種植</h4>
+								</li>
+								<li>
+									<h5>2017 / 04 / 15</h5>
+									<div class="img"><img src="https://api.fnkr.net/testimg/200x200/00CED1/FFF/?text=B"></div>
+									<h4>採花</h4>
+								</li>
+								<li>
+									<h5>2017 / 04 / 17</h5>
+									<div class="img"><img src="https://api.fnkr.net/testimg/200x200/00CED1/FFF/?text=C"></div>
+									<h4>萃取</h4>
+								</li>
+							</ul>
+						</div>
+						
+					</div>
+
 				</div>
 			</div>
-		</div>
-		
-
-
-
-
-
-
-
-
-
-		<div class="container">
-			<form action="checkout.html">
-				<div class="wrapper row">
-					<div class="order-info">
-						<h3>訂單編號：<span>1702261531</span></h3>
-						<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
-						<h5>運送方式：<span>黑貓取貨付款</span></h5>
-						<button class="small-btn">我要退貨</button>
-					</div>
-					<ul class="titles">
-						<li>商品項目</li>
-						<li>價格</li>
-						<li>數量</li>
-						<li>小計</li>
-					</ul>
-					<ul class="items">
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id[]">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li>NT$ 3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li>NT$ 7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id[]">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li>NT$ 3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li>NT$ 7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-					</ul>
-					<div class="order-info">
-						<h3>訂製訂單編號：<span>1702261531</span></h3>
-						<h5>訂單日期：<span>2017 / 02 / 27  01:04</span></h5>
-						<h5>運送方式：<span>黑貓取貨付款</span></h5>
-						<button class="small-btn">取消訂單</button><!-- 採花期之前顯示 -->
-						<button class="small-btn">我要退貨</button>
-					</div>
-					
-					<ul class="titles">
-						<li>商品項目</li>
-						<li>價格</li>
-						<li>數量</li>
-						<li>小計</li>
-					</ul>
-					<ul class="items">
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li>NT$ 3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li>NT$ 7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li>NT$ 3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li>NT$ 7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-					</ul>
-					<ul class="preorder-time">
-						<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
-						<li class="flower"><div>4/15</div><h5>手工採花</h5></li>
-						<li class="extracting"><div>4/17</div><h5>定量萃取</h5></li>
-						<li class="detecting"><div>4/26</div><h5>微生物檢測</h5></li>
-						<li class="bottling"><div>5/1</div><h5>裝瓶</h5></li>
-						<li class="shipping"><div>5/6</div><h5>運送</h5></li>
-					</ul>
-				</div>
-			</form>
 		</div>
 	</section>	
 	
