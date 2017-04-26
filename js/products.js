@@ -117,11 +117,11 @@ var pre_order_app = new Vue({
 			title: "訂製新鮮保養品",
 			discription: "我們在您訂製後，才開始採花，製作保養品。製成後在最短的時間內配送給您，給您的肌膚最新鮮的活性。",
 			intro: [
-				{title:"培育四年", content:"故事由一株瓶苗開始，經過小苗、中苗、大苗到開花，每一個步驟都細心呵護。如此經過了四年，才會長成今天我們看到的蘭花", img: "images/grey_block.png"},
-				{title:"手工採花", content:"在有著絕佳純淨環境的阿里山上，孕育著LanVece享有世界品種權的蝴蝶蘭，四年的用心以手工採摘後延續下去", img: "images/grey_block.png"},
-				{title:"定量萃取", content:"花朵採摘後，迅速以低溫、小量與短距的綠色萃取技術，將花朵的活性濃縮精淬，產出最高鮮活效的植萃原液", img: "images/grey_block.png"},
-				{title:"微生物檢測", content:"完成了萃取製程，LanVece也在安全方面做足把關，我們的產品皆須通過SGS微生物檢測，層層機制來確保產品的穩定", img: "images/grey_block.png"},
-				{title:"裝瓶", content:"通過檢測的萃取液，由符合保養品高規格標準的GMP廠，在無塵室進行裝瓶，一瓶瓶滿載養分的LanVece就此誕生", img: "images/grey_block.png"}
+				{title:"培育四年", content:"故事由一株瓶苗開始，經過小苗、中苗、大苗到開花，每一個步驟都細心呵護。如此經過了四年，才會長成今天我們看到的蘭花", img: "images/illustration.svg"},
+				{title:"手工採花", content:"在有著絕佳純淨環境的阿里山上，孕育著LanVece享有世界品種權的蝴蝶蘭，四年的用心以手工採摘後延續下去", img: "images/illustration.svg"},
+				{title:"定量萃取", content:"花朵採摘後，迅速以低溫、小量與短距的綠色萃取技術，將花朵的活性濃縮精淬，產出最高鮮活效的植萃原液", img: "images/illustration.svg"},
+				{title:"微生物檢測", content:"完成了萃取製程，LanVece也在安全方面做足把關，我們的產品皆須通過SGS微生物檢測，層層機制來確保產品的穩定", img: "images/illustration.svg"},
+				{title:"裝瓶", content:"通過檢測的萃取液，由符合保養品高規格標準的GMP廠，在無塵室進行裝瓶，一瓶瓶滿載養分的LanVece就此誕生", img: "images/illustration.svg"}
 			],
 			order_date: "訂製日"
 		},
@@ -195,11 +195,13 @@ var product_data = {
 	]
 };
 
-// product_app Vue
+var database = {};
+
+// product_app
 var products_app = new Vue({
 	el: "#product_app",
 	data:{
-		product: product_data,	//產品資料	
+		product: null,	//產品資料	
 		count: 1,		//購買數量
 		active_page: "application", //記錄分頁現時位置
 		//分頁描述，方便中英切換
@@ -217,7 +219,16 @@ var products_app = new Vue({
 			]
 		}
 	},
+	created: function () {
+    this.fetchData();
+  },
 	methods:{
+		fetchData: function(){
+			var _this = this;
+			$.get("product_data.json",function(data){
+				_this.product = data;
+			})
+		},
 		sub: function(){
 			if(this.count>1){this.count--;}
 		},
@@ -271,6 +282,16 @@ var products = new Vue({
 //關於
 var about = new Vue({
 	el: "#about",
-	data: about_data || ""
-})
-	
+	data: about_data || "",
+	computed:{
+		telform : function(){
+			return this.location.tel.slice(0,2)+" "+this.location.tel.slice(2,6)+" "+this.location.tel.slice(6);
+		}
+	}
+});
+
+
+
+String.prototype.telform = function(){
+	return this.slice(0,2)+" "+this.slice(2,6)+" "+this.slice(6);
+}
