@@ -61,9 +61,12 @@ navTextNext = '下一個 <i class="fa fa fa-chevron-right" aria-hidden="true"></
 								<input class="count" v-model="count" v-on:keyup="countLimit" type="text" maxlength="3">
 								<div class="add" v-on:click="add()" unselectable="on"></div>
 							</div>
-							<div class="add_cart">
-								放入購物袋
-							</div>
+							<a href="#">
+								<div class="add_cart">
+									放入購物袋
+								</div>
+							</a>
+							
 						</div>
 						<div class="show_box">
 							<ul class="menu">
@@ -72,7 +75,7 @@ navTextNext = '下一個 <i class="fa fa fa-chevron-right" aria-hidden="true"></
 							<div class="page_wrap">
 								<div class="page_box application" data-id="application" style="display:block">
 									<div class="video_box">
-										<div class="poster" v-bind:style="{ 'background-image': 'url('+ product.application.video.img +')' }">
+										<div class="poster" v-bind:style="{ 'background-image': 'url('+ product.application.video.img +')' }" v-on:click="hide()">
 											<div class="cover_icon">
 												<div class="triangle"></div>
 											</div>

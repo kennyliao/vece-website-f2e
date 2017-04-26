@@ -34,14 +34,14 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	<body about>
 		<header></header>
 		<section id="about" class="content">
-			<div class="head_img" v-bind:style=" 'background-image: url('+ intro.img +')'"></div>
+			<div class="head_img" v-bind:style=" 'background-image: url('+ about_data[1].intro.img +')'"></div>
 			<div class="title">
-				<h1>{{intro.title}}</h1>
-				<p class="content">{{intro.content}}</p>
+				<h1>{{about_data[1].intro.title}}</h1>
+				<p class="content">{{about_data[1].intro.content}}</p>
 			</div>
 			<div class="pages">
 				<ul class="owl-pages owl-carousel owl-theme">
-					<li v-for="p in pages" class="intro_block">
+					<li v-for="p in about_data[1].pages" class="intro_block">
 						<div class="img" v-bind:style="'background-image: url('+ p.img +')'"></div>
 						<h3>{{p.content}}</h3>
 					</li>
@@ -58,20 +58,7 @@ $.get("components/header.html", function(data, status){
 });
 $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
-});  
-
-var about_data = {
-	intro: {
-		title: "阿里山與蝴蝶蘭",
-		content: "座落於海拔1,300公尺高的蝴蝶蘭園，純淨的空氣和朝陽夕霧等特殊氣候，提供了蝴蝶蘭適度的陽光和水分，形成了絕佳的生長環境。",
-		img: "https://unsplash.it/1400/?image=823"
-	},
-	pages:[
-		{content:"座落於海拔1,300公尺高的蝴蝶蘭園，純淨的空氣和朝陽夕霧等特殊氣候", img: "https://unsplash.it/1400/800?image=832"},
-		{content:"提供了蝴蝶蘭適度的陽光和水分，形成了絕佳的生長環境。", img: "https://unsplash.it/1400/?image=823"},
-		{content:"座落於海拔1,300公尺高的蝴蝶蘭園，純淨的空氣和朝陽夕霧等特殊氣候", img: "https://unsplash.it/1400/800?image=64"}
-	]
-};
+}); 
 		</script>
 		<script src="js/products.js"></script>
 	</body>

@@ -33,15 +33,15 @@ navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 	</head>
 	<body pre-order>
 		<header></header>
-		<section id="pre-order-app" class="content">
+		<section id="pre-order" class="content">
 			<div class="container-fiuld">
 				<div class="title">
-					<h1>{{page_data.title}}</h1>
-					<p>{{page_data.discription}}</p>
+					<h1>{{pre_order_data.page_data.title}}</h1>
+					<p>{{pre_order_data.page_data.discription}}</p>
 				</div>
 				<div class="intro">
 					<ul class="owl-pre-order-intro owl-carousel owl-theme">
-						<li v-for="(i,id) in page_data.intro" class="intro_block">
+						<li v-for="(i,id) in pre_order_data.page_data.intro" class="intro_block">
 							<h2>{{i.title}}</h2>
 							<div class="img" v-bind:style="'background-image:url('+i.img+'); background-position-x:'+ id*116+'px'"></div>
 							<p>{{i.content}}</p>
@@ -49,9 +49,9 @@ navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 					</ul>
 				</div>
 				<div class="pre_order_series">
-					<h2>{{page_data.order_date}}   {{series_1.date.from}}～{{series_1.date.to}}</h2>
+					<h2>{{pre_order_data.page_data.order_date}}   {{pre_order_data.series_1.date.from}}～{{pre_order_data.series_1.date.to}}</h2>
 					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in series_1.product" class="product_block">
+						<li v-for="p in pre_order_data.series_1.product" class="product_block">
 							<img v-bind:src="p.image" alt=""/>
 							<h3>{{p.name}}</h3>
 							<div class="price">{{p.price}}</div>
@@ -60,9 +60,9 @@ navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 					</ul>
 				</div>
 				<div class="pre_order_series">
-					<h2>{{page_data.order_date}}  {{series_2.date.from}}～{{series_2.date.to}}</h2>
+					<h2>{{pre_order_data.page_data.order_date}}  {{pre_order_data.series_2.date.from}}～{{pre_order_data.series_2.date.to}}</h2>
 					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in series_2.product" class="product_block">
+						<li v-for="p in pre_order_data.series_2.product" class="product_block">
 							<img v-bind:src="p.image" alt=""/>
 							<h3>{{p.name}}</h3>
 							<div class="price">{{p.price}}</div>

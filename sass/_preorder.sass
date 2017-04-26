@@ -34,12 +34,14 @@ body[pre-order] section.content
 				line-height: 31px
 				text-align: left
 		.intro
+			display: inline-block
 			width: 100%
-			max-width: 1440px
 			padding: 34px 8px 117px
-			margin: 0 auto
 			background-color: $color_bg
 			text-align: center
+			.owl-pre-order-intro
+				max-width: 1440px
+				margin: 0 auto
 			.owl-carousel .owl-nav 
 				& .owl-next, & .owl-prev
 					position: absolute
@@ -53,15 +55,17 @@ body[pre-order] section.content
 			.owl-next
 				right: 30px
 			.intro_block
-				padding: 0 47px
+				padding: 0 20px
 				h2
 					margin-bottom: 10px
 					font-size: 15px
 					font-weight: 700
 					line-height: 34px
 					color: $color_black
-				img
+				.img
 					position: relative
+					background-size: auto 116px
+					height: 116px
 					display: inline-block
 					width: 100%
 					max-width: 116px

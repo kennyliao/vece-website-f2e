@@ -35,15 +35,15 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	<body store>
 		<header></header>
 		<section id="about" class="content">
-			<div class="head_img" v-bind:style=" 'background-image: url('+ location.img +')'"></div>
+			<div class="head_img" v-bind:style=" 'background-image: url('+ about_data[2].location.img +')'"></div>
 			<div class="title_wrap">
 				<h1>台北概念店</h1>
 				<div class="title_box">
 					<div class="time">
-						{{location.open_time}}
+						{{about_data[2].location.open_time}}
 					</div>
-					<a class="tel" v-bind:href="'tel:'+location.tel">tel：{{telform}}</a>
-					<a class="address" v-bind:href="location.address_url" target="_blank">{{location.address}}</a>
+					<a class="tel" v-bind:href="'tel:'+about_data[2].location.tel">tel：{{telform}}</a>
+					<a class="address" v-bind:href="about_data[2].location.address_url" target="_blank">{{about_data[2].location.address}}</a>
 				</div>
 			</div>
 
@@ -53,7 +53,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 			</a>
 			<div class="pages">
 				<ul class="owl-pages owl-carousel owl-theme">
-					<li v-for="p in pages" class="intro_block">
+					<li v-for="p in about_data[2].pages" class="intro_block">
 						<div class="img" v-bind:style="'background-image: url('+ p.img +')'"></div>
 						<h3>{{p.content}}</h3>
 					</li>
@@ -73,21 +73,6 @@ $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
 });  
 
-
-var about_data = {
-	location: {
-		open_time: "營業時間 : 12:00 ~ 22:00",
-		tel: "0227527196",
-		address: "台北市大安區忠孝東路四段181巷40弄8號",
-		address_url: "https://www.google.com/maps?q=LanVece",
-		img: "https://unsplash.it/1400/800?image=832"
-	},
-	pages:[
-		{content:"體驗區", img: "https://unsplash.it/1400/800?image=832"},
-		{content:"零售區", img: "https://unsplash.it/1400/?image=823"},
-		{content:"影片區", img: "https://unsplash.it/1400/800?image=64"}
-	]
-};
 
 google.maps.event.addDomListener(window, 'load', initMap);
 
