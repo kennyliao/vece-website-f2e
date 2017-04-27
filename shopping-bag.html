@@ -111,13 +111,13 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 					<li class="currency">{{final_price}}</li>
 				</ul>
 				<div class="remove" v-on:click="delete_item(id)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-			<ul class="preorder-time" v-if="items_data.order_type == 'pre_order'">
-				<li class="placeorder"><div>{{items_data.order_date[0]}}</div><h5>下訂期</h5></li>
-				<li class="flower"><div>{{items_data.order_date[1]}}</div><h5>手工採花</h5></li>
-				<li class="extracting"><div>{{items_data.order_date[2]}}</div><h5>定量萃取</h5></li>
-				<li class="detecting"><div>{{items_data.order_date[3]}}</div><h5>微生物檢測</h5></li>
-				<li class="bottling"><div>{{items_data.order_date[4]}}</div><h5>裝瓶</h5></li>
-				<li class="shipping"><div>{{items_data.order_date[5]}}</div><h5>運送</h5></li>
+			<ul class="preorder-time" v-if="items_data.pre_order">
+				<li class="placeorder"><div>{{items_data.order_date[0]}} - {{items_data.order_date[1]}}</div><h5>下訂期</h5></li>
+				<li class="flower"><div>{{items_data.order_date[2]}}</div><h5>手工採花</h5></li>
+				<li class="extracting"><div>{{items_data.order_date[3]}}</div><h5>定量萃取</h5></li>
+				<li class="detecting"><div>{{items_data.order_date[4]}}</div><h5>微生物檢測</h5></li>
+				<li class="bottling"><div>{{items_data.order_date[5]}}</div><h5>裝瓶</h5></li>
+				<li class="shipping"><div>{{items_data.order_date[6]}}</div><h5>運送</h5></li>
 			</ul>
 			</div>
 		</template>
