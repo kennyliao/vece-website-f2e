@@ -1210,6 +1210,7 @@ body[checkout] section.content div.right-content div.points-using input[type="ch
 .breadcrumb >li{
 	font-size: 16px;
 	color: #bfc1c5;
+	cursor: default;
 }
 .breadcrumb > li + div + li:before{
 	content: "\f105";
@@ -1934,15 +1935,22 @@ body[checkout] section.content div.left-content div.customer-info ul.shipping-me
 body[checkout] section.content div.left-content div.customer-info ul.shipping-method li label input:checked+span.dot+span, body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input:checked+label span.dot+span{
 	color: #6b6f77;
 }
-body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input+label+div button{
+body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input+label+.choose711 button{
 	display: none;
 }
-body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input:checked+label+div button{
+body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input:checked+label+.choose711 button{
 	background: none;
 	border: 1pt solid #6b6f77;
 	margin-left: 50px;
 	padding: 10px;
 	display: block;
+}
+body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input+label+div.choose711+.selected-store{
+	display: none;
+}
+body[checkout] section.content div.left-content div.customer-info ul.shipping-method li input:checked+label+div.choose711+.selected-store{
+	display: block;
+	margin: 50px;
 }
 @media screen and (max-width: 767px){
 	body[checkout] footer{

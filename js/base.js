@@ -1,29 +1,4 @@
-$(document).ready(function(){
- //  	$(".owl-carousel").owlCarousel({
-	//     loop:false,
-	//     margin:10,
-	//     nav:true,
-	//     responsive:{
-	//         0:{
-	//             items:1.2
-	//         },
-	//         767:{
-	//             items:1.1
-	//         },
-	//         1000:{
-	//             items:1.1
-	//         },
-	//         1200:{
-	//             items:1.3
-	//         },
-	//         1400:{
-	//             items:1.8
-	//         },
-	//         2500:{
-	//             items:3
-	//         }
-	//     }
-	// });
+
 	$(".owl-hero").owlCarousel({
 	    center: true,
 	    items:1,
@@ -168,5 +143,24 @@ $(document).ready(function(){
       }
    }); 
 
+	function searchAreaToggle(e){
+		if(e=='1'){
+			$('.search-area').addClass('active');
+			$('.search-area').find('input:first').focus();
+		}else if(e=='0'){
+			$('.search-area').removeClass('active');
+		}
+	}
 
-});
+	var iframe_link = 'unimartmap.php';
+	function show_cvs_map() {
+		window.open(iframe_link,'CVS map',config='width=1024,height=600,status=no,scrollbars=yes,toolbar=no,location=no,menubar=no');
+	}
+	function set_store_info(CVSStoreID,CVSStoreName,CVSAddress,CVSTelephone) {
+		$('.store-name>span').html(CVSStoreName);
+		$('.store-address>span').html(CVSAddress);
+		// $('.store-phone>span').html(CVSTelephone);
+		// $('.store-info').show();
+		// $('.ecpaylogistic-warning').hide();
+		// $('.checkselectecpaylogistic').prop('value','selected');
+	}
