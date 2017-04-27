@@ -1,7 +1,6 @@
-.bag_item
-//	background-color: #58f
+@import checkout
 
-.bag_item
+body[shopping-bag] section.content .bag_item
 	width: 100%
 	min-height: 120px
 	display: -webkit-flex
@@ -14,13 +13,13 @@
 	position: relative
 
 @media screen and (max-width: 767px)
-	.bag_item
+	body[shopping-bag] section.content .bag_item
 		flex-direction: column
 
 body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 	margin-bottom: 95px
 
-.bag_item
+body[shopping-bag] section.content .bag_item
 	div.product-item
 		display: -webkit-flex
 		display: -moz-flex
@@ -101,42 +100,42 @@ body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 		cursor: pointer
 
 @media screen and (max-width: 767px)
-	.bag_item div.product-item
+	body[shopping-bag] section.content .bag_item div.product-item
 		width: 100%
 
 @media screen and (min-width: 768px) and (max-width: 992px)
-	.bag_item div.product-item div.item-photo
+	body[shopping-bag] section.content .bag_item div.product-item div.item-photo
 		width: 80px
 
 @media screen and (max-width: 767px)
-	.bag_item div.product-item div.item-photo
+	body[shopping-bag] section.content .bag_item div.product-item div.item-photo
 		width: 70px
 
 @media screen and (min-width: 768px) and (max-width: 992px)
-	.bag_item div.product-item div.item-name h4
+	body[shopping-bag] section.content .bag_item div.product-item div.item-name h4
 		font-size: 16px
 
 @media screen and (max-width: 767px)
-	.bag_item div.product-item div.item-name
+	body[shopping-bag] section.content .bag_item div.product-item div.item-name
 		padding: 10px 0
 		h4
 			font-size: 16px
 			letter-spacing: 1px
 
 @media screen and (min-width: 768px) and (max-width: 992px)
-	.bag_item div.product-item div.item-name div.capacity
+	body[shopping-bag] section.content .bag_item div.product-item div.item-name div.capacity
 		font-size: 16px
 
 @media screen and (max-width: 767px)
-	.bag_item div.product-item div.item-name div.capacity
+	body[shopping-bag] section.content .bag_item div.product-item div.item-name div.capacity
 		font-size: 16px
 
 @media screen and (min-width: 768px) and (max-width: 992px)
-	.bag_item ul.item-price li
+	body[shopping-bag] section.content .bag_item ul.item-price li
 		font-size: 16px
 
 @media screen and (max-width: 767px)
-	.bag_item ul.item-price
+	body[shopping-bag] section.content .bag_item ul.item-price
 		width: 100%
 		justify-content: flex-end
 		li
@@ -148,25 +147,25 @@ body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 				width: 30%
 
 @media screen and (min-width: 768px) and (max-width: 991px)
-	.bag_item ul.item-price input
+	body[shopping-bag] section.content .bag_item ul.item-price input
 		width: 50px
 		line-height: 35px
 
 @media screen and (max-width: 767px)
-	.bag_item ul.item-price input
+	body[shopping-bag] section.content .bag_item ul.item-price input
 		width: 40px
 		line-height: 30px
 		font-size: 15px
 
 @media screen and (min-width: 992px)
-	.bag_item ul.item-price div
+	body[shopping-bag] section.content .bag_item ul.item-price div
 		&.add:hover
 			background-position: -60px 50%
 		&.minus:hover
 			background-position: -90px 50%
 
 @media screen and (min-width: 768px) and (max-width: 991px)
-	.bag_item ul.item-price div
+	body[shopping-bag] section.content .bag_item ul.item-price div
 		&.add
 			width: 24px
 			height: 24px
@@ -183,7 +182,7 @@ body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 			margin-right: 10px
 
 @media screen and (max-width: 767px)
-	.bag_item ul.item-price div
+	body[shopping-bag] section.content .bag_item ul.item-price div
 		&.add
 			width: 22px
 			height: 22px
@@ -198,7 +197,7 @@ body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 			margin-right: 10px
 
 @media screen and (max-width: 767px)
-	.bag_item div.remove
+	body[shopping-bag] section.content .bag_item div.remove
 		position: absolute
 		right: -10px
 		top: 19px
@@ -218,38 +217,9 @@ body[shopping-bag] section.content ul.preorder-time
 	padding: 0 30px
 
 @media screen and (max-width: 767px)
-	body[shopping-bag] section.content ul.preorder-time
-		padding: 0 5px
-		min-height: 100px
+	body[shopping-bag] section.content .bag_item:last-child
 		margin-bottom: 0
 
 @media screen and (max-width: 767px)
-	.bag_item:last-child
-		margin-bottom: 0
-
-@media screen and (max-width: 767px)
-	.bag_item:last-child:after
+	body[shopping-bag] section.content .bag_item:last-child:after
 		height: 0
-
-body[shopping-bag] section.content form ul.preorder-time li
-	width: auto
-	text-align: left
-	font-size: 16px
-	letter-spacing: 1px
-	margin: 0 15px
-	color: #bfc1c5
-	h5
-		text-align: left
-		margin-top: 10px
-		color: #bfc1c5
-	&:first-child
-		color: #4e5156
-		h5
-			color: #4e5156
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content form ul.preorder-time li
-		display: none
-		&:first-child, &:last-child
-			display: block
-			height: 55px

@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/shopping_bag.css">
+	
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
@@ -24,6 +26,7 @@
 	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
 	</script>
 	<script src="css/owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/vue.min.js"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<link rel="bookmark" href="images/favicon.ico"/>
 	<title>LanVece</title>
@@ -31,15 +34,15 @@
 <body checkout>
 	<header class=""></header>
 
-	<section class="content">
+	<section id="checkout"  class="content">
 		<form action="">
 			<div class="right-content">
-				<h4 class="bouns-points">您有 <span>10000</span> 點會員紅利</h4>
+				<h4 class="bouns-points">您有 <span>{{left_bonus_point}}</span> 點會員紅利</h4>
 				<p>(10 點會員紅利可折抵商品 1 元，限折抵訂單全額) </p>
 				<h3>您購買的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
 				<div class="points-using">
 					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" id="use_points">
+					<input type="checkbox" value="true" name="use_points" id="use_points" v-on:click="discount()">
 					<label for="use_points">使用紅利折抵</label>
 				</div>
 				<ul class="titles">
@@ -47,35 +50,14 @@
 					<li>價格</li>
 				</ul>
 				<ul class="items">
-					<li>
-						<div class="product-item">
-							<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
-							<div class="item-name">
-								<h4>逆齡時空肌蘭萃菁華液</h4>
-								<div class="capacity">30 ml</div>
-							</div>
-						</div>
-						<ul class="item-price">
-							<li class="currency">7,000</li>
-						</ul>
-					</li>
-					<li>
-						<div class="product-item">
-							<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">1</span></div>
-							<div class="item-name">
-								<h4>逆齡時空肌蘭萃菁華液</h4>
-								<div class="capacity">30 ml</div>
-							</div>
-						</div>
-						<ul class="item-price">
-							<li class="currency">7,000</li>
-						</ul>
+					<li v-for="(p,id) in bag_data.products" v-if="p.order_type == 'now_order'">
+						<bagItem :items_data="p"></bagItem>
 					</li>
 				</ul>
 				<h3>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
 				<div class="points-using">
 					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" id="use_points_preorder">
+					<input type="checkbox" value="true" name="use_points" id="use_points_preorder" v-on:click="discount()">
 					<label for="use_points_preorder">使用紅利折抵</label>
 				</div>
 				<ul class="titles">
@@ -83,30 +65,11 @@
 					<li>價格</li>
 				</ul>
 				<ul class="items">
-					<li>
-						<div class="product-item">
-							<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">2</span></div>
-							<div class="item-name">
-								<h4>逆齡時空肌蘭萃菁華液</h4>
-								<div class="capacity">30 ml</div>
-							</div>
-						</div>
-						<ul class="item-price">
-							<li class="currency">7,000</li>
-						</ul>
+					<!--use component-->
+					<li v-for="(p,id) in bag_data.products" v-if="p.order_type == 'pre_order'">
+						<bagItem :items_data="p"></bagItem>
 					</li>
-					<li>
-						<div class="product-item">
-							<div class="item-photo"><img src="images/products/product-demo.png"><span class="quantity">1</span></div>
-							<div class="item-name">
-								<h4>逆齡時空肌蘭萃菁華液</h4>
-								<div class="capacity">30 ml</div>
-							</div>
-						</div>
-						<ul class="item-price">
-							<li class="currency">700</li>
-						</ul>
-					</li>
+					<!--end component-->
 				</ul>
 				<ul class="preorder-time">
 					<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
@@ -118,16 +81,16 @@
 						<h4>Summary</h4>
 						<ul>
 							<li>
-								<div class="summary-label">結帳金額小計</div><div class="subtotal-amount currency">13,300</div>
+								<div class="summary-label">結帳金額小計</div><div class="subtotal-amount currency">{{sub_total_price}}</div>
 							</li>
 							<li>
-								<div class="summary-label">免費運送</div><div class="shipping-amount currency">0</div>
+								<div class="summary-label">免費運送</div><div class="shipping-amount currency">{{trans_price}}</div>
 							</li>
 							<li class="using-points">
-								<div class="summary-label">紅利點數折抵</div><div class="shipping-amount currency">-700</div>
+								<div class="summary-label">紅利點數折抵</div><div class="shipping-amount currency">-{{discount_price}}</div>
 							</li>
 							<li>
-								<div class="summary-label">總額</div><div class="total-amount currency">13,300</div>
+								<div class="summary-label">總額</div><div class="total-amount currency">{{total_price}}</div>
 							</li>
 						</ul>
 						
@@ -227,7 +190,24 @@
 	
 	<footer></footer>
 
-
+	<!--Vue component-->
+		<template id="bag_item">
+			<div class="bag_item">
+				<div class="product-item">
+					<div class="item-photo"><img v-bind:src="items_data.image"><span class="quantity">{{items_data.quantity}}</span></div>
+					<div class="item-name">
+						<h4>{{items_data.name}}</h4>
+						<div class="capacity">{{items_data.capacity}} ml</div>
+					</div>
+				</div>
+				<ul class="item-price">
+					<li class="currency">{{final_price}}</li>
+				</ul>
+			</div>
+		</template>
+		<!--end component-->
+	
+	<script src="js/products.js"></script>
 	<script src="js/base.js"></script>
 	<script>
 		$.get("components/header.html", function(data, status){

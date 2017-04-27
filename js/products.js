@@ -272,66 +272,38 @@ $(document).ready(function(){
 		}
 	});
 	
+//shopping_bag.html
 	var shopping_bag = new Vue({
 		el: "#shopping_bag",
 		data: {
-			bag_data: {
-				count: 0,
-				trans_free: 15000,
-				products : [
-					{
-						"name":"逆齡時空肌蘭萃菁華液",
-						"image": "images/products/product-demo.png",
-						"capacity": 30,
-						"product_id": 1234567,
-						"item_price": 3000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 5000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 2000, 
-						"quantity": 1,
-						"order_type": "pre_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 4000, 
-						"quantity": 1,
-						"order_type": "pre_order"
-					}
-				]
-			}
+			bag_data: ""
+		},
+		created: function () {
+			this.fetchData();
 		},
 		computed: {
 			sub_total_price: function(){
-				return this.bag_data.products.reduce(function(sum, product){
-					return sum + parseInt(product.item_price)* parseInt(product.quantity);
-				},0)
+				if(this.bag_data.products)
+					return this.bag_data.products.reduce(function(sum, product){
+						return sum + parseInt(product.item_price)* parseInt(product.quantity);
+					},0)
+				else
+					return 0;
 			},
 			trans_price: function(){
-				return this.sub_total_price>=this.bag_data.trans_free?0:500;
+				return this.sub_total_price>=this.bag_data.trans_free?0:100;
 			},
 			total_price: function(){
 				return this.sub_total_price+this.trans_price;
 			}
 		},
 		methods: {
+			fetchData: function(){
+				var _this = this;
+				$.get("json/bag_data.json", function(data){
+					_this.bag_data = data;
+				});
+			},
 			delete_item: function(id){
 				console.log(id);
 				this.bag_data.products.splice(id,1);
@@ -339,6 +311,64 @@ $(document).ready(function(){
 		}
 	})
 	
+//check-out.html
+	var checkout = new Vue({
+		el: "#checkout",
+		data: {
+			user_data: "",
+			bag_data: ""
+		},
+		created: function () {
+			this.fetchData();
+		},
+		computed: {
+			sub_total_price: function(){
+				if(this.bag_data.products)
+					return this.bag_data.products.reduce(function(sum, product){
+						return sum + parseInt(product.item_price)* parseInt(product.quantity);
+					},0)
+				else
+					return 0;
+			},
+			trans_price: function(){
+				return this.sub_total_price>=this.bag_data.trans_free?0:100;
+			},
+			discount_price: function(){
+				if(this.bag_data.use_discount){
+					var max_bonus_money = Math.floor(this.user_data.bonus_point/10);
+					if(this.sub_total_price>max_bonus_money)
+						return max_bonus_money;
+					else
+						return this.sub_total_price;
+				}else{
+					return 0;
+				}
+			},
+			left_bonus_point: function(){
+				return this.user_data.bonus_point - this.discount_price*10;
+			},
+			total_price: function(){
+				if(this.bag_data.use_discount)
+					return this.sub_total_price+this.trans_price-this.discount_price;
+				else
+					return this.sub_total_price+this.trans_price;
+			}
+		},
+		methods: {
+			fetchData: function(){
+				var _this = this;
+				$.get("json/bag_data.json", function(data){
+					_this.bag_data = data;
+				});
+				$.get("json/user_data.json", function(data){
+					_this.user_data = data;
+				});
+			},
+			discount: function(){
+				this.bag_data.use_discount = !this.bag_data.use_discount;
+			}
+		}
+	})
 	
 })
 
