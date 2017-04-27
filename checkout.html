@@ -156,6 +156,8 @@
 									<div class="selected-store">
 										<p class="store-name">門市名稱：<span></span></p>
 										<p class="store-address">門市地址：<span></span></p>
+										<input type="hidden" name="store_id" id="store_id" value="">
+										<input type="hidden" name="store_name" id="store_name" value="">
 									</div>
 								</li>
 							</ul>
@@ -223,6 +225,22 @@
 	
 	<script src="js/products.js"></script>
 	<script src="js/base.js"></script>
+	<script>
+		var iframe_link = 'unimartmap.php';
+	function show_cvs_map() {
+		window.open(iframe_link,'CVS map',config='width=1024,height=600,status=no,scrollbars=yes,toolbar=no,location=no,menubar=no');
+	}
+	function set_store_info(CVSStoreID,CVSStoreName,CVSAddress,CVSTelephone) {
+		$('.store-name>span').html(CVSStoreName);
+		$('.store-address>span').html(CVSAddress);
+		$('#store_id').val(CVSStoreID);
+		$('#store_name').val(CVSStoreName);
+		// $('.store-phone>span').html(CVSTelephone);
+		// $('.store-info').show();
+		// $('.ecpaylogistic-warning').hide();
+		// $('.checkselectecpaylogistic').prop('value','selected');
+	}
+	</script>
 	<script>
 		$.get("components/header.html", function(data, status){
         	$('header').html(data);
