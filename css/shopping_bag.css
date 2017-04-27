@@ -1,4 +1,4 @@
-body[checkout] section.content .bag_item {
+body[checkout] section.content ul.items .bag_item {
   width: 100%;
   min-height: 130px;
   display: -webkit-flex;
@@ -7,21 +7,14 @@ body[checkout] section.content .bag_item {
   display: -o-flex;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
+  padding: 20px 0;
 }
-body[checkout] section.content .bag_item:before {
-  content: "";
-  width: 100%;
-  height: 1pt;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #bfc1c5;
-}
-body[checkout] section.content:nth-of-type(1) > li:last-child {
+body[checkout] section.content ul.items:nth-of-type(1) > li:last-child {
   margin-bottom: 95px;
 }
-body[checkout] section.content .bag_item div.product-item {
+body[checkout] section.content ul.items .bag_item div.product-item {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -30,15 +23,16 @@ body[checkout] section.content .bag_item div.product-item {
   flex-direction: row;
   align-items: center;
   width: 80%;
+  padding: 10px 0 10px;
 }
-body[checkout] section.content .bag_item div.product-item div.item-photo {
+body[checkout] section.content ul.items .bag_item div.product-item div.item-photo {
   width: 90px;
   position: relative;
   border-radius: 8px;
   background-color: #fff;
   border: solid 1pt #e8e8e8;
 }
-body[checkout] section.content .bag_item div.product-item div.item-photo span.quantity {
+body[checkout] section.content ul.items .bag_item div.product-item div.item-photo span.quantity {
   display: block;
   position: absolute;
   right: -8px;
@@ -61,15 +55,15 @@ body[checkout] section.content .bag_item div.product-item div.item-photo span.qu
   align-items: center;
   justify-content: center;
 }
-body[checkout] section.content .bag_item div.product-item div.item-name {
+body[checkout] section.content ul.items .bag_item div.product-item div.item-name {
   padding: 10px 10px 10px 30px;
 }
-body[checkout] section.content .bag_item div.product-item div.item-name div.capacity {
+body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity {
   font-size: 18px;
   text-align: left;
   margin-top: 10px;
 }
-body[checkout] section.content .bag_item ul.item-price {
+body[checkout] section.content ul.items .bag_item ul.item-price {
   width: 20%;
   display: -webkit-flex;
   display: -moz-flex;
@@ -79,13 +73,13 @@ body[checkout] section.content .bag_item ul.item-price {
   flex-direction: row;
   align-items: center;
 }
-body[checkout] section.content .bag_item ul.item-price li {
+body[checkout] section.content ul.items .bag_item ul.item-price li {
   width: 100%;
   font-size: 18px;
   color: #4e5156;
   text-align: center;
 }
-body[checkout] section.content .bag_item ul.item-price li:nth-child(2) {
+body[checkout] section.content ul.items .bag_item ul.item-price li:nth-child(2) {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -95,7 +89,7 @@ body[checkout] section.content .bag_item ul.item-price li:nth-child(2) {
   align-items: center;
   justify-content: center;
 }
-body[checkout] section.content .bag_item ul.item-price input {
+body[checkout] section.content ul.items .bag_item ul.item-price input {
   width: 60px;
   text-align: center;
   font-size: 18px;
@@ -104,7 +98,7 @@ body[checkout] section.content .bag_item ul.item-price input {
   display: inline-block;
   border-radius: 0;
 }
-body[checkout] section.content .bag_item ul.item-price div.add {
+body[checkout] section.content ul.items .bag_item ul.item-price div.add {
   width: 30px;
   height: 30px;
   background-image: url("../images/buy_products.svg");
@@ -116,7 +110,7 @@ body[checkout] section.content .bag_item ul.item-price div.add {
   margin-left: 20px;
   cursor: pointer;
 }
-body[checkout] section.content .bag_item ul.item-price div.minus {
+body[checkout] section.content ul.items .bag_item ul.item-price div.minus {
   width: 30px;
   height: 30px;
   background-image: url("../images/buy_products.svg");
@@ -128,12 +122,46 @@ body[checkout] section.content .bag_item ul.item-price div.minus {
   margin-right: 20px;
   cursor: pointer;
 }
-body[checkout] section.content .bag_item div.remove {
+body[checkout] section.content ul.items .bag_item div.remove {
   width: 6%;
   height: 20px;
   margin: auto;
   color: #777;
   cursor: pointer;
+}
+body[checkout] section.content ul .preorder-time {
+  width: 100%;
+  min-height: 100px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  -ms-align-items: center;
+  align-items: center;
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 10px;
+}
+body[checkout] section.content ul .preorder-time li {
+  width: auto;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 15px;
+  color: #bfc1c5;
+}
+body[checkout] section.content ul .preorder-time li h5 {
+  text-align: left;
+  margin-top: 10px;
+  color: #bfc1c5;
+}
+body[checkout] section.content ul .preorder-time li:first-child {
+  color: #4e5156;
+}
+body[checkout] section.content ul .preorder-time li:first-child h5 {
+  color: #4e5156;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -269,6 +297,27 @@ body[checkout] section.content .bag_item div.remove {
     position: absolute;
     right: -10px;
     top: 19px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[checkout] section.content .bag_item ul.preorder-time {
+    padding: 0 5px;
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[checkout] section.content ul .bag_item .preorder-time:after {
+    height: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[checkout] section.content ul .bag_item .preorder-time li {
+    display: none;
+  }
+  body[checkout] section.content ul .bag_item .preorder-time li:first-child, body[checkout] section.content ul .bag_item .preorder-time li:last-child {
+    display: block;
+    height: 55px;
   }
 }
 body[shopping-bag] section.content .bag_item {

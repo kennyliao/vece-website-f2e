@@ -1,5 +1,5 @@
-/* line 2, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-body[checkout] section.content .bag_item {
+/* line 3, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul.items .bag_item {
   width: 100%;
   min-height: 130px;
   display: -webkit-flex;
@@ -8,23 +8,16 @@ body[checkout] section.content .bag_item {
   display: -o-flex;
   display: flex;
   flex-direction: row;
-  position: relative; }
-  /* line 12, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item:before {
-    content: "";
-    width: 100%;
-    height: 1pt;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #bfc1c5; }
+  flex-wrap: wrap;
+  position: relative;
+  padding: 20px 0; }
 
-/* line 20, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-body[checkout] section.content:nth-of-type(1) > li:last-child {
+/* line 15, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul.items:nth-of-type(1) > li:last-child {
   margin-bottom: 95px; }
 
-/* line 23, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-body[checkout] section.content .bag_item div.product-item {
+/* line 18, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul.items .bag_item div.product-item {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -32,16 +25,17 @@ body[checkout] section.content .bag_item div.product-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 80%; }
-  /* line 33, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item div.product-item div.item-photo {
+  width: 80%;
+  padding: 10px 0 10px; }
+  /* line 29, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-photo {
     width: 90px;
     position: relative;
     border-radius: 8px;
     background-color: #fff;
     border: solid 1pt #e8e8e8; }
-    /* line 39, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-    body[checkout] section.content .bag_item div.product-item div.item-photo span.quantity {
+    /* line 35, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul.items .bag_item div.product-item div.item-photo span.quantity {
       display: block;
       position: absolute;
       right: -8px;
@@ -63,17 +57,17 @@ body[checkout] section.content .bag_item div.product-item {
       -webkit-align-items: center;
       align-items: center;
       justify-content: center; }
-  /* line 61, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item div.product-item div.item-name {
+  /* line 57, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-name {
     padding: 10px 10px 10px 30px; }
-    /* line 63, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-    body[checkout] section.content .bag_item div.product-item div.item-name div.capacity {
+    /* line 59, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity {
       font-size: 18px;
       text-align: left;
       margin-top: 10px; }
 
-/* line 67, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-body[checkout] section.content .bag_item ul.item-price {
+/* line 63, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul.items .bag_item ul.item-price {
   width: 20%;
   display: -webkit-flex;
   display: -moz-flex;
@@ -82,14 +76,14 @@ body[checkout] section.content .bag_item ul.item-price {
   display: flex;
   flex-direction: row;
   align-items: center; }
-  /* line 76, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item ul.item-price li {
+  /* line 72, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item ul.item-price li {
     width: 100%;
     font-size: 18px;
     color: #4e5156;
     text-align: center; }
-    /* line 81, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-    body[checkout] section.content .bag_item ul.item-price li:nth-child(2) {
+    /* line 77, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul.items .bag_item ul.item-price li:nth-child(2) {
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
@@ -98,8 +92,8 @@ body[checkout] section.content .bag_item ul.item-price {
       flex-direction: row;
       align-items: center;
       justify-content: center; }
-  /* line 90, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item ul.item-price input {
+  /* line 86, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item ul.item-price input {
     width: 60px;
     text-align: center;
     font-size: 18px;
@@ -107,8 +101,8 @@ body[checkout] section.content .bag_item ul.item-price {
     border: 1pt solid #9fa3a8;
     display: inline-block;
     border-radius: 0; }
-  /* line 99, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item ul.item-price div.add {
+  /* line 95, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item ul.item-price div.add {
     width: 30px;
     height: 30px;
     background-image: url("../images/buy_products.svg");
@@ -119,8 +113,8 @@ body[checkout] section.content .bag_item ul.item-price {
     background-repeat: no-repeat;
     margin-left: 20px;
     cursor: pointer; }
-  /* line 110, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-  body[checkout] section.content .bag_item ul.item-price div.minus {
+  /* line 106, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul.items .bag_item ul.item-price div.minus {
     width: 30px;
     height: 30px;
     background-image: url("../images/buy_products.svg");
@@ -132,21 +126,56 @@ body[checkout] section.content .bag_item ul.item-price {
     margin-right: 20px;
     cursor: pointer; }
 
-/* line 121, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
-body[checkout] section.content .bag_item div.remove {
+/* line 117, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul.items .bag_item div.remove {
   width: 6%;
   height: 20px;
   margin: auto;
   color: #777;
   cursor: pointer; }
 
+/* line 123, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+body[checkout] section.content ul .preorder-time {
+  width: 100%;
+  min-height: 100px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  -ms-align-items: center;
+  align-items: center;
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 10px; }
+  /* line 137, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul .preorder-time li {
+    width: auto;
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0 15px;
+    color: #bfc1c5; }
+    /* line 144, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul .preorder-time li h5 {
+      text-align: left;
+      margin-top: 10px;
+      color: #bfc1c5; }
+    /* line 148, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul .preorder-time li:first-child {
+      color: #4e5156; }
+      /* line 150, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+      body[checkout] section.content ul .preorder-time li:first-child h5 {
+        color: #4e5156; }
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 129, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 154, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item {
     min-height: 120px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 133, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 158, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item {
     min-height: 120px;
     flex-direction: column;
@@ -154,88 +183,88 @@ body[checkout] section.content .bag_item div.remove {
     padding: 0; } }
 
 @media screen and (max-width: 767px) {
-  /* line 140, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 165, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item {
     width: 100%; } }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 144, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 169, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-photo {
     width: 80px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 148, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 173, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-photo {
     width: 70px; } }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 152, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 177, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-name h4 {
     font-size: 16px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 156, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 181, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-name {
     padding: 10px 0 10px 15px; }
-    /* line 158, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    /* line 183, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
     body[checkout] section.content ul.items .bag_item div.product-item div.item-name h4 {
       font-size: 16px;
       letter-spacing: 1px; } }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 163, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 188, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity {
     font-size: 16px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 167, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 192, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity {
     font-size: 16px; } }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 171, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 196, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price li {
     font-size: 16px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 175, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 200, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price {
     width: 100%;
     justify-content: flex-end; }
-    /* line 178, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    /* line 203, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
     body[checkout] section.content ul.items .bag_item ul.item-price li {
       width: 50%;
       font-size: 16px; }
-      /* line 181, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+      /* line 206, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
       body[checkout] section.content ul.items .bag_item ul.item-price li:first-child {
         display: none; }
-      /* line 183, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+      /* line 208, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
       body[checkout] section.content ul.items .bag_item ul.item-price li:last-child {
         width: 30%; } }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 187, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 212, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price input {
     width: 50px;
     line-height: 35px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 192, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 217, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price input {
     width: 40px;
     line-height: 30px;
     font-size: 15px; } }
 
 @media screen and (min-width: 992px) {
-  /* line 199, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 224, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.add:hover {
     background-position: -60px 50%; }
-  /* line 201, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 226, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.minus:hover {
     background-position: -90px 50%; } }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 206, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 231, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.add {
     width: 24px;
     height: 24px;
@@ -243,7 +272,7 @@ body[checkout] section.content .bag_item div.remove {
     background-size: 96px 48px;
     background-position: -48px 50%;
     margin-left: 10px; }
-  /* line 213, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 238, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.minus {
     width: 24px;
     height: 24px;
@@ -253,14 +282,14 @@ body[checkout] section.content .bag_item div.remove {
     margin-right: 10px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 223, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 248, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.add {
     width: 22px;
     height: 22px;
     background-size: 88px 44px;
     background-position: -44px 50%;
     margin-left: 10px; }
-  /* line 229, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 254, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item ul.item-price div.minus {
     width: 22px;
     height: 22px;
@@ -269,11 +298,32 @@ body[checkout] section.content .bag_item div.remove {
     margin-right: 10px; } }
 
 @media screen and (max-width: 767px) {
-  /* line 237, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  /* line 262, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
   body[checkout] section.content ul.items .bag_item div.remove {
     position: absolute;
     right: -10px;
     top: 19px; } }
+
+@media screen and (max-width: 767px) {
+  /* line 268, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content .bag_item ul.preorder-time {
+    padding: 0 5px;
+    min-height: 100px;
+    margin-bottom: 0; } }
+
+@media screen and (max-width: 767px) {
+  /* line 274, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul .bag_item .preorder-time:after {
+    height: 0; } }
+
+@media screen and (max-width: 767px) {
+  /* line 278, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+  body[checkout] section.content ul .bag_item .preorder-time li {
+    display: none; }
+    /* line 280, /Users/mac/Documents/vece-website-f2e/sass/_checkout.sass */
+    body[checkout] section.content ul .bag_item .preorder-time li:first-child, body[checkout] section.content ul .bag_item .preorder-time li:last-child {
+      display: block;
+      height: 55px; } }
 
 /* line 3, /Users/mac/Documents/vece-website-f2e/sass/shopping_bag.sass */
 body[shopping-bag] section.content .bag_item {

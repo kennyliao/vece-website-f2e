@@ -946,6 +946,9 @@ body[products-app] section.content .product_intro .product_box .count_box *, bod
   vertical-align: middle;
 }
 body[products-app] section.content .product_intro .product_box .count_box .count, body[pre-order-app] section.content .product_intro .product_box .count_box .count {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
   -webkit-appearance: none;
   display: inline-block;
   border: none;

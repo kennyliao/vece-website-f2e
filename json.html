@@ -13,11 +13,22 @@
 		<div id="box">
 		</div>
 		<script>
+var app_data = {
+	active_page: "application", //記錄分頁現時位置
+	//分頁描述，方便中英切換
+	page_item: [
+		{cht_name:"使用方式", eng_name:"application"},
+		{cht_name:"成份", eng_name:"ingredients"},
+		{cht_name:"功效", eng_name:"effect"}
+	]
+};
+
 var product_data = {
 	name: "逆齡時空肌蘭萃菁華液",  
 	discript: "高雅淡紫色的菁華液，為珍貴抗老、抗自由基成份",
 	price: 3500,
 	capacity: 30,
+	quantity: 1,
 	image: "images/products/product-demo.png",
 	//使用方式的影片縮圖、連結和步驟
 	application: { 
@@ -226,7 +237,7 @@ var promot_data = {
 function showJSON(data){
 	document.getElementById("box").innerHTML = JSON.stringify(data);
 }
-showJSON(promot_data);
+showJSON(app_data);
 		</script>
 
 

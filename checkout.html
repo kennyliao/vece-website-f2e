@@ -71,10 +71,7 @@
 					</li>
 					<!--end component-->
 				</ul>
-				<ul class="preorder-time">
-					<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
-					<li class="shipping"><div>5/6</div><h5>運送</h5></li>
-				</ul>
+				
 				<div class="summary">
 					
 					<div class="summary-details">
@@ -105,19 +102,21 @@
 					<div class="step1">
 						<div class="customer-info">
 							<h2>購買人資訊</h2>
-							<div class="input"><input type="email" placeholder="Email"></div>
+							<div class="input"><input type="email" placeholder="Email" v-model="buyer_data.email"></div>
 							<h2>收件人資訊</h2>
-							<div class="input"><input type="text" placeholder="收件人姓名"></div>
-							<div class="input"><input type="text" placeholder="手機號碼"></div>
+							<div class="input"><input type="text" placeholder="收件人姓名" v-model="buyer_data.name"></div>
+							<div class="input"><input type="text" placeholder="手機號碼" v-model="buyer_data.phone"></div>
 							<div class="input address">
-								<select>
-									<option value="0">收件地址</option>
+								<select v-model="buyer_data.county">
+									<option value="" disabled selected>縣市</option>
+									<option v-for="c in address_data.county_data" v-bind:value="c.value">{{c.name}}</option>
 								</select>
-								<select>
-									<option value="0"></option>
+								<select v-model="buyer_data.district">
+									<option value="" disabled selected>地區</option>
+									<option v-for="d in address_data.district_data" v-bind:value="d.value">{{d.name}}</option>
 								</select>
 							</div>
-							<div class="input"><input type="text"></div>
+							<div class="input"><input type="text" placeholder="街道地址" v-model="buyer_data.street"></div>
 							<div class="save-for-next"><input type="checkbox" checked> <span>將收件人資料儲存方便下次使用。</span></div>
 						</div>
 						<div class="goback">
@@ -131,18 +130,27 @@
 							<h2>收件人資訊</h2>
 							<ul class="receiver-details">
 								<li class="th">姓名</li>
-								<li class="td">Lulu</li>
+								<li class="td">{{buyer_data.name}}</li>
 								<li class="th">手機號碼</li>
-								<li class="td">0912123456</li>
+								<li class="td">{{buyer_data.phone}}</li>
 								<li class="th">地址</li>
-								<li class="td">台北市大安區忠孝東路一段1號</li>
+								<li class="td">{{final_address}}</li>
 							</ul>
 							<h2>運送方式</h2>
 							<ul class="shipping-method">
-								<li><label><input type="radio" name="shipping_method" value="1" checked><span class="dot"></span><span>黑貓宅配</span></label></li>
-								<li><label><input type="radio" name="shipping_method" value="2" checked><span class="dot"></span><span>黑貓貨到付款</span></label></li>
 								<li>
-									<input type="radio" name="shipping_method" value="3" id="shipping-method-711">
+									<label>
+										<input type="radio" name="shipping_method" value="1" v-model="buyer_data.trans_way" checked><span class="dot"></span>
+										<span>黑貓宅配</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="radio" name="shipping_method" value="2" v-model="buyer_data.trans_way"><span class="dot"></span><span>黑貓貨到付款</span>
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="shipping_method" value="3" id="shipping-method-711" v-model="buyer_data.trans_way">
 									<label for="shipping-method-711"><span class="dot"></span><span>7-11 純取貨</span></label>
 									<div class="choose711"><a href="#" onclick="show_cvs_map();"><button>選擇收件門市</button></a></div>
 									<div class="selected-store">
@@ -163,15 +171,15 @@
 							<h2>收件人資訊</h2>
 							<ul class="receiver-details">
 								<li class="th">Email</li>
-								<li class="td">demo@gmail.com</li>
+								<li class="td">{{buyer_data.email}}</li>
 								<li class="th">姓名</li>
-								<li class="td">Lulu</li>
+								<li class="td">{{buyer_data.name}}</li>
 								<li class="th">手機號碼</li>
-								<li class="td">0912123456</li>
+								<li class="td">{{buyer_data.phone}}</li>
 								<li class="th">地址</li>
-								<li class="td">台北市大安區忠孝東路一段1號</li>
+								<li class="td">{{final_address}}</li>
 								<li class="th">運送方式</li>
-								<li class="td">黑貓取貨付款</li>
+								<li class="td store-name">{{trans_way_word}} <span>門市</span></li>
 							</ul>
 						</div>
 						<div class="goback">
@@ -185,8 +193,6 @@
 						</div>
 					</div>
 				</ul>
-				
-				
 				
 			</div>
 		</form>
@@ -207,9 +213,13 @@
 				<ul class="item-price">
 					<li class="currency">{{final_price}}</li>
 				</ul>
+				<ul class="preorder-time" v-if="items_data.pre_order">
+					<li class="placeorder"><div>{{items_data.order_date[0]}} - {{items_data.order_date[1]}}</div><h5>下訂期</h5></li>
+					<li class="shipping"><div>{{items_data.order_date[6]}}</div><h5>運送</h5></li>
+				</ul>
 			</div>
 		</template>
-		<!--end component-->
+	<!--end component-->
 	
 	<script src="js/products.js"></script>
 	<script src="js/base.js"></script>

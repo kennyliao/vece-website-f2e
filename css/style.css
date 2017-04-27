@@ -1190,6 +1190,9 @@ body[checkout] section.content div.right-content div.points-using label{
 	text-align: center;
 	font-weight: 300;
 }
+body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:checked+label:before{
+	content: "已";
+}
 @media screen and (max-width: 767px){
 	body[checkout] section.content div.right-content div.points-using input[type="checkbox"]{
 		position: absolute;
@@ -1646,15 +1649,6 @@ body[checkout] section.content ul.preorder-time{
 		margin-bottom: 0;
 	}
 }
-body[checkout] section.content ul.preorder-time:after{
-	content: "";
-	width: 100%;
-	height: 1pt;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: #bfc1c5;
-}
 @media screen and (max-width: 767px){
 	body[checkout] section.content ul.preorder-time:after{
 		height: 0;
@@ -1920,6 +1914,9 @@ body[checkout] section.content div.left-content div.customer-info ul.receiver-de
 	line-height: 40px;	
 	color: #9fa2a8;
 	text-align: left;
+}
+body[checkout] section.content div.left-content div.customer-info ul.receiver-details li.td:last-child span{
+	margin-left: 15px;
 }
 body[checkout] section.content div.left-content div.customer-info ul.shipping-method li{
 	text-align: left;
