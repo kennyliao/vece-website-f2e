@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+		<meta name="author" content="LanVece">
+		<meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+		<meta property="og:title" content="【LanVece 新鮮保養】"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.lanvece.com"/>
+		<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+		<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+		</script>
+		<script src="css/owlcarousel/owl.carousel.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/base.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+		<link rel="bookmark" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/product.css">
+		<title>LanVece</title>
+	</head>
+	<body about>
+		<header></header>
+		<section id="about" class="content">
+			<div class="head_img" v-bind:style=" 'background-image: url('+ about_data[1].intro.img +')'"></div>
+			<div class="title">
+				<h1>{{about_data[1].intro.title}}</h1>
+				<p class="content">{{about_data[1].intro.content}}</p>
+			</div>
+			<div class="pages">
+				<ul class="owl-pages owl-carousel owl-theme">
+					<li v-for="p in about_data[1].pages" class="intro_block">
+						<div class="img" v-bind:style="'background-image: url('+ p.img +')'"></div>
+						<h3>{{p.content}}</h3>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<footer></footer>
+
+
+		<script>
+$.get("components/header.html", function(data, status){
+	$('header').html(data);
+});
+$.get("components/footer.html", function(data, status){
+	$('footer').html(data);
+}); 
+		</script>
+		<script src="js/products.js"></script>
+	</body>
 </html>

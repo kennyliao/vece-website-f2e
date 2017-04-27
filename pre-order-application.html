@@ -34,15 +34,18 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 	<body pre-order-app>
 		<header></header>
 		<section id="product_app" class="content">
-			<!--產品操作-->
-			<div class="container">
-				<div class="row date_wrap">
+			<!--訂製日-->
+			<div class="container-fiuld date_wrap">
+				<div class="date_box">
 					<h2>訂製日 {{product.pre_order_date.from}}～{{product.pre_order_date.to}}</h2>
 					<div class="date_block" v-for="p in product.pre_order_procedure">
 						<div class="date">{{p.date}}</div>
 						<div class="event">{{p.event}}</div>
 					</div>
 				</div>
+			</div>
+			<!--產品操作-->
+			<div class="container">
 				<div class="row product_intro">
 					<div class="col-sm-5">
 						<img class="product_img" v-bind:src="product.image" alt="">
@@ -60,9 +63,11 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 								<input class="count" v-model="count" v-on:keyup="countLimit" type="text" maxlength="3">
 								<div class="add" v-on:click="add()" unselectable="on"></div>
 							</div>
-							<div class="add_cart">
-								放入購物袋
-							</div>
+							<a href="#">
+								<div class="add_cart">
+									放入購物袋
+								</div>
+							</a>
 						</div>
 						<div class="show_box">
 							<ul class="menu">
@@ -71,7 +76,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 							<div class="page_wrap">
 								<div class="page_box application" data-id="application" style="display:block">
 									<div class="video_box">
-										<div class="poster" v-bind:style="{ 'background-image': 'url('+ product.application.video.img +')' }">
+										<div class="poster" v-bind:style="{ 'background-image': 'url('+ product.application.video.img +')' }" v-on:click="hide()">
 											<div class="cover_icon">
 												<div class="triangle"></div>
 											</div>

@@ -1,0 +1,240 @@
+body[checkout] section.content 
+  .bag_item
+    width: 100%
+    min-height: 130px
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    flex-direction: row
+    position: relative
+    &:before
+      content: ""
+      width: 100%
+      height: 1pt
+      position: absolute
+      top: 0
+      left: 0
+      background-color: #bfc1c5
+  &:nth-of-type(1) > li:last-child
+    margin-bottom: 95px
+  .bag_item
+    div.product-item
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      flex-direction: row
+      align-items: center
+      width: 80%
+      div
+        &.item-photo
+          width: 90px
+          position: relative
+          border-radius: 8px
+          background-color: #fff
+          border: solid 1pt #e8e8e8
+          span.quantity
+            display: block
+            position: absolute
+            right: -8px
+            top: -12px
+            background-color: #6b6f76
+            width: 25px
+            height: 25px
+            border-radius: 50%
+            font-size: 14px
+            text-align: center
+            color: #fff
+            font-family: HelveticaNeue
+            /* border: solid 1.5pt #fff;
+            display: -webkit-flex
+            display: -moz-flex
+            display: -ms-flex
+            display: -o-flex
+            display: flex
+            -webkit-align-items: center
+            align-items: center
+            justify-content: center
+        &.item-name
+          padding: 10px 10px 10px 30px
+          div.capacity
+            font-size: 18px
+            text-align: left
+            margin-top: 10px
+    ul.item-price
+      width: 20%
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      flex-direction: row
+      align-items: center
+      li
+        width: 100%
+        font-size: 18px
+        color: #4e5156
+        text-align: center
+        &:nth-child(2)
+          display: -webkit-flex
+          display: -moz-flex
+          display: -ms-flex
+          display: -o-flex
+          display: flex
+          flex-direction: row
+          align-items: center
+          justify-content: center
+      input
+        width: 60px
+        text-align: center
+        font-size: 18px
+        line-height: 40px
+        border: 1pt solid #9fa3a8
+        display: inline-block
+        border-radius: 0
+      div
+        &.add
+          width: 30px
+          height: 30px
+          background-image: url('../images/buy_products.svg')
+          -webkit-background-size: 120px 60px
+          background-size: 120px 60px
+          background-position: 0 50%
+          display: inline-block
+          background-repeat: no-repeat
+          margin-left: 20px
+          cursor: pointer
+        &.minus
+          width: 30px
+          height: 30px
+          background-image: url('../images/buy_products.svg')
+          -webkit-background-size: 120px 60px
+          background-size: 120px 60px
+          background-position: -30px 50%
+          display: inline-block
+          background-repeat: no-repeat
+          margin-right: 20px
+          cursor: pointer
+    div.remove
+      width: 6%
+      height: 20px
+      margin: auto
+      color: #777
+      cursor: pointer
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  body[checkout] section.content ul.items .bag_item
+    min-height: 120px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item
+    min-height: 120px
+    flex-direction: column
+    justify-content: center
+    padding: 0
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item div.product-item
+    width: 100%
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-photo
+    width: 80px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-photo
+    width: 70px
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-name h4
+    font-size: 16px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-name
+    padding: 10px 0 10px 15px
+    h4
+      font-size: 16px
+      letter-spacing: 1px
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity
+    font-size: 16px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item div.product-item div.item-name div.capacity
+    font-size: 16px
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+  body[checkout] section.content ul.items .bag_item ul.item-price li
+    font-size: 16px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item ul.item-price
+    width: 100%
+    justify-content: flex-end
+    li
+      width: 50%
+      font-size: 16px
+      &:first-child
+        display: none
+      &:last-child
+        width: 30%
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  body[checkout] section.content ul.items .bag_item ul.item-price input
+    width: 50px
+    line-height: 35px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item ul.item-price input
+    width: 40px
+    line-height: 30px
+    font-size: 15px
+
+@media screen and (min-width: 992px)
+  body[checkout] section.content ul.items .bag_item ul.item-price div
+    &.add:hover
+      background-position: -60px 50%
+    &.minus:hover
+      background-position: -90px 50%
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  body[checkout] section.content ul.items .bag_item ul.item-price div
+    &.add
+      width: 24px
+      height: 24px
+      -webkit-background-size: 96px 48px
+      background-size: 96px 48px
+      background-position: -48px 50%
+      margin-left: 10px
+    &.minus
+      width: 24px
+      height: 24px
+      -webkit-background-size: 96px 48px
+      background-size: 96px 48px
+      background-position: -72px 50%
+      margin-right: 10px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item ul.item-price div
+    &.add
+      width: 22px
+      height: 22px
+      background-size: 88px 44px
+      background-position: -44px 50%
+      margin-left: 10px
+    &.minus
+      width: 22px
+      height: 22px
+      background-size: 88px 44px
+      background-position: -66px 50%
+      margin-right: 10px
+
+@media screen and (max-width: 767px)
+  body[checkout] section.content ul.items .bag_item div.remove
+    position: absolute
+    right: -10px
+    top: 19px

@@ -10,13 +10,18 @@ body[products-app] section.content, body[pre-order-app] section.content
 	letter-spacing: 1.9px
 	color: $color_black
 	margin-top: 90px
-	padding-bottom: 70px
+	padding-bottom: 211px
 	h2
 		color: $color_black
 	.container
 		margin-bottom: 124px
 	.date_wrap
+		text-align: center
 		padding-top: 64px
+		background-color: $color_bg
+		.date_box
+			max-width: 1280px
+			margin: 0 auto
 		h2
 			font-size: 28px
 			letter-spacing: 2px
@@ -93,6 +98,7 @@ body[products-app] section.content, body[pre-order-app] section.content
 					display: inline-block
 					vertical-align: middle
 				.count
+					-webkit-appearance: none
 					display: inline-block
 					border: none
 					border: solid 1px $color_border
@@ -114,12 +120,12 @@ body[products-app] section.content, body[pre-order-app] section.content
 				.sub
 					background-position-x: -90.2px
 					opacity: 0.5
-					&:hover
+					&:active
 						opacity: 1
 				.add
 					background-position-x: -60px
 					opacity: 0.5
-					&:hover
+					&:active
 						opacity: 1
 			.add_cart
 				width: 191px
@@ -133,9 +139,7 @@ body[products-app] section.content, body[pre-order-app] section.content
 				border: solid 1px $color_border
 				cursor: pointer
 				+transition(0.2s)
-				&:hover
-					color: $color_purple
-					border-color: $color_purple
+				
 		.show_box
 			.menu
 				width: 100%
@@ -300,9 +304,24 @@ body[products-app] section.content, body[pre-order-app] section.content
 				&:before
 					content: none
 		
+@media screen and (min-width: 992px)
+	body[products-app] section.content,body[pre-order-app] section.content
+		.product_intro
+			.product_box
+				.count_box
+					.sub:hover
+						opacity: 1
+					.add:hover
+						opacity: 1
+				.add_cart:hover
+					color: $color_purple
+					border-color: $color_purple
+						
 @media screen and (max-width: 767px)
 	body[products-app] section.content,body[pre-order-app] section.content
+		margin-top: 55px
 		padding-top: 0px
+		padding-bottom: 74px
 		h2
 			font-size: 20px
 			letter-spacing: 2px
@@ -310,11 +329,12 @@ body[products-app] section.content, body[pre-order-app] section.content
 			padding: 0 25px
 			margin-bottom: 59px
 		.date_wrap
+			padding: 36px 25px 0 
 			h2
 				font-size: 18px
 				margin-bottom: 29px
 			.date_block
-				margin-bottom: 51px
+				margin-bottom: 37px
 				.date
 					font-size: 13px
 					margin-bottom: 8px

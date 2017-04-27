@@ -34,14 +34,14 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	<body about>
 		<header></header>
 		<section id="about" class="content">
-			<div class="head_img" v-bind:style=" 'background-image: url('+ intro.img +')'"></div>
+			<div class="head_img" v-bind:style=" 'background-image: url('+ about_data[0].intro.img +')'"></div>
 			<div class="title">
-				<h1>{{intro.title}}</h1>
-				<p class="content">{{intro.content}}</p>
+				<h1>{{about_data[0].intro.title}}</h1>
+				<p class="content">{{about_data[0].intro.content}}</p>
 			</div>
 			<div class="pages">
 				<ul class="owl-pages owl-carousel owl-theme">
-					<li v-for="p in pages" class="intro_block">
+					<li v-for="p in about_data[0].pages" class="intro_block">
 						<div class="img" v-bind:style="'background-image: url('+ p.img +')'"></div>
 						<h3>{{p.content}}</h3>
 					</li>
@@ -59,19 +59,6 @@ $.get("components/header.html", function(data, status){
 $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
 });  
-
-var about_data = {
-	intro: {
-		title: "保留花的活性",
-		content: "新鮮的蝴蝶蘭採摘後迅速進入萃取製成，就是為了完美保留花中的活性成分。細緻的高活性分子富含多酚類、花青素、多醣體及維生素B、C、E，發揮蝴蝶蘭的養膚功效。",
-		img: "https://unsplash.it/1400/800?image=832"
-	},
-	pages:[
-		{content:"新鮮的蝴蝶蘭採摘後迅速進入萃取製成，就是為了完美保留花中的活性成分。", img: "https://unsplash.it/1400/800?image=832"},
-		{content:"細緻的高活性分子富含多酚類、花青素、多醣體及維生素B、C、E，發揮蝴蝶蘭的養膚功效。", img: "https://unsplash.it/1400/?image=823"},
-		{content:"新鮮的蝴蝶蘭採摘後迅速進入萃取製成，就是為了完美保留花中的活性成分。", img: "https://unsplash.it/1400/800?image=64"}
-	]
-};
 		</script>
 		<script src="js/products.js"></script>
 	</body>

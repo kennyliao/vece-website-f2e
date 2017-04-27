@@ -1,193 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
-    <meta name="author" content="LanVece">
-    <meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
-	<meta property="og:title" content="【LanVece 新鮮保養】"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="http://www.lanvece.com"/>
-	<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
-	<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-	navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
-	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
-	</script>
-	<script src="css/owlcarousel/owl.carousel.min.js"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-	<link rel="bookmark" href="images/favicon.ico"/>
-	<title>LanVece</title>
-</head>
-<body shopping-bag>
-	<header class=""></header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+		<meta name="author" content="LanVece">
+		<meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+		<meta property="og:title" content="【LanVece 新鮮保養】"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.lanvece.com"/>
+		<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+		<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/shopping_bag.css">
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+		</script>
+		<script src="css/owlcarousel/owl.carousel.min.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+		<link rel="bookmark" href="images/favicon.ico"/>
+		<title>LanVece</title>
+	</head>
+	<body shopping-bag>
+		<header class=""></header>
 
-	<section class="content">
-		<div class="container">
-			<form action="checkout.html">
-				<div class="wrapper row">
-					<h2>您購物袋中的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-					<ul class="titles">
-						<li>商品項目</li>
-						<li>價格</li>
-						<li>數量</li>
-						<li>小計</li>
-					</ul>
-					<ul class="items">
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id[]">
+		<section class="content">
+			<div id="shopping_bag" class="container">
+				<form action="checkout.html">
+					<div class="wrapper row">
+
+						<h2>您購物袋中的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
+						<ul class="titles">
+							<li>商品項目</li>
+							<li>價格</li>
+							<li>數量</li>
+							<li>小計</li>
+						</ul>
+						<ul class="items">
+							<!--use template-->
+							<li v-for="(p,id) in bag_data.products" v-if="p.pre_order == false">
+								<bagItem :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
+							</li>
+							<!--end template-->
+						</ul>
+						<h2>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
+						<ul class="titles">
+							<li>商品項目</li>
+							<li>價格</li>
+							<li>數量</li>
+							<li>小計</li>
+						</ul>
+						<ul class="items">
+							<!--use template-->
+							<li v-for="(p,id) in bag_data.products" v-if="p.pre_order == true">
+								<bagItem :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
+							</li>
+							<!--end template-->
+						</ul>
+						<div class="summary">
+							<div class="goback"><h4 class="inline">繼續選購商品</h4></div>
+							<div class="summary-details">
+								<h3>Summary</h3>
+								<ul>
+									<li>
+										<div class="summary-label">購物袋金額小計</div><div class="subtotal-amount currency">{{sub_total_price}}</div>
+									</li>
+									<li>
+										<div class="summary-label">運費</div><div class="shipping-amount currency">{{trans_price}}</div>
+									</li>
+									<li>
+										<div class="summary-label">總額</div><div class="total-amount currency">{{total_price}}</div>
+									</li>
+								</ul>
+								<div class="input">
+									<input type="submit" value="結帳" class="login-btn checkout-btn">
+									<div>登入後才能結帳。<a href="login.html"><h5>立即登入</h5></a></div>
 								</div>
-							</div>
-							<ul class="item-price">
-								<li class="currency">3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li class="currency">7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id[]">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li class="currency">3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li class="currency">7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-						</li>
-					</ul>
-					<h2>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-					<ul class="titles">
-						<li>商品項目</li>
-						<li>價格</li>
-						<li>數量</li>
-						<li>小計</li>
-					</ul>
-					<ul class="items">
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li class="currency">3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li class="currency">7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-							<ul class="preorder-time">
-								<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
-								<li class="flower"><div>4/15</div><h5>手工採花</h5></li>
-								<li class="extracting"><div>4/17</div><h5>定量萃取</h5></li>
-								<li class="detecting"><div>4/26</div><h5>微生物檢測</h5></li>
-								<li class="bottling"><div>5/1</div><h5>裝瓶</h5></li>
-								<li class="shipping"><div>5/6</div><h5>運送</h5></li>
-							</ul>
-						</li>
-						<li>
-							<div class="product-item">
-								<div class="item-photo"><img src="images/products/product-demo.png"></div>
-								<div class="item-name">
-									<h4>逆齡時空肌蘭萃菁華液</h4>
-									<div class="capacity">30 ml</div>
-									<input type="hidden" value="1234567" name="product_id">
-								</div>
-							</div>
-							<ul class="item-price">
-								<li class="currency">3,500</li>
-								<li><div class="minus"></div><input type="text" name="quantity[]" value="1"><div class="add"></div></li>
-								<li class="currency">7,000</li>
-							</ul>
-							<div class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-							<ul class="preorder-time">
-								<li class="placeorder"><div>4/1 - 4/14</div><h5>下訂期</h5></li>
-								<li class="flower"><div>4/15</div><h5>手工採花</h5></li>
-								<li class="extracting"><div>4/17</div><h5>定量萃取</h5></li>
-								<li class="detecting"><div>4/26</div><h5>微生物檢測</h5></li>
-								<li class="bottling"><div>5/1</div><h5>裝瓶</h5></li>
-								<li class="shipping"><div>5/6</div><h5>運送</h5></li>
-							</ul>
-						</li>
-					</ul>
-					<div class="summary">
-						<div class="goback"><h4 class="inline">繼續選購商品</h4></div>
-						<div class="summary-details">
-							<h3>Summary</h3>
-							<ul>
-								<li>
-									<div class="summary-label">購物袋金額小計</div><div class="subtotal-amount currency">13,300</div>
-								</li>
-								<li>
-									<div class="summary-label">免費運送</div><div class="shipping-amount currency">0</div>
-								</li>
-								<li>
-									<div class="summary-label">總額</div><div class="total-amount currency">13,300</div>
-								</li>
-							</ul>
-							<div class="input">
-								<input type="submit" value="結帳" class="login-btn checkout-btn">
-								<div>登入後才能結帳。<a href="login.html"><h5>立即登入</h5></a></div>
 							</div>
 						</div>
 					</div>
+				</form>
+			</div>
+		</section>	
+
+		<footer></footer>
+
+		<!--Vue component-->
+		<template id="bag_item" >
+			<div class="bag_item">
+				<div class="product-item">
+					<div class="item-photo"><img v-bind:src="items_data.image"></div>
+					<div class="item-name">
+						<h4>{{items_data.name}}</h4>
+						<div class="capacity">{{items_data.capacity}} ml</div>
+						<input type="hidden" v-bind:value="items_data.product_id" name="product_id">
+					</div>
 				</div>
-			</form>
-		</div>
-	</section>	
-	
-	<footer></footer>
+				<ul class="item-price">
+					<li class="currency">{{items_data.item_price}}</li>
+					<li><div class="minus" v-on:click="sub()"></div><input type="text" name="quantity[]" v-model="items_data.quantity"><div class="add" v-on:click="add()"></div></li>
+					<li class="currency">{{final_price}}</li>
+				</ul>
+				<div class="remove" v-on:click="delete_item(id)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+			<ul class="preorder-time" v-if="items_data.order_type == 'pre_order'">
+				<li class="placeorder"><div>{{items_data.order_date[0]}}</div><h5>下訂期</h5></li>
+				<li class="flower"><div>{{items_data.order_date[1]}}</div><h5>手工採花</h5></li>
+				<li class="extracting"><div>{{items_data.order_date[2]}}</div><h5>定量萃取</h5></li>
+				<li class="detecting"><div>{{items_data.order_date[3]}}</div><h5>微生物檢測</h5></li>
+				<li class="bottling"><div>{{items_data.order_date[4]}}</div><h5>裝瓶</h5></li>
+				<li class="shipping"><div>{{items_data.order_date[5]}}</div><h5>運送</h5></li>
+			</ul>
+			</div>
+		</template>
+		<!--end component-->
+		
+		<script src="js/products.js"></script>
+		<script src="js/base.js"></script>
+		<script>
+$.get("components/header.html", function(data, status){
+	$('header').html(data);
+});
+$.get("components/footer.html", function(data, status){
+	$('footer').html(data);
+});
+		</script>
 
 
-	<script src="js/base.js"></script>
-	<script>
-		$.get("components/header.html", function(data, status){
-        	$('header').html(data);
-    	});
-		$.get("components/footer.html", function(data, status){
-        	$('footer').html(data);
-    	});
-	</script>
-
-
-	<script>
-	//登入功能測試鍵
-		$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-		function gologin(){
-			$('header').addClass('login');
-			$('section.content').append('<button onclick="gologout();" id="gologout">登出功能測試鍵</button>');
-			$('input.checkout-btn').attr('disabled',false);
-			$('#gologin').remove();
-		}
-		function gologout(){
-			$('header').removeClass('login');
-			$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-			$('input.checkout-btn').attr('disabled',true);
-			$('#gologout').remove();
-		}
-	</script>
-</body>
+		<script>
+//登入功能測試鍵
+$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
+function gologin(){
+	$('header').addClass('login');
+	$('section.content').append('<button onclick="gologout();" id="gologout">登出功能測試鍵</button>');
+	$('input.checkout-btn').attr('disabled',false);
+	$('#gologin').remove();
+}
+function gologout(){
+	$('header').removeClass('login');
+	$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
+	$('input.checkout-btn').attr('disabled',true);
+	$('#gologout').remove();
+}
+		</script>
+	</body>
 </html>
