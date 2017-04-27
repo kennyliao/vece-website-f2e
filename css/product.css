@@ -956,6 +956,7 @@ body[products-app] section.content .product_intro .product_box .count_box .count
   margin: 0px 28px;
   font-size: 20px;
   text-align: center;
+  border-radius: 0;
 }
 body[products-app] section.content .product_intro .product_box .count_box .sub, body[products-app] section.content .product_intro .product_box .count_box .add, body[pre-order-app] section.content .product_intro .product_box .count_box .sub, body[pre-order-app] section.content .product_intro .product_box .count_box .add {
   width: 30px;
