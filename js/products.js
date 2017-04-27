@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	//購買數量按鍵限制
 	$(".count").keydown(function (e) {
 		if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -19,30 +19,29 @@ $(document).ready(function(){
 			e.preventDefault();
 		}
 	});
-	
+
 	var mobile_items = 1.5; //owl-carousel最小尺寸項目數
 
 	//product-application.html & pre-order-application.html
 	var products_app = new Vue({
 		el: "#product_app",
 		data:{
-			product: null,	//產品資料
+			product: "",	//產品資料
 			count: 1,		//購買數量
 			active_page: "application", //記錄分頁現時位置
 			//分頁描述，方便中英切換
 			page_item: [{cht_name:"使用方式", eng_name:"application"},
 									{cht_name:"成份", eng_name:"ingredients"},
 									{cht_name:"功效", eng_name:"effect"}],
-			//同系列產品推介
-			promot_data: {	
-				series_title: "逆齡時空肌系列",
-				product: [
-					{name:"逆齡時空肌蘭萃水菁華",price:"1500", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
-					{name:"逆齡時空肌蘭萃水肌皂",price:"2000", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
-					{name:"逆齡時空肌蘭萃水菁華",price:"2500", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
-					{name:"逆齡時空肌蘭萃美肌皂",price:"3000", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"}
-				]
-			},
+			promot_data: "", //同系列產品推介
+			interface_data: {
+				count: 1,		//購買數量
+				active_page: "application", //記錄分頁現時位置
+				//分頁描述，方便中英切換
+				page_item: [{cht_name:"使用方式", eng_name:"application"},
+										{cht_name:"成份", eng_name:"ingredients"},
+										{cht_name:"功效", eng_name:"effect"}],
+			}
 		},
 		//建立後取得資料
 		created: function () {
@@ -51,8 +50,8 @@ $(document).ready(function(){
 		methods:{
 			fetchData: function(){
 				var _this = this;
-				$.getJSON("json/product_app_data.json", function(data){
-					_this.product = data;
+				$.getJSON("json/promot_data.json", function(data){
+					_this.promot_data = data;
 					_this.$nextTick(function(){
 						$(".owl-promot").owlCarousel({
 							center: false,
@@ -76,6 +75,9 @@ $(document).ready(function(){
 					},function(error){
 						console.log(error);
 					})
+				})
+				$.getJSON("json/product_app_data.json", function(data){
+					_this.product = data;
 				})
 			},
 			sub: function(){
@@ -244,9 +246,9 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
-	
-//shoppimg-bag.html 購物車
+
+
+	//shoppimg-bag.html 購物車
 	Vue.component("bagitem",{
 		template: "#bag_item",
 		props: ["items_data","delete_item","id"],
@@ -271,8 +273,8 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
-//shopping_bag.html
+
+	//shopping_bag.html
 	var shopping_bag = new Vue({
 		el: "#shopping_bag",
 		data: {
@@ -287,8 +289,8 @@ $(document).ready(function(){
 					return this.bag_data.products.reduce(function(sum, product){
 						return sum + parseInt(product.item_price)* parseInt(product.quantity);
 					},0)
-				else
-					return 0;
+					else
+						return 0;
 			},
 			trans_price: function(){
 				return this.sub_total_price>=this.bag_data.trans_free?0:100;
@@ -310,8 +312,8 @@ $(document).ready(function(){
 			}
 		}
 	})
-	
-//check-out.html
+
+	//check-out.html
 	var checkout = new Vue({
 		el: "#checkout",
 		data: {
@@ -322,36 +324,69 @@ $(document).ready(function(){
 			this.fetchData();
 		},
 		computed: {
+			//折扣價格
+			discount_for_price: function(){
+				var bag = this.bag_data;
+				if(this.bag_data.products){
+					//購買項目 0:無項目，1:購買項目，2:訂製項目，3:全部項目
+					if(bag.discount_for == 1){
+						return bag.products.filter(function(obj){
+							if(obj.pre_order == false)
+								return true;
+							else
+								return false;
+						}).reduce(function(sum, product){
+							return sum + parseInt(product.item_price)* parseInt(product.quantity);
+						},0)
+					}else if(bag.discount_for == 2){
+						return bag.products.filter(function(obj){
+							if(obj.pre_order == true)
+								return true;
+							else
+								return false;
+						}).reduce(function(sum, product){
+							return sum + parseInt(product.item_price)* parseInt(product.quantity);
+						},0)
+					}else if(bag.discount_for == 3){
+						return this.sub_total_price;
+					}else{
+						return 0;
+					}
+				}else
+					return 0;
+			},
+			//小計
 			sub_total_price: function(){
 				if(this.bag_data.products)
 					return this.bag_data.products.reduce(function(sum, product){
 						return sum + parseInt(product.item_price)* parseInt(product.quantity);
 					},0)
-				else
-					return 0;
+					else
+						return 0;
 			},
+			//運費
 			trans_price: function(){
 				return this.sub_total_price>=this.bag_data.trans_free?0:100;
 			},
+			//折扣量
 			discount_price: function(){
-				if(this.bag_data.use_discount){
+				if(this.bag_data.discount_for){
 					var max_bonus_money = Math.floor(this.user_data.bonus_point/10);
-					if(this.sub_total_price>max_bonus_money)
+					if(this.discount_for_price>max_bonus_money)
 						return max_bonus_money;
 					else
-						return this.sub_total_price;
+						return this.discount_for_price;
 				}else{
 					return 0;
 				}
 			},
+			//剩餘紅利點數
 			left_bonus_point: function(){
 				return this.user_data.bonus_point - this.discount_price*10;
 			},
+			//取終價格
 			total_price: function(){
-				if(this.bag_data.use_discount)
-					return this.sub_total_price+this.trans_price-this.discount_price;
-				else
-					return this.sub_total_price+this.trans_price;
+				return this.sub_total_price+this.trans_price-this.discount_price;
 			}
 		},
 		methods: {
@@ -364,12 +399,23 @@ $(document).ready(function(){
 					_this.user_data = data;
 				});
 			},
-			discount: function(){
-				this.bag_data.use_discount = !this.bag_data.use_discount;
+			//判斷紅利折低項目
+			discount: function(num){
+				//0:無項目，1:購買項目，2:訂製項目，3:全部項目
+				if(this.bag_data.discount_for == num){
+					this.bag_data.discount_for = 0;
+				}else if(this.bag_data.discount_for == 0){
+					this.bag_data.discount_for = num;
+				}else if(this.bag_data.discount_for == 3){
+					this.bag_data.discount_for -= num;
+				}else{
+					this.bag_data.discount_for += num;
+				}
+				console.log(this.bag_data.discount_for);
 			}
 		}
 	})
-	
-})
+
+	})
 
 

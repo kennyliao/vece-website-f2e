@@ -209,14 +209,24 @@ var bag_data = {
 }
 
 var user_data = {
-				bonus_point: 12469, //紅利點數
-				use_discount: false, //有沒有使用點數抵折
-			}
+	bonus_point: 12469, //紅利點數
+	use_discount: false, //有沒有使用點數抵折
+}
+
+var promot_data = {	
+	series_title: "逆齡時空肌系列",
+	product: [
+		{name:"逆齡時空肌蘭萃水菁華",price:"1500", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
+		{name:"逆齡時空肌蘭萃水肌皂",price:"2000", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
+		{name:"逆齡時空肌蘭萃水菁華",price:"2500", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"},
+		{name:"逆齡時空肌蘭萃美肌皂",price:"3000", date: {from: "04／01", to: "04/15"}, image: "images/products/product-demo.png", url: "#"}
+	]
+}
 
 function showJSON(data){
 	document.getElementById("box").innerHTML = JSON.stringify(data);
 }
-showJSON(bag_data);
+showJSON(promot_data);
 		</script>
 	</body>
 </html>

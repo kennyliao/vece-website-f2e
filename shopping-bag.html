@@ -47,7 +47,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 						</ul>
 						<ul class="items">
 							<!--use template-->
-							<li v-for="(p,id) in bag_data.products" v-if="p.order_type == 'now_order'">
+							<li v-for="(p,id) in bag_data.products" v-if="p.pre_order == false">
 								<bagItem :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
 							</li>
 							<!--end template-->
@@ -61,7 +61,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 						</ul>
 						<ul class="items">
 							<!--use template-->
-							<li v-for="(p,id) in bag_data.products" v-if="p.order_type == 'pre_order'">
+							<li v-for="(p,id) in bag_data.products" v-if="p.pre_order == true">
 								<bagItem :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
 							</li>
 							<!--end template-->
