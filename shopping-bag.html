@@ -134,22 +134,5 @@ $.get("components/footer.html", function(data, status){
 });
 		</script>
 
-
-		<script>
-//登入功能測試鍵
-$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-function gologin(){
-	$('header').addClass('login');
-	$('section.content').append('<button onclick="gologout();" id="gologout">登出功能測試鍵</button>');
-	$('input.checkout-btn').attr('disabled',false);
-	$('#gologin').remove();
-}
-function gologout(){
-	$('header').removeClass('login');
-	$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-	$('input.checkout-btn').attr('disabled',true);
-	$('#gologout').remove();
-}
-		</script>
 	</body>
 </html>

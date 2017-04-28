@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Document</title>
+		<title>此文件為vue使用的json格式參考用文件</title>
 		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
 		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
 
@@ -239,6 +239,25 @@ function showJSON(data){
 	document.getElementById("box").innerHTML = JSON.stringify(data);
 }
 showJSON(app_data);
+		</script>
+
+
+
+				<script>
+//登入功能測試鍵
+$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
+function gologin(){
+	$('header').addClass('login');
+	$('section.content').append('<button onclick="gologout();" id="gologout">登出功能測試鍵</button>');
+	$('input.checkout-btn').attr('disabled',false);
+	$('#gologin').remove();
+}
+function gologout(){
+	$('header').removeClass('login');
+	$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
+	$('input.checkout-btn').attr('disabled',true);
+	$('#gologout').remove();
+}
 		</script>
 	</body>
 </html>

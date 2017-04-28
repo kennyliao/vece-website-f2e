@@ -24,7 +24,6 @@
 	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
 	</script>
 	<script src="css/owlcarousel/owl.carousel.min.js"></script>
-	<script src="js/base.js"></script>
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<link rel="bookmark" href="images/favicon.ico"/>
 	<title>LanVece</title>
@@ -175,18 +174,19 @@
 			</div>
 		</div>
 		<div class="environment container-fluid">
-			<div class="photo col-sm-7" style="background-image: url('images/env.png');"></div>
-			<div class="desc col-sm-5">
-				<h2>阿里山蘭園</h2>
-				<p>隱身在海拔1300公尺的高山山脈，嚴格環控的活機莊園中，一株白花蝴蝶蘭迸出145朵璀璨，長達180天的驚人生命力，讓飽滿厚實的花瓣閃耀著光芒。</p>
-				<h5><i class="fa fa-arrow-right" aria-hidden="true"></i> 阿里山與蘭花</h5>
-			</div>		
+			<div class="photo row" style="background-image: url('images/env.png');"">
+				<div class="desc col-sm-push-7 col-sm-5">
+					<h2>阿里山蘭園</h2>
+					<p>隱身在海拔1300公尺的高山山脈，嚴格環控的活機莊園中，一株白花蝴蝶蘭迸出145朵璀璨，長達180天的驚人生命力，讓飽滿厚實的花瓣閃耀著光芒。</p>
+					<h5>阿里山與蘭花</h5>
+				</div>	
+			</div>
 		</div>
 		<div class="ingredient container-fluid">
 			<div class="desc col-sm-4">
 				<h2>兩大獨家成分</h2>
 				<p>大白蝴蝶蘭萃與紅蝴蝶蘭萃是我們摸索 7 年，提煉出來的成分，富含多酚類、花青素、多醣體及天然維生素B、C、E。</p>
-				<h5><i class="fa fa-arrow-right" aria-hidden="true"></i> 了解更多</h5>
+				<h5>了解更多</h5>
 			</div>
 			<div class="col-sm-8">
 				
@@ -198,7 +198,7 @@
 				<h2>概念店</h2>
 				<p>營業時間 : 11:00 - 21:00</p>
 				<p>台北市大安區忠孝東路四段181巷40弄8號</p>
-				<h5><i class="fa fa-arrow-right" aria-hidden="true"></i> 概念店</h5>
+				<h5>概念店</h5>
 			</div>
 		</div>
 
@@ -206,7 +206,7 @@
 
 	<footer></footer>
 
-
+	<script src="js/base.js"></script>
 	<script>
 		$.get("components/header.html", function(data, status){
         	$('header').html(data);

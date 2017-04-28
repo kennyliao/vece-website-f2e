@@ -136,10 +136,25 @@ body[home] section.content div.preorder .owl-nav .owl-prev.disabled, body[home] 
 		display: none;
 	}
 }
-body[home] section.content div.environment{
-	padding-top: 176px;
+body[home] section.content .environment{
+	max-height: 600px;
 }
-body[home] section.content div.environment div.photo, body[home] section.content div.store div.photo{
+body[home] section.content .environment h2, body[home] section.content .environment p,body[home] section.content .environment h5{
+	color: #fff;
+}
+body[home] section.content .desc{
+	height: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+}
+body[home] section.content .environment .photo, body[home] section.content .store .photo{
 	height: 600px;
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -147,11 +162,13 @@ body[home] section.content div.environment div.photo, body[home] section.content
 body[home] section.content div.environment h2, body[home] section.content div.ingredient h2, body[home] section.content div.store h2{
 	font-weight: normal;
 }
-body[home] section.content div.environment p, body[home] section.content div.ingredient p, body[home] section.content div.store p{
+body[home] section.content p{
+	margin-top: 20px;
 	font-size: 18px;
 	letter-spacing: 2px;
 	color: #4e5156;
 	line-height: 1.9;
+	font-weight: 300;
 }
 body[home] section.content div.ingredient{
 	height: 656px;

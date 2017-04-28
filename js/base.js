@@ -159,6 +159,8 @@
 	function set_store_info(CVSStoreID,CVSStoreName,CVSAddress,CVSTelephone) {
 		$('.store-name>span').html(CVSStoreName);
 		$('.store-address>span').html(CVSAddress);
+		$('#store_id').val(CVSStoreID);
+		$('#store_name').val(CVSStoreName);
 		// $('.store-phone>span').html(CVSTelephone);
 		// $('.store-info').show();
 		// $('.ecpaylogistic-warning').hide();
