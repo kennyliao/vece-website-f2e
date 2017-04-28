@@ -1,0 +1,166 @@
+@import compass/css3
+@import mixin
+
+body[aboutus] section.content
+	margin-top: 90px
+	.video_box
+		position: relative
+		width: 100%
+		height: 547px
+		margin-bottom: 199px
+		background-color: #f7f7f7
+		overflow: hidden
+		.poster
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 10
+			background: center center / cover no-repeat
+			width: 100%
+			height: 100%
+			&:hover
+				.cover_icon
+					background-color: #ffffff
+					.triangle
+						border-left: solid 28px #0a0a0a
+			.cover_icon
+				z-index: 10
+				+ab_center()
+				width: 82px
+				height: 82px
+				+border-radius(50%)
+				opacity: 0.6
+				background-color: #0a0a0a
+				+transition(0.2s)
+				.triangle
+					+ab_center()
+					left: 55%
+					border-left: solid 28px #ffffff
+					border-top: solid 15px rgba(0,0,0,0)
+					border-bottom: solid 15px rgba(0,0,0,0)
+					+transition(0.2s)
+		.video_block
+			position: relative
+			background-color: #f7f7f7
+			width: 100%
+			height: 100%
+			object-fit: cover
+	.pages
+		margin-bottom: 200px
+		width: 100%
+		.dots_wrap
+			width: 100%
+			height: 100px
+			margin: 189px auto
+			overflow: hidden
+			.owl-dots
+				height: 50px
+				width: 80%
+				max-width: 1440px
+				margin: 0 auto
+				position: relative
+				text-align: center
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					top: calc(50% - 1px)
+					height: 2px
+					width: 100%
+					background-color: #bfc1c5
+				.owl-dot
+					position: absolute
+					top: 50%
+					width: 20px
+					height: 20px
+					+border-radius(50%)
+					+transform(translate(-50%,-50%))
+					background-color: #bfc1c5
+					&:first-child
+						left: 0%
+					span
+						position: absolute
+						top: 30px
+						left: 50%
+						+transform(translateX(-50%))
+						font-size: 20px
+						letter-spacing: 1px
+						color: #bfc1c5
+					&.active
+						background-color: #4d5156
+						span
+							color: #4d5156
+		.owl-aboutus
+			.intro_block
+				padding: 0 40px
+				max-width: 1440px
+				margin: 0 auto
+				height: 492px
+				.img
+					float: left
+					width: 55%
+					height: 100%
+					background: center center / cover no-repeat
+				.content_wrap
+					float: left
+					width: 45%
+					padding-left: 71px
+					text-align: left
+					h3
+						font-size: 38px
+						color: $color_black
+						text-align: left
+						margin-bottom: 30px
+					p
+						font-size: 20px
+						line-height: 34px
+						letter-spacing: 1px
+						color: $color_black
+
+$items_col: 5
+@for $i from 1 through $items_col
+	body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot:nth-child(#{$i})
+		left: 100% / ($items_col - 1) * $i - 25%
+
+@media screen and (max-width: 767px)
+	@for $i from 1 through $items_col
+		body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot:nth-child(#{$i})
+			left: 50% * $i - 50%
+		body[aboutus] section.content .pages .dots_wrap .owl-dots:before
+			width: 50% * $i - 50%
+	body[aboutus] section.content
+		margin-top: 55px
+		.video_box
+			height: 210px
+			margin-bottom: 59px
+		.pages
+			margin-bottom: 100px
+			.dots_wrap
+				margin: 10px auto
+				.owl-dots
+					+transform(translateX(50%))
+					+transition(0.3s)
+					.owl-dot
+						width: 16px
+						height: 16px
+						span
+							font-size: 14px
+							letter-spacing: 0.7px
+			.owl-aboutus
+				.intro_block
+					padding: 0 30px
+					height: inherit
+					.img
+						width: 100%
+						height: 200px
+						margin-bottom: 21px
+					.content_wrap
+						width: 100%
+						padding-left: 0
+						h3
+							font-size: 26px
+							margin-bottom: 13px
+						p
+							font-size: 15px
+							line-height: 25px
+					
