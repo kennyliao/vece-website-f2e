@@ -849,6 +849,7 @@ body[aboutus] section.content .video_box .poster {
   background: center center/cover no-repeat;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 body[aboutus] section.content .video_box .poster:hover .cover_icon {
   background-color: #ffffff;
@@ -941,6 +942,7 @@ body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: #bfc1c5;
+  cursor: pointer;
 }
 body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot:first-child {
   left: 0%;
@@ -1077,6 +1079,7 @@ body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot:nth-child(5) 
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    cursor: pointer;
   }
   body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot {
     width: 16px;
@@ -1237,7 +1240,6 @@ body[products-app] section.content .product_intro .product_box .count_box .count
   margin: 0px 28px;
   font-size: 20px;
   text-align: center;
-  border-radius: 0;
 }
 body[products-app] section.content .product_intro .product_box .count_box .sub, body[products-app] section.content .product_intro .product_box .count_box .add, body[pre-order-app] section.content .product_intro .product_box .count_box .sub, body[pre-order-app] section.content .product_intro .product_box .count_box .add {
   width: 30px;

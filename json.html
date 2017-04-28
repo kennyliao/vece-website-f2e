@@ -235,29 +235,24 @@ var promot_data = {
 	]
 }
 
+var aboutus_data = {
+	header_video: {
+		img: "https://unsplash.it/1400/800?image=64",
+		url: "https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4"
+	},
+	pages: [
+		{title:"Renew Brand13", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude t", img: "https://unsplash.it/1400/800?image=832", year: 2013},
+		{title:"Renew Brand14", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations. wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/?image=823", year: 2014},
+		{title:"Renew Brand15", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain s.", img: "https://unsplash.it/1400/800?image=64", year: 2015},
+		{title:"Renew Brand16", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/800?image=832", year: 2016},
+		{title:"Renew Brand17", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/?image=823", year: 2017}
+	]
+}
+
 function showJSON(data){
 	document.getElementById("box").innerHTML = JSON.stringify(data);
 }
-showJSON(app_data);
-		</script>
-
-
-
-				<script>
-//登入功能測試鍵
-$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-function gologin(){
-	$('header').addClass('login');
-	$('section.content').append('<button onclick="gologout();" id="gologout">登出功能測試鍵</button>');
-	$('input.checkout-btn').attr('disabled',false);
-	$('#gologin').remove();
-}
-function gologout(){
-	$('header').removeClass('login');
-	$('section.content').append('<button onclick="gologin();" id="gologin">登入功能測試鍵</button>');
-	$('input.checkout-btn').attr('disabled',true);
-	$('#gologout').remove();
-}
+showJSON(aboutus_data);
 		</script>
 	</body>
 </html>

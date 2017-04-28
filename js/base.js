@@ -5,6 +5,7 @@
 	    nav:false,
 	    loop:true,
 	    margin:0,
+			dots: false,
 	    autoplay:true,
 	    autoplayTimeout:5000,
 	    autoplayHoverPause:false,
@@ -19,10 +20,14 @@
 	    items:3,
 	    nav:true,
 	    loop:false,
+			dots: false,
 	    margin:0,
 	    responsive:{
-	        320:{
-	            items:1.1
+					0:{
+	            items: 1
+	        },
+	        767:{
+	            items: 2
 	        }
 	    }
 	});

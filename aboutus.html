@@ -44,7 +44,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 					<source v-bind:src="aboutus_data.header_video.url" type="video/mp4">
 				</video>
 			</div>
-			<div class="pages">
+			<div class="pages" v-on:touchend="trans_dots()">
 				<ul class="owl-aboutus owl-carousel owl-theme">
 					<li v-for="a in aboutus_data.pages" class="intro_block">
 						<div class="img" v-bind:style="'background-image: url('+ a.img +')'"></div>

@@ -197,19 +197,7 @@ var pre_order = new Vue({
 var aboutus = new Vue({
 	el: "#aboutus",
 	data: {
-		aboutus_data: {
-			header_video: {
-				img: "https://unsplash.it/1400/800?image=64",
-				url: "https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4"
-			},
-			pages: [
-				{title:"Renew Brand13", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude t", img: "https://unsplash.it/1400/800?image=832", year: 2013},
-				{title:"Renew Brand14", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations. wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/?image=823", year: 2014},
-				{title:"Renew Brand15", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain s.", img: "https://unsplash.it/1400/800?image=64", year: 2015},
-				{title:"Renew Brand16", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/800?image=832", year: 2016},
-				{title:"Renew Brand17", content: "Alishan is 415 square kilometres in area. Notable characteristics include mountain wilderness, four villages, waterfalls, high altitude tea plantations. high altitude tea plantations.", img: "https://unsplash.it/1400/?image=823", year: 2017}
-			]
-		}
+		aboutus_data: ""
 	},
 	created: function(){
 		this.fetchData();
@@ -217,31 +205,45 @@ var aboutus = new Vue({
 	methods: {
 		fetchData: function(){
 			var _this = this;
-			$.getJSON("json/about_data.json", function(data){
-				//				_this.aboutus_data = data;
-				$(".owl-aboutus").owlCarousel({
-					dotsContainer: "#owl-aboutus-dots",
-					center: true,
-					items: 1,
-					nav:false,
-					loop:false,
-					margin:0,
-					autoplay:false,
-					dots: true,
-					responsive:{
-						0:{
-							items: 1
+			$.getJSON("json/aboutus_data.json", function(data){
+				_this.aboutus_data = data;
+				_this.$nextTick(function(){
+					$(".owl-aboutus").owlCarousel({
+						dotsContainer: "#owl-aboutus-dots",
+						center: true,
+						items: 1,
+						nav:false,
+						loop:false,
+						margin:0,
+						autoplay:false,
+						dots: true,
+						responsive:{
+							0:{
+								items: 1
+							}
 						}
-					}
+					});
+					$('.owl-dot').click(function () {
+						$(".owl-aboutus").trigger('to.owl.carousel', [$(this).index(), 300]);
+					});
 				});
-				$('.owl-dot').click(function () {
-					$(".owl-aboutus").trigger('to.owl.carousel', [$(this).index(), 300]);
-				});
+
 			}) 
 		},
 		play_video: function(event){
 			$(".poster").hide();
 			$(".video_block").get(0).play();
+		},
+		trans_dots: function(){
+			if($(window).width()<=767){
+				setTimeout(function(){
+					var index_dot = $(".owl-dot.active").index();
+					var distance = index_dot * -50 +50;
+					$(".owl-dots").css({
+						"transform": "translate("+distance+"%, 0)"
+					});
+				},100);
+			}
 		}
 	}
 })
@@ -515,6 +517,7 @@ $(".cover").click(function(){
 //aboutus 年份圖片
 $("#aboutus .pages").bind("mouseup touchend",function(){
 	if($(window).width()<=767){
+		console.log("touched!");
 		setTimeout(function(){
 			var index_dot = $(".owl-dot.active").index();
 			var distance = index_dot * -50 +50;
@@ -525,10 +528,11 @@ $("#aboutus .pages").bind("mouseup touchend",function(){
 	}
 })
 
+//aboutus resize dots 定位
 $(window).resize(function(){
 	if($(window).width()>767){
 		$(".owl-dots").css({
-				"transform": "translate(0, 0)"
-			});
+			"transform": "translate(0, 0)"
+		});
 	}
 })

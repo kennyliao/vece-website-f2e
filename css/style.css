@@ -1,6 +1,7 @@
 body[home] section.content div.hero-img{
 	width: 100%;
 	height: 789px;
+	z-index: -1;
 }
 body[home] section.content div.hero-img .item{
 	height: 789px;
@@ -42,7 +43,8 @@ body[home] section.content div.hero-img .owl-dots{
 
 
 body[home] section.content div.preorder{
-	text-align: center;
+	z-index: 10
+		text-align: center;
 	background-color: #fafafa;
 	padding-bottom: 120px;
 }
@@ -60,23 +62,28 @@ body[home] section.content div.preorder h1+p{
 	margin-bottom: 49px;
 }
 /* body[home] section.content div.preorder .owl-carousel .owl-item{
-	transition: transform .5s;
+transition: transform .5s;
 }
 body[home] section.content div.preorder .owl-carousel .owl-item.center .item{
-	transform: scale(1.5, 1.5);
-	z-index: 999;
-	position: relative;
-	bottom: 30px;
+transform: scale(1.5, 1.5);
+z-index: 999;
+position: relative;
+bottom: 30px;
 }
 body[home] section.content div.preorder .owl-carousel .owl-item.center .item ul{
-	transform: scale(.75,.75);
+transform: scale(.75,.75);
 } */
+body[home] section.content div.preorder {
+	text-align: center;
+}
+
 body[home] section.content div.preorder .owl-carousel .item{
 	background-color: #fff;
 	margin: 10px;
 	padding: 35px;
 	box-shadow: -3px 7px 10px 0 rgba(142, 142, 142, 0.19);
 }
+
 body[home] section.content div.preorder .owl-carousel .item ul{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -84,9 +91,9 @@ body[home] section.content div.preorder .owl-carousel .item ul{
 	display: -o-flex;
 	display: flex;
 	-webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 body[home] section.content div.preorder .owl-carousel .item ul li{
 	text-align: center;
@@ -99,10 +106,43 @@ body[home] section.content div.preorder .owl-carousel .item button{
 	background: none;
 	font-size: 18px;
 	margin-top: 33px;
+	transition: 0.2s;
 }
 @media screen and (min-width: 768px){
+	body[home] section.content div.preorder .owl-carousel{
+		z-index: 999;
+		-webkit-transform: translateY(-20%);
+		-ms-transform: translateY(-20%);
+		-o-transform: translateY(-20%);
+		transform: translateY(-20%);
+	}
+	body[home] section.content div.preorder .owl-carousel .owl-stage{
+		padding: 50px 0;
+		-webkit-box-sizing: padding-box;
+		-moz-box-sizing: padding-box;
+		box-sizing: padding-box;
+	}
 	body[home] section.content div.preorder .owl-carousel .item button{
 		display: none;
+	}
+	body[home] section.content div.preorder .owl-carousel .owl-item.active.center .item{
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	body[home] section.content div.preorder .owl-carousel .item{
+		-webkit-transform: scale(.55);
+		-ms-transform: scale(.55);
+		-o-transform: scale(.55);
+		transform: scale(.55);
+		transition: 0.3s;
+	}
+	body[home] section.content div.preorder .owl-carousel .owl-item.active.center .item{
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
 	}
 }
 body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel .owl-nav .owl-prev{
@@ -118,7 +158,12 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 	bottom: -30px;
 	border-radius: 0;
 	opacity: 0;
+	transition: 0.2s;
 }
+@media screen and (max-width: 767px){
+
+}
+
 body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-prev{
 	opacity: .5;
 }
@@ -154,10 +199,80 @@ body[home] section.content .desc{
 	-ms-align-items: flex-start;
 	align-items: flex-start;
 }
+body[home] section.content .mid{
+	width: 100%;
+	text-align: center;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+}
+body[home] section.content .mid .texts{
+	max-width: 688px;
+	margin: 0 auto;
+	margin-bottom: 70px;
+	text-align: left;
+}
+body[home] section.content .mid .photos{
+	width: 100%;
+}
+body[home] section.content .mid .photo{
+	display: inline-block;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex;
+	width: 40%;
+	height: 100%;
+	max-width: 280px;
+	height: 280px;
+	margin: 0 2.5%;
+	background: center center/ contain no-repeat;
+}
+body[home] section.content .store span{
+	font-size: 18px;
+}
+body[home] section.content .store a{
+	margin-top: 40px;
+}
+body[home] section.content .store span:before, body[home] section.content .arrow-left:before, body[home] section.content .arrow-right:after{
+	content: "";
+	display: inline-block;
+	vertical-align:text-top;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	background: url("../images/arrow.svg") center center/cover no-repeat;
+}
+
+body[home] section.content .arrow-left:before, body[home] section.content .arrow-right:after{
+	width: 18px;
+	height: 18px;
+}
+body[home] section.content .arrow-left:before{
+	margin-right: 5px;
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+body[home] section.content .arrow-right:after{
+	margin-right: 0px;
+	margin-left: 5px;
+}
+body[home] section.content .arrow-left:before, .arrow-right:after{
+	width: 18px;
+	height: 18px;
+}
 body[home] section.content .environment .photo, body[home] section.content .store .photo{
 	height: 600px;
 	-webkit-background-size: cover;
 	background-size: cover;
+	-webkit-background-position: top center;
+	background-position: top center;
+}
+body[home] section.content .environment .photo, body[home] section.content .store .desc{
+	padding-left: 55px;
 }
 body[home] section.content div.environment h2, body[home] section.content div.ingredient h2, body[home] section.content div.store h2{
 	font-weight: normal;
@@ -171,7 +286,16 @@ body[home] section.content p{
 	font-weight: 300;
 }
 body[home] section.content div.ingredient{
-	height: 656px;
+	height: 896px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
 }
 
 body[home] section.content div.store{
@@ -1443,8 +1567,8 @@ body[checkout] section.content ul.items>li div.product-item div.item-photo span.
 	display: -o-flex;
 	display: flex;
 	-webkit-align-items: center;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 body[checkout] section.content ul.items>li div.product-item div.item-name{
 	padding: 10px 10px 10px 30px;
@@ -2107,52 +2231,52 @@ body[member-center] section.content .input input[type="button"].save{
 
 /* newsletter */
 body[member-center] section.content .switch {
-  position: relative;
-  display: inline-block;
-  width: 115px;
-  height: 60px;
-  margin-top: 30px;
-  margin-bottom: 100px;
+	position: relative;
+	display: inline-block;
+	width: 115px;
+	height: 60px;
+	margin-top: 30px;
+	margin-bottom: 100px;
 }
 body[member-center] section.content .switch input {display:none;}
 body[member-center] section.content .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 body[member-center] section.content .slider:before {
-  position: absolute;
-  content: "";
-  height: 52px;
-  width: 52px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #fff;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 52px;
+	width: 52px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #fff;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 body[member-center] section.content input:checked + .slider {
-  background-color: #c0a6eb;
+	background-color: #c0a6eb;
 }
 body[member-center] section.content input:focus + .slider {
-  box-shadow: 0 0 1px #c0a6eb;
+	box-shadow: 0 0 1px #c0a6eb;
 }
 body[member-center] section.content input:checked + .slider:before {
-  -webkit-transform: translateX(55px);
-  -ms-transform: translateX(55px);
-  transform: translateX(55px);
+	-webkit-transform: translateX(55px);
+	-ms-transform: translateX(55px);
+	transform: translateX(55px);
 }
 body[member-center] section.content .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 body[member-center] section.content .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 body[member-center] section.content input + .slider:after{
 	content: "已取消訂閱";
@@ -2171,33 +2295,33 @@ body[member-center] section.content input:checked + .slider:after{
 }
 @media screen and (max-width: 767px){
 	body[member-center] section.content .switch {
-	  width: 95px;
-	  height: 40px;
+		width: 95px;
+		height: 40px;
 	}
 	body[member-center] section.content .slider:before {
-	  position: absolute;
-	  content: "";
-	  height: 32px;
-	  width: 32px;
-	  left: 4px;
-	  bottom: 4px;
-	  background-color: #fff;
-	  -webkit-transition: .4s;
-	  transition: .4s;
+		position: absolute;
+		content: "";
+		height: 32px;
+		width: 32px;
+		left: 4px;
+		bottom: 4px;
+		background-color: #fff;
+		-webkit-transition: .4s;
+		transition: .4s;
 	}
 	body[member-center] section.content input:checked + .slider {
-	  background-color: #c0a6eb;
+		background-color: #c0a6eb;
 	}
 	body[member-center] section.content input:focus + .slider {
-	  box-shadow: 0 0 1px #c0a6eb;
+		box-shadow: 0 0 1px #c0a6eb;
 	}
 	body[member-center] section.content input:checked + .slider:before {
-	  -webkit-transform: translateX(55px);
-	  -ms-transform: translateX(55px);
-	  transform: translateX(55px);
+		-webkit-transform: translateX(55px);
+		-ms-transform: translateX(55px);
+		transform: translateX(55px);
 	}
 	body[member-center] section.content .slider.round {
-	  border-radius: 20px;
+		border-radius: 20px;
 	}
 	body[member-center] section.content input + .slider:after{
 		font-size: 16px;
@@ -2276,8 +2400,8 @@ body[member-center] section.content .tab-content .input.address select{
 	padding: 15px 25px;
 	max-width: 220px;
 	-webkit-appearance: none;
-   -moz-appearance:    none;
-   appearance:         none;
+	-moz-appearance:    none;
+	appearance:         none;
 }
 body[member-center] section.content .tab-content .input.address select+select{
 	margin-left: 10px;
@@ -2427,41 +2551,41 @@ body[member-center] section.content .tab-content div.order-search div.search-for
 	height: auto;
 	border-radius: 0;
 	background: #fff;
-    border-bottom: 1px solid #bababa;
-    letter-spacing: .12em;
-    font-size: 16px;
-    padding: 5px 30px 5px 0;
-    text-align: left;
-    /* text-transform: uppercase; */
-    margin-bottom: 0;
+	border-bottom: 1px solid #bababa;
+	letter-spacing: .12em;
+	font-size: 16px;
+	padding: 5px 30px 5px 0;
+	text-align: left;
+	/* text-transform: uppercase; */
+	margin-bottom: 0;
 }
 body[member-center] section.content .tab-content div.order-search div.search-form button[type="submit"]{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    background: transparent;
-    border: none;
-    color: #fff;
-    display: block;
-    letter-spacing: normal;
-    padding: 0;
-    cursor: inherit;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	color: #fff;
+	display: block;
+	letter-spacing: normal;
+	padding: 0;
+	cursor: inherit;
 	background-image: url('../images/sidemenu _icons.svg');
 	-webkit-background-size: 220px 22px;
 	background-size: 220px 22px;
-    background-repeat: no-repeat;
-    background-position: -12px -1px;
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 5px;
-    right: 0;
-    opacity: .5;
-    cursor: pointer;
-    text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: -12px -1px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	opacity: .5;
+	cursor: pointer;
+	text-indent: -9999px;
 }
 @media screen and (min-width: 769px){
 	body[member-center] section.content .tab-content div.order-search div.search-form button[type="submit"]:hover{
@@ -2626,7 +2750,7 @@ body[member-center] section.content ul.items>li div.product-item div.item-photo 
 	text-align: center;
 	color: #fff;
 	font-family: HelveticaNeue;
-    display: none;	
+	display: none;	
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
 	body[member-center] section.content #order-menu ul.items>li div.product-item div.item-photo{
