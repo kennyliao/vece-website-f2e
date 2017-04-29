@@ -160,18 +160,60 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 	opacity: 0;
 	transition: 0.2s;
 }
-@media screen and (max-width: 767px){
 
+body[home] section.content .preorder .owl-carousel .item h3{
+	font-size: 28px;
+	margin-bottom: 40px;
+}
+body[home] section.content .preorder .owl-carousel .item ul li{
+	margin: 0 10px;
+}
+body[home] section.content .preorder .owl-carousel .item ul li .icon{
+	width: 80px;
+	height: 80px;
+	background-image: url('../images/illustration.svg');
+	background-repeat: no-repeat;
+	-webkit-background-size: 420px 80px;
+	background-size: 420px 80px;
+	background-position: -65px 0;
+}
+body[home] section.content .preorder .owl-carousel .item ul li:nth-child(2) .icon{
+	background-position: -130px 0;
+}
+body[home] section.content .preorder .owl-carousel .item ul li:nth-child(3) .icon{
+	background-position: -205px 0;
+}
+body[home] section.content .preorder .owl-carousel .item ul li:nth-child(4) .icon{
+	background-position: -275px 0;
+}
+body[home] section.content .preorder .owl-carousel .item ul li:nth-child(5) .icon{
+	background-position: -345px 0;
+}
+body[home] section.content .preorder .owl-carousel .item h5{
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+body[home] section.content .preorder .owl-carousel .item h4{
+	font-size: 20px;
+	margin-top: 15px;
 }
 
 body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-prev{
 	opacity: .5;
 }
 body[home] section.content div.preorder .owl-nav .owl-next{
-	right: 5%;
+	right: 23%;
 }
 body[home] section.content div.preorder .owl-nav .owl-prev{
-	left: 5%;
+	left: 23%;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	body[home] section.content div.preorder .owl-nav .owl-next{
+		right: 16.5%;
+	}
+	body[home] section.content div.preorder .owl-nav .owl-prev{
+		left: 16.5%;
+	}
 }
 body[home] section.content div.preorder .owl-nav .owl-prev.disabled, body[home] section.content div.preorder .owl-nav .owl-next.disabled{
 	display: none;

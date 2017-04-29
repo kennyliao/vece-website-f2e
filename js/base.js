@@ -24,9 +24,12 @@
 	    margin:0,
 	    responsive:{
 					0:{
-	            items: 1
+	            items: 1.1
 	        },
 	        767:{
+	            items: 1.6
+	        },
+	        1024:{
 	            items: 2
 	        }
 	    }
