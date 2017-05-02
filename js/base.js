@@ -15,6 +15,7 @@
 	        }
 	    }
 	});
+<<<<<<< HEAD
 //	$(".owl-preorder").owlCarousel({
 //	    center: true,
 //	    items:3,
@@ -31,6 +32,28 @@
 //	        }
 //	    }
 //	});
+=======
+	$(".owl-preorder").owlCarousel({
+	    center: true,
+	    items:3,
+	    nav:true,
+	    loop:false,
+			dots: false,
+	    margin:0,
+	    responsive:{
+					0:{
+	            items: 1.1
+	        },
+	        767:{
+	            items: 1.6
+	        },
+	        1024:{
+	            items: 2
+	        }
+	    }
+	});
+
+>>>>>>> origin/master
 
 
 	
