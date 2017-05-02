@@ -1111,6 +1111,240 @@ body[aboutus] section.content .pages .dots_wrap .owl-dots .owl-dot:nth-child(5) 
     line-height: 25px;
   }
 }
+body[member-center] section.content #order-menu ul.items .order_list {
+  width: 100%;
+  min-height: 120px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+body[member-center] section.content #order-menu ul.items:nth-of-type(1) > li:last-child {
+  margin-bottom: 95px;
+}
+body[member-center] section.content #order-menu ul.items .order_list div.product-item {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 55%;
+  padding: 10px 0;
+  position: relative;
+}
+body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-photo {
+  width: 100px;
+  position: relative;
+}
+body[member-center] section.content ul.items .order_list div.product-item div.item-photo span.quantity {
+  display: block;
+  position: absolute;
+  right: -8px;
+  top: -12px;
+  background-color: #6b6f76;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  font-family: HelveticaNeue;
+  display: none;
+}
+body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name {
+  padding: 10px;
+}
+body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name div.item-status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 27.27%;
+  height: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name div.capacity {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 10px;
+}
+body[member-center] section.content #order-menu ul.items .order_list ul.item-price {
+  width: 45%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body[member-center] section.content #order-menu ul.items .order_list ul.item-price li {
+  width: 33.34%;
+  font-size: 18px;
+  color: #4e5156;
+  text-align: center;
+}
+body[member-center] section.content #order-menu ul.preorder-time {
+  width: 100%;
+  min-height: 140px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  -ms-align-items: center;
+  align-items: center;
+  position: relative;
+  /* padding: 0 30px; */
+}
+body[member-center] section.content #order-menu ul.preorder-time li {
+  width: auto;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 30px;
+  color: #bfc1c5;
+}
+body[member-center] section.content #order-menu ul.preorder-time li h5 {
+  text-align: left;
+  margin-top: 10px;
+  color: #bfc1c5;
+}
+body[member-center] section.content #order-menu ul.preorder-time li.active, body[member-center] section.content #order-menu ul.preorder-time li:first-child {
+  color: #4e5156;
+}
+body[member-center] section.content #order-menu ul.preorder-time li.active h5, body[member-center] section.content #order-menu ul.preorder-time li:first-child h5 {
+  color: #4e5156;
+}
+
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list {
+    flex-direction: column;
+    padding: 10px 0 35px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-photo {
+    width: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-photo {
+    width: 70px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    border: solid 1pt #e8e8e8;
+  }
+  body[member-center] section.content ul.items .order_list div.product-item div.item-photo span.quantity {
+    display: block;
+    position: absolute;
+    right: -8px;
+    top: -12px;
+    background-color: #6b6f76;
+    width: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name h4 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name {
+    padding: 10px 0 10px 20px;
+  }
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name div.item-status {
+    position: static;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name h4 {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name div.capacity {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list div.product-item div.item-name div.capacity {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  body[member-center] section.content #order-menu ul.items .order_list ul.item-price li {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu ul.items .order_list ul.item-price {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  body[member-center] section.content #order-menu ul.items .order_list ul.item-price li {
+    width: 50%;
+    font-size: 16px;
+  }
+  body[member-center] section.content #order-menu ul.items .order_list ul.item-price li:nth-child(2), body[member-center] section.content #order-menu ul.items .order_list ul.item-price li:first-child {
+    display: none;
+  }
+  body[member-center] section.content #order-menu ul.items .order_list ul.item-price li:last-child {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu .order_list ul.preorder-time {
+    padding: 0 5px;
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  body[member-center] section.content #order-menu .order_list ul.preorder-time li {
+    margin: 0 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[member-center] section.content #order-menu .order_list ul.preorder-time li {
+    display: none;
+  }
+  body[member-center] section.content #order-menu .order_list ul.preorder-time li:first-child {
+    display: block;
+    height: 55px;
+  }
+  body[member-center] section.content form ul.preorder-time li:last-child {
+    display: block;
+    height: 55px;
+  }
+}
 /*購物頁 */
 body[products-app] section.content, body[pre-order-app] section.content {
   letter-spacing: 1.9px;

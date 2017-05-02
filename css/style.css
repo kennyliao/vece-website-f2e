@@ -2811,7 +2811,7 @@ body[member-center] section.content .tab-content div.order-search div.search-for
 	width: 100%;
 	height: auto;
 	border-radius: 0;
-	background: #fff;
+	background: none;
 	border-bottom: 1px solid #bababa;
 	letter-spacing: .12em;
 	font-size: 16px;
@@ -3151,7 +3151,7 @@ body[member-center] section.content #order-menu ul.preorder-time{
 	align-items: center;
 	position: relative;
 	/* padding: 0 30px; */
-	margin-bottom: 90px;
+	margin-bottom: 30px;
 }
 @media screen and (max-width: 767px){
 	body[member-center] section.content #order-menu ul.preorder-time{
