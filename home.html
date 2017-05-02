@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="css/base.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/vue.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>
 navTextPrev = '<span class="arrow-left">上一波訂製</span>';
@@ -31,42 +32,14 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 	<body home>
 		<header class=""></header>
 
-		<section class="content">
+		<section id="home" class="content">
 
 			<div class="hero-img">
 				<ul class="owl-hero owl-carousel owl-theme">
-					<li class="item" style="background-image: url('https://unsplash.it/1400/800?image=832');">
+					<li class="item" v-for="h in hero_data" v-bind:style="'background-image: url('+h.img+')'">
 						<div class="title">
-							<h1>逆齡時空肌系列</h1>
-							<p>緊緻肌膚細緻、明亮、彈潤</p>
-							<button>訂製</button>
-						</div>
-					</li>
-					<li class="item" style="background-image: url('https://unsplash.it/1400/?image=823');">
-						<div class="title">
-							<h1>逆齡時空肌系列</h1>
-							<p>緊緻肌膚細緻、明亮、彈潤</p>
-							<button>訂製</button>
-						</div>
-					</li>
-					<li class="item" style="background-image: url('https://unsplash.it/1400/800?image=64');">
-						<div class="title">
-							<h1>逆齡時空肌系列</h1>
-							<p>緊緻肌膚細緻、明亮、彈潤</p>
-							<button>訂製</button>
-						</div>
-					</li>
-					<li class="item" style="background-image: url('https://unsplash.it/1400/800?image=65');">
-						<div class="title">
-							<h1>逆齡時空肌系列</h1>
-							<p>緊緻肌膚細緻、明亮、彈潤</p>
-							<button>訂製</button>
-						</div>
-					</li>
-					<li class="item" style="background-image: url('https://api.fnkr.net/testimg/1440x567/bbccdd/FFF/?text=HERO5');">
-						<div class="title">
-							<h1>逆齡時空肌系列</h1>
-							<p>緊緻肌膚細緻、明亮、彈潤</p>
+							<h1>{{h.title}}</h1>
+							<p>{{h.content}}</p>
 							<button>訂製</button>
 						</div>
 					</li>
@@ -75,95 +48,14 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 			<div class="preorder">
 				<div class="order-date">
 					<ul class="owl-preorder owl-carousel owl-theme">
-						<li class="item">
-							<h2>下訂期：3 / 1 ~ 3 / 14</h2>
+						<li class="item" v-for="p in preorder_data">
+							<h2>下訂期：{{p[0]}} ~ {{p[p.length-1]}}</h2>
 							<ul>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>出貨</h4>
-								</li>
-							</ul>
-							<button>read more</button>
-						</li>
-						<li class="item">
-							<h2>下訂期：4 / 1 ~ 4 / 14</h2>
-							<ul>
-								<li>
-									<h5 class="date">4 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>出貨</h4>
-								</li>
-							</ul>
-							<button>read more</button>
-						</li>
-						<li class="item">
-							<h2>下訂期：5 / 1 ~ 5 / 14</h2>
-							<ul>
-								<li>
-									<h5 class="date">5 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"><img src="https://api.fnkr.net/testimg/150x150/FFF/00CED1/?text=icon"></div>
-									<h4>出貨</h4>
+								<li v-for="(d,id) in p">
+									<h5 class="date">{{d}}</h5>
+									<div class="icon" v-bind:style="'background-image: url('+homepage_data.icon_url+'); background-position-x: '+ 20*(id+1) + '\%'">
+									</div>
+									<h4>{{homepage_data.procedure[id]}}</h4>
 								</li>
 							</ul>
 							<button>read more</button>
@@ -197,7 +89,7 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 
 			</div>
 			<div class="store container-fluid">
-				<div class="row store">
+				<div class="row">
 					<div class="photo col-sm-7" style="background-image: url('images/env.png');"></div>
 					<div class="desc col-sm-5">
 						<h2>概念店</h2>
@@ -211,7 +103,9 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 		</section>
 
 		<footer></footer>
-
+		
+		
+		<script src="js/products.js"></script>
 		<script src="js/base.js"></script>
 		<script>
 $.get("components/header.html", function(data, status){

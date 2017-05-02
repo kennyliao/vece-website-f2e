@@ -80,7 +80,7 @@ body[home] section.content div.preorder {
 body[home] section.content div.preorder .owl-carousel .item{
 	background-color: #fff;
 	margin: 10px;
-	padding: 35px;
+	padding: 43px 35px 90px;
 	box-shadow: -3px 7px 10px 0 rgba(142, 142, 142, 0.19);
 }
 
@@ -96,7 +96,19 @@ body[home] section.content div.preorder .owl-carousel .item ul{
 	justify-content: center;
 }
 body[home] section.content div.preorder .owl-carousel .item ul li{
+	width: 100%;
 	text-align: center;
+}
+body[home] section.content div.preorder .owl-carousel .item ul li .icon{
+/*	border: solid 1px;*/
+	max-width: 80px;
+	margin: 20px auto;
+	background: left center/auto 90% no-repeat;
+}
+body[home] section.content div.preorder .owl-carousel .item ul li .icon:before{
+	content: "";
+	display: inline-block;
+	padding-top: 100%;
 }
 body[home] section.content div.preorder .owl-carousel .item button{
 	width: 130px;
@@ -111,25 +123,19 @@ body[home] section.content div.preorder .owl-carousel .item button{
 @media screen and (min-width: 768px){
 	body[home] section.content div.preorder .owl-carousel{
 		z-index: 999;
-		-webkit-transform: translateY(-20%);
-		-ms-transform: translateY(-20%);
-		-o-transform: translateY(-20%);
-		transform: translateY(-20%);
+		-webkit-transform: translateY(-10%);
+		-ms-transform: translateY(-10%);
+		-o-transform: translateY(-10%);
+		transform: translateY(-10%);
 	}
 	body[home] section.content div.preorder .owl-carousel .owl-stage{
-		padding: 50px 0;
+		padding-bottom: 50px;
 		-webkit-box-sizing: padding-box;
 		-moz-box-sizing: padding-box;
 		box-sizing: padding-box;
 	}
 	body[home] section.content div.preorder .owl-carousel .item button{
 		display: none;
-	}
-	body[home] section.content div.preorder .owl-carousel .owl-item.active.center .item{
-		-webkit-transform: scale(1.1);
-		-ms-transform: scale(1.1);
-		-o-transform: scale(1.1);
-		transform: scale(1.1);
 	}
 	body[home] section.content div.preorder .owl-carousel .item{
 		-webkit-transform: scale(.55);
@@ -139,10 +145,10 @@ body[home] section.content div.preorder .owl-carousel .item button{
 		transition: 0.3s;
 	}
 	body[home] section.content div.preorder .owl-carousel .owl-item.active.center .item{
-		-webkit-transform: scale(1.1);
-		-ms-transform: scale(1.1);
-		-o-transform: scale(1.1);
-		transform: scale(1.1);
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
 	}
 }
 body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel .owl-nav .owl-prev{
@@ -160,18 +166,26 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 	opacity: 0;
 	transition: 0.2s;
 }
-@media screen and (max-width: 767px){
-
+@media screen and (min-width: 768px){
+	body[home] section.content div.preorder .owl-carousel .item h2 {
+		margin-bottom: 62px;
+		font-size: 28px;
+	}
+	body[home] section.content div.preorder .owl-carousel .item h5 {
+		font-size: 20px;
+		letter-spacing: 1.1px;
+	}
 }
+
 
 body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-prev{
 	opacity: .5;
 }
 body[home] section.content div.preorder .owl-nav .owl-next{
-	right: 5%;
+	right: 22%;
 }
 body[home] section.content div.preorder .owl-nav .owl-prev{
-	left: 5%;
+	left: 22%;
 }
 body[home] section.content div.preorder .owl-nav .owl-prev.disabled, body[home] section.content div.preorder .owl-nav .owl-next.disabled{
 	display: none;
@@ -271,9 +285,17 @@ body[home] section.content .environment .photo, body[home] section.content .stor
 	-webkit-background-position: top center;
 	background-position: top center;
 }
-body[home] section.content .environment .photo, body[home] section.content .store .desc{
-	padding-left: 55px;
+@media screen and (min-width: 768px){
+	body[home] section.content .store .photo{
+		width: 62.5%;
+	}
+	body[home] section.content .store .desc{
+		width: 37.5%;
+		padding-left: 55px;
+	}
 }
+
+
 body[home] section.content div.environment h2, body[home] section.content div.ingredient h2, body[home] section.content div.store h2{
 	font-weight: normal;
 }
@@ -298,12 +320,9 @@ body[home] section.content div.ingredient{
 	align-items: flex-start;
 }
 
-body[home] section.content div.store{
-	padding-bottom: 209px;
+body[home] section.content div.store:last-of-type{
+	padding-bottom: 289px;
 }
-
-
-
 
 /* 登入頁面 */
 body[login] section.content{

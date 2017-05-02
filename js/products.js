@@ -21,6 +21,72 @@ $(".count").keydown(function (e) {
 
 var mobile_items = 1.5; //owl-carousel最小尺寸項目數
 
+//home Vue.component
+Vue.component("preorderblock",{
+	template: "#preorder_block",
+	props: [],
+	computed: {
+	},
+	data: {
+		count: 0
+	},
+	methods: {
+	}
+});
+
+//home.html
+var home_app = new Vue({
+	el: "#home",
+	data: {
+		testdata: "",
+		homepage_data: {
+			icon_url: "images/illustration.svg",
+			procedure: ["採花","萃取","檢測","裝瓶","出貨"]
+		},
+		hero_data:[
+			{title:"逆齡時空肌系列1",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://unsplash.it/1400/800?image=832"},
+			{title:"逆齡時空肌系列2",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://unsplash.it/1400/?image=823"},
+			{title:"逆齡時空肌系列3",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://unsplash.it/1400/800?image=64"},
+			{title:"逆齡時空肌系列4",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://unsplash.it/1400/800?image=65"},
+			{title:"逆齡時空肌系列5",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://api.fnkr.net/testimg/1440x567/bbccdd/FFF/?text=HERO5"}
+		],
+		preorder_data: [
+			["3 / 1","3 / 4","3 / 14","3 / 24","4 / 1"],
+			["3 / 14","3 / 20","4 / 14","4 / 24","4 / 30"],
+			["3 / 31","4 / 4","4 / 14","4 / 24","5 / 1"]
+		]
+	},
+	created: function(){
+		this.fetchData();
+	},
+	methods: {
+		fetchData: function(){
+			var _this = this;
+			$.getJSON("json/promot_data.json", function(data){
+				_this.testdata = data;
+				_this.$nextTick(function(){
+					$(".owl-preorder").owlCarousel({
+						center: true,
+						items:3,
+						nav:true,
+						loop:false,
+						dots: false,
+						margin:0,
+						responsive:{
+							0:{
+								items: 1
+							},
+							767:{
+								items: 1.8
+							}
+						}
+					});
+				})
+			})
+		}
+	}
+})
+
 //product-application.html & pre-order-application.html
 var products_app = new Vue({
 	el: "#product_app",

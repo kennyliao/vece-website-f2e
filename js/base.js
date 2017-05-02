@@ -15,25 +15,25 @@
 	        }
 	    }
 	});
-	$(".owl-preorder").owlCarousel({
-	    center: true,
-	    items:3,
-	    nav:true,
-	    loop:false,
-			dots: false,
-	    margin:0,
-	    responsive:{
-					0:{
-	            items: 1
-	        },
-	        767:{
-	            items: 2
-	        }
-	    }
-	});
+//	$(".owl-preorder").owlCarousel({
+//	    center: true,
+//	    items:3,
+//	    nav:true,
+//	    loop:false,
+//			dots: false,
+//	    margin:0,
+//	    responsive:{
+//					0:{
+//	            items: 1
+//	        },
+//	        767:{
+//	            items: 1.8
+//	        }
+//	    }
+//	});
 
 
-
+	
 
 
 
