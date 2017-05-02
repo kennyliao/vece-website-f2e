@@ -133,6 +133,9 @@ body[home] header{
 body[home] header.scroll{
 	background-color: #fff;
 }
+body[home] header.submenu-active{
+	background-color: #fff;
+}
 header:after, body[home] header.scroll:after{
 	content: "";
 	width: 100%;
@@ -330,6 +333,11 @@ body[home] header.scroll ul.menu>li a{
 		bottom: 0;
 		left: 0;
 	}
+	header.scroll ul.menu>li:hover:after{
+		z-index: 5;
+		height: 1px;
+		background-color: #e9e9e9;
+	}
 }
 header ul.menu li ul{
 	display: none;
@@ -343,6 +351,7 @@ header ul.menu li ul{
 		display: flex;
 	}
 }
+
 header ul.menu li ul.product-menu{
 	width: 100%;
 	height: 409px;
@@ -354,11 +363,38 @@ header ul.menu li ul.product-menu{
 	-webkit-align-items: center;
     align-items: center;
 }
-
+header ul.menu>li{
+	cursor: default;
+}
+@media screen and (max-width: 767px){
+	header ul.menu li ul.active.product-menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		top: 55px;
+		box-shadow: none;
+		flex-direction: row;
+		-webkit-flex-wrap: nowrap;
+		-moz-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		-o-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		overflow-y: hidden;
+		overflow-x: auto;
+	}
+}
 header ul.menu li ul.product-menu li{
 	width: 20%;
 	text-align: center;
 	color: #2f3031;
+}
+@media screen and (max-width: 767px){
+	header ul.menu li ul.active.product-menu li{
+		width: 30%;
+		margin: 0 15px;
+	}
 }
 header ul.menu li ul.product-menu li div.series-color{
 	width: 49px;
@@ -389,21 +425,56 @@ header ul.menu li ul.aboutus-menu{
 	-webkit-align-items: center;
     align-items: center;
 }
+@media screen and (max-width: 767px){
+	header ul.menu li ul.active.aboutus-menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		top: 55px;
+		box-shadow: none;
+		flex-direction: column;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
 header ul.menu li ul.aboutus-menu li{
 	width: 33%;
 	text-align: center;
 	color: #2f3031;
 }
+@media screen and (max-width: 767px){
+	header ul.menu li ul.aboutus-menu li{
+		width: 100%;
+		padding: 20px 0;
+		position: relative;
+	}
+}
 header ul.menu li ul.aboutus-menu li div img{
 	width: 80%;
 	max-width: 296px;
 }
+
 header ul.menu li ul.aboutus-menu li h5{
 	font-size: 16px;
 	letter-spacing: 2px;
 	line-height: 34px;
 	margin: 14px 0;
 	color: #4e5156;
+}
+@media screen and (max-width: 767px){
+	header ul.menu li ul.aboutus-menu li h5{
+		position: absolute;
+		height: 20px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 5;
+		color: #fff;
+	}
 }
 header ul.side-menu{
 	float: right;

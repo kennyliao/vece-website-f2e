@@ -1,42 +1,5 @@
-
-//	$(".owl-hero").owlCarousel({
-//	    center: true,
-//	    items:1,
-//	    nav:false,
-//	    loop:true,
-//	    margin:0,
-//			dots: false,
-//	    autoplay:true,
-//	    autoplayTimeout:5000,
-//	    autoplayHoverPause:false,
-//	    responsive:{
-//	        320:{
-//	            items:1
-//	        }
-//	    }
-//	});
-
-//	$(".owl-preorder").owlCarousel({
-//	    center: true,
-//	    items:3,
-//	    nav:true,
-//	    loop:false,
-//			dots: false,
-//	    margin:0,
-//	    responsive:{
-//					0:{
-//	            items: 1
-//	        },
-//	        767:{
-//	            items: 1.8
-//	        }
-//	    }
-//	});
-
-
-	
-
-
+	var windowHeight = $(window).height();
+	var windowWidth = $(window).width();
 
 	//滾動fix選單
 	$(document).bind('scroll', function(){
@@ -58,15 +21,14 @@
 	
 
 	//頁面最小高
-	var windowHeight = $(window).height();
 	$('section.content').css('min-height', windowHeight-114);
 	$(window).resize(function(){
 		var windowHeightResize = $(window).height();
 		$('section.content').css('min-height', windowHeightResize-114);
 	});
 
+
 	//body scroll animately when input focus
-	var windowWidth = $(window).width();
 	$('div.input input').focus(function(){
 		if(windowWidth < 767){
 			// $("html, body").animate({ scrollTop: '370px' }, 600);
