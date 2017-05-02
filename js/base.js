@@ -1,21 +1,21 @@
 
-	$(".owl-hero").owlCarousel({
-	    center: true,
-	    items:1,
-	    nav:false,
-	    loop:true,
-	    margin:0,
-			dots: false,
-	    autoplay:true,
-	    autoplayTimeout:5000,
-	    autoplayHoverPause:false,
-	    responsive:{
-	        320:{
-	            items:1
-	        }
-	    }
-	});
-<<<<<<< HEAD
+//	$(".owl-hero").owlCarousel({
+//	    center: true,
+//	    items:1,
+//	    nav:false,
+//	    loop:true,
+//	    margin:0,
+//			dots: false,
+//	    autoplay:true,
+//	    autoplayTimeout:5000,
+//	    autoplayHoverPause:false,
+//	    responsive:{
+//	        320:{
+//	            items:1
+//	        }
+//	    }
+//	});
+
 //	$(".owl-preorder").owlCarousel({
 //	    center: true,
 //	    items:3,
@@ -32,28 +32,6 @@
 //	        }
 //	    }
 //	});
-=======
-	$(".owl-preorder").owlCarousel({
-	    center: true,
-	    items:3,
-	    nav:true,
-	    loop:false,
-			dots: false,
-	    margin:0,
-	    responsive:{
-					0:{
-	            items: 1.1
-	        },
-	        767:{
-	            items: 1.6
-	        },
-	        1024:{
-	            items: 2
-	        }
-	    }
-	});
-
->>>>>>> origin/master
 
 
 	

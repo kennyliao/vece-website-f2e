@@ -33,7 +33,6 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 		<header class=""></header>
 
 		<section id="home" class="content">
-
 			<div class="hero-img">
 				<ul class="owl-hero owl-carousel owl-theme">
 					<li class="item" v-for="h in hero_data" v-bind:style="'background-image: url('+h.img+')'">
@@ -46,123 +45,34 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 				</ul>
 			</div>
 			<div class="preorder">
+				<div class="texts">
+					<h1>訂製新鮮、高活性的保養品</h1>
+					<p>我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，<br>做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。</p>
+				</div>
 				<div class="order-date">
 					<ul class="owl-preorder owl-carousel owl-theme">
-<<<<<<< HEAD
 						<li class="item" v-for="p in preorder_data">
-							<h2>下訂期：{{p[0]}} ~ {{p[p.length-1]}}</h2>
+							<h2>訂製日：{{p[0]}} ~ {{p[p.length-1]}}</h2>
 							<ul>
 								<li v-for="(d,id) in p">
 									<h5 class="date">{{d}}</h5>
 									<div class="icon" v-bind:style="'background-image: url('+homepage_data.icon_url+'); background-position-x: '+ 20*(id+1) + '\%'">
 									</div>
 									<h4>{{homepage_data.procedure[id]}}</h4>
-=======
-						<li class="item">
-							<h3>訂製日：3 / 1 ~ 3 / 14</h3>
-							<ul>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>出貨</h4>
-								</li>
-							</ul>
-							<button>read more</button>
-						</li>
-						<li class="item">
-							<h3>訂製日：4 / 1 ~ 4 / 14</h3>
-							<ul>
-								<li>
-									<h5 class="date">4 / 14</h5>
-									<div class="icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>出貨</h4>
-								</li>
-							</ul>
-							<button>read more</button>
-						</li>
-						<li class="item">
-							<h3>訂製日：5 / 1 ~ 5 / 14</h3>
-							<ul>
-								<li>
-									<h5 class="date">5 / 14</h5>
-									<div class="icon"></div>
-									<h4>採花</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>萃取</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 1</h5>
-									<div class="icon"></div>
-									<h4>檢測</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 4</h5>
-									<div class="icon"></div>
-									<h4>裝瓶</h4>
-								</li>
-								<li>
-									<h5 class="date">3 / 14</h5>
-									<div class="icon"></div>
-									<h4>出貨</h4>
->>>>>>> origin/master
 								</li>
 							</ul>
 							<button>read more</button>
 						</li>
 					</ul>
 				</div>
-				<h1>訂製新鮮、高活性的保養品</h1>
-				<p>我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，<br>做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。</p>
+				
 			</div>
 			<div class="environment container-fluid">
 				<div class="photo row" style="background-image: url('images/env.png');">
 					<div class="desc col-sm-push-7 col-sm-5">
 						<h2>阿里山蘭園</h2>
 						<p>隱身在海拔1300公尺的高山山脈，嚴格環控的活機莊園中，一株白花蝴蝶蘭迸出145朵璀璨，長達180天的驚人生命力，讓飽滿厚實的花瓣閃耀著光芒。</p>
-						<h5>阿里山與蘭花</h5>
+						<a href="environment.html"><span>阿里山與蘭花</span></a>
 					</div>	
 				</div>
 			</div>
@@ -171,7 +81,7 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 					<div class="texts">
 						<h2>兩大獨家成分</h2>
 						<p>大白蝴蝶蘭萃與紅蝴蝶蘭萃是我們摸索 7 年，提煉出來的成分，富含多酚類、花青素、多醣體及天然維生素B、C、E。</p>
-						<h5>了解更多</h5>
+						<a href="ingredients.html"><span>了解更多</span></a>
 					</div>
 					<div class="photos">
 						<div class="photo" style="background-image: url('images/grey_block.png')"></div>
@@ -195,8 +105,8 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 		</section>
 
 		<footer></footer>
-		
-		
+
+
 		<script src="js/products.js"></script>
 		<script src="js/base.js"></script>
 		<script>

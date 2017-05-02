@@ -51,9 +51,9 @@ var home_app = new Vue({
 			{title:"逆齡時空肌系列5",content:"緊緻肌膚細緻、明亮、彈潤",img:"https://api.fnkr.net/testimg/1440x567/bbccdd/FFF/?text=HERO5"}
 		],
 		preorder_data: [
-			["3 / 1","3 / 4","3 / 14","3 / 24","4 / 1"],
-			["3 / 14","3 / 20","4 / 14","4 / 24","4 / 30"],
-			["3 / 31","4 / 4","4 / 14","4 / 24","5 / 1"]
+			["3/1","3/4","3/14","3/24","4/1"],
+			["3/14","3/20","4/14","4/24","4/30"],
+			["3/31","4/4","4/14","4/24","5/1"]
 		]
 	},
 	created: function(){
@@ -74,10 +74,29 @@ var home_app = new Vue({
 						margin:0,
 						responsive:{
 							0:{
-								items: 1
+								items: 1.2
 							},
 							767:{
+								items: 1.5
+							},
+							996:{
 								items: 1.8
+							}
+						}
+					});
+					$(".owl-hero").owlCarousel({
+						center: true,
+						items:1,
+						nav:false,
+						loop:true,
+						margin:0,
+						dots: false,
+						autoplay:true,
+						autoplayTimeout:5000,
+						autoplayHoverPause:false,
+						responsive:{
+							320:{
+								items:1
 							}
 						}
 					});
@@ -573,6 +592,143 @@ var checkout = new Vue({
 		}
 	}
 })
+
+//member-center.html
+var member_center = new Vue({
+	el: "#member_center",
+	data: {
+		order_data: [
+			{
+				order_id: 120394753,
+				trans_type: "黑貓取貨",
+				order_date: "2017/02/27 01:04",
+				products: [
+					{
+						"name":"逆齡時空肌蘭萃菁華液",
+						"image": "images/products/product-demo.png",
+						"order_status": "運送中",
+						"capacity": 30,
+						"product_id": 1234567,
+						"item_price": 3000, 
+						"quantity": 1,
+						"order_type": "now_order"
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "缺貨",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 5000, 
+						"quantity": 1,
+						"order_type": "now_order"
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "運送中",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 2000, 
+						"quantity": 1,
+						"order_type": "pre_order",
+						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "已送達",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 4000, 
+						"quantity": 1,
+						"order_type": "pre_order",
+						"order_date": ["4/15 - 4/30", "5/1", "5/3", "5/16", "5/28", "5/31"]
+					}
+				]
+			},
+			{
+				order_id: 089487949,
+				trans_type: "7-11取貨",
+				order_date: "2017/02/28 11:04",
+				products: [
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "缺貨",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 5000, 
+						"quantity": 1,
+						"order_type": "now_order"
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "運送中",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 2000, 
+						"quantity": 1,
+						"order_type": "pre_order",
+						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "已送達",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 4000, 
+						"quantity": 1,
+						"order_type": "pre_order",
+						"order_date": ["4/15 - 4/30", "5/1", "5/3", "5/16", "5/28", "5/31"]
+					}
+				]
+			},
+			{
+				order_id: 140856253,
+				trans_type: "黑貓取貨",
+				order_date: "2017/02/27 01:04",
+				products: [
+					{
+						"name":"逆齡時空肌蘭萃菁華液",
+						"image": "images/products/product-demo.png",
+						"order_status": "運送中",
+						"capacity": 30,
+						"product_id": 1234567,
+						"item_price": 3000, 
+						"quantity": 1,
+						"order_type": "now_order"
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "缺貨",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 5000, 
+						"quantity": 1,
+						"order_type": "now_order"
+					},
+					{
+						"name":"逆齡時空肌蘭萃菁華皂",
+						"image": "images/products/product-demo.png",
+						"order_status": "運送中",
+						"capacity": 40,
+						"product_id": 7654321,
+						"item_price": 2000, 
+						"quantity": 1,
+						"order_type": "pre_order",
+						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
+					}
+				]
+			}
+		]
+	}
+})
+
+
 
 //播放影片
 $(".cover").click(function(){

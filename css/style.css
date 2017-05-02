@@ -19,13 +19,19 @@ body[home] section.content div.hero-img .item{
 	}
 }
 body[home] section.content div.hero-img div.title{
+	text-shadow: -1px 0 rgba(255,255,255,0.5), 0 1px rgba(255,255,255,0.5), 1px 0 rgba(255,255,255,0.5), 0 -1px rgba(255,255,255,0.5);
 	position: absolute;
 	color: #2f3031;
 	letter-spacing: 2px;
-	top: 57px;
-	left: 55px;
+	bottom: 65%;
+	left: 83px;
+	-webkit-transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	-o-transform: translateY(50%);
+	transform: translateY(50%);
 }
 body[home] section.content div.hero-img div.title h1{
+	text-align: left;
 	font-weight: normal;
 	font-size: 26px;
 }
@@ -41,11 +47,67 @@ body[home] section.content div.hero-img .owl-dots{
 	left: 11px;
 }
 
+@media screen and (min-width: 768px){
+	
+	body[home] section.content div.preorder .texts{
+		position: absolute;
+		top: 536px;
+		left: 50%;
+		width: 100%;
+		-webkit-transform: translate(-50%,0);
+		-ms-transform: translate(-50%,0);
+		-o-transform: translate(-50%,0);
+		transform: translate(-50%,0);
+	}
+	body[home] section.content div.preorder{
+		margin-bottom: 240px;
+	}
+}
+@media screen and (max-width: 767px){
+	body[home] section.content div.hero-img div.title{
+		bottom: 34px;
+		left: 20px;
+		-webkit-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+	}
+	body[home] section.content div.hero-img div.title h1{
+		font-size: 20px;
+		letter-spacing: 2px;
+		margin-bottom: 4px;
+		text-align: left;
+	}
+	body[home] section.content div.hero-img div.title h1+p{
+		font-size: 14px;
+		letter-spacing: 1px;
+		margin: 0;
+		text-align: left;
+	}
+	body[home] section.content div.hero-img div.title button{
+		display: none;
+	}
+	body[home] section.content div.preorder .texts{
+		text-align: left;
+		padding: 0 20px;
+	}
+	body[home] section.content div.preorder .texts h1{
+		padding: 45px 0 12px;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+	body[home] section.content div.preorder .texts h1+p{
+		margin-bottom: 30px;
+		font-size: 14px;
+		line-height: 26px;
+	}
+}
+
 
 body[home] section.content div.preorder{
-	z-index: 10
-		text-align: center;
-	background-color: #fafafa;
+	position: relative;
+	z-index: 10;
+	text-align: center;
 	padding-bottom: 120px;
 }
 body[home] section.content div.preorder h1{
@@ -73,6 +135,7 @@ bottom: 30px;
 body[home] section.content div.preorder .owl-carousel .owl-item.center .item ul{
 transform: scale(.75,.75);
 } */
+
 body[home] section.content div.preorder {
 	text-align: center;
 }
@@ -100,7 +163,6 @@ body[home] section.content div.preorder .owl-carousel .item ul li{
 	text-align: center;
 }
 body[home] section.content div.preorder .owl-carousel .item ul li .icon{
-/*	border: solid 1px;*/
 	max-width: 80px;
 	margin: 20px auto;
 	background: left center/auto 90% no-repeat;
@@ -119,6 +181,32 @@ body[home] section.content div.preorder .owl-carousel .item button{
 	font-size: 18px;
 	margin-top: 33px;
 	transition: 0.2s;
+}
+@media screen and (max-width: 767px){
+	body[home] section.content div.preorder{
+		padding-bottom: 30px;
+	}
+	body[home] section.content div.preorder .owl-carousel .owl-stage {
+		padding-bottom: 20px;
+	}
+	body[home] section.content div.preorder .owl-carousel .item{
+/*		margin: 0 25px;*/
+		padding: 28px 4px 30px;
+	}
+	body[home] section.content div.preorder .owl-carousel .item h2{
+		font-size: 18px;
+		margin-bottom: 37px;
+	}
+	body[home] section.content div.preorder .owl-carousel .item h5{
+		font-size: 13px;
+	}
+	body[home] section.content div.preorder .owl-carousel .item ul li .icon{
+		max-width: 80px;
+		margin: 10px auto;
+	}
+	body[home] section.content div.preorder .owl-carousel .item h4{
+		font-size: 14px;
+	}
 }
 @media screen and (min-width: 768px){
 	body[home] section.content div.preorder .owl-carousel{
@@ -166,7 +254,7 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 	opacity: 0;
 	transition: 0.2s;
 }
-<<<<<<< HEAD
+
 @media screen and (min-width: 768px){
 	body[home] section.content div.preorder .owl-carousel .item h2 {
 		margin-bottom: 62px;
@@ -176,57 +264,49 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 		font-size: 20px;
 		letter-spacing: 1.1px;
 	}
-=======
 
-body[home] section.content .preorder .owl-carousel .item h3{
-	font-size: 28px;
-	margin-bottom: 40px;
+	body[home] section.content .preorder .owl-carousel .item h3{
+		font-size: 28px;
+		margin-bottom: 40px;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li{
+		margin: 0 10px;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li .icon{
+		width: 80px;
+		height: 80px;
+		background-image: url('../images/illustration.svg');
+		background-repeat: no-repeat;
+		-webkit-background-size: 420px 80px;
+		background-size: 420px 80px;
+		background-position: -65px 0;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li:nth-child(2) .icon{
+		background-position: -130px 0;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li:nth-child(3) .icon{
+		background-position: -205px 0;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li:nth-child(4) .icon{
+		background-position: -275px 0;
+	}
+	body[home] section.content .preorder .owl-carousel .item ul li:nth-child(5) .icon{
+		background-position: -345px 0;
+	}
+	body[home] section.content .preorder .owl-carousel .item h5{
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	body[home] section.content .preorder .owl-carousel .item h4{
+		font-size: 20px;
+		margin-top: 15px;
+	}
 }
-body[home] section.content .preorder .owl-carousel .item ul li{
-	margin: 0 10px;
-}
-body[home] section.content .preorder .owl-carousel .item ul li .icon{
-	width: 80px;
-	height: 80px;
-	background-image: url('../images/illustration.svg');
-	background-repeat: no-repeat;
-	-webkit-background-size: 420px 80px;
-	background-size: 420px 80px;
-	background-position: -65px 0;
-}
-body[home] section.content .preorder .owl-carousel .item ul li:nth-child(2) .icon{
-	background-position: -130px 0;
-}
-body[home] section.content .preorder .owl-carousel .item ul li:nth-child(3) .icon{
-	background-position: -205px 0;
-}
-body[home] section.content .preorder .owl-carousel .item ul li:nth-child(4) .icon{
-	background-position: -275px 0;
-}
-body[home] section.content .preorder .owl-carousel .item ul li:nth-child(5) .icon{
-	background-position: -345px 0;
-}
-body[home] section.content .preorder .owl-carousel .item h5{
-	font-size: 20px;
-	margin-bottom: 15px;
-}
-body[home] section.content .preorder .owl-carousel .item h4{
-	font-size: 20px;
-	margin-top: 15px;
->>>>>>> origin/master
-}
-
 
 body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-next, body[home] section.content div.preorder .owl-carousel:hover .owl-nav .owl-prev{
 	opacity: .5;
 }
 body[home] section.content div.preorder .owl-nav .owl-next{
-<<<<<<< HEAD
-	right: 22%;
-}
-body[home] section.content div.preorder .owl-nav .owl-prev{
-	left: 22%;
-=======
 	right: 23%;
 }
 body[home] section.content div.preorder .owl-nav .owl-prev{
@@ -239,7 +319,6 @@ body[home] section.content div.preorder .owl-nav .owl-prev{
 	body[home] section.content div.preorder .owl-nav .owl-prev{
 		left: 16.5%;
 	}
->>>>>>> origin/master
 }
 body[home] section.content div.preorder .owl-nav .owl-prev.disabled, body[home] section.content div.preorder .owl-nav .owl-next.disabled{
 	display: none;
@@ -263,18 +342,54 @@ body[home] section.content .desc{
 	display: -o-flex;
 	display: flex;
 	flex-direction: column;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
 	justify-content: center;
 	-ms-align-items: flex-start;
 	align-items: flex-start;
 }
+@media screen and (max-width: 767px){
+	body[home] section.content .environment{
+		height: 220px;
+		margin-bottom: 280px;
+	}
+	body[home] section.content .environment .desc{
+		color: #eee;
+		position: relative;
+		top: 230px;
+		padding: 0 20px;
+	}
+	body[home] section.content .environment h2{
+		position: relative;
+		font-size: 20px;
+		color: #000;
+	}
+	body[home] section.content .environment p{
+		font-size: 14px;
+		line-height: 26px;
+		color: #000;
+	}
+	body[home] section.content .ingredient{
+		padding: 0;
+	}
+	body[home] section.content .ingredient .texts{
+		padding: 0 20px;
+	}
+	body[home] section.content .ingredient .texts a{
+		display: inline-block;
+		margin-top: 30px;
+	}
+}
 body[home] section.content .mid{
 	width: 100%;
+	padding: 0;
 	text-align: center;
 	flex-direction: column;
 	-ms-align-items: center;
 	align-items: center;
 }
 body[home] section.content .mid .texts{
+	position: relative;
 	max-width: 688px;
 	margin: 0 auto;
 	margin-bottom: 70px;
@@ -284,26 +399,31 @@ body[home] section.content .mid .photos{
 	width: 100%;
 }
 body[home] section.content .mid .photo{
+	position:relative;
 	display: inline-block;
-	display: -webkit-inline-flex;
-	display: -moz-inline-flex;
-	display: -ms-inline-flex;
-	display: -o-inline-flex;
-	display: inline-flex;
 	width: 40%;
-	height: 100%;
 	max-width: 280px;
-	height: 280px;
 	margin: 0 2.5%;
-	background: center center/ contain no-repeat;
+	background: center top/ contain no-repeat;
+}
+body[home] section.content .mid .photo:after{
+	content: " ";
+	position:relative;
+	display: inline-block;
+	height: 280px;
+}
+
+body[home] section.content .environment span, body[home] section.content .store span, body[home] section.content .ingredient span{
+	font-size: 18px;
+	display: none;
 }
 body[home] section.content .store span{
-	font-size: 18px;
+	display: inline-block;
 }
-body[home] section.content .store a{
+body[home] section.content .store a, body[home] section.content .ingredient a,body[home] section.content .environment a{
 	margin-top: 40px;
 }
-body[home] section.content .store span:before, body[home] section.content .arrow-left:before, body[home] section.content .arrow-right:after{
+body[home] section.content .store span:before, body[home] section.content .ingredient span:before,body[home] section.content .environment span:before, body[home] section.content .arrow-left:before, body[home] section.content .arrow-right:after{
 	content: "";
 	display: inline-block;
 	vertical-align:text-top;
@@ -348,6 +468,18 @@ body[home] section.content .environment .photo, body[home] section.content .stor
 		padding-left: 55px;
 	}
 }
+@media screen and (max-width: 767px){
+	body[home] section.content .environment .photo{
+		height: 200px;
+	}
+	body[home] section.content .store span, body[home] section.content .ingredient span, body[home] section.content .environment span{
+		font-size: 14px;
+		display: inline-block;
+	}
+	body[home] section.content .store span:before, body[home] section.content .ingredient span:before{
+		margin-right: 5px;
+	}
+}
 
 
 body[home] section.content div.environment h2, body[home] section.content div.ingredient h2, body[home] section.content div.store h2{
@@ -373,9 +505,65 @@ body[home] section.content div.ingredient{
 	-ms-align-items: flex-start;
 	align-items: flex-start;
 }
+@media screen and (max-width: 767px){
+	body[home] section.content div.ingredient {
+		height: 448px;
+	}
+	body[home] section.content .mid .texts {
+		position: absolute;
+		bottom: 65px;
+		left: 0;
+		text-align: left;
+		margin-bottom: 0;
+	}
+	body[home] section.content .mid .texts h2{
+		text-align: left;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+	body[home] section.content .mid .texts p{
+		text-align: left;
+		font-size: 14px;
+		letter-spacing: 2px;
+	}
+	body[home] section.content .mid .photos {
+		left: 0;
+		position: absolute;
+		top: 8%;
+	}
+	body[home] section.content .mid .photos .photo{
+		width: 30%;
+		max-width: 180px;
+		margin: 0 5%;
+	}
+}
 
-body[home] section.content div.store:last-of-type{
-	padding-bottom: 289px;
+@media screen and (min-width: 768px){
+	body[home] section.content div.store:last-of-type{
+		padding-bottom: 289px;
+	}
+}
+
+@media screen and (max-width: 767px){
+	body[home] section.content div.store .photo{
+		height: 220px;
+	}
+	body[home] section.content div.store .desc{
+		padding: 28px 20px;
+	}
+	body[home] section.content div.store .desc h2 {
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+	body[home] section.content div.store .desc p{
+		font-size: 14px;
+		line-height: 26px;
+		letter-spacing: 1px;
+		margin: 6px 0 17px;
+	}
+	body[home] section.content div.store:last-of-type{
+		padding-bottom: 50px;
+	}
 }
 
 /* 登入頁面 */
