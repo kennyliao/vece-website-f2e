@@ -593,138 +593,75 @@ var checkout = new Vue({
 	}
 })
 
+
+//member Vue component
+//shoppimg-bag.html 購物車
+Vue.component("orderlist",{
+	template: "#order_list",
+	props: ["products"],
+	computed: {
+		final_price: function(){
+			return (this.products.item_price * this.products.quantity);
+		}
+	},
+	data: {
+	},
+	methods: {
+	}
+});
+
 //member-center.html
 var member_center = new Vue({
 	el: "#member_center",
 	data: {
-		order_data: [
-			{
-				order_id: 120394753,
-				trans_type: "黑貓取貨",
-				order_date: "2017/02/27 01:04",
-				products: [
-					{
-						"name":"逆齡時空肌蘭萃菁華液",
-						"image": "images/products/product-demo.png",
-						"order_status": "運送中",
-						"capacity": 30,
-						"product_id": 1234567,
-						"item_price": 3000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "缺貨",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 5000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "運送中",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 2000, 
-						"quantity": 1,
-						"order_type": "pre_order",
-						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "已送達",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 4000, 
-						"quantity": 1,
-						"order_type": "pre_order",
-						"order_date": ["4/15 - 4/30", "5/1", "5/3", "5/16", "5/28", "5/31"]
-					}
-				]
-			},
-			{
-				order_id: 089487949,
-				trans_type: "7-11取貨",
-				order_date: "2017/02/28 11:04",
-				products: [
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "缺貨",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 5000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "運送中",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 2000, 
-						"quantity": 1,
-						"order_type": "pre_order",
-						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "已送達",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 4000, 
-						"quantity": 1,
-						"order_type": "pre_order",
-						"order_date": ["4/15 - 4/30", "5/1", "5/3", "5/16", "5/28", "5/31"]
-					}
-				]
-			},
-			{
-				order_id: 140856253,
-				trans_type: "黑貓取貨",
-				order_date: "2017/02/27 01:04",
-				products: [
-					{
-						"name":"逆齡時空肌蘭萃菁華液",
-						"image": "images/products/product-demo.png",
-						"order_status": "運送中",
-						"capacity": 30,
-						"product_id": 1234567,
-						"item_price": 3000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "缺貨",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 5000, 
-						"quantity": 1,
-						"order_type": "now_order"
-					},
-					{
-						"name":"逆齡時空肌蘭萃菁華皂",
-						"image": "images/products/product-demo.png",
-						"order_status": "運送中",
-						"capacity": 40,
-						"product_id": 7654321,
-						"item_price": 2000, 
-						"quantity": 1,
-						"order_type": "pre_order",
-						"order_date": ["4/1 - 4/14", "4/15", "4/17", "4/26", "5/1", "5/6"]
-					}
-				]
+		search_data: "",
+		history_search_data: "",
+		history_data: "",
+		order_data: ""
+	},
+	created: function(){
+		this.fetchData();
+	},
+	computed:{
+		filter_data: function(){
+			var _this = this;
+			if(this.search_data == "" || Number(this.search_data) == NaN){
+				return this.order_data;
+			}else{
+				return this.order_data.filter(function(obj){
+					if(obj["order_id"].toString().indexOf(_this.search_data) == 0){
+						return true;
+					}else{
+						return false;
+					};
+				})
 			}
-		]
+		},
+		history_filter_data: function(){
+			var _this = this;
+			if(this.history_search_data == "" || Number(this.history_search_data) == NaN){
+				return this.history_data;
+			}else{
+				return this.history_data.filter(function(obj){
+					if(obj["order_id"].toString().indexOf(_this.history_search_data) == 0){
+						return true;
+					}else{
+						return false;
+					};
+				})
+			}
+		}
+	},
+	methods:{
+		fetchData: function(){
+			var _this = this;
+			$.get("json/history_data.json", function(data){
+				_this.history_data = data;
+			});
+			$.get("json/order_data.json", function(data){
+				_this.order_data = data;
+			});
+		}
 	}
 })
 
