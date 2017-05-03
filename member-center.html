@@ -130,7 +130,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 									</div>
 								</div>
 								<ul>
-								
+									<li class="no_data" v-if="filter_data == ''">查無訂單</li>
 									<li v-for="(o,id) in filter_data" v-if="o.order_type == 'now_order'">
 										<div class="order-info">
 											<h3>訂單編號：<span>{{o.order_id}}</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>
@@ -193,6 +193,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 									</div>
 								</div>
 								<ul>
+									<li class="no_data" v-if="history_filter_data == ''">查無訂單</li>
 									<li v-for="(o,id) in history_filter_data" v-if="o.order_type == 'now_order'">
 										<div class="order-info">
 											<h3>訂單編號：<span>{{o.order_id}}</span><i class="fa fa-angle-down fa-lg close-items" aria-hidden="true"></i></h3>

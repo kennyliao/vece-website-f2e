@@ -1,44 +1,31 @@
-
-//	$(".owl-hero").owlCarousel({
-//	    center: true,
-//	    items:1,
-//	    nav:false,
-//	    loop:true,
-//	    margin:0,
-//			dots: false,
-//	    autoplay:true,
-//	    autoplayTimeout:5000,
-//	    autoplayHoverPause:false,
-//	    responsive:{
-//	        320:{
-//	            items:1
-//	        }
-//	    }
-//	});
-
-//	$(".owl-preorder").owlCarousel({
-//	    center: true,
-//	    items:3,
-//	    nav:true,
-//	    loop:false,
-//			dots: false,
-//	    margin:0,
-//	    responsive:{
-//					0:{
-//	            items: 1
-//	        },
-//	        767:{
-//	            items: 1.8
-//	        }
-//	    }
-//	});
+//home light_box
+	var light_box = $("#light_box");
+	light_box.lightbox_me({
+		apprearEffect: "fadeIn",
+		disappearEffect: "fadeOut",
+		overlaySpeed: 300,
+		overlayDisappearSpeed: 300,
+		lightboxSpeed: 300,
+		lightboxDisappearSpeed: 300,
+		closeSelector: ".light_box_close",
+		closeClick: false,
+		centered: false,
+		zIndex: 9999,
+		overlayCSS: {
+			background: 'black', 
+			opacity: .6
+		}
+	});
+	light_box.children("span").click(function(){
+		light_box.fadeOut(300);
+		$(".lb_overlay").fadeOut(300);
+		setTimeout(function(){
+			light_box.trigger("close");
+		},300);
+	})
 
 
-	
-
-
-
-	//滾動fix選單
+//滾動fix選單
 	$(document).bind('scroll', function(){
     	var scrollTop=$(window).scrollTop();
     	if(scrollTop>20){
