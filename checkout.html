@@ -42,7 +42,7 @@
 				<h3>您購買的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
 				<div class="points-using">
 					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" id="use_points" v-on:click="discount(1)">
+					<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<now_price&&bag_data.discount_for!=1?true:false" id="use_points" v-on:click="discount(1)">
 					<label for="use_points">使用紅利折抵</label>
 				</div>
 				<ul class="titles">
@@ -57,7 +57,7 @@
 				<h3>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
 				<div class="points-using">
 					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" id="use_points_preorder" v-on:click="discount(2)">
+					<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<pre_price&&bag_data.discount_for!=2?true:false" id="use_points_preorder" v-on:click="discount(2)">
 					<label for="use_points_preorder">使用紅利折抵</label>
 				</div>
 				<ul class="titles">

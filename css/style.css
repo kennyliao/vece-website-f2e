@@ -1743,6 +1743,14 @@ body[checkout] section.content div.right-content div.points-using input[type="ch
 		margin-left: 0;
 	}
 }
+body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:disabled+label{
+	background-color: #888;
+	color: #fff;
+	border: 1pt solid #888;
+}
+body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:disabled+label:before{
+	content: "無法";
+}
 body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:checked+label{
 	background-color: #ab8edb;
 	color: #fff;
