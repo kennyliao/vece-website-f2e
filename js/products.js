@@ -476,11 +476,6 @@ var checkout = new Vue({
 	created: function () {
 		this.fetchData();
 	},
-	watch: {
-		sub_total_price: function(){
-			this.disabled_check();
-		}
-	},
 	computed: {
 		//合成地址
 		final_address: function(){
@@ -605,14 +600,6 @@ var checkout = new Vue({
 	},
 	//方法
 	methods: {
-		//檢查checkbox
-		disabled_check: function(){
-			console.log(this.now_price + "+" + this.pre_price + "=" + this.sub_total_price);
-			if(this.max_bonus<this.sub_total_price){
-				console.log("small");
-//				$(".points-using input[type='checkbox']").attr("disabled","true");
-			};
-		},
 		//從外部載入資訊
 		fetchData: function(){
 			var _this = this;
