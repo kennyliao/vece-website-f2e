@@ -1,7 +1,36 @@
+<<<<<<< HEAD
 	var windowHeight = $(window).height();
 	var windowWidth = $(window).width();
+=======
+//home light_box
+	var light_box = $("#light_box");
+	light_box.lightbox_me({
+		apprearEffect: "fadeIn",
+		disappearEffect: "fadeOut",
+		overlaySpeed: 300,
+		overlayDisappearSpeed: 300,
+		lightboxSpeed: 300,
+		lightboxDisappearSpeed: 300,
+		closeSelector: ".light_box_close",
+		closeClick: false,
+		centered: false,
+		zIndex: 9999,
+		overlayCSS: {
+			background: 'black', 
+			opacity: .6
+		}
+	});
+	light_box.children("span").click(function(){
+		light_box.fadeOut(300);
+		$(".lb_overlay").fadeOut(300);
+		setTimeout(function(){
+			light_box.trigger("close");
+		},300);
+	})
 
-	//滾動fix選單
+>>>>>>> ad12ea429aa4becef977f61468031d7bf5b22d86
+
+//滾動fix選單
 	$(document).bind('scroll', function(){
     	var scrollTop=$(window).scrollTop();
     	if(scrollTop>20){
