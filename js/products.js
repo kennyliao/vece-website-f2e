@@ -534,12 +534,13 @@ var checkout = new Vue({
 		},
 		//小計
 		sub_total_price: function(){
-			if(this.bag_data.products)
+			if(this.bag_data.products){
 				return this.bag_data.products.reduce(function(sum, product){
 					return sum + parseInt(product.item_price)* parseInt(product.quantity);
 				},0)
-				else
-					return 0;
+			}else{
+				return 0;
+			}
 		},
 		//運費
 		trans_price: function(){
@@ -550,13 +551,25 @@ var checkout = new Vue({
 			if(this.bag_data.discount_for){
 				var max_bonus_money = Math.floor(this.user_data.bonus_point/10);
 				if(this.discount_for_price>max_bonus_money)
-					return max_bonus_money;
+					return 0;
 				else
 					return this.discount_for_price;
 			}else{
 				return 0;
 			}
 		},
+//		//未來折扣量
+//		future_discount_price: function(){
+//			if(this.bag_data.discount_for){
+//				var max_bonus_money = Math.floor(this.user_data.bonus_point/10);
+//				if(this.discount_for_price>max_bonus_money)
+//					return max_bonus_money;
+//				else
+//					return this.discount_for_price;
+//			}else{
+//				return 0;
+//			}
+//		},
 		//剩餘紅利點數
 		left_bonus_point: function(){
 			return this.user_data.bonus_point - this.discount_price*10;
@@ -578,6 +591,22 @@ var checkout = new Vue({
 		},
 		//判斷紅利折低項目
 		discount: function(num){
+			
+			
+			//0:無項目，1:購買項目，2:訂製項目，3:全部項目
+			if(this.bag_data.discount_for == num){
+				this.bag_data.discount_for = 0;
+			}else if(this.bag_data.discount_for == 0){
+				this.bag_data.discount_for = num;
+			}else if(this.bag_data.discount_for == 3){
+				this.bag_data.discount_for -= num;
+			}else{
+				this.bag_data.discount_for += num;
+			}
+			console.log(this.bag_data.discount_for);
+		},
+		//判斷紅利折低項目
+		future_discount: function(num){
 			//0:無項目，1:購買項目，2:訂製項目，3:全部項目
 			if(this.bag_data.discount_for == num){
 				this.bag_data.discount_for = 0;
