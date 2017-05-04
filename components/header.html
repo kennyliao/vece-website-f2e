@@ -1,6 +1,6 @@
 <div class="logo"><a href="home.html"><img src="images/lanvece.svg" alt="lanvece"></a></div>
 <ul class="menu">
-	<li><a href="products.html">產品</a>
+	<li class="product-menu-btn">產品
 		<ul class="product-menu">
 			<li>
 				<a href="products.html#luxe-rejuvenation">
@@ -40,7 +40,7 @@
 		</ul>
 	</li>
 	<li><a href="pre-order.html">訂製</a></li>
-	<li><a href="aboutus.html">關於我們</a>
+	<li class="aboutus-menu-btn">關於我們
 		<ul class="aboutus-menu">
 			<li>
 				<a href="aboutus.html#ingredients">
@@ -101,13 +101,31 @@
 	</div>
 	<button class="search-close" onclick="searchAreaToggle('0');">close</button>
 </div>
-<!-- <script>
-	function searchAreaToggle(e){
-		if(e=='1'){
-			$('.search-area').addClass('active');
-			$('.search-area').find('input:first').focus();
-		}else if(e=='0'){
-			$('.search-area').removeClass('active');
+<script>
+	$('.aboutus-menu-btn').click(function(){
+		var windowHeight = $(window).height();
+		var submenuHeight = windowHeight - 114;
+		if(windowWidth < 768){
+			$('.aboutus-menu').height(submenuHeight).toggleClass('active');
+			$('.product-menu').removeClass('active');
+			// $('header').toggleClass('submenu-active');
+			$('header').addClass('scroll');
 		}
-	}
-</script> -->
+	});
+	$('.product-menu-btn').click(function(){
+		var windowHeight = $(window).height();
+		var submenuHeight = windowHeight - 114;
+		if(windowWidth < 768){
+			$('.product-menu').height(submenuHeight).toggleClass('active');
+			$('.aboutus-menu').removeClass('active');
+			// $('header').toggleClass('submenu-active');
+			$('header').addClass('scroll');
+		}
+	});
+	$(window).resize(function(){
+		var submenuHeight = windowHeight - 114;
+		if(windowWidth < 768){
+			$('.product-menu').height(submenuHeight);
+		}
+	});
+</script>
