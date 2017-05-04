@@ -566,7 +566,7 @@ body[home] section.content div.ingredient{
 	}
 }
 /* light box */
-#light_box{
+body[home] #light_box{
 	z-index: 9999;
 	display: none;
 	position: relative;
@@ -579,22 +579,141 @@ body[home] section.content div.ingredient{
 	text-align: center;
 	background-color: #eee;
 	border-radius: 5px;
+	
 }
-#light_box .img{
-	border: solid 1px black;
+body[home] #light_box img{
 	position: relative;
 	width: 100%;
-	height: 90vh;
 	background: center center / contain no-repeat;
 }
-#light_box span{
+body[home] #light_box img:first-of-type{
+	display: block;
+}
+body[home] #light_box img:last-of-type{
+	display: none;
+}
+body[home] #light_box .message{
+	display: none;
 	position: absolute;
-	right: 15px;
+	left: 15px;
 	top: 6px;
-	color: #888;
-	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 50%;
+	line-height: 28px;
+	color: #999;
+}
+body[home] #light_box .content{
+	position: absolute;
+	color: #fff;
+	font-size: 42px;
+	bottom: 35%;
+	right: 0;
+	width: 38%;
+	letter-spacing: 5px;
+	-webkit-transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	-o-transform: translateY(50%);
+	transform: translateY(50%);
+	text-shadow: 0px 0px 6px rgba(0,0,0,0.6);
 }
 
+body[home] #light_box .content h1 {
+	font-family: inherit;
+	font-size: 42px;
+	font-weight: normal;
+	letter-spacing: 5px;
+	line-height: 2;
+	color: #fff;
+}
+body[home] #light_box .light_box_close{
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	right: 15px;
+	top: 9px;
+	color: #eee;
+	background-color: transparent;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+body[home] #light_box .light_box_close:after{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(45deg);
+	transition: 0.3s;
+}
+body[home] #light_box .light_box_close:before{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(-45deg);
+	transition: 0.3s;
+}
+@media screen and (min-width: 768px){
+	
+	body[home] #light_box .light_box_close:hover{
+	color: #fff;
+}
+	body[home] #light_box .light_box_close:hover:after, body[home] #light_box .light_box_close:hover:before{
+		background-color: #fff;
+	}
+}
+@media screen and (max-width: 767px){
+	body[home] #light_box{
+		width: initial;
+		max-width: 90%;
+		height: 80%;
+		padding: 5px;
+		border-radius: 2px;
+	}
+	body[home] #light_box .message{
+		top: 6px;
+		left: 3px;
+		font-size: 18px;
+		color: #fff;
+	}
+	body[home] #light_box img{
+		height: 100%;
+		width: auto;
+		background-color: #000;
+	}
+	body[home] #light_box img:first-of-type{
+		display: none;
+	}
+	body[home] #light_box img:last-of-type{
+		display: block;
+	}
+	body[home] #light_box .content{
+		bottom: 20%;
+		width: 100%;
+		font-size: 30px;
+	}
+	body[home] #light_box .content h1{
+		font-size: 30px;
+		line-height: 1.5;
+	}
+	body[home] #light_box .light_box_close{
+		top: 8px;
+		right: 6px;
+		color: rgba(0,0,0,0);
+		
+	}
+	body[home] #light_box .light_box_close:after, body[home] #light_box .light_box_close:before{
+		background-color: #fff;
+	}
+}
 
 /* 登入頁面 */
 body[login] section.content{
@@ -1465,6 +1584,11 @@ body[checkout] section.content div.right-content{
 	margin-top: -90px;
 	z-index: 10;
 }
+@media screen and (min-width: 992px) and (max-width: 1099px){
+	body[checkout] section.content div.right-content{
+		padding: 33px 20px 100px 20px;
+	}
+}
 body[checkout] section.content div.left-content{
 	padding: 33px 45px 100px 45px;
 	width: 50%;
@@ -1618,6 +1742,14 @@ body[checkout] section.content div.right-content div.points-using input[type="ch
 		font-size: 13px;
 		margin-left: 0;
 	}
+}
+body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:disabled+label{
+	background-color: #888;
+	color: #fff;
+	border: 1pt solid #888;
+}
+body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:disabled+label:before{
+	content: "無法";
 }
 body[checkout] section.content div.right-content div.points-using input[type="checkbox"]:checked+label{
 	background-color: #ab8edb;
