@@ -450,6 +450,9 @@ header ul.menu li ul.aboutus-menu li{
 		padding: 20px 0;
 		position: relative;
 	}
+	header ul.menu li ul.aboutus-menu li:last-child{
+		margin-bottom: 40px;
+	}
 }
 header ul.menu li ul.aboutus-menu li div img{
 	width: 80%;

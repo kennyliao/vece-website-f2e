@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 	var windowHeight = $(window).height();
 	var windowWidth = $(window).width();
-=======
+
 //home light_box
 	var light_box = $("#light_box");
 	light_box.lightbox_me({
@@ -27,8 +26,6 @@
 			light_box.trigger("close");
 		},300);
 	})
-
->>>>>>> ad12ea429aa4becef977f61468031d7bf5b22d86
 
 //滾動fix選單
 	$(document).bind('scroll', function(){

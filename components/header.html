@@ -107,7 +107,8 @@
 		if(windowWidth < 768){
 			$('.aboutus-menu').height(submenuHeight).toggleClass('active');
 			$('.product-menu').removeClass('active');
-			$('header').toggleClass('submenu-active');
+			// $('header').toggleClass('submenu-active');
+			$('header').addClass('scroll');
 		}
 	});
 	$('.product-menu-btn').click(function(){
@@ -116,7 +117,14 @@
 		if(windowWidth < 768){
 			$('.product-menu').height(submenuHeight).toggleClass('active');
 			$('.aboutus-menu').removeClass('active');
-			$('header').toggleClass('submenu-active');
+			// $('header').toggleClass('submenu-active');
+			$('header').addClass('scroll');
+		}
+	});
+	$(window).resize(function(){
+		var submenuHeight = windowHeight - 114;
+		if(windowWidth < 768){
+			$('.product-menu').height(submenuHeight);
 		}
 	});
 </script>
