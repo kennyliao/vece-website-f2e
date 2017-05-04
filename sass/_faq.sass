@@ -1,0 +1,36 @@
+@import compass/css3
+@import mixin
+
+body[faq] section.content
+	margin-top: 90px
+	.search_area
+		padding: 86px 170px 101px
+		h1
+			margin-bottom: 24px
+			text-align: left
+			color: $color_black
+			font-size: 38px
+		.faq_search
+			width: 540px
+			height: 64px
+			border: solid 1px $color_border
+			padding: 10px 15px
+			font-size: 20px
+	.qa_section
+		padding: 0 70px
+		ul
+			li.qa_block
+				border-bottom: solid 1px $color_border
+				padding: 44px 100px
+				&:first-child
+					border-top: solid 1px $color_border
+				h2
+					text-align: left
+					font-size: 38px
+					margin-bottom: 21px
+				ul li
+					display: inline-block
+					width: 50%
+					margin: 8px 0
+					font-size: 20px
+			

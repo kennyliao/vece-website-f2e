@@ -1209,7 +1209,6 @@ body[member-center] section.content #order-menu ul.preorder-time {
   -ms-align-items: center;
   align-items: center;
   position: relative;
-  /* padding: 0 30px; */
 }
 body[member-center] section.content #order-menu ul.preorder-time li {
   width: auto;
@@ -1345,6 +1344,47 @@ body[member-center] section.content #order-menu ul.preorder-time li.active h5, b
     height: 55px;
   }
 }
+body[faq] section.content {
+  margin-top: 90px;
+}
+body[faq] section.content .search_area {
+  padding: 86px 170px 101px;
+}
+body[faq] section.content .search_area h1 {
+  margin-bottom: 24px;
+  text-align: left;
+  color: #4e5156;
+  font-size: 38px;
+}
+body[faq] section.content .search_area .faq_search {
+  width: 540px;
+  height: 64px;
+  border: solid 1px #9fa3a8;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+body[faq] section.content .qa_section {
+  padding: 0 70px;
+}
+body[faq] section.content .qa_section ul li.qa_block {
+  border-bottom: solid 1px #9fa3a8;
+  padding: 44px 100px;
+}
+body[faq] section.content .qa_section ul li.qa_block:first-child {
+  border-top: solid 1px #9fa3a8;
+}
+body[faq] section.content .qa_section ul li.qa_block h2 {
+  text-align: left;
+  font-size: 38px;
+  margin-bottom: 21px;
+}
+body[faq] section.content .qa_section ul li.qa_block ul li {
+  display: inline-block;
+  width: 50%;
+  margin: 8px 0;
+  font-size: 20px;
+}
+
 /*購物頁 */
 body[products-app] section.content, body[pre-order-app] section.content {
   letter-spacing: 1.9px;
