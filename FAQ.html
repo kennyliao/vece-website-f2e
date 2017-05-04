@@ -34,21 +34,25 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	<body faq>
 		<header></header>
 		<section id="faq" class="content">
-			<div class="container-fiuld">
+			<div class="container-fiuld qa_section">
 				<div class="search_area">
 					<h1>常見問題</h1>
-					<input class="faq_search" type="text" placeholder="search">
+					<p v-for="n in filter_data">
+					</p>
+					<input class="faq_search" v-model="search_data" type="text" placeholder="Your Question..">
 				</div>
 			</div>
 			<div class="container-fiuld qa_section">
 				<ul class="qa_wrap">
-					<li class="qa_block" v-for="d in question_data">
-						<h2>關於{{d.type}}</h2>
+					<li class="qa_block" v-for="d in filter_data" v-if="d.questions.length > 0">
+						<h2>{{d.type}}相關</h2>
 						<ul>
-							<li v-for="q in d.questions">
-								{{q.question.slice(0,24)}}
+							<li v-for="(q,id) in d.questions">
+								<faquestion :question_data="q" :id="id">
+								</faquestion>
 							</li>
 						</ul>
+						<a class="ask" href="faq-ask-question.html"><span>無法解決您的問題？請發問</span></a>
 					</li>
 				</ul>
 			</div>
@@ -57,6 +61,14 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 
 		<footer></footer>
 
+		<template id="faquestion">
+			<div class="faquestion">
+				<h3 v-on:click="show_ans($event)">{{id+1}}. {{question_limit}}</h3>
+				<div class="faqanswer">
+					{{question_data.content}}
+				</div>
+			</div>
+		</template>
 
 		<script>
 $.get("components/header.html", function(data, status){

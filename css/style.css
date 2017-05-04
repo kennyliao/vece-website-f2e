@@ -1,3 +1,14 @@
+body{
+	/* Allows content to fill the viewport and go beyond the bottom */
+height: 100%;
+ 
+/* Allows you to scroll below the viewport; default value is visible */
+overflow-y: scroll;
+ 
+/* To smooth any scrolling behavior */
+-webkit-overflow-scrolling: touch;
+}
+
 body[home] section.content div.hero-img{
 	width: 100%;
 	height: 789px;
@@ -163,9 +174,11 @@ body[home] section.content div.preorder .owl-carousel .item ul li{
 	text-align: center;
 }
 body[home] section.content div.preorder .owl-carousel .item ul li .icon{
+	position: relative;
 	max-width: 80px;
 	margin: 20px auto;
 	background: left center/auto 90% no-repeat;
+	display: -ms-none;
 }
 body[home] section.content div.preorder .owl-carousel .item ul li .icon:before{
 	content: "";

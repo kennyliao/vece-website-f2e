@@ -1346,18 +1346,22 @@ body[member-center] section.content #order-menu ul.preorder-time li.active h5, b
 }
 body[faq] section.content {
   margin-top: 90px;
+  margin-bottom: 109px;
 }
-body[faq] section.content .search_area {
-  padding: 86px 170px 101px;
+body[faq] section.content .qa_section .search_area {
+  padding: 86px 40px 101px;
+  max-width: 1280px;
+  margin: 0px auto;
 }
-body[faq] section.content .search_area h1 {
+body[faq] section.content .qa_section .search_area h1 {
   margin-bottom: 24px;
   text-align: left;
   color: #4e5156;
   font-size: 38px;
 }
-body[faq] section.content .search_area .faq_search {
-  width: 540px;
+body[faq] section.content .qa_section .search_area input.faq_search {
+  width: 100%;
+  max-width: 540px;
   height: 64px;
   border: solid 1px #9fa3a8;
   padding: 10px 15px;
@@ -1366,25 +1370,149 @@ body[faq] section.content .search_area .faq_search {
 body[faq] section.content .qa_section {
   padding: 0 70px;
 }
-body[faq] section.content .qa_section ul li.qa_block {
+body[faq] section.content .qa_section > ul li.qa_block {
   border-bottom: solid 1px #9fa3a8;
-  padding: 44px 100px;
+  padding: 44px 50px;
+  max-width: 1280px;
+  margin: 0px auto;
+  font-size: 0;
 }
-body[faq] section.content .qa_section ul li.qa_block:first-child {
+body[faq] section.content .qa_section > ul li.qa_block:first-child {
   border-top: solid 1px #9fa3a8;
 }
-body[faq] section.content .qa_section ul li.qa_block h2 {
+body[faq] section.content .qa_section > ul li.qa_block h2 {
   text-align: left;
-  font-size: 38px;
+  font-size: 28px;
   margin-bottom: 21px;
 }
-body[faq] section.content .qa_section ul li.qa_block ul li {
+body[faq] section.content .qa_section > ul li.qa_block .ask {
+  position: relative;
   display: inline-block;
-  width: 50%;
+  font-size: 18px;
+  line-height: 42px;
+  margin-top: 61px;
+  cursor: pointer;
+}
+body[faq] section.content .qa_section > ul li.qa_block .ask span {
+  display: inline-block;
+}
+body[faq] section.content .qa_section > ul li.qa_block .ask span:after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: text-top;
+  width: 23px;
+  height: 22px;
+  background: url("../images/arrow.svg") center center/contain no-repeat;
+}
+body[faq] section.content .qa_section > ul li.qa_block > ul {
+  column-count: 2;
+  column-gap: 30px;
+  -moz-column-count: 2;
+  -moz-column-gap: 30px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 30px;
+  width: 100%;
+  padding: 0 10px;
+}
+body[faq] section.content .qa_section > ul li.qa_block > ul li {
+  display: inline-block;
+  width: 100%;
   margin: 8px 0;
   font-size: 20px;
 }
+body[faq] section.content .qa_section > ul li.qa_block .faquestion h3 {
+  display: inline-block;
+  font-family: "PingFangTC";
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #4e5156;
+}
+body[faq] section.content .qa_section > ul li.qa_block .faquestion h3.active {
+  font-weight: bold;
+  color: #2f3031;
+}
+body[faq] section.content .qa_section > ul li.qa_block .faquestion span {
+  display: inline-block;
+}
+body[faq] section.content .qa_section > ul li.qa_block .faquestion .faqanswer {
+  padding: 20px;
+  font-size: 18px;
+  display: none;
+}
 
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  body[faq] section.content .qa_section {
+    padding: 0 30px;
+  }
+  body[faq] section.content .qa_section .search_area {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body[faq] section.content {
+    margin-top: 55px;
+    margin-bottom: 37px;
+  }
+  body[faq] section.content .qa_section {
+    padding: 0 20px;
+  }
+  body[faq] section.content .qa_section .search_area {
+    width: 100%;
+    text-align: center;
+    padding: 45px 0 0;
+  }
+  body[faq] section.content .qa_section .search_area h1 {
+    display: none;
+  }
+  body[faq] section.content .qa_section .search_area input.faq_search {
+    display: inline-block;
+    height: 44px;
+    max-width: 100%;
+    margin: 0px auto;
+    background-color: #efefef;
+    font-size: 17px;
+    border: none;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block {
+    padding: 50px 0 40px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block:first-child {
+    border-top: none;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block:last-child {
+    border-bottom: none;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block h2 {
+    font-size: 23px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block .ask {
+    font-size: 14px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block .ask span:after {
+    height: 18px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block > ul {
+    width: 100%;
+    padding: 0;
+    font-size: 16px;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block .faquestion h3 {
+    font-size: 16px;
+    line-height: 23px;
+    margin: 3px 0;
+  }
+}
 /*購物頁 */
 body[products-app] section.content, body[pre-order-app] section.content {
   letter-spacing: 1.9px;
