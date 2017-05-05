@@ -1437,13 +1437,14 @@ body[faq] section.content .qa_section > ul li.qa_block .faquestion h3 {
   color: #4e5156;
 }
 body[faq] section.content .qa_section > ul li.qa_block .faquestion h3.active {
-  font-weight: blod;
+  font-weight: 700;
   color: #2f3031;
 }
 body[faq] section.content .qa_section > ul li.qa_block .faquestion span {
   display: inline-block;
 }
 body[faq] section.content .qa_section > ul li.qa_block .faquestion .faqanswer {
+  position: relative;
   padding: 20px;
   font-size: 18px;
   display: none;
@@ -1517,6 +1518,10 @@ body[faq] section.content .qa_section > ul li.qa_block .faquestion .faqanswer {
     font-size: 16px;
     line-height: 23px;
     margin: 3px 0;
+  }
+  body[faq] section.content .qa_section > ul li.qa_block .faquestion .faqanswer {
+    font-size: 16px;
+    line-height: 1.8;
   }
 }
 body[faq-ask-question] section.content {
