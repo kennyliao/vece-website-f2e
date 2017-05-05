@@ -15,6 +15,8 @@ body[faq] section.content
 				color: $color_black
 				font-size: 38px
 			input.faq_search
+				-webkit-appearance: none
+				border-radius: 0
 				width: 100%
 				max-width: 540px
 				height: 64px
@@ -167,9 +169,11 @@ body[faq-ask-question] section.content
 			margin: 0px auto
 			padding-top: 72px
 			text-align: center
-			input:-webkit-autofill
-				-webkit-box-shadow: 0 0 0px 1000px white inset
 			input[type="text"],input[type="mail"],label
+				input:-webkit-autofill
+				-webkit-box-shadow: 0 0 0px 1000px white inset
+				-webkit-appearance: none
+				border-radius: 0
 				display: block
 				width: 100%
 				font-size: 20px
@@ -183,6 +187,8 @@ body[faq-ask-question] section.content
 				color: #bfc1c5
 				text-align: left
 			textarea
+				-webkit-appearance: none
+				border-radius: 0
 				border: solid 1px #bfc1c5
 				resize: none
 				width: 100%
@@ -214,11 +220,13 @@ body[faq-ask-question] section.content
 				padding-top: 40px
 				input[type="text"],input[type="mail"],label
 					font-size: 15px
-					padding: 4px
+					padding: 4px 0
 					margin-bottom: 29px
 				label
-					margin-bottom: 0
+					margin-bottom: 4px
 				textarea
+					-webkit-appearance: none
+					border-radius: 0
 					font-size: 15px
 					height: 232px
 					margin-bottom: 55px

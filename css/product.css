@@ -8,6 +8,10 @@
   z-index: 10;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 body[products] header {
   background: none;
 }
@@ -1360,6 +1364,8 @@ body[faq] section.content .qa_section .search_area h1 {
   font-size: 38px;
 }
 body[faq] section.content .qa_section .search_area input.faq_search {
+  -webkit-appearance: none;
+  border-radius: 0;
   width: 100%;
   max-width: 540px;
   height: 64px;
@@ -1541,10 +1547,10 @@ body[faq-ask-question] section.content .container-fiuld #faq-form {
   padding-top: 72px;
   text-align: center;
 }
-body[faq-ask-question] section.content .container-fiuld #faq-form input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
 body[faq-ask-question] section.content .container-fiuld #faq-form input[type="text"], body[faq-ask-question] section.content .container-fiuld #faq-form input[type="mail"], body[faq-ask-question] section.content .container-fiuld #faq-form label {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-appearance: none;
+  border-radius: 0;
   display: block;
   width: 100%;
   font-size: 20px;
@@ -1560,6 +1566,8 @@ body[faq-ask-question] section.content .container-fiuld #faq-form label {
   text-align: left;
 }
 body[faq-ask-question] section.content .container-fiuld #faq-form textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
   border: solid 1px #bfc1c5;
   resize: none;
   width: 100%;
@@ -1599,13 +1607,15 @@ body[faq-ask-question] section.content .container-fiuld #faq-form input[type="su
   }
   body[faq-ask-question] section.content .container-fiuld #faq-form input[type="text"], body[faq-ask-question] section.content .container-fiuld #faq-form input[type="mail"], body[faq-ask-question] section.content .container-fiuld #faq-form label {
     font-size: 15px;
-    padding: 4px;
+    padding: 4px 0;
     margin-bottom: 29px;
   }
   body[faq-ask-question] section.content .container-fiuld #faq-form label {
-    margin-bottom: 0;
+    margin-bottom: 4px;
   }
   body[faq-ask-question] section.content .container-fiuld #faq-form textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
     font-size: 15px;
     height: 232px;
     margin-bottom: 55px;
@@ -1617,6 +1627,177 @@ body[faq-ask-question] section.content .container-fiuld #faq-form input[type="su
     -moz-border-radius: 1px;
     -webkit-border-radius: 1px;
     border-radius: 1px;
+  }
+}
+body[search-result] section.content {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+body[search-result] section.content .container-fiuld {
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 50px 40px;
+}
+body[search-result] section.content .container-fiuld:first-child {
+  padding-top: 90px;
+  padding-bottom: 10px;
+}
+body[search-result] section.content .container-fiuld h1 {
+  margin-bottom: 60px;
+  font-size: 30px;
+}
+body[search-result] section.content .container-fiuld h1 span {
+  color: #ab8eda;
+  font-size: 34px;
+  margin-left: 10px;
+}
+body[search-result] section.content .container-fiuld .status {
+  position: relative;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px 5px;
+  border-bottom: solid 1px #9fa3a8;
+}
+body[search-result] section.content .container-fiuld .status span {
+  color: #ab8eda;
+  font-size: 22px;
+  margin: 0 5px;
+}
+body[search-result] section.content .container-fiuld .status #search_block {
+  width: 250px;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  float: right;
+  border: solid 1px #efefef;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+body[search-result] section.content .container-fiuld .status #search_block .search {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  background-image: url("../images/sidemenu _icons.svg");
+  background-size: 220px 22px;
+  background-repeat: no-repeat;
+  background-position: -12px -1px;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+body[search-result] section.content .container-fiuld .status #search_block .search:hover {
+  opacity: 1;
+}
+body[search-result] section.content .container-fiuld .item {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+body[search-result] section.content .container-fiuld .item .img_box {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+body[search-result] section.content .container-fiuld .item .img_box img {
+  width: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+body[search-result] section.content .container-fiuld .item .conetent_box {
+  display: block;
+}
+body[search-result] section.content .container-fiuld .item h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+body[search-result] section.content .container-fiuld .item p {
+  font-size: 18px;
+}
+body[search-result] section.content .container-fiuld .item p:before {
+  content: "NT$";
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 966px) {
+  body[search-result] section.content .container-fiuld .item:hover {
+    -moz-box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.7);
+    -webkit-box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.7);
+    box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.7);
+  }
+}
+@media screen and (max-width: 767px) {
+  body[search-result] section.content {
+    margin-top: 55px;
+  }
+  body[search-result] section.content .container-fiuld {
+    padding: 0px 25px;
+  }
+  body[search-result] section.content .container-fiuld:first-child {
+    padding: 40px 20px 0px;
+  }
+  body[search-result] section.content .container-fiuld h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  body[search-result] section.content .container-fiuld h1 span {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  body[search-result] section.content .container-fiuld .status {
+    font-size: 16px;
+  }
+  body[search-result] section.content .container-fiuld .status span {
+    font-size: 18px;
+  }
+  body[search-result] section.content .container-fiuld .status #search_block {
+    display: none;
+    width: 100%;
+    float: none;
+    margin-top: 10px;
+    position: relative;
+  }
+  body[search-result] section.content .container-fiuld .col-xs-12 {
+    padding: 0 10px;
+  }
+  body[search-result] section.content .container-fiuld .item {
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: solid 1px #ccc;
+  }
+  body[search-result] section.content .container-fiuld .item .img_box {
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  body[search-result] section.content .container-fiuld .item .img_box img {
+    height: 100%;
+  }
+  body[search-result] section.content .container-fiuld .item .conetent_box {
+    padding-left: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(70% - 4px);
+  }
+  body[search-result] section.content .container-fiuld .item .conetent_box h2 {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  body[search-result] section.content .container-fiuld .item .conetent_box p {
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: left;
   }
 }
 /*購物頁 */

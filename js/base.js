@@ -1,10 +1,11 @@
 var windowHeight = $(window).height();
 var windowWidth = $(window).width();
 
-//home light_box
+//light_box
 if($.fn.lightbox_me != undefined){
-	var light_box = $("#light_box");
-	light_box.lightbox_me({
+	//home light_box
+	var home_light_box = $("#light_box");
+	home_light_box.lightbox_me({
 		apprearEffect: "fadeIn",
 		disappearEffect: "fadeOut",
 		overlaySpeed: 300,
@@ -20,24 +21,53 @@ if($.fn.lightbox_me != undefined){
 		onLoad: function(){
 			var _this = $(this);
 			var time = 5, t;
-			light_box.trigger('reposition');
+			home_light_box.trigger('reposition');
 			$(".message").css("display","block").html(time);
 			t = setInterval(function(){
 				if(time>0)
 					time--;
 				if(time==0){
 					clearInterval(t);
-					closeLightbox(light_box);
+					closeLightbox(home_light_box);
 				}
 				$(".message").html(time);
 			},1000);
 		}
 	});
-	light_box.children(".light_box_close").click(function(){
-		closeLightbox(light_box);
+	home_light_box.children(".light_box_close").click(function(){
+		closeLightbox(home_light_box);
 	})
 }
 
+//註冊頁條款視窗
+$(".terms").click(function(e){
+	e.preventDefault();
+	$("#policy_box").trigger('reposition');
+	$("#policy_box").lightbox_me({
+		appearEffect: "fadeIn",
+		disappearEffect: "fadeOut",
+		overlaySpeed: 300,
+		lightboxSpeed: 300,
+		closeClick: true,
+		centered: true,
+		zIndex: 9999,
+		overlayCSS: {
+			background: 'black', 
+			opacity: .6
+		},
+		onLoad: function(){
+			$("body").css("overflow","hidden");
+		},
+		onClose: function(){
+			$("body").css("overflow","auto");
+		}
+	})
+})
+$("#policy_box").children("button").click(function(){
+	closeLightbox($("#policy_box"));
+})
+
+//關閉light_box淡出效果
 function closeLightbox(dom){
 	var item = dom;
 	dom.fadeOut(300);
@@ -48,43 +78,43 @@ function closeLightbox(dom){
 }
 
 //滾動fix選單
-	$(document).bind('scroll', function(){
-    	var scrollTop=$(window).scrollTop();
-    	if(scrollTop>20){
-    		$('header').addClass('scroll');
-    	}else{
-    		$('header').removeClass('scroll');
-    	}
-	});
+$(document).bind('scroll', function(){
+	var scrollTop=$(window).scrollTop();
+	if(scrollTop>20){
+		$('header').addClass('scroll');
+	}else{
+		$('header').removeClass('scroll');
+	}
+});
 
-	//search-area開關
-	// $('.search-btn').click(function(){
-	// 	$('.search-area').addClass('active');
-	// }); 
-	// $('.search-close').click(function(){
-	// 	$('.search-area').removeClass('active');
-	// });
-	
-
-	//頁面最小高
-	$('section.content').css('min-height', windowHeight-114);
-	$(window).resize(function(){
-		var windowHeightResize = $(window).height();
-		$('section.content').css('min-height', windowHeightResize-114);
-	});
+//search-area開關
+// $('.search-btn').click(function(){
+// 	$('.search-area').addClass('active');
+// }); 
+// $('.search-close').click(function(){
+// 	$('.search-area').removeClass('active');
+// });
 
 
-	//body scroll animately when input focus
-	$('div.input input').focus(function(){
-		if(windowWidth < 767){
-			// $("html, body").animate({ scrollTop: '370px' }, 600);
-		}else if(windowWidth < 991){
-			// $("html, body").animate({ scrollTop: '170px' }, 600);
-		}else{
+//頁面最小高
+$('section.content').css('min-height', windowHeight-114);
+$(window).resize(function(){
+	var windowHeightResize = $(window).height();
+	$('section.content').css('min-height', windowHeightResize-114);
+});
 
-		}
-		
-	});
+
+//body scroll animately when input focus
+$('div.input input').focus(function(){
+	if(windowWidth < 767){
+		// $("html, body").animate({ scrollTop: '370px' }, 600);
+	}else if(windowWidth < 991){
+		// $("html, body").animate({ scrollTop: '170px' }, 600);
+	}else{
+
+	}
+
+});
 
 
 //滾動fix選單

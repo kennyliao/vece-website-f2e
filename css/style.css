@@ -592,7 +592,6 @@ body[home] #light_box{
 	text-align: center;
 	background-color: #eee;
 	border-radius: 5px;
-	
 }
 body[home] #light_box img{
 	position: relative;
@@ -980,6 +979,110 @@ body[signup] section.content>div:last-child{
 }
 body[signup] section.content>div:last-child a h5{
 	padding-left: 10px;
+}
+body[signup] #policy_box{
+	z-index: 9999;
+	display: none;
+	position: relative;
+	width: 80%;
+	height: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 15px 40px;
+	padding-top: 40px;
+	overflow: auto;
+	text-align: center;
+	background-color: #eee;
+	border-radius: 5px;
+}
+body[signup] #policy_box h2{
+	margin-bottom: 30px;
+}
+body[signup] #policy_box .content_wrap{
+	width: 100%;
+	height: calc(100% - 160px);
+	padding: 30px;
+	font-size: 16px;
+	text-align: left;
+	overflow: auto;
+	background-color: #fff;
+}
+body[signup] #policy_box .content_box{
+	word-wrap:break-word;
+}
+body[signup] #policy_box .light_box_close{
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	right: 20px;
+	top: 20px;
+	color: #eee;
+	background-color: transparent;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+body[signup] #policy_box .light_box_close:after{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(45deg);
+	transition: 0.3s;
+}
+body[signup] #policy_box .light_box_close:before{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(-45deg);
+	transition: 0.3s;
+}
+body[signup] #policy_box .light_box_close:hover:after,body[signup] #policy_box .light_box_close:hover:before{
+	background-color: #fff;
+}
+body[signup] #policy_box .conform{
+	margin-top: 30px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	width: 160px;
+	height: 45px;
+	border-radius: 3px;
+	background-color: #b99ee4;
+	color: #fff;
+	cursor: pointer;
+}
+@media screen and (max-width: 767px){
+	body[signup] #policy_box{
+		width: 95%;
+		padding: 10px;
+		padding-top: 15px;
+	}
+	body[signup] #policy_box h2{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	body[signup] #policy_box .content_wrap{
+		height: calc(100% - 100px);
+		padding: 15px;
+	}
+	body[signup] #policy_box .content_box{
+		padding: 0px;
+	}
+	body[signup] #policy_box .conform{
+		margin-top: 15px;
+		height: 40px;
+	}
+	body[signup] #policy_box .light_box_close{
+		top: 15px;
+		right: 15px;
+	}
 }
 
 

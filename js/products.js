@@ -727,6 +727,7 @@ Vue.component("faquestion",{
 	}
 });
 
+//FAQ.html
 var faq = new Vue({
 	el: "#faq",
 	data: {
@@ -804,6 +805,26 @@ var faq = new Vue({
 		}
 	},
 	methods:{
+	}
+})
+
+//search
+var search_result = new Vue({
+	el: "#search-result",
+	data: {
+		search_data: "",
+		search_keyword: "逆齡"
+	},
+	created: function(){
+		this.fetchData();
+	},
+	methods:{
+		fetchData: function(){
+			var _this = this;
+			$.get("json/promot_data.json",function(data){
+				_this.search_data = data;
+			})
+		}
 	}
 })
 
