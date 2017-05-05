@@ -31,35 +31,20 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
 	</head>
-	<body faq>
+	<body faq-ask-question>
 		<header></header>
-		<section id="faq" class="content">
-			<div class="container-fiuld qa_section">
-				<div class="search_area">
-					<h1>常見問題</h1>
-					<p v-for="n in filter_data">
-					</p>
-					<input class="faq_search" v-model="search_data" type="text" placeholder="Your Question..">
-				</div>
+		<section id="faq-ask-question" class="content">
+			<div class="container-fiuld">
+				<h1>問題反映</h1>
+				<form id="faq-form" action="">
+					<input type="text" name="user_name" id="user_name" placeholder="姓名">
+					<input type="mail" name="user_email" id="user_email" placeholder="電郵">
+					<input type="text" name="subject" id="subject" placeholder="主題">
+					<label for="question">問題詳細</label>
+					<textarea name="question" id="question"></textarea>
+					<input type="submit" value="提交問題">
+				</form>
 			</div>
-			<div class="container-fiuld qa_section">
-				<ul class="qa_wrap">
-					<li class="qa_block" v-for="d in filter_data" v-if="d.questions.length > 0">
-						<h2>{{d.type}}相關</h2>
-						<ul>
-							<li v-for="(q,id) in d.questions">
-								<faquestion :question_data="q" :id="id">
-								</faquestion>
-							</li>
-						</ul>
-						<a class="ask" href="faq-ask-question.html"><span>無法解決您的問題？請發問</span></a>
-					</li>
-					<li class="qa_block"  v-if="!have_filter">
-						<a class="ask last" href="faq-ask-question.html"><span>沒有相關的問題？請發問</span></a>
-					</li>
-				</ul>
-			</div>
-		
 		</section>
 
 		<footer></footer>

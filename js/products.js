@@ -792,6 +792,16 @@ var faq = new Vue({
 				})
 			}
 		},
+		have_filter: function(){
+			var flag = false;
+			var count = 0;
+			for(var i=0;i<this.filter_data.length;i++){
+				if(this.filter_data[i].questions.length != 0){
+					flag = true;
+				}
+			}
+			return flag;
+		}
 	},
 	methods:{
 	}
