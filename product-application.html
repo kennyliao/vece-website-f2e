@@ -30,8 +30,11 @@ navTextNext = '下一個 <i class="fa fa fa-chevron-right" aria-hidden="true"></
 		<link rel="bookmark" href="images/favicon.ico"/>
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
+		<script>
+		</script>
 	</head>
 	<body products-app>
+		<div class="loading"></div>
 		<header></header>
 		<section id="product_app" class="content" v-cloak>
 			<!--產品操作-->
@@ -68,7 +71,7 @@ navTextNext = '下一個 <i class="fa fa fa-chevron-right" aria-hidden="true"></
 							</a>
 							
 						</div>
-						<div class="show_box">
+						<div class="show_box" v-if="product.application">
 							<ul class="menu">
 								<li class="item" v-bind:class="(p.eng_name == app_data.active_page)?'active':''" v-for="p in app_data.page_item" v-bind:data-id="p.eng_name" v-on:click="changepage">{{p.cht_name}}</li>
 							</ul>
@@ -141,6 +144,8 @@ $.get("components/header.html", function(data, status){
 $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
 }); 
+
+
 		</script>
 	</body>
 </html>

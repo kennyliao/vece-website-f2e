@@ -785,10 +785,10 @@ var faq = new Vue({
 						});
 						return flag;
 					});
-//					if(obj.questions.indexOf(_this.search_data) != -1)
-//						return true;
-//					else
-//						return false;
+					//					if(obj.questions.indexOf(_this.search_data) != -1)
+					//						return true;
+					//					else
+					//						return false;
 					return newObj;
 				})
 			}
@@ -808,31 +808,103 @@ var faq = new Vue({
 	}
 })
 
-//search
-var search_result = new Vue({
+//search_result.html
+if( $("#search-result").length != 0){
+	var search_result = new Vue({
 	el: "#search-result",
 	data: {
 		search_data: "",
-		search_keyword: "逆齡"
+		search_keyword: "逆齡",
+		series_data: ["逆齡時空系列","舒敏平衡肌系列","晶透綻白肌系列","導水瞬透肌系列","全效系列","其它"],
+		desktop_width: true
 	},
 	created: function(){
 		this.fetchData();
 	},
+	computed: {
+	},
+	mounted(){
+		this.$nextTick(function(){
+			window.addEventListener('resize', this.decide_width);
+			this.decide_width();
+		})
+	},
 	methods:{
+		//載入資料，初始化owl-carousel
 		fetchData: function(){
 			var _this = this;
-			$.get("json/promot_data.json",function(data){
+			$.get("json/search_result.json",function(data){
 				_this.search_data = data;
+				_this.$nextTick(function(){
+					_this.decide_width();
+				});
 			})
+		},
+		//分類資料
+		filter_data: function(series){
+			if(this.search_data){
+				if(series != "其它"){
+					return this.search_data.filter(function(obj){
+						if(obj["series"] == series){
+							return true;
+						}else{
+							return false;
+						};
+					});
+				}else{
+					return this.search_data.filter(function(obj){
+						if(!obj["series"]){
+							return true;
+						}else{
+							return false;
+						};
+					});
+				}
+
+			}
+		},
+		//判斷陣列是否為空陣列
+		decide_empty: function(item){
+			if(Array.isArray(item) && item.length > 0)
+				return true;
+			else
+				return false;
+		},
+		//判斷使用者視窗寬度
+		decide_width: function(){
+			if(window.innerWidth>=768){
+				this.desktop_width = true;
+				$(".owl-search").owlCarousel({
+					items: 1.1,
+					nav:false,
+					loop:false,
+					margin:0,
+					autoplay:false,
+					dots: false,
+					responsive:{
+						0:{
+							items: 1.3,
+							center: true,
+							margin: 20
+						},
+						768:{
+							items: 3,
+							center: false
+						}
+					}
+				});
+				console.log(this.desktop_width);
+			}
+			else{
+				this.desktop_width = false;
+				console.log(this.desktop_width);
+			}
+
 		}
 	}
 })
 
-
-//$(".faquestion h3").click(function(){
-//	console.log("hello!");
-//	$(this.$el.myLink).next(".faqanswer").slideToggle();
-//})
+}
 
 
 //播放影片

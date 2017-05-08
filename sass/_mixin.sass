@@ -5,16 +5,44 @@ $color_grey: #6b6f77
 $color_border: #9fa3a8
 $color_purple: #ab8eda
 
-@mixin user-select()
-	-moz-user-select: none
-	-webkit-user-select: none
+//是否容許選取文字
+@mixin user-select($value: none)
+	-moz-user-select: $value
+	-webkit-user-select: $value
 
+//絕對定位置中
 @mixin ab_center()
 	position: absolute
 	top: 50%
 	left: 50%
 	+transform(translate(-50%,-50%))
-	
+
+//transition
+@mixin trans($value...)
+	-moz-transition: $value
+	-o-transition: $value
+	-webkit-transition: $value
+	transition: $value
+
+//背景置中
+@mixin bg_center()
+	background-color: transparent
+	background-position: 50% 50%
+	background-repeat: no-repeat
+
+@mixin flex_box
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+@mixin flex_center
+	+flex_box
+	-webkit-justify-content: center
+	justify-content: center
+	-webkit-align-items: center
+	align-items: center
 
 .full_a
 	position: absolute

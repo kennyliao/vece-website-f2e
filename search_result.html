@@ -34,39 +34,60 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	<body search-result>
 		<header></header>
 
-		<section id="search-result" class="content">
+		<section id="search-result" class="content" v-cloak>
+			<!--control center-->
 			<div class="container-fiuld">
 				<h1>搜尋關於<span>{{search_keyword}}</span></h1>
 				<div class="status">
-					總共搜索到<span v-if="search_data.product">{{search_data.product.length}}</span>個結果
 					<form id="search_block" action="">
-						<input v-model="search_keyword" type="text" id="keywords" name="keywords" value="逆齡">
+						<input type="text" id="keywords" name="keywords" :value="search_keyword">
 						<button type="submit" class="search"></button>
 					</form>
+					總共搜索到
+					<span v-if="search_data">{{search_data.length}}</span>
+					<span v-else="search_data">{{0}}</span>
+					個結果
 				</div>
 			</div>
+			<!--資料顯示-->
 			<div class="container-fiuld">
-				<div class="row">
-					<div v-for="p in search_data.product" class="col-sm-4 col-xs-12">
-					<div class="item">
-						<div class="img_box">
-							<img v-bind:src="p.image" alt="">
+				<div class="row" v-for="series in series_data" v-if="decide_empty(filter_data(series)) && desktop_width">
+					<h2>{{series}}</h2>
+					<div class="owl-search owl-carousel owl-theme" >
+						<div v-for="p in filter_data(series)" class="item">
+							<div class="img_box">
+								<img v-bind:src="p.image" alt="">
+							</div>
+							<div class="conetent_box">
+								<h3>{{p. name}}</h3>
+								<p>{{p.capacity}}</p>
+							</div>
+							<a class="full_a" v-bind:href="p.url"></a>
 						</div>
-						<div class="conetent_box">
-							<h2>{{p. name}}</h2>
-							<p>{{p.price}}</p>
-						</div>
-						<a class="full_a" v-bind:href="p.url"></a>
 					</div>
 				</div>
+				<!--for mobile-->
+				<div class="row" v-for="series in series_data" v-if="decide_empty(filter_data(series)) && !desktop_width">
+					<h2>{{series}}</h2>
+					<div class="mobile_block">
+						<div v-for="p in filter_data(series)" class="item" >
+							<div class="img_box">
+								<img v-bind:src="p.image" alt="">
+							</div>
+							<div class="conetent_box">
+								<div class="conetent_block">
+									<h3>{{p. name}}</h3>
+									<p>{{p.capacity}}</p>
+								</div>
+							</div>
+							<a class="full_a" v-bind:href="p.url"></a>
+						</div>
+					</div>
 				</div>
-				
-
 			</div>
 		</section>
 
 		<footer></footer>
-
 		<script src="js/base.js"></script>
 		<script src="js/products.js"></script>
 		<script>
