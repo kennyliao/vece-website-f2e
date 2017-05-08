@@ -678,8 +678,8 @@ body[home] #light_box .light_box_close:before{
 @media screen and (min-width: 768px){
 	
 	body[home] #light_box .light_box_close:hover{
-	color: #fff;
-}
+		/* color: #fff; */
+	}
 	body[home] #light_box .light_box_close:hover:after, body[home] #light_box .light_box_close:hover:before{
 		background-color: #fff;
 	}
@@ -3627,3 +3627,4 @@ body[member-center] section.content .tab-content #traceability .item .traceabili
 		margin: 10px 0;
 	}
 }
+

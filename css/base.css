@@ -204,6 +204,7 @@ header ul.menu{
 		bottom: 0;
 		left: 0;
 		background-color: #fff;
+		z-index: 99;
 	}
 }
 header ul.menu>li{
@@ -367,6 +368,15 @@ header ul.menu li ul.product-menu{
 header ul.menu>li{
 	cursor: default;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	header ul.menu li ul.active.product-menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
+}
 @media screen and (max-width: 767px){
 	header ul.menu li ul.active.product-menu{
 		display: -webkit-flex;
@@ -425,6 +435,15 @@ header ul.menu li ul.aboutus-menu{
 	box-shadow: -3px 7px 10px 0 rgba(0, 0, 0, 0.15);
 	-webkit-align-items: center;
     align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	header ul.menu li ul.active.aboutus-menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
 }
 @media screen and (max-width: 767px){
 	header ul.menu li ul.active.aboutus-menu{

@@ -94,7 +94,7 @@
 	<div class="logo"><a href="index.html"><img src="images/lanvece.svg" alt="lanvece"></a></div>
 	<div class="search-form">
 		<form action="">
-			<input type="text" id="searchInput" placeholder="Search" onblur="blurit('0',5000)" 
+			<input type="text" id="searchInput" placeholder="Search" onblur="blurit('0',3000)" 
 			onfocus="blurit('1')"/>
 			<button type="submit">Search</button>
 		</form>
@@ -106,21 +106,21 @@
 		var windowHeight = $(window).height();
 		var submenuHeight = windowHeight - 114;
 		if(windowWidth < 768){
-			$('.aboutus-menu').height(submenuHeight).toggleClass('active');
-			$('.product-menu').removeClass('active');
-			// $('header').toggleClass('submenu-active');
-			$('header').addClass('scroll');
+			$('.aboutus-menu').height(submenuHeight);
 		}
+		$('.aboutus-menu').toggleClass('active');
+		$('.product-menu').removeClass('active');
+		$('header').addClass('scroll');
 	});
 	$('.product-menu-btn').click(function(){
 		var windowHeight = $(window).height();
 		var submenuHeight = windowHeight - 114;
 		if(windowWidth < 768){
-			$('.product-menu').height(submenuHeight).toggleClass('active');
-			$('.aboutus-menu').removeClass('active');
-			// $('header').toggleClass('submenu-active');
-			$('header').addClass('scroll');
+			$('.product-menu').height(submenuHeight);
 		}
+		$('.product-menu').toggleClass('active');
+		$('.aboutus-menu').removeClass('active');
+		$('header').addClass('scroll');
 	});
 	$(window).resize(function(){
 		var submenuHeight = windowHeight - 114;
