@@ -215,6 +215,8 @@ body[home] section.content div.preorder .owl-carousel .item button{
 	}
 	body[home] section.content div.preorder .owl-carousel .item ul li .icon{
 		max-width: 80px;
+		-webkit-background-size: 600% 100%;
+		background-size: 600% 100%;
 		margin: 10px auto;
 	}
 	body[home] section.content div.preorder .owl-carousel .item h4{

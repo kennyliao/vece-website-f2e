@@ -1642,6 +1642,13 @@ body[search-result] section.content .container-fiuld:first-child {
   padding-top: 90px;
   padding-bottom: 10px;
 }
+body[search-result] section.content .container-fiuld .no-data {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+body[search-result] section.content .container-fiuld .no-data span {
+  display: inline-block;
+}
 body[search-result] section.content .container-fiuld .row {
   margin: 0;
   margin-bottom: 30px;
@@ -1762,6 +1769,14 @@ body[search-result] section.content .container-fiuld .item p:after {
   }
   body[search-result] section.content .container-fiuld:first-child {
     padding: 40px 20px 0px;
+  }
+  body[search-result] section.content .container-fiuld .no-data {
+    padding-top: 65px;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  body[search-result] section.content .container-fiuld .no-data span {
+    display: block;
   }
   body[search-result] section.content .container-fiuld .row {
     padding: 20px 0;
