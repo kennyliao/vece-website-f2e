@@ -701,6 +701,33 @@ var member_center = new Vue({
 	}
 })
 
+
+//FAQ.html
+Vue.component("faquestion",{
+	template: "#faquestion",
+	props: ["question_data","id"],
+	data: {
+	},
+	computed: {
+		question_limit: function(){
+			if(this.question_data.question.length > 22)
+				return this.question_data.question.slice(0);
+			else
+				return this.question_data.question;
+		}
+	},
+	methods:{
+		show_ans: function(event){
+			var ans = $(event.target).next();
+			$(".faquestion h3").not(event.target).removeClass("active");
+			$(".faqanswer").not(ans).slideUp(250);
+			$(event.target).stop().toggleClass("active");
+			ans.stop().slideToggle(250);
+		}
+	}
+});
+
+//FAQ.html
 var faq = new Vue({
 	el: "#faq",
 	data: {
@@ -722,7 +749,8 @@ var faq = new Vue({
 					{question: "如果我忘記密碼怎麼辦呢？", content: "如果您忘記密碼，請至以下連結輸入相關資料"},
 					{question: "在台灣的外國人士如何註冊成為會員？", content: "若您不是台灣人，沒有中華民國身分證字號，可於【身分證字號】欄位改填入【統一證號】。若沒有【統一證號】跟【台灣地區手機門號】可進行身份認證，將無法註冊成為會員。"},
 					{question: "我想要修改我的登入密碼/個人安全碼？", content: "請您登入後至我的拍賣點選會員資料旁的「修改」，輸入你的個人安全密碼之後會進入到「修改會員資料」頁面修改登入密碼。"},
-					{question: "如何開啟兩步驟驗證(個人安全電腦2.0)服務？", content: "請您登入後到 露天拍賣> 我的拍賣 > 兩步驟驗證(個人安全電腦2.0) 點選「馬上啟用」。"},
+					{question: "如何開啟兩步驟驗證服務？", content: "請您登入後到 露天拍賣> 我的拍賣 > 兩步驟驗證(個人安全電腦2.0) 點選「馬上啟用」。"},
+					{question: "如何開啟兩步驟驗證服務？", content: "請您登入後到 露天拍賣> 我的拍賣 > 兩步驟驗證(個人安全電腦2.0) 點選「馬上啟用」。"}
 				]
 			},
 			{
@@ -735,10 +763,148 @@ var faq = new Vue({
 					{question: "我去寄貨，需要支付交寄費用嗎？", content: "賣家在超商門市交寄貨品時，無需先支付寄件費用，於寄件隔日運費將直接列入賣家的計費中心"}
 				]
 			},
-		]
+		],
+		search_data: ""
+	},
+	computed:{
+		filter_data: function(){
+			var _this = this;
+			if(this.search_data == ""){ //沒有搜尋時
+				return this.question_data;
+			}else{
+				return this.question_data.map(function(obj){
+					var newObj = {};
+					newObj["type"] = obj["type"];
+					newObj["questions"] =  obj["questions"].filter(function(subobj){
+						var tag = ["question","content"];
+						var flag = false;
+						tag.forEach(function(now_tag){
+							if(subobj[now_tag].indexOf(_this.search_data) != -1){
+								flag = true;
+							}
+						});
+						return flag;
+					});
+					//					if(obj.questions.indexOf(_this.search_data) != -1)
+					//						return true;
+					//					else
+					//						return false;
+					return newObj;
+				})
+			}
+		},
+		have_filter: function(){
+			var flag = false;
+			var count = 0;
+			for(var i=0;i<this.filter_data.length;i++){
+				if(this.filter_data[i].questions.length != 0){
+					flag = true;
+				}
+			}
+			return flag;
+		}
+	},
+	methods:{
 	}
 })
 
+//search_result.html
+if( $("#search-result").length != 0){
+	var search_result = new Vue({
+	el: "#search-result",
+	data: {
+		search_data: "",
+		search_keyword: "逆齡",
+		series_data: ["逆齡時空系列","舒敏平衡肌系列","晶透綻白肌系列","導水瞬透肌系列","全效系列","其它"],
+		desktop_width: true
+	},
+	created: function(){
+		this.fetchData();
+	},
+	computed: {
+	},
+	mounted(){
+		this.$nextTick(function(){
+			window.addEventListener('resize', this.decide_width);
+			this.decide_width();
+		})
+	},
+	methods:{
+		//載入資料，初始化owl-carousel
+		fetchData: function(){
+			var _this = this;
+			$.get("json/search_result.json",function(data){
+				_this.search_data = data;
+				_this.$nextTick(function(){
+					_this.decide_width();
+				});
+			})
+		},
+		//分類資料
+		filter_data: function(series){
+			if(this.search_data){
+				if(series != "其它"){
+					return this.search_data.filter(function(obj){
+						if(obj["series"] == series){
+							return true;
+						}else{
+							return false;
+						};
+					});
+				}else{
+					return this.search_data.filter(function(obj){
+						if(!obj["series"]){
+							return true;
+						}else{
+							return false;
+						};
+					});
+				}
+
+			}
+		},
+		//判斷陣列是否為空陣列
+		decide_empty: function(item){
+			if(Array.isArray(item) && item.length > 0)
+				return true;
+			else
+				return false;
+		},
+		//判斷使用者視窗寬度
+		decide_width: function(){
+			if(window.innerWidth>=768){
+				this.desktop_width = true;
+				$(".owl-search").owlCarousel({
+					items: 1.1,
+					nav:false,
+					loop:false,
+					margin:0,
+					autoplay:false,
+					dots: false,
+					responsive:{
+						0:{
+							items: 1.3,
+							center: true,
+							margin: 20
+						},
+						768:{
+							items: 3,
+							center: false
+						}
+					}
+				});
+				console.log(this.desktop_width);
+			}
+			else{
+				this.desktop_width = false;
+				console.log(this.desktop_width);
+			}
+
+		}
+	}
+})
+
+}
 
 
 //播放影片

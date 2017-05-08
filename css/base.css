@@ -30,7 +30,7 @@ h1{
 	text-align: center;
 	font-weight: 300;
 	letter-spacing: 2px;
-	font-family: "PingFangTC-Regular";
+	font-family: "PingFangTC-Regular","Microsoft JhengHei";
 	color: #4e5156;
 	margin: 0;
 	cursor: default;
@@ -40,7 +40,7 @@ h2{
 	text-align: center;
 	font-weight: 300;
 	letter-spacing: 2px;
-	font-family: "PingFangTC-Light";
+	font-family: "PingFangTC-Light","Microsoft JhengHei";
 	color: #2e2f31;
 	margin: 0;
 	cursor: default;
@@ -50,7 +50,7 @@ h3{
 	text-align: center;
 	font-weight: 300;
 	letter-spacing: 2px;
-	font-family: "PingFangTC-Regular";
+	font-family: "PingFangTC-Regular","Microsoft JhengHei";
 	color: #2e2f31;
 	margin: 0;
 	cursor: default;
@@ -60,7 +60,7 @@ h4{
 	text-align: center;
 	font-weight: 300;
 	letter-spacing: 2px;
-	font-family: "PingFangTC-Regular";
+	font-family: "PingFangTC-Regular","Microsoft JhengHei";
 	color: #4d5156;
 	margin: 0;
 	cursor: default;
@@ -70,7 +70,7 @@ h5{
 	text-align: center;
 	font-weight: 300;
 	letter-spacing: 1px;
-	font-family: "PingFangTC-Regular";
+	font-family: "PingFangTC-Regular","Microsoft JhengHei";
 	color: #2e2f31;
 	margin: 0;
 	cursor: default;
@@ -180,6 +180,7 @@ body[home] header.scroll div.logo{
 }
 header div.logo img{
 	width: 136px;
+	height: 30px;
 }
 
 header>ul{

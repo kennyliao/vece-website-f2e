@@ -20,70 +20,53 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>
-navTextPrev = '<i class="fa fa-chevron-left" aria-hidden="true"></i> 上一頁';
-navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>';
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
 		</script>
 		<script src="css/owlcarousel/owl.carousel.min.js"></script>
 		<script src="js/vue.min.js"></script>
-		<script src="js/base.js"></script>
+
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 		<link rel="bookmark" href="images/favicon.ico"/>
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
 	</head>
-	<body pre-order>
+	<body faq-ask-question>
 		<header></header>
-		<section id="pre-order" class="content" v-cloak>
+		<section id="faq-ask-question" class="content">
 			<div class="container-fiuld">
-				<div class="title">
-					<h1>{{pre_order_data.page_data.title}}</h1>
-					<p>{{pre_order_data.page_data.discription}}</p>
-				</div>
-				<div class="intro">
-					<ul class="owl-pre-order-intro owl-carousel owl-theme">
-						<li v-for="(i,id) in pre_order_data.page_data.intro" class="intro_block">
-							<h2>{{i.title}}</h2>
-							<div class="img" v-bind:style="'background-image:url('+i.img+'); background-position-x:'+ -id*116+'px'"></div>
-							<p>{{i.content}}</p>
-						</li>
-					</ul>
-				</div>
-				<div class="pre_order_series">
-					<h2>{{pre_order_data.page_data.order_date}}   {{pre_order_data.series_1.date.from}}～{{pre_order_data.series_1.date.to}}</h2>
-					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in pre_order_data.series_1.product" class="product_block">
-							<img v-bind:src="p.image" alt=""/>
-							<h3>{{p.name}}</h3>
-							<div class="price">{{p.price}}</div>
-							<a class="full_a" v-bind:href="p.url"></a>
-						</li>
-					</ul>
-				</div>
-				<div class="pre_order_series">
-					<h2>{{pre_order_data.page_data.order_date}}  {{pre_order_data.series_2.date.from}}～{{pre_order_data.series_2.date.to}}</h2>
-					<ul class="owl-promot owl-carousel owl-theme">
-						<li v-for="p in pre_order_data.series_2.product" class="product_block">
-							<img v-bind:src="p.image" alt=""/>
-							<h3>{{p.name}}</h3>
-							<div class="price">{{p.price}}</div>
-							<a class="full_a" v-bind:href="p.url"></a>
-						</li>
-					</ul>
-				</div>
+				<h1>問題反映</h1>
+				<form id="faq-form" action="">
+					<input type="text" name="user_name" id="user_name" placeholder="姓名">
+					<input type="mail" name="user_email" id="user_email" placeholder="電郵">
+					<input type="text" name="subject" id="subject" placeholder="主題">
+					<label for="question">問題詳細</label>
+					<textarea name="question" id="question"></textarea>
+					<input type="submit" value="提交問題">
+				</form>
 			</div>
-			
 		</section>
 
 		<footer></footer>
 
-		<script src="js/products.js"></script>
+		<template id="faquestion">
+			<div class="faquestion">
+				<h3 v-on:click="show_ans($event)">{{id+1}}. {{question_limit}}</h3>
+				<div class="faqanswer">
+					{{question_data.content}}
+				</div>
+			</div>
+		</template>
+
 		<script>
 $.get("components/header.html", function(data, status){
 	$('header').html(data);
 });
 $.get("components/footer.html", function(data, status){
 	$('footer').html(data);
-});  
+}); 
 		</script>
+		<script src="js/products.js"></script>
+		<script src="js/base.js"></script>
 	</body>
 </html>
