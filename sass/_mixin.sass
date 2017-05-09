@@ -44,6 +44,27 @@ $color_purple: #ab8eda
 	-webkit-align-items: center
 	align-items: center
 
+@mixin b-sh($value...)
+	-webkit-box-shadow: $value
+	-moz-box-shadow: $value
+	box-shadow: $value
+
+@mixin transform($value)
+	-ms-transform: $value
+	-webkit-transform: $value
+	transform: $value
+
+@mixin tf-origin($value)
+	-webkit-transform-origin: $value
+	-moz-transform-origin: $value
+	-ms-transform-origin: $value
+	-o-transform-origin: $value
+
+@mixin border-radius($value)
+	-webkit-border-radius: $value
+	-moz-border-radius: $value
+	border-radius: $value
+	
 .full_a
 	position: absolute
 	top: 0

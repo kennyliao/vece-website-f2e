@@ -320,6 +320,19 @@ body[checkout] section.content ul .preorder-time li:first-child h5 {
     height: 55px;
   }
 }
+.full_a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+[v-cloak] {
+  display: none;
+}
+
 body[shopping-bag] section.content .bag_item {
   width: 100%;
   min-height: 120px;
@@ -331,6 +344,90 @@ body[shopping-bag] section.content .bag_item {
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
+}
+
+body[shopping-bag] .delete_box {
+  z-index: 99999;
+  -webkit-box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.4);
+  -moz-box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.4);
+  box-shadow: 0px 0px 9px rgba(159, 163, 168, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 300px;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+}
+body[shopping-bag] .delete_box p {
+  display: block;
+  margin: 40px 0 20px;
+}
+body[shopping-bag] .delete_box p span {
+  color: #ab8eda;
+}
+body[shopping-bag] .delete_box .btn {
+  margin: 5px;
+  padding: 5px 25px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+body[shopping-bag] .delete_box .confirm {
+  background-color: #ab8eda;
+  color: #fff;
+  font-weight: 100;
+}
+body[shopping-bag] .delete_box .cancel {
+  color: #fff;
+  font-weight: 100;
+}
+body[shopping-bag] .delete_box .search-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+}
+body[shopping-bag] .delete_box .search-close:before, body[shopping-bag] .delete_box .search-close:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: #9fa3a8;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body[shopping-bag] .delete_box .search-close:before {
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+}
+body[shopping-bag] .delete_box .search-close:after {
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
 }
 
 @media screen and (max-width: 767px) {

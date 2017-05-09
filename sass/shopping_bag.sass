@@ -1,4 +1,5 @@
 @import checkout
+@import mixin
 
 body[shopping-bag] section.content .bag_item
 	width: 100%
@@ -11,6 +12,56 @@ body[shopping-bag] section.content .bag_item
 	flex-direction: row
 	flex-wrap: wrap
 	position: relative
+
+
+body[shopping-bag] .delete_box
+	z-index: 99999
+	+b-sh(0px 0px 9px rgba($color_border,0.4))
+	+ab_center
+	position: fixed
+	width: 300px
+	height: 150px
+	background-color: #fff
+	text-align: center
+	p
+		display: block
+		margin: 40px 0 20px
+		span
+			color: $color_purple
+	.btn
+		margin: 5px
+		padding: 5px 25px
+		+border-radius(2px)
+	.confirm
+		background-color: $color_purple
+		color: #fff
+		font-weight: 100
+	.cancel
+		color: #fff
+		font-weight: 100
+	.search-close
+		position: absolute
+		top: 5px
+		right: 5px
+		background-color: transparent
+		color: #fff
+		height: 30px
+		width: 30px
+		&:before, &:after
+			+ab_center
+			content: ""
+			width: 25px
+			height: 2px
+			background-color: $color_border
+			+trans(0.3s)
+		&:before
+			+transform(translate(-50%,-50%) rotate(45deg))
+			+tf-origin(50% 50%)
+		&:after
+			+transform(translate(-50%,-50%) rotate(-45deg))
+			+tf-origin(50% 50%)
+			
+		
 
 @media screen and (max-width: 767px)
 	body[shopping-bag] section.content .bag_item

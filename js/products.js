@@ -380,7 +380,7 @@ var about = new Vue({
 });
 
 
-//shoppimg-bag.html 購物車
+//shopping-bag.html 購物車
 Vue.component("bagitem",{
 	template: "#bag_item",
 	props: ["items_data","delete_item","id"],
@@ -388,9 +388,6 @@ Vue.component("bagitem",{
 		final_price: function(){
 			return (this.items_data.item_price * this.items_data.quantity);
 		}
-	},
-	data: {
-		count: 0
 	},
 	methods: {
 		sub: function(){
@@ -402,6 +399,11 @@ Vue.component("bagitem",{
 		countLimit: function(){
 			if(this.items_data.quantity>100){this.count=100;}
 			if(this.items_data.quantity<1){this.count=1;}
+		},
+		show_light_box: function(id,event){
+			$(".delete_box").css("display","block");
+			$(".delete_box span").html(id);
+			this.$parent.delete_id = id;
 		}
 	}
 });
@@ -410,7 +412,9 @@ Vue.component("bagitem",{
 var shopping_bag = new Vue({
 	el: "#shopping_bag",
 	data: {
-		bag_data: ""
+		bag_data: "",
+		delete_id: "",
+		show_box: "",
 	},
 	created: function () {
 		this.fetchData();
@@ -438,9 +442,11 @@ var shopping_bag = new Vue({
 				_this.bag_data = data;
 			});
 		},
-		delete_item: function(id){
+		delete_item: function(event){
+			var id = this.delete_id;
 			console.log(id);
 			this.bag_data.products.splice(id,1);
+			$(".delete_box").css("display","none");
 		}
 	}
 })
