@@ -39,8 +39,33 @@ if($.fn.lightbox_me != undefined){
 	})
 }
 
+//訂購頁條款視窗
+$(".agree-policy h5").click(function(e){
+	e.preventDefault();
+	$("#policy_box").trigger('reposition');
+	$("#policy_box").lightbox_me({
+		appearEffect: "fadeIn",
+		disappearEffect: "fadeOut",
+		overlaySpeed: 300,
+		lightboxSpeed: 300,
+		closeClick: true,
+		centered: true,
+		zIndex: 9999,
+		overlayCSS: {
+			background: 'black', 
+			opacity: .6
+		},
+		onLoad: function(){
+			$("body").css("overflow","hidden");
+		},
+		onClose: function(){
+			$("body").css("overflow","auto");
+		}
+	})
+})
+
 //註冊頁條款視窗
-$(".terms").click(function(e){
+$(".terms h5").click(function(e){
 	e.preventDefault();
 	$("#policy_box").trigger('reposition');
 	$("#policy_box").lightbox_me({

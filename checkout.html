@@ -1,206 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
-    <meta name="author" content="LanVece">
-    <meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
-	<meta property="og:title" content="【LanVece 新鮮保養】"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="http://www.lanvece.com"/>
-	<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
-	<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/shopping_bag.css">
-	
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-	navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
-	navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
-	</script>
-	<script src="css/owlcarousel/owl.carousel.min.js"></script>
-	<script src="js/vue.min.js"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-	<link rel="bookmark" href="images/favicon.ico"/>
-	<title>LanVece</title>
-</head>
-<body checkout>
-	<header class=""></header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+		<meta name="author" content="LanVece">
+		<meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+		<meta property="og:title" content="【LanVece 新鮮保養】"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.lanvece.com"/>
+		<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+		<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/shopping_bag.css">
 
-	<section id="checkout"  class="content" v-cloak>
-		<form action="">
-			<div class="right-content">
-				<h4 class="bouns-points">您有 <span>{{left_bonus_point}}</span> 點會員紅利</h4>
-				<p>(10 點會員紅利可折抵商品 1 元，限折抵訂單全額) </p>
-				<h3>您購買的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
-				<div class="points-using">
-					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<now_price && bag_data.discount_for!=1 && bag_data.discount_for!=3?true:false" id="use_points" v-on:click="discount(1)">
-					<label for="use_points">使用紅利折抵</label>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/jquery.lightbox_me.js"></script>
+		<script>
+navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
+navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+		</script>
+		<script src="css/owlcarousel/owl.carousel.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+		<link rel="bookmark" href="images/favicon.ico"/>
+		<title>LanVece</title>
+	</head>
+	<body checkout>
+		<header class=""></header>
+
+		<section id="checkout"  class="content" v-cloak>
+			<form action="">
+				<div class="right-content">
+					<h4 class="bouns-points">您有 <span>{{left_bonus_point}}</span> 點會員紅利</h4>
+					<p>(10 點會員紅利可折抵商品 1 元，限折抵訂單全額) </p>
+					<h3>您購買的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
+					<div class="points-using">
+						<input type="text" placeholder="您欲使用的點數">
+						<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<now_price && bag_data.discount_for!=1 && bag_data.discount_for!=3?true:false" id="use_points" v-on:click="discount(1)">
+						<label for="use_points">使用紅利折抵</label>
+					</div>
+					<ul class="titles">
+						<li>商品項目</li>
+						<li>價格</li>
+					</ul>
+					<ul class="items">
+						<!--use component-->
+						<bagItem v-for="(p,id) in bag_data.products" v-if="p.pre_order == false" :items_data="p"></bagItem>
+						<!--end component-->
+					</ul>
+					<h3>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
+					<div class="points-using">
+						<input type="text" placeholder="您欲使用的點數">
+						<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<pre_price && bag_data.discount_for!=2 && bag_data.discount_for!=3?true:false" id="use_points_preorder" v-on:click="discount(2)">
+						<label for="use_points_preorder">使用紅利折抵</label>
+					</div>
+					<ul class="titles">
+						<li>商品項目</li>
+						<li>價格</li>
+					</ul>
+					<ul class="items">
+						<!--use component-->
+						<bagItem v-for="(p,id) in bag_data.products" v-if="p.pre_order" :items_data="p"></bagItem>
+						<!--end component-->
+					</ul>
+
+					<div class="summary">
+
+						<div class="summary-details">
+							<h4>Summary</h4>
+							<ul>
+								<li>
+									<div class="summary-label">結帳金額小計</div><div class="subtotal-amount currency">{{sub_total_price}}</div>
+								</li>
+								<li>
+									<div class="summary-label">免費運送</div><div class="shipping-amount currency">{{trans_price}}</div>
+								</li>
+								<li class="using-points">
+									<div class="summary-label">紅利點數折抵</div><div class="shipping-amount currency">-{{discount_price}}</div>
+								</li>
+								<li>
+									<div class="summary-label">總額</div><div class="total-amount currency">{{total_price}}</div>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>	
+
+				<div class="left-content">
+					<a name="your-info"></a>
+					<ul class="breadcrumb">
+						<li class="active">顧客資訊</li>
+						<div class="step1">
+							<div class="customer-info">
+								<h2>購買人資訊</h2>
+								<div class="input"><input type="email" placeholder="Email" v-model="buyer_data.email"></div>
+								<h2>收件人資訊</h2>
+								<div class="input"><input type="text" placeholder="收件人姓名" v-model="buyer_data.name"></div>
+								<div class="input"><input type="text" placeholder="手機號碼" v-model="buyer_data.phone"></div>
+								<div class="input address">
+									<select v-model="buyer_data.county">
+										<option value="" disabled selected>縣市</option>
+										<option v-for="c in address_data.county_data" v-bind:value="c.value">{{c.name}}</option>
+									</select>
+									<select v-model="buyer_data.district">
+										<option value="" disabled selected>地區</option>
+										<option v-for="d in address_data.district_data" v-bind:value="d.value">{{d.name}}</option>
+									</select>
+								</div>
+								<div class="input"><input type="text" placeholder="街道地址" v-model="buyer_data.street"></div>
+								<div class="save-for-next"><input type="checkbox" checked> <span>將收件人資料儲存方便下次使用。</span></div>
+							</div>
+							<div class="goback">
+								<h4 class="inline"><a href="shopping-bag.html">返回購物袋</a></h4>
+								<a href="#your-info" class="login-btn next-btn" d="gostep2">下一步</a>
+							</div>
+						</div>
+						<li>運送與付款方式</li>
+						<div class="step2">
+							<div class="customer-info">
+								<h2>收件人資訊</h2>
+								<ul class="receiver-details">
+									<li class="th">姓名</li>
+									<li class="td">{{buyer_data.name}}</li>
+									<li class="th">手機號碼</li>
+									<li class="td">{{buyer_data.phone}}</li>
+									<li class="th">地址</li>
+									<li class="td">{{final_address}}</li>
+								</ul>
+								<h2>運送方式</h2>
+								<ul class="shipping-method">
+									<li>
+										<input type="radio" id="shipping_method_home" name="shipping_method" value="1" v-model="buyer_data.trans_way" checked>
+										<label for="shipping_method_home">
+											<span class="dot"></span>
+											<span>黑貓宅配</span>
+										</label>
+									</li>
+									<li>
+										<input type="radio" id="shipping_method_cashon" name="shipping_method" value="2" v-model="buyer_data.trans_way">
+										<label for="shipping_method_cashon">
+											<span class="dot"></span><span>黑貓貨到付款</span>
+										</label>
+									</li>
+									<li>
+										<input type="radio" name="shipping_method" value="3" id="shipping-method-711" v-model="buyer_data.trans_way">
+										<label for="shipping-method-711"><span class="dot"></span><span>7-11 純取貨</span></label>
+										<div class="choose711"><a href="#" onclick="show_cvs_map();"><button>選擇收件門市</button></a></div>
+										<div class="selected-store">
+											<p class="store-name">門市名稱：<span></span></p>
+											<p class="store-address">門市地址：<span></span></p>
+											<input type="hidden" name="store_id" id="store_id" value="">
+											<input type="hidden" name="store_name" id="store_name" value="">
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="goback">
+								<h4 class="inline">返回顧客資訊</h4>
+								<a href="#your-info" class="login-btn next-btn" d="gostep3">下一步</a>
+							</div>
+						</div>
+						<li>確認購買資訊</li>
+						<div class="step3">
+							<div class="customer-info">
+								<h2>收件人資訊</h2>
+								<ul class="receiver-details">
+									<li class="th">Email</li>
+									<li class="td">{{buyer_data.email}}</li>
+									<li class="th">姓名</li>
+									<li class="td">{{buyer_data.name}}</li>
+									<li class="th">手機號碼</li>
+									<li class="td">{{buyer_data.phone}}</li>
+									<li class="th">地址</li>
+									<li class="td">{{final_address}}</li>
+									<li class="th">運送方式</li>
+									<li class="td store-name">{{trans_way_word}}<span></span></li>
+								</ul>
+								<div class="agree-policy">
+									按下「完成訂購」，
+									即代表您接受並同意所有LanVece的<a href="terms.html"><h5>銷售與退款政策</h5></a>之條款。
+								</div>
+							</div>
+							<div class="goback">
+								<h4 class="inline">返回運送與付款方式</h4>
+								<div class="input">
+									<input type="submit" value="前往付款" class="login-btn pay-btn">
+								</div>
+								<div class="input">
+									<input type="submit" value="完成訂購" class="login-btn pay-btn">
+								</div>
+							</div>
+						</div>
+					</ul>
 				</div>
-				<ul class="titles">
-					<li>商品項目</li>
-					<li>價格</li>
-				</ul>
-				<ul class="items">
-				<!--use component-->
-					<bagItem v-for="(p,id) in bag_data.products" v-if="p.pre_order == false" :items_data="p"></bagItem>
-				<!--end component-->
-				</ul>
-				<h3>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h3>
-				<div class="points-using">
-					<input type="text" placeholder="您欲使用的點數">
-					<input type="checkbox" value="true" name="use_points" v-bind:disabled="left_bonus_price<pre_price && bag_data.discount_for!=2 && bag_data.discount_for!=3?true:false" id="use_points_preorder" v-on:click="discount(2)">
-					<label for="use_points_preorder">使用紅利折抵</label>
-				</div>
-				<ul class="titles">
-					<li>商品項目</li>
-					<li>價格</li>
-				</ul>
-				<ul class="items">
-				<!--use component-->
-					<bagItem v-for="(p,id) in bag_data.products" v-if="p.pre_order" :items_data="p"></bagItem>
-				<!--end component-->
-				</ul>
-				
-				<div class="summary">
-					
-					<div class="summary-details">
-						<h4>Summary</h4>
-						<ul>
-							<li>
-								<div class="summary-label">結帳金額小計</div><div class="subtotal-amount currency">{{sub_total_price}}</div>
-							</li>
-							<li>
-								<div class="summary-label">免費運送</div><div class="shipping-amount currency">{{trans_price}}</div>
-							</li>
-							<li class="using-points">
-								<div class="summary-label">紅利點數折抵</div><div class="shipping-amount currency">-{{discount_price}}</div>
-							</li>
-							<li>
-								<div class="summary-label">總額</div><div class="total-amount currency">{{total_price}}</div>
-							</li>
-						</ul>
+			</form>
+		</section>	
+
+		<footer></footer>
+
+		<div id="policy_box">
+			<button class="search-close light_box_close">close</button>
+			<h2>服務政策說明</h2>
+			<div class="content_wrap">
+				<div class="content_box">
+					<p>
+						非瑕疵原因之退貨及退款政策<br><br>
+						如果您對產品不滿，您可於 24 小時線上自助服務遞交退貨申請,或於星期一至星期五上午九時至晚上九時的時段內致電 0800-020-021 申請 Return Material Authorization (RMA)。
+						符合退貨條件的產品，請於取得產品之日起十四個日曆日內辦理退貨申請。 有關貨到即損產品Dead On Arrival的條款，請參閱下一部份的詳細說明。<br>
+						如果您所退還的產品符合退貨條件並且以未開封的原包裝被退回，我們將以您原付款方式的退款。但請注意，我們只能退款至台灣的銀行帳戶，而且該銀行帳戶名稱必須和付款人的名稱/資訊一致。請注意，我們只能在台灣境內進行退款，無法退款至其他國家。所有產品，包括但不限於任何與產品一併交付的附件、手冊、文檔及註冊資料，必須包裝於未開封的原包裝內。<br>
+						請注意 Apple 不准許以下產品的退貨或向其提供退款：<br>
+						(1) 開放式記憶體<br>
+						(2) 開放式軟體*<br>
+						(3) 最新編程軟體產品（軟體升級產品）<br>
+						(4) Apple 禮品包裝（包括禮品盒加絲帶和賀卡）<br>
+						(5) Apple 開發人員產品 (會員資格、依事件計次技術支援、WWDC 門票)<br>
+
+						*您可在拒絕授權條件之後，退還軟體產品，但以該軟體並未載入電腦為限。然而，若該軟體及內附的軟體授權證書之封簽或貼條已被破損，則不得要求退貨。<br>
+						退貨前請確保您已申請退貨 (Return Material Authorisation)。<br>
+						我們會依照本條款根據你退還的貨品退還款項。<br>
+						請注意：對於所有申請 RMA 者，您須確保折讓證明單仍與產品一併退回。詳情請參閱www.apple.com.tw/support/store之資訊
+					</p>
+					<p>
+						貨到即損（DOA：Dead On Arrival）產品：開箱即現的系統故障<br><br>
+					如果一件 Apple 品牌的硬體產品在開箱時首次使用中顯示硬體故障，阻礙基礎可操作性，則其會被考慮為DOA。如果您相信您的產品屬於DOA，請在取得產品之日起十四個日曆日內致電 00800 095 988，AppleCare 技術支援部門。AppleCare 技術支援部門將決定該產品是否屬於DOA並向您提供以下的選擇：<br>
+					(1) 更換：為您免費更換及運送您訂購的產品給您。承運商將安排一名代表與您保持聯繫以設立更換產品並提供DOA產品的退貨程序。 <br>
+					(2) 維修：您可以選擇維修該產品；但一旦選擇維修，該產品將不再符合更換的條件。 產品必須在運送之日起十四個日曆日內被認定為DOA以便接受更換產品。<br>
+					如果產品在運送之日起十四個日曆日後被 AppleCare 技術支援部門視為DOA，Apple的標準產品保固將適用。如果該產品被 AppleCare 技術支援部門不視為DOA，Apple的標準產品保固將適用。<br>
+					所有 AppleCare 技術支援部門確定為貨到即損 (DOA) 之產品將由本公司負擔運送至原寄貨地址之運費。<br>
+					Apple 保留測試被退回的DOA產品的權利。如果產品的狀況被顧客不真實的敍述，Apple 得收取 NT$400 的處理費。
+					</p>
+					<p>
+					瑕疵產品<br><br>
+					Apple 品牌產品<br>
+					如您於Apple Store 購買之 Apple 品牌產品事後發現瑕疵，請致電00800 095 988 .以聯繫 AppleCare 技術支援部門。如 AppleCare 技術支援部門認為瑕疵屬實，其應適用產品的保固條款。請向 AppleCare 技術支援部門提及產品之保固資訊和其他與產品一併送交您的支援文檔。（更多有關Apple產品保固的資訊，請參考後述產品保固部分。）<br>
+					非 Apple 品牌/第三方產品<br>
+					若您發現一件第三方產品有瑕疵，請直接聯繫生產商瞭解有關生產商的保證。<br>
+					注意：<br>
+					通過本網址銷售的未標明 Apple 品牌名稱的產品，將由其製造商根據與產品附隨的條款與條件獨立提供服務及支援。 Ａpple 的有限保固不適用於非 Apple 品牌產品，即使其和 Apple 產品包裝在一起或一起銷售。<br>
 						
-					</div>
+					</p>
+					
+
+					
+
+
+					回到頁首
 				</div>
-			</div>	
-
-			<div class="left-content">
-				<a name="your-info"></a>
-				<ul class="breadcrumb">
-					<li class="active">顧客資訊</li>
-					<div class="step1">
-						<div class="customer-info">
-							<h2>購買人資訊</h2>
-							<div class="input"><input type="email" placeholder="Email" v-model="buyer_data.email"></div>
-							<h2>收件人資訊</h2>
-							<div class="input"><input type="text" placeholder="收件人姓名" v-model="buyer_data.name"></div>
-							<div class="input"><input type="text" placeholder="手機號碼" v-model="buyer_data.phone"></div>
-							<div class="input address">
-								<select v-model="buyer_data.county">
-									<option value="" disabled selected>縣市</option>
-									<option v-for="c in address_data.county_data" v-bind:value="c.value">{{c.name}}</option>
-								</select>
-								<select v-model="buyer_data.district">
-									<option value="" disabled selected>地區</option>
-									<option v-for="d in address_data.district_data" v-bind:value="d.value">{{d.name}}</option>
-								</select>
-							</div>
-							<div class="input"><input type="text" placeholder="街道地址" v-model="buyer_data.street"></div>
-							<div class="save-for-next"><input type="checkbox" checked> <span>將收件人資料儲存方便下次使用。</span></div>
-						</div>
-						<div class="goback">
-							<h4 class="inline"><a href="shopping-bag.html">返回購物袋</a></h4>
-							<a href="#your-info" class="login-btn next-btn" d="gostep2">下一步</a>
-						</div>
-					</div>
-					<li>運送與付款方式</li>
-					<div class="step2">
-						<div class="customer-info">
-							<h2>收件人資訊</h2>
-							<ul class="receiver-details">
-								<li class="th">姓名</li>
-								<li class="td">{{buyer_data.name}}</li>
-								<li class="th">手機號碼</li>
-								<li class="td">{{buyer_data.phone}}</li>
-								<li class="th">地址</li>
-								<li class="td">{{final_address}}</li>
-							</ul>
-							<h2>運送方式</h2>
-							<ul class="shipping-method">
-								<li>
-									<label>
-										<input type="radio" name="shipping_method" value="1" v-model="buyer_data.trans_way" checked><span class="dot"></span>
-										<span>黑貓宅配</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="radio" name="shipping_method" value="2" v-model="buyer_data.trans_way"><span class="dot"></span><span>黑貓貨到付款</span>
-									</label>
-								</li>
-								<li>
-									<input type="radio" name="shipping_method" value="3" id="shipping-method-711" v-model="buyer_data.trans_way">
-									<label for="shipping-method-711"><span class="dot"></span><span>7-11 純取貨</span></label>
-									<div class="choose711"><a href="#" onclick="show_cvs_map();"><button>選擇收件門市</button></a></div>
-									<div class="selected-store">
-										<p class="store-name">門市名稱：<span></span></p>
-										<p class="store-address">門市地址：<span></span></p>
-										<input type="hidden" name="store_id" id="store_id" value="">
-										<input type="hidden" name="store_name" id="store_name" value="">
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="goback">
-							<h4 class="inline">返回顧客資訊</h4>
-							<a href="#your-info" class="login-btn next-btn" d="gostep3">下一步</a>
-						</div>
-					</div>
-					<li>確認購買資訊</li>
-					<div class="step3">
-						<div class="customer-info">
-							<h2>收件人資訊</h2>
-							<ul class="receiver-details">
-								<li class="th">Email</li>
-								<li class="td">{{buyer_data.email}}</li>
-								<li class="th">姓名</li>
-								<li class="td">{{buyer_data.name}}</li>
-								<li class="th">手機號碼</li>
-								<li class="td">{{buyer_data.phone}}</li>
-								<li class="th">地址</li>
-								<li class="td">{{final_address}}</li>
-								<li class="th">運送方式</li>
-								<li class="td store-name">{{trans_way_word}}<span></span></li>
-							</ul>
-						</div>
-						<div class="goback">
-							<h4 class="inline">返回運送與付款方式</h4>
-							<div class="input">
-								<input type="submit" value="前往付款" class="login-btn pay-btn">
-							</div>
-							<div class="input">
-								<input type="submit" value="完成訂購" class="login-btn pay-btn">
-							</div>
-						</div>
-					</div>
-				</ul>
-				
 			</div>
-		</form>
-	</section>	
-	
-	<footer></footer>
+			<button class="conform">確認</button>
+		</div>
 
-	<!--Vue component-->
+
+		<!--Vue component-->
 		<template id="bag_item">
 			<li class="bag_item">
 				<div class="product-item">
@@ -219,17 +278,17 @@
 				</ul>
 			</li>
 		</template>
-	<!--end component-->
-	
-	<script src="js/products.js"></script>
-	<script src="js/base.js"></script>
-	<script>
-		$.get("components/header.html", function(data, status){
-        	$('header').html(data);
-    	});
-		$.get("components/footer.html", function(data, status){
-        	$('footer').html(data);
-    	});
-	</script>
-</body>
+		<!--end component-->
+
+		<script src="js/products.js"></script>
+		<script src="js/base.js"></script>
+		<script>
+$.get("components/header.html", function(data, status){
+	$('header').html(data);
+});
+$.get("components/footer.html", function(data, status){
+	$('footer').html(data);
+});
+		</script>
+	</body>
 </html>

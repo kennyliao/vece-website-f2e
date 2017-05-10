@@ -35,37 +35,50 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 		<header class=""></header>
 
 		<section class="content">
-			<div id="shopping_bag" class="container">
+			<div id="shopping_bag" class="container" v-cloak>
 				<form action="checkout.html">
 					<div class="wrapper row">
 						<h2>您購物袋中的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-						<ul class="titles" v-if="has_now_order">
-							<li>商品項目</li>
-							<li>價格</li>
-							<li>數量</li>
-							<li>小計</li>
-						</ul>
-						<div class="no-item" v-else>購物袋中沒有任何項目，請前往繼續購物</div>
-							<!--use template-->
-							<transition-group name="items-fade" tag="ul" class="items">
-							<bagItem v-for="(p,id) in bag_data.products" :key="'item-'+id" v-if="p.pre_order == false" :items_data="p"  :delete_item="delete_item" :id="id"></bagItem>
-							</transition-group>
-							<!--end template-->
-						<h2>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-						<ul class="titles" v-if="has_pre_order">
-							<li>商品項目</li>
-							<li>價格</li>
-							<li>數量</li>
-							<li>小計</li>
-						</ul>
-						<transition-group name="no-items-fade" tag="ul" class="no-item" v-else>
-							購物袋中沒有任何項目，請前往繼續購物
+						<transition name="has-item">
+							<ul class="titles" v-if="has_now_order">
+								<li>商品項目</li>
+								<li>價格</li>
+								<li>數量</li>
+								<li>小計</li>
+							</ul>
+						</transition>
+						<!--use template-->
+						<transition-group name="items-fade" tag="ul" class="items">
+							<bagItem v-for="(p,id) in bag_data.products" :key="'item_'+p.product_id" v-if="p.pre_order == false" :items_data="p"  :delete_item="delete_item" :id="id"></bagItem>
+							<div class="bag_item no_item" v-if="!has_now_order" key="no_item" >
+								<span>購物袋中沒有任何項目，請前往繼續購物</span>
+								<a href="home.html">
+									<div class="btn">前往購物</div>
+								</a>
+							</div>
 						</transition-group>
-							<!--use template-->
-							<transition-group name="items-fade" tag="ul" class="items">
-								<bagItem  v-for="(p,id) in bag_data.products" :key="'item-'+id" v-if="p.pre_order == true" :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
-							</transition-group>
-							<!--end template-->
+						<!--end template-->
+						
+						<h2>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
+						<transition name="has-item">
+							<ul class="titles" v-if="has_pre_order">
+								<li>商品項目</li>
+								<li>價格</li>
+								<li>數量</li>
+								<li>小計</li>
+							</ul>
+						</transition>
+						<!--use template-->
+						<transition-group name="items-fade" tag="ul" class="items">
+							<bagItem  v-for="(p,id) in bag_data.products" :key="'item_'+p.product_id" v-if="p.pre_order == true" :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
+							<div class="bag_item no_item" v-if="!has_pre_order" key="no_item" >
+								<span>購物袋中沒有任何項目，請前往繼續購物</span>
+								<a href="home.html">
+									<div class="btn">前往購物</div>
+								</a>
+							</div>
+						</transition-group>
+						<!--end template-->
 						<div class="summary">
 							<div class="goback"><h4 class="inline">繼續選購商品</h4></div>
 							<div class="summary-details">

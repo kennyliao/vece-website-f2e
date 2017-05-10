@@ -656,7 +656,7 @@ var checkout = new Vue({
 			}else{
 				this.bag_data.discount_for += num;
 			}
-			console.log(this.bag_data.discount_for);
+//			console.log(this.bag_data.discount_for);
 		}
 	}
 })
@@ -857,7 +857,7 @@ if( $("#search-result").length != 0){
 	},
 	computed: {
 	},
-	mounted(){
+	mounted: function(){
 		this.$nextTick(function(){
 			window.addEventListener('resize', this.decide_width);
 			this.decide_width();
@@ -910,14 +910,14 @@ if( $("#search-result").length != 0){
 				this.desktop_width = true;
 				$(".owl-search").owlCarousel({
 					items: 1.1,
-					nav:false,
-					loop:false,
+					nav: true,
+					loop: false,
 					margin:0,
 					autoplay:false,
 					dots: false,
 					responsive:{
 						0:{
-							items: 1.3,
+							items: 1.5,
 							center: true,
 							margin: 20
 						},

@@ -10,6 +10,67 @@
 
 [v-cloak] {
   display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+body section.content .owl-carousel .owl-nav {
+  height: 20px;
+}
+body section.content .owl-carousel .owl-nav .owl-prev, body section.content .owl-carousel .owl-nav .owl-next {
+  background-color: transparent;
+  color: #2f3031;
+  position: absolute;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+body section.content .owl-carousel .owl-nav .owl-prev:hover, body section.content .owl-carousel .owl-nav .owl-next:hover {
+  opacity: 0.8;
+}
+body section.content .owl-carousel .owl-nav .owl-prev.disabled, body section.content .owl-carousel .owl-nav .owl-next.disabled {
+  display: none;
+}
+body section.content .owl-carousel .owl-nav .owl-prev {
+  left: 30px;
+}
+body section.content .owl-carousel .owl-nav .owl-next {
+  right: 30px;
+}
+
+body section.content .arrow-left:before, body section.content .arrow-right:after {
+  content: "";
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background: url("../images/arrow.svg") center center/cover no-repeat;
+}
+
+body section.content .arrow-left:before, body section.content .arrow-right:after {
+  width: 18px;
+  height: 18px;
+}
+
+body section.content .arrow-left:before {
+  margin-right: 5px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+body section.content .arrow-right:after {
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+body section.content .arrow-left:before, .arrow-right:after {
+  width: 18px;
+  height: 18px;
 }
 
 body[products] header {
@@ -460,6 +521,9 @@ body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav .
 body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-next:hover, body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-prev:hover {
   color: #6b6f77;
 }
+body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-next.disabled, body[pre-order] section.content .container-fiuld .intro .owl-carousel .owl-nav .owl-prev.disabled {
+  display: none;
+}
 body[pre-order] section.content .container-fiuld .intro .owl-prev {
   left: 30px;
 }
@@ -514,6 +578,9 @@ body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel
 }
 body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-next:hover, body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-prev:hover {
   color: #6b6f77;
+}
+body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-next.disabled, body[pre-order] section.content .container-fiuld .pre_order_series .owl-carousel .owl-nav .owl-prev.disabled {
+  display: none;
 }
 body[pre-order] section.content .container-fiuld .pre_order_series .owl-prev {
   left: 30px;
@@ -2250,6 +2317,9 @@ body[products-app] section.content #promot .owl-carousel .owl-nav .owl-next, bod
 }
 body[products-app] section.content #promot .owl-carousel .owl-nav .owl-next:hover, body[products-app] section.content #promot .owl-carousel .owl-nav .owl-prev:hover, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-next:hover, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-prev:hover {
   color: #6b6f77;
+}
+body[products-app] section.content #promot .owl-carousel .owl-nav .owl-next.disabled, body[products-app] section.content #promot .owl-carousel .owl-nav .owl-prev.disabled, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-next.disabled, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-prev.disabled {
+  display: none;
 }
 body[products-app] section.content #promot .owl-prev, body[pre-order-app] section.content #promot .owl-prev {
   left: 30px;
