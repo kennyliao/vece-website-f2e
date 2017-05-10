@@ -233,6 +233,8 @@ function searchAreaToggle(e){
 	}
 }
 
+
+//search area 關閉
 var blurcount;
 function blurit(e,time){
 	if(e == "0"){

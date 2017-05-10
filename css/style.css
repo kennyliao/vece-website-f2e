@@ -1287,7 +1287,7 @@ body[shopping-bag] section.content ul.items>li ul.item-price li{
 		display: none;
 	}
 	body[shopping-bag] section.content ul.items>li ul.item-price li:last-child{
-		width: 30%;
+		width: 32%;
 	}
 }
 body[shopping-bag] section.content ul.items>li ul.item-price li:nth-child(2){
@@ -1398,8 +1398,8 @@ body[shopping-bag] section.content ul.items>li div.remove{
 @media screen and (max-width: 767px){
 	body[shopping-bag] section.content ul.items>li div.remove{
 		position: absolute;
-		right: -10px;
-		top: 19px;
+		right: 0px;
+		top: 30px;
 	}
 }
 body[shopping-bag] section.content ul.preorder-time{

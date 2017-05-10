@@ -1,5 +1,18 @@
 @import checkout
 @import mixin
+	
+.items-fade-leave
+	opacity: 1
+	position: relative
+	display: block
+.items-fade-leave-active
+	transition: all 5s ease
+.items-fade-leave-active
+	opacity: 0
+.no-items-fade-before-enter
+	tansition: all 5s
+	opacity: 0
+
 
 body[shopping-bag] section.content .bag_item
 	width: 100%
@@ -69,6 +82,8 @@ body[shopping-bag] .delete_box
 
 body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
 	margin-bottom: 95px
+
+
 
 body[shopping-bag] section.content .bag_item
 	div.product-item
@@ -144,15 +159,62 @@ body[shopping-bag] section.content .bag_item
 				margin-right: 20px
 				cursor: pointer
 	div.remove
+		position: relative
 		width: 6%
 		height: 20px
 		margin: auto
 		color: #777
 		cursor: pointer
+	.layer
+		z-index: 999
+		top: 1px
+		left: 0
+		background-color: rgba(255,255,255,0.85)
+		position: absolute
+		display: none
+		width: 100%
+		height: calc(100% - 2px)
+		.text
+			+ab_center
+			font-size: 20px
+			text-shadow: 0px 0px 5px rgba(255,255,255,1)
+		.control_box
+			display: inline-block
+			position: absolute
+			left: initial
+			top: 60px
+			right: 0%
+			+transform(translate(0%,-50%)) 
+			background-color: #fff
+			width: 24%
+			min-width: 120px
+			text-align: center
+			
+			.btn
+				display: inline-block
+				font-size: 14px
+				width: 40%
+				color: white
+				padding: 5px 20px
+				+border-radius(3px)
+				&:first-child
+					margin-right: 5px
+			.confirm
+				background-color: $color_purple
+			.cancel
+				background-color: $color_border
+		
+@media screen and (max-width: 767px)
+	body[shopping-bag] section.content .bag_item
+		.layer
+			.control_box
+				top: 38px
+				right: -10px
 
 @media screen and (max-width: 767px)
 	body[shopping-bag] section.content .bag_item div.product-item
 		width: 100%
+		
 
 @media screen and (min-width: 768px) and (max-width: 992px)
 	body[shopping-bag] section.content .bag_item div.product-item div.item-photo

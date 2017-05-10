@@ -36,40 +36,36 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 
 		<section class="content">
 			<div id="shopping_bag" class="container">
-
-				<div class="delete_box" v-show="false">
-					<button class="search-close light_box_close" @submit.prevent>close</button>
-					<p>確定移除<span></span>？</p>
-					<button class="btn confirm" v-on:click.prevent="delete_item()" @submit.prevent>確定</button>
-					<button class="btn cancel" @submit.prevent>取消</button>
-				</div>
-
 				<form action="checkout.html">
 					<div class="wrapper row">
 						<h2>您購物袋中的項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-						<ul class="titles">
+						<ul class="titles" v-if="has_now_order">
 							<li>商品項目</li>
 							<li>價格</li>
 							<li>數量</li>
 							<li>小計</li>
 						</ul>
-						<ul class="items">
+						<div class="no-item" v-else>購物袋中沒有任何項目，請前往繼續購物</div>
 							<!--use template-->
-							<bagItem v-for="(p,id) in bag_data.products" v-if="p.pre_order == false" :items_data="p"  :delete_item="delete_item" :id="id"></bagItem>
+							<transition-group name="items-fade" tag="ul" class="items">
+							<bagItem v-for="(p,id) in bag_data.products" :key="'item-'+id" v-if="p.pre_order == false" :items_data="p"  :delete_item="delete_item" :id="id"></bagItem>
+							</transition-group>
 							<!--end template-->
-						</ul>
 						<h2>您的訂製項目<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></h2>
-						<ul class="titles">
+						<ul class="titles" v-if="has_pre_order">
 							<li>商品項目</li>
 							<li>價格</li>
 							<li>數量</li>
 							<li>小計</li>
 						</ul>
-						<ul class="items">
+						<transition-group name="no-items-fade" tag="ul" class="no-item" v-else>
+							購物袋中沒有任何項目，請前往繼續購物
+						</transition-group>
 							<!--use template-->
-							<bagItem  v-for="(p,id) in bag_data.products" v-if="p.pre_order == true" :items_data="p"    :delete_item="delete_item" :id="id"></bagItem>
+							<transition-group name="items-fade" tag="ul" class="items">
+								<bagItem  v-for="(p,id) in bag_data.products" :key="'item-'+id" v-if="p.pre_order == true" :items_data="p" :delete_item="delete_item" :id="id"></bagItem>
+							</transition-group>
 							<!--end template-->
-						</ul>
 						<div class="summary">
 							<div class="goback"><h4 class="inline">繼續選購商品</h4></div>
 							<div class="summary-details">
@@ -113,7 +109,18 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 					<li><div class="minus" v-on:click="sub()"></div><input type="text" name="quantity[]" v-model="items_data.quantity"><div class="add" v-on:click="add()"></div></li>
 					<li class="currency">{{final_price}}</li>
 				</ul>
-				<div class="remove" v-on:click="show_light_box(id,$event)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+				<div class="remove" v-on:click="show_light_box(id,$event)">
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</div>
+				<div class="layer">
+					<div class="text">
+						確定移除此商品？
+					</div>
+					<div class="control_box">
+						<button class="btn confirm" v-on:click.prevent="delete_item(id,$event)" @submit.prevent>確定</button>
+						<button class="btn cancel" v-on:click.prevent.stop="cancel_delete($event)" @submit.prevent>取消</button>
+					</div>
+				</div>
 				<ul class="preorder-time" v-if="items_data.pre_order">
 					<li class="placeorder"><div>{{items_data.order_date[0]}} - {{items_data.order_date[1]}}</div><h5>下訂期</h5></li>
 					<li class="flower"><div>{{items_data.order_date[2]}}</div><h5>手工採花</h5></li>
