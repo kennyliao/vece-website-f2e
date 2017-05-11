@@ -104,9 +104,9 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 							<!--  會員等級頁  -->
 							<div id="membership" class="tab-pane fade" v-show="membership_data">
 									<ul class="member_grade owl-membership owl-carousel owl-theme">
-										<li v-for="m in membership_data" :class="is_now_grade(m.grade)?'active center':''">
+										<li v-for="m in membership_data" :class="is_now_grade(m.grade)?'grade active':'grade'">
 											<div class="avator">
-												<img  v-if="is_now_grade(m.grade)" src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
+												<img v-if="is_now_grade(m.grade)" src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
 											</div>
 											<h4>{{m.grade}}</h4>
 											<hr>
@@ -116,11 +116,25 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 												</li>
 												<li v-for="u in m.upgrade" v-if="u.origin_level">
 													{{u.origin_level}} --
-													{{u.require}} 即可成為 {{m.grade}}
+													{{u.require}}  即可成為 {{m.grade}}
 												</li>
 											</ul>
+											<div class="link_box" v-if="!is_now_grade(m.grade)">
+												<a href="#">瞭解更多<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+											</div>
+											
 										</li>
 									</ul>
+									<div class="user_grade_block">
+										<h5 v-if="now_grade_data">您目前為<span>{{now_grade_data.grade}}</span></h5>
+											<div class="avator">
+												<img src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
+											</div>
+											<div class="link_box" >
+												想知道更多會員等級的資訊？<a href="#">瞭解更多<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+											</div>
+										
+									</div>
 								<h3>紅利點數</h3>
 								<ul class="point">
 									<li class="tr">
@@ -154,6 +168,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 					</div>
 					<!--  訂單查詢頁  -->
 					<div id="order-menu" class="tab-pane fade">
+						
 						<ul class="nav nav-tabs submenu">
 							<li class="active"><a data-toggle="tab" href="#order">進行中訂單</a></li>
 							<li><a data-toggle="tab" href="#past-order">歷史訂單</a></li>

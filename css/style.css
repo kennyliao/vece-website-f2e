@@ -3119,13 +3119,36 @@ body[member-center] section.content ul.member_grade{
 	padding: 0 20px;
 	padding-top: 50px;
 }
+body[member-center] section.content div.user_grade_block{
+	margin: 40px 0 70px;
+	display: none;
+}
+body[member-center] section.content div.user_grade_block .avator{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+body[member-center] section.content div.user_grade_block  h5{
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+body[member-center] section.content div.user_grade_block  h5 span{
+	color: #ab8eda;
+	margin-left: 3px;
+}
 @media screen and (max-width: 768px){
 	body[member-center] section.content #membership{
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 	body[member-center] section.content ul.member_grade{
 		padding: 0;
+	}
+	body[member-center] section.content div.user_grade_block{
+		display: block;
 	}
 }
 body[member-center] section.content ul.member_grade .owl-nav{
@@ -3136,23 +3159,62 @@ body[member-center] section.content ul.member_grade .owl-nav{
 
 body[member-center] section.content ul.member_grade li{
 	position: relative;
-	display: inline-block;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
 	width: 100%;
 }
+body[member-center] section.content ul.member_grade li .link_box {
+	text-align: right;
+	width: 100%;
+	padding: 0 15px;
+}
+body[member-center] section.content .user_grade_block .link_box {
+	margin-top: 20px;
+	text-align: center;
+}
+body[member-center] section.content ul.member_grade li .link_box a, body[member-center] section.content .user_grade_block a{
+	color: #ab8edb;
+	margin-left: 5px;
+}
+body[member-center] section.content ul.member_grade li .link_box a i, body[member-center] section.content .user_grade_block a i{
+	margin-left: 5px;
+}
+
 body[member-center] section.content ul.member_grade li .avator{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 	overflow: hidden;
-	margin: 0 auto;
+	margin: 0 calc((100% - 50px) /2);
 	margin-bottom: 30px;
 }
 body[member-center] section.content ul.member_grade li ul.qualification{
+	width: 100%;
 	align-items: flex-start;
 	padding: 0 25px;
 }
+body[member-center] section.content #membership hr {
+	display: block;
+	width: 100%;
+	border-width: 2px;
+}
 @media screen and (max-width: 768px){
+	body[member-center] section.content ul.member_grade{
+		display: none;
+	}
+	body[member-center] section.content ul.member_grade li{
+		align-items: flex-end;
+	}
 	body[member-center] section.content ul.member_grade li ul.qualification{
+		display: none;
+	}
+	body[member-center] section.content #membership hr {
 		display: none;
 	}
 }
@@ -3165,6 +3227,7 @@ body[member-center] section.content ul.member_grade li ul.qualification li{
 }
 body[member-center] section.content ul.member_grade li ul.qualification li:first-child{
 	text-align: center;
+	width: 100%;
 }
 
 body[member-center] section.content ul.member_grade li ul.qualification li:after{
@@ -3172,6 +3235,7 @@ body[member-center] section.content ul.member_grade li ul.qualification li:after
 	text-align: center;
 	display: block;
 	margin-top: 20px;
+	width: 100%;
 }
 body[member-center] section.content ul.member_grade li ul.qualification li:last-child:after{
 	content: none;
@@ -3212,6 +3276,29 @@ body[member-center] section.content ul.point div.td, body[member-center] section
 	line-height: 30px;
 	letter-spacing: 2px;
 	color: #4e5156;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content ul.point, body[member-center] section.content ul.interest{
+		padding: 0;
+		margin-top: 0;
+	}
+	body[member-center] section.content ul.point li.tr, body[member-center] section.content ul.interest li.tr{
+		margin-top: 0;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+	}
+	body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th, body[member-center] section.content ul.point div.td, body[member-center] section.content ul.interest div.td {
+		width: 100%;
+		font-size: 15px;
+		line-height: 30px;
+		letter-spacing: 0.8px;
+	}
+	body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th {
+		margin-bottom: 5px;
+	}
+	body[member-center] section.content ul.interest {
+		margin-bottom: 70px;
+	}
 }
 
 body[member-center] .change-password-area{

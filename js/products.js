@@ -835,7 +835,7 @@ var member_center = new Vue({
 						dots: false,
 						responsive:{
 							0:{
-								items: 1.5,
+								items: 1,
 								center: true
 							},
 							768:{
