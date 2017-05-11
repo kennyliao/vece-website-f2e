@@ -92,10 +92,20 @@ body[products] header:after {
   height: 0;
 }
 body[products] header div.logo {
+  background-color: rgba(255, 255, 255, 0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body[products] header div.logo img {
   -webkit-filter: invert(1);
   filter: invert(1);
 }
 body[products] header.scroll div.logo {
+  background-color: white;
+}
+body[products] header.scroll div.logo img {
   -webkit-filter: invert(0);
   filter: invert(0);
 }
@@ -185,7 +195,7 @@ body[products] section.content .head_img .title h1 {
   color: #fff;
 }
 body[products] section.content .head_img .title p {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 18px;
   line-height: 31px;
   letter-spacing: 2px;
@@ -201,6 +211,7 @@ body[products] section.content .intro_wrap .intro_box {
   display: inline-block;
   vertical-align: middle;
   width: 49%;
+  padding-right: 25px;
 }
 body[products] section.content .intro_wrap .intro_box h2 {
   position: absolute;
@@ -531,7 +542,7 @@ body[pre-order] section.content .container-fiuld .intro .owl-next {
   right: 30px;
 }
 body[pre-order] section.content .container-fiuld .intro .intro_block {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 body[pre-order] section.content .container-fiuld .intro .intro_block h2 {
   margin-bottom: 10px;
@@ -589,7 +600,7 @@ body[pre-order] section.content .container-fiuld .pre_order_series .owl-next {
   right: 30px;
 }
 body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot {
-  padding: 0;
+  padding: 0px;
   width: 100%;
   max-width: 1057px;
   display: inline-block;
@@ -648,7 +659,7 @@ body[pre-order] section.content .container-fiuld .pre_order_series .owl-promot .
     display: none;
   }
   body[pre-order] section.content .container-fiuld .intro .intro_block {
-    padding: 0 25px;
+    padding: 0px;
   }
   body[pre-order] section.content .container-fiuld .intro .intro_block h2 {
     text-align: center;
@@ -2156,9 +2167,6 @@ body[products-app] section.content .product_intro .show_box .page_wrap, body[pre
   max-width: 600px;
   width: 100%;
 }
-body[products-app] section.content .product_intro .show_box .page_box, body[pre-order-app] section.content .product_intro .show_box .page_box {
-  display: none;
-}
 body[products-app] section.content .product_intro .show_box .application .video_box, body[pre-order-app] section.content .product_intro .show_box .application .video_box {
   position: relative;
   max-width: 485px;
@@ -2262,7 +2270,7 @@ body[products-app] section.content .photo .photo_block .cover, body[pre-order-ap
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
@@ -2512,6 +2520,12 @@ body[products-app] section.content #promot .item_wrap .date:before, body[pre-ord
   body[products-app] section.content #promot, body[pre-order-app] section.content #promot {
     margin-bottom: 20px;
   }
+  body[products-app] section.content #promot h2, body[pre-order-app] section.content #promot h2 {
+    margin-bottom: 66px;
+  }
+  body[products-app] section.content #promot .owl-carousel .owl-nav, body[pre-order-app] section.content #promot .owl-carousel .owl-nav {
+    height: 0;
+  }
   body[products-app] section.content #promot .owl-carousel .owl-nav .owl-next, body[products-app] section.content #promot .owl-carousel .owl-nav .owl-prev, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-next, body[pre-order-app] section.content #promot .owl-carousel .owl-nav .owl-prev {
     display: none;
   }
@@ -2525,4 +2539,14 @@ body[products-app] section.content #promot .item_wrap .date:before, body[pre-ord
     font-size: 15px;
     line-height: 27px;
   }
+}
+.pages-wrap-fade-enter-active, .pages-wrap-fade-leave-active {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pages-wrap-fade-enter, .pages-wrap-fade-leave-active {
+  opacity: 0;
 }

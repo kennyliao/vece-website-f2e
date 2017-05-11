@@ -34,7 +34,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 	<body products>
 		<header></header>
 		<section id="products" class="content" v-cloak>
-			<div class="container-fiuld">
+			<div class="container-fiuld" v-if="products_data">
 				<div class="head_img" v-bind:style="'background-image: url('+products_data.products.img+')'">
 					<div class="title">
 						<h1>{{products_data.products.title}}</h1>

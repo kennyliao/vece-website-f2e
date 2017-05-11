@@ -34,7 +34,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 	</head>
 	<body store>
 		<header></header>
-		<section id="about" class="content">
+		<section id="about" class="content" v-if="about_data">
 			<div class="head_img" v-bind:style=" 'background-image: url('+ about_data[2].location.img +')'"></div>
 			<div class="title_wrap">
 				<h1>台北概念店</h1>

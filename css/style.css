@@ -630,7 +630,11 @@ body[home] #light_box .content{
 	-ms-transform: translateY(50%);
 	-o-transform: translateY(50%);
 	transform: translateY(50%);
-	text-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+	text-shadow: 0px 0px 6px rgba(0,0,0,0.4);
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 body[home] #light_box .content h1 {
@@ -3094,6 +3098,113 @@ body[member-center] section.content .tab-content .input.address select+select{
 body[member-center] section.content .tab-content button.change-password{
 	margin-top: 50px;
 }
+
+body[member-center] section.content #membership h3{
+	color: #4e5156;
+}
+
+body[member-center] section.content h4 {
+/*	text-align: left;*/
+}
+body[member-center] section.content ul.member_grade{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 70px;
+	margin-bottom: 116px;
+	padding: 0 20px;
+	padding-top: 50px;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content ul.member_grade{
+		padding: 0;
+	}
+}
+body[member-center] section.content ul.member_grade .owl-nav{
+	position: absolute;
+	width: 100%;
+	bottom: -20px;
+}
+
+body[member-center] section.content ul.member_grade li{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+body[member-center] section.content ul.member_grade li .avator{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+body[member-center] section.content ul.member_grade li ul.qualification{
+	align-items: flex-start;
+	padding: 0 25px;
+}
+body[member-center] section.content ul.member_grade li ul.qualification li{
+	margin: 20px 0;
+	font-size: 18px;
+	letter-spacing: 1.1px;
+	line-height: 30px;
+	text-align: justify;
+}
+body[member-center] section.content ul.member_grade li ul.qualification li:first-child{
+	text-align: center;
+}
+
+body[member-center] section.content ul.member_grade li ul.qualification li:after{
+	content: "or";
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+body[member-center] section.content ul.member_grade li ul.qualification li:last-child:after{
+	content: none;
+}
+body[member-center] section.content ul.point, body[member-center] section.content ul.interest{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin-top: 40px;
+}
+body[member-center] section.content ul.interest{
+	margin-bottom: 200px;
+}
+body[member-center] section.content ul.point li,body[member-center] section.content ul.interest li {
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th{
+	width: 10%;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	font-weight: 400;
+	margin-bottom: 18px;
+}
+body[member-center] section.content ul.point div.td, body[member-center] section.content ul.interest div.td{
+	width: 90%;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	color: #4e5156;
+}
+
 body[member-center] .change-password-area{
 	width: 630px;
 	height: 590px;

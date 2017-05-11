@@ -22,8 +22,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/vue.min.js"></script>
 		<script>
-navTextPrev = '<i class="fa fa-arrow-left" aria-hidden="true"></i> 上一波訂製';
-navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+navTextPrev = '<i class="fa fa-chevron-left" aria-hidden="true"></i> 上一個';
+navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>';
 		</script>
 		<script src="css/owlcarousel/owl.carousel.min.js"></script>
 		<script src="js/jquery.lightbox_me.js"></script>
@@ -50,6 +50,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 							<li><a data-toggle="tab" href="#newsletter">電子報設定</a></li>
 						</ul>
 						<div class="tab-content">
+						<!--  帳戶資訊頁  -->
 							<div id="account" class="tab-pane fade in active">
 								<h3>基本資料</h3>
 								<div class="input"><input type="text" value=""></div>
@@ -71,6 +72,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 								</div>
 								<div class="input"><input type="button" value="儲存" class="login-btn save"></div>
 							</div>
+							<!--  收件資訊頁  -->
 							<div id="recipient" class="tab-pane fade">
 								<h3>收件人</h3>
 								<div class="input"><input type="text" placeholder="收件人姓名"></div>
@@ -99,10 +101,46 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 								<div class="save-for-next"><input type="checkbox" checked> <span>與收件人地址相同。</span></div>
 								<div class="input"><input type="button" value="儲存" class="login-btn save"></div>
 							</div>
-							<div id="membership" class="tab-pane fade">
-								<h3>會員制度即將上線</h3>
-
+							<!--  會員等級頁  -->
+							<div id="membership" class="tab-pane fade" v-show="membership_data">
+									<ul class="member_grade owl-membership owl-carousel owl-theme">
+										<li v-for="m in membership_data">
+											<div class="avator">
+												<img  v-if="is_now_grade(m.grade)" src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
+											</div>
+											<h4>{{m.grade}}</h4>
+											<hr>
+											<ul class="qualification">
+												<li v-if="m.qualification">
+													{{m.qualification}}
+												</li>
+												<li v-for="u in m.upgrade" v-if="u.origin_level">
+													{{u.origin_level}} --
+													{{u.require}} 即可成為 {{m.grade}}
+												</li>
+											</ul>
+										</li>
+									</ul>
+								<h3>紅利點數</h3>
+								<ul class="point">
+									<li class="tr">
+										<div class="th">累計方式</div>
+										<div class="td">加入會員後，在 LanVece專櫃或網站消費皆可累積。 {{now_grade_data.point_transfer}}</div>
+									</li>
+									<li class="tr">
+										<div class="th">點數折抵</div>
+										<div class="td">紅利點數 1 點 ＝ NT 1 元。點數可兌換任意商品</div>
+									</li>
+								</ul>
+								<h3>會員福利</h3>
+								<ul class="interest">
+									<li class="tr" v-for="i in now_grade_data.interest">
+										<div class="th">{{i.title}}</div>
+										<div class="td">{{i.content}}</div>
+									</li>
+								</ul>
 							</div>
+							<!--  電子報頁  -->
 							<div id="newsletter" class="tab-pane fade">
 								<h3>電子報</h3>
 								<div>
@@ -114,6 +152,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 							</div>
 						</div>
 					</div>
+					<!--  訂單查詢頁  -->
 					<div id="order-menu" class="tab-pane fade">
 						<ul class="nav nav-tabs submenu">
 							<li class="active"><a data-toggle="tab" href="#order">進行中訂單</a></li>
@@ -154,7 +193,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 											<!--end Vue template-->
 										</ul>
 									</li>
-									
+
 								</ul>
 								<ul>
 									<li v-for="(o,id) in filter_data" v-if="o.order_type == 'pre_order'">
@@ -287,7 +326,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 
 		<footer></footer>
 
-<!--Vue component-->
+		<!--Vue component-->
 		<template id="order_list">
 			<div class="order_list">
 				<div class="product-item">
@@ -314,7 +353,7 @@ navTextNext = '下一波訂製 <i class="fa fa-arrow-right" aria-hidden="true"><
 				</ul>
 			</div>
 		</template>
-<!--end component-->
+		<!--end component-->
 		<script src="js/products.js"></script>
 		<script src="js/base.js"></script>
 		<script>

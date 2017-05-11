@@ -110,7 +110,7 @@ var home_app = new Vue({
 var products_app = new Vue({
 	el: "#product_app",
 	data:{
-		product: "",
+		product: "", //產品頁資訊
 		promot_data: "", //同系列產品推介
 		app_data: ""
 	},
@@ -125,21 +125,19 @@ var products_app = new Vue({
 				_this.promot_data = data;
 				_this.$nextTick(function(){
 					$(".owl-promot").owlCarousel({
-						center: false,
-						items: mobile_items,
+						items: 2,
 						nav: true,
 						loop: false,
 						dots: false,
 						margin: 0,
 						responsive:{
 							0:{
-								items: mobile_items
+								items: mobile_items,
+								center: true,
 							},
 							768:{
-								items: 2
-							},
-							992:{
-								items: 3
+								items: 3,
+								center: false,
 							}
 						}
 					});
@@ -155,21 +153,18 @@ var products_app = new Vue({
 				_this.app_data = data;
 			})
 		},
-		sub: function(){
+		sub: function(){ //數量減
 			if(this.product.quantity>1){this.product.quantity--;}
 		},
-		add: function(){
+		add: function(){ //數量加
 			if(this.product.quantity<100){this.product.quantity++;}
 		},
-		quantityLimit: function(){
+		quantityLimit: function(){ //限制
 			if(this.product.quantity>100){this.product.quantity=100;}
 			if(this.product.quantity<1){this.product.quantity=1;}
 		},
 		changepage: function(event){
 			this.app_data.active_page = event.target.getAttribute("data-id");
-			console.log();
-			$(".page_box").hide();
-			$(".page_box."+this.app_data.active_page).show();
 		},
 		hide: function(event){
 			$(".poster").hide();
@@ -194,21 +189,18 @@ var products = new Vue({
 				_this.products_data = data;
 				_this.$nextTick(function(){
 					$(".owl-products").owlCarousel({
-						center: true,
 						items: 2,
 						nav: true,
-						loop: true,
+						loop: false,
 						dots: false,
 						margin: 0,
 						responsive:{
 							0:{
-								items: 2
+								items: 2,
+								center: true
 							},
 							768:{
-								items: 3
-							},
-							992:{
-								items: 5
+								items: 4
 							}
 						}
 					});
@@ -244,14 +236,11 @@ var pre_order = new Vue({
 						responsive:{
 							0:{
 								items: mobile_items,
-								center: false
+								center: true
 							},
 							768:{
-								items: 2,
+								items: 3,
 								center: false
-							},
-							992:{
-								items: 3
 							}
 						}
 					});
@@ -264,7 +253,8 @@ var pre_order = new Vue({
 						margin: 0,
 						responsive:{
 							0:{
-								items: mobile_items
+								items: mobile_items,
+								margin: 25
 							},
 							768:{
 								items: 5,
@@ -667,7 +657,7 @@ var checkout = new Vue({
 
 
 //member Vue component
-//orderlist.html 購物車
+//member-center.html 購物車
 Vue.component("orderlist",{
 	template: "#order_list",
 	props: ["products"],
@@ -675,10 +665,6 @@ Vue.component("orderlist",{
 		final_price: function(){
 			return (this.products.item_price * this.products.quantity);
 		}
-	},
-	data: {
-	},
-	methods: {
 	}
 });
 
@@ -686,6 +672,102 @@ Vue.component("orderlist",{
 var member_center = new Vue({
 	el: "#member_center",
 	data: {
+		member_now_grade: "風雅會員",
+		membership_data: [
+			{
+				//1.會員等級
+				grade: "LanVece之友", 
+				qualification: "註冊會員", 
+				term: "",
+				//3.點數累計
+				point_transfer: "",
+				//2.升等條件
+				upgrade: [""], 
+				renewal: "",
+				//生日優惠
+				birthday_gift: "",
+				//會員福利
+				interest: [
+					{title:"優先知新", content:"優先享有新品上市訊息"}
+				]
+			},
+			{
+				//1.會員等級
+				grade: "風雅會員", 
+				qualification: "單次消費不限金額", 
+				term: "會員有效期為一年",
+				//3.點數累計
+				point_transfer: "消費1元1點，全額兌換正價商品及贈品。",
+				//2.升等條件
+				upgrade: [""], 
+				//續會方式
+				renewal: "於會期內再次臨櫃消費(入會消費金額不得累入計算)",
+				//會員福利
+				interest: [
+					{title:"新春紅包", content:"享有新春紅包禮"},
+					{title:"優先體驗", content:"優先享有新品上市訊息&優先體驗活動"},
+					{title:"呼朋引伴", content:"會員邀請好友至LanVece專櫃並成功加入會員，即可獲享點數3000點。"}
+				]
+			},
+			{
+				//1.會員等級
+				grade: "榮華會員", 
+				qualification: "單次消費達8,000", 
+				term: "會員有效期為一年",
+				//3.點數累計
+				point_transfer: "消費1元1點，全額兌換正價商品及贈品。",
+				//2.升等條件
+				upgrade: [{
+						origin_level:"風雅會員", 
+						require:"會期內累計消費達10,000(入會消費金額不得累入計算)", 
+						special:"享尊榮升等禮乙份"
+					}], 
+				renewal: "於會期內再累積消費滿8,000(入會消費金額不得累入計算)* 續會獲續會禮3,000點",
+				//會員福利
+				interest: [
+					{title:"生日優惠", content:"生日當月加贈3,000點。"},
+					{title:"新春紅包", content:"享有新春紅包禮"},
+					{title:"優先體驗", content:"優先享有新品上市訊息&優先體驗活動"},
+					{title:"呼朋引伴", content:"會員邀請好友至LanVece專櫃並成功加入會員，即可獲享點數3000點。"},
+					{title:"節日同慶", content:"獨享母親節、週年慶尊寵預購會資格&頂級滿額好禮"},
+					{title:"生活講座", content:"不定期會員專屬活動資訊與邀請"}
+				]
+			},
+			{
+				//1.會員等級
+				grade: "尊寵會員", 
+				qualification: "單次消費達25,000", 
+				term: "會員有效期為一年",
+				//3.點數累計
+				point_transfer: "消費1元1.1點，全額兌換正價商品及贈品。",
+				//2.升等條件
+				upgrade: [
+					{
+						origin_level:"風雅會員", 
+						require:"會期內累計消費達10,000(入會消費金額不得累入計算)", 
+						special:"享尊榮升等禮乙份"
+					},
+					{
+						origin_level:"榮華會員", 
+						require:"升等尊榮會員-會期內累計消費滿30,000(入會消費金額不得累入計算)", 
+						special:"享尊榮升等禮乙份"
+					},
+				], 
+				renewal: "於會期內再累積消費滿25,000(入會消費金額不得累入計算)續會獲續會禮5,000點",
+				//生日優惠
+				birthday_gift: "生日當月首筆消費點數雙倍。*專屬生日禮乙份",
+				//會員福利
+				interest: [
+					{title:"生日優惠", content:"生日當月首筆消費點數雙倍。 *專屬生日禮乙份"},
+					{title:"新春紅包", content:"享有新春紅包禮"},
+					{title:"優先體驗", content:"優先享有新品上市訊息&優先體驗活動"},
+					{title:"呼朋引伴", content:"會員邀請好友至LanVece專櫃並成功加入會員，即可獲享點數3000點。"},
+					{title:"節日同慶", content:"獨享母親節、週年慶尊寵預購會資格&頂級滿額好禮"},
+					{title:"生活講座", content:"不定期會員專屬活動資訊與邀請"},
+					{title:"第一優先", content:"限量新品優先預購"}
+					]
+			}
+		],
 		search_data: "",
 		history_search_data: "",
 		history_data: "",
@@ -695,6 +777,20 @@ var member_center = new Vue({
 		this.fetchData();
 	},
 	computed:{
+		//現在用戶等級之結果
+		now_grade_data: function(){
+			var _this = this;
+			return this.membership_data.filter(function(obj){
+				if(obj.grade == _this.member_now_grade){
+					return true;
+				}
+				else{
+					return false;
+				}
+					
+			})[0];
+		},
+		//訂單查詢過濾結果
 		filter_data: function(){
 			var _this = this;
 			if(this.search_data == "" || Number(this.search_data) == NaN){
@@ -709,6 +805,7 @@ var member_center = new Vue({
 				})
 			}
 		},
+		//歷史訂單查詢過濾結果
 		history_filter_data: function(){
 			var _this = this;
 			if(this.history_search_data == "" || Number(this.history_search_data) == NaN){
@@ -725,14 +822,48 @@ var member_center = new Vue({
 		}
 	},
 	methods:{
+		//載入資料
 		fetchData: function(){
 			var _this = this;
 			$.get("json/history_data.json", function(data){
 				_this.history_data = data;
+				_this.$nextTick(function(){
+					$(".owl-membership").owlCarousel({
+						items: 1.2,
+						nav:false,
+						loop:false,
+						margin:0,
+						autoplay:false,
+						dots: false,
+						responsive:{
+							0:{
+								items: 1.5,
+								center: true
+							},
+							768:{
+								items: 3,
+								center: false,
+								nav: true
+							},
+							993:{
+								items: 4,
+								center: false,
+								nav: true
+							}
+						}
+					});
+				});
+				
 			});
 			$.get("json/order_data.json", function(data){
 				_this.order_data = data;
 			});
+		},
+		is_now_grade: function(str){
+			if(str == this.member_now_grade)
+				return true;
+			else
+				return false;
 		}
 	}
 })
