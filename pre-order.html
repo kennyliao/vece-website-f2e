@@ -34,7 +34,7 @@ navTextNext = '下一頁 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 	<body pre-order>
 		<header></header>
 		<section id="pre-order" class="content" v-cloak>
-			<div class="container-fiuld">
+			<div class="container-fiuld" v-if="pre_order_data">
 				<div class="title">
 					<h1>{{pre_order_data.page_data.title}}</h1>
 					<p>{{pre_order_data.page_data.discription}}</p>

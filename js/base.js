@@ -263,12 +263,12 @@ function searchAreaToggle(e){
 var blurcount;
 function blurit(e,time){
 	if(e == "0"){
-		console.log("blur");
+//		console.log("blur");
 		blurcount = setTimeout(function(){
 			searchAreaToggle("0");
 		},time);
 	}else if(e == "1"){
-		console.log("focus");
+//		console.log("focus");
 		clearTimeout(blurcount);
 	}
 }

@@ -236,7 +236,6 @@ var pre_order = new Vue({
 				_this.pre_order_data = data;
 				_this.$nextTick(function(){
 					$(".owl-promot").owlCarousel({
-						center: false,
 						items: 2,
 						nav: true,
 						loop: false,
@@ -244,10 +243,12 @@ var pre_order = new Vue({
 						margin: 0,
 						responsive:{
 							0:{
-								items: mobile_items
+								items: mobile_items,
+								center: false
 							},
 							768:{
-								items: 2
+								items: 2,
+								center: false
 							},
 							992:{
 								items: 3
@@ -255,7 +256,7 @@ var pre_order = new Vue({
 						}
 					});
 					$(".owl-pre-order-intro").owlCarousel({
-						center: false,
+						center: true,
 						items: 5,
 						nav: true,
 						loop: false,
@@ -266,7 +267,8 @@ var pre_order = new Vue({
 								items: mobile_items
 							},
 							768:{
-								items: 5
+								items: 5,
+								center: false
 							}
 						}
 					});
