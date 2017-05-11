@@ -166,6 +166,7 @@ header .logo{
  	filter: invert(0);
 }
 body[home] header .logo{
+	-ms-filter: invert(1);
 	-webkit-filter: invert(1);
  	filter: invert(1);
 }

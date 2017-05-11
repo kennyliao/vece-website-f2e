@@ -1,225 +1,161 @@
 @import checkout
+@import mixin
 
-body[shopping-bag] section.content .bag_item
-	width: 100%
-	min-height: 120px
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	flex-direction: row
+.items-fade-enter
+	position: absolute !important
+	opacity: 0
+.items-fade-enter-active
+	transition: opacity 1s
+.items-fade-leave
+	opacity: 1
+.items-fade-leave-active
+	opacity: 0
+	position: absolute !important
+	+transform(translate(30px))
+	+trans(opacity 1s ease)
+
+.has-item-leave-active
+	transition: opacity 0s
+.has-item-leave-active
+	opacity: 0
+
+body[shopping-bag] section.content .no_item
+	border-top: solid 1px $color_border
+	border-bottom: solid 1px $color_border
+	justify-content: center
+	align-items: center
 	flex-wrap: wrap
 	position: relative
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item
-		flex-direction: column
-
-body[shopping-bag] section.content ul.items:nth-of-type(1) > li:last-child
-	margin-bottom: 95px
+	padding: 80px 0
+	margin-bottom: 60px
+	font-size: 16px
+	span
+		display: block
+		width: 100%
+		margin-bottom: 20px
+	.btn
+		padding: 8px 30px
+		background-color: $color_purple
+		color: white
+		+border-radius(3px)
+	
+@media screen and (max-width: 768px)
+	body[shopping-bag] section.content .no_item
+		margin-top: 20px
+		padding: 20px 0
 
 body[shopping-bag] section.content .bag_item
-	div.product-item
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		flex-direction: row
-		align-items: center
-		width: 40%
-		padding: 10px 0
-		div
-			&.item-photo
-				width: 100px
-			&.item-name
-				padding: 10px
-				div.capacity
-					font-size: 18px
-					text-align: left
-					margin-top: 10px
-	ul.item-price
-		width: 54%
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		flex-direction: row
-		align-items: center
-		li
-			width: 33.34%
-			font-size: 18px
-			color: #4e5156
-			&:nth-child(2)
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				flex-direction: row
-				align-items: center
-				justify-content: center
-		input
-			width: 60px
-			text-align: center
-			font-size: 18px
-			line-height: 40px
-			border: 1pt solid #9fa3a8
-			display: inline-block
-			border-radius: 0
-		div
-			&.add
-				width: 30px
-				height: 30px
-				background-image: url('../images/buy_products.svg')
-				-webkit-background-size: 120px 60px
-				background-size: 120px 60px
-				background-position: 0 50%
-				display: inline-block
-				background-repeat: no-repeat
-				margin-left: 20px
-				cursor: pointer
-			&.minus
-				width: 30px
-				height: 30px
-				background-image: url('../images/buy_products.svg')
-				-webkit-background-size: 120px 60px
-				background-size: 120px 60px
-				background-position: -30px 50%
-				display: inline-block
-				background-repeat: no-repeat
-				margin-right: 20px
-				cursor: pointer
+	transition: all 1s ease, margin 0s
+	background-color: #fff
+
+body[shopping-bag] .delete_box
+	z-index: 99999
+	+b-sh(0px 0px 9px rgba($color_border,0.4))
+	+ab_center
+	position: fixed
+	width: 300px
+	height: 150px
+	background-color: #fff
+	text-align: center
+	p
+		display: block
+		margin: 40px 0 20px
+		span
+			color: $color_purple
+	.btn
+		margin: 5px
+		padding: 5px 25px
+		+border-radius(2px)
+	.confirm
+		background-color: $color_purple
+		color: #fff
+		font-weight: 100
+	.cancel
+		color: #fff
+		font-weight: 100
+	.search-close
+		position: absolute
+		top: 5px
+		right: 5px
+		background-color: transparent
+		color: #fff
+		height: 30px
+		width: 30px
+		&:before, &:after
+			+ab_center
+			content: ""
+			width: 25px
+			height: 2px
+			background-color: $color_border
+			+trans(0.3s)
+		&:before
+			+transform(translate(-50%,-50%) rotate(45deg))
+			+tf-origin(50% 50%)
+		&:after
+			+transform(translate(-50%,-50%) rotate(-45deg))
+			+tf-origin(50% 50%)
+
+body[shopping-bag] section.content .bag_item
 	div.remove
+		position: relative
 		width: 6%
 		height: 20px
 		margin: auto
 		color: #777
 		cursor: pointer
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item div.product-item
-		width: 100%
-
-@media screen and (min-width: 768px) and (max-width: 992px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-photo
-		width: 80px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-photo
-		width: 70px
-
-@media screen and (min-width: 768px) and (max-width: 992px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-name h4
-		font-size: 16px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-name
-		padding: 10px 0
-		h4
-			font-size: 16px
-			letter-spacing: 1px
-
-@media screen and (min-width: 768px) and (max-width: 992px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-name div.capacity
-		font-size: 16px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item div.product-item div.item-name div.capacity
-		font-size: 16px
-
-@media screen and (min-width: 768px) and (max-width: 992px)
-	body[shopping-bag] section.content .bag_item ul.item-price li
-		font-size: 16px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item ul.item-price
-		width: 100%
-		justify-content: flex-end
-		li
-			width: 50%
-			font-size: 16px
-			&:first-child
-				display: none
-			&:last-child
-				width: 30%
-
-@media screen and (min-width: 768px) and (max-width: 991px)
-	body[shopping-bag] section.content .bag_item ul.item-price input
-		width: 50px
-		line-height: 35px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item ul.item-price input
-		width: 40px
-		line-height: 30px
-		font-size: 15px
-
-@media screen and (min-width: 992px)
-	body[shopping-bag] section.content .bag_item ul.item-price div
-		&.add:hover
-			background-position: -60px 50%
-		&.minus:hover
-			background-position: -90px 50%
-
-@media screen and (min-width: 768px) and (max-width: 991px)
-	body[shopping-bag] section.content .bag_item ul.item-price div
-		&.add
-			width: 24px
-			height: 24px
-			-webkit-background-size: 96px 48px
-			background-size: 96px 48px
-			background-position: -48px 50%
-			margin-left: 10px
-		&.minus
-			width: 24px
-			height: 24px
-			-webkit-background-size: 96px 48px
-			background-size: 96px 48px
-			background-position: -72px 50%
-			margin-right: 10px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item ul.item-price div
-		&.add
-			width: 22px
-			height: 22px
-			background-size: 88px 44px
-			background-position: -44px 50%
-			margin-left: 10px
-		&.minus
-			width: 22px
-			height: 22px
-			background-size: 88px 44px
-			background-position: -66px 50%
-			margin-right: 10px
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item div.remove
+	.layer
+		z-index: 999
+		top: 1px
+		left: 0
+		background-color: rgba(255,255,255,0.85)
 		position: absolute
-		right: -10px
-		top: 19px
-
-body[shopping-bag] section.content ul.preorder-time
-	width: 100%
-	min-height: 140px
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	flex-direction: row
-	-ms-align-items: center
-	align-items: center
-	position: relative
-	padding: 0 30px
-
+		display: none
+		width: 100%
+		height: calc(100% - 2px)
+		.text
+			+ab_center
+			font-size: 20px
+			text-shadow: 0px 0px 5px rgba(255,255,255,1)
+		.control_box
+			display: inline-block
+			position: absolute
+			left: initial
+			top: 60px
+			right: 0%
+			+transform(translate(0%,-50%)) 
+			background-color: #fff
+			width: 24%
+			min-width: 180px
+			text-align: center
+			.btn
+				display: inline-block
+				font-size: 14px
+				width: 40%
+				min-width: 80px
+				color: white
+				padding: 5px 20px
+				+border-radius(3px)
+				&:first-child
+					margin-right: 5px
+			.confirm
+				background-color: $color_purple
+			.cancel
+				background-color: $color_border
+		
 @media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item:last-child
-		margin-bottom: 0
-
-@media screen and (max-width: 767px)
-	body[shopping-bag] section.content .bag_item:last-child:after
-		height: 0
+	body[shopping-bag] section.content .bag_item
+		.layer
+			.text
+				top: 30%
+				width: 100%
+			.control_box
+				+ab_center
+				top: 60%
+		div.remove
+			position: absolute
+			right: -10px
+			top: 19px
+		&:last-child
+			margin-bottom: 0
+			&:after
+				height: 1px

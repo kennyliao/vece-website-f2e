@@ -380,17 +380,17 @@ var about = new Vue({
 });
 
 
-//shoppimg-bag.html 購物車
+//shopping-bag.html 購物車
 Vue.component("bagitem",{
 	template: "#bag_item",
 	props: ["items_data","delete_item","id"],
+	data:{
+		show_box: false
+	},
 	computed: {
 		final_price: function(){
 			return (this.items_data.item_price * this.items_data.quantity);
 		}
-	},
-	data: {
-		count: 0
 	},
 	methods: {
 		sub: function(){
@@ -402,6 +402,15 @@ Vue.component("bagitem",{
 		countLimit: function(){
 			if(this.items_data.quantity>100){this.count=100;}
 			if(this.items_data.quantity<1){this.count=1;}
+		},
+		show_light_box: function(id,event){
+			$(event.currentTarget).next(".layer").fadeIn(300);
+			$(".delete_box span").html(id);
+			this.$parent.delete_id = id;
+			$(event.currentTarget).parents(".layer").hide
+		},
+		cancel_delete: function(event){
+			$(event.currentTarget).parents(".layer").fadeOut(300);
 		}
 	}
 });
@@ -410,12 +419,14 @@ Vue.component("bagitem",{
 var shopping_bag = new Vue({
 	el: "#shopping_bag",
 	data: {
-		bag_data: ""
+		bag_data: "",
+		delete_id: "",
 	},
 	created: function () {
 		this.fetchData();
 	},
 	computed: {
+		//小計
 		sub_total_price: function(){
 			if(this.bag_data.products)
 				return this.bag_data.products.reduce(function(sum, product){
@@ -424,11 +435,19 @@ var shopping_bag = new Vue({
 				else
 					return 0;
 		},
+		//運費
 		trans_price: function(){
-			return this.sub_total_price>=this.bag_data.trans_free?0:100;
+			return this.sub_total_price>=this.bag_data.trans_free?0:00;
 		},
+		//總額
 		total_price: function(){
 			return this.sub_total_price+this.trans_price;
+		},
+		has_now_order: function(){
+			return this.count_has(false);
+		},
+		has_pre_order: function(){
+			return this.count_has(true);
 		}
 	},
 	methods: {
@@ -438,9 +457,24 @@ var shopping_bag = new Vue({
 				_this.bag_data = data;
 			});
 		},
-		delete_item: function(id){
-			console.log(id);
+		//刪除項目
+		delete_item: function(id,event){
+			$(event.currentTarget).parents(".layer").hide();
 			this.bag_data.products.splice(id,1);
+		},
+		count_has: function(boo){
+			var flag = false;
+			if(Array.isArray(this.bag_data.products) && this.bag_data.products.length>0){
+				this.bag_data.products.filter(function(obj){
+					if(obj["pre_order"] == boo){
+						flag = true;
+					}
+				});
+				return flag;
+			}else{
+				return false;
+			}
+			
 		}
 	}
 })
@@ -622,7 +656,7 @@ var checkout = new Vue({
 			}else{
 				this.bag_data.discount_for += num;
 			}
-			console.log(this.bag_data.discount_for);
+//			console.log(this.bag_data.discount_for);
 		}
 	}
 })
@@ -631,7 +665,7 @@ var checkout = new Vue({
 
 
 //member Vue component
-//shoppimg-bag.html 購物車
+//orderlist.html 購物車
 Vue.component("orderlist",{
 	template: "#order_list",
 	props: ["products"],
@@ -823,7 +857,7 @@ if( $("#search-result").length != 0){
 	},
 	computed: {
 	},
-	mounted(){
+	mounted: function(){
 		this.$nextTick(function(){
 			window.addEventListener('resize', this.decide_width);
 			this.decide_width();
@@ -876,14 +910,14 @@ if( $("#search-result").length != 0){
 				this.desktop_width = true;
 				$(".owl-search").owlCarousel({
 					items: 1.1,
-					nav:false,
-					loop:false,
+					nav: true,
+					loop: false,
 					margin:0,
 					autoplay:false,
 					dots: false,
 					responsive:{
 						0:{
-							items: 1.3,
+							items: 1.5,
 							center: true,
 							margin: 20
 						},

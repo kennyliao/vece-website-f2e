@@ -44,6 +44,27 @@ $color_purple: #ab8eda
 	-webkit-align-items: center
 	align-items: center
 
+@mixin b-sh($value...)
+	-webkit-box-shadow: $value
+	-moz-box-shadow: $value
+	box-shadow: $value
+
+@mixin transform($value)
+	-ms-transform: $value
+	-webkit-transform: $value
+	transform: $value
+
+@mixin tf-origin($value)
+	-webkit-transform-origin: $value
+	-moz-transform-origin: $value
+	-ms-transform-origin: $value
+	-o-transform-origin: $value
+
+@mixin border-radius($value)
+	-webkit-border-radius: $value
+	-moz-border-radius: $value
+	border-radius: $value
+	
 .full_a
 	position: absolute
 	top: 0
@@ -54,3 +75,51 @@ $color_purple: #ab8eda
 
 [v-cloak] 
 	display: none
+	opacity: 0
+	transition: 0.5s
+
+body section.content .owl-carousel .owl-nav
+	height: 20px
+	& .owl-prev, & .owl-next
+		background-color: transparent
+		color: $color_dark
+		position: absolute
+		+trans(0.3s)
+		opacity: 0.6
+		&:hover
+			opacity: 0.8
+		&.disabled
+			display: none
+	.owl-prev
+		left: 30px
+	.owl-next
+		right: 30px
+
+body section.content .arrow-left:before, body section.content .arrow-right:after
+	content: ""
+	display: inline-block
+	vertical-align: text-top
+	margin-right: 10px
+	width: 20px
+	height: 20px
+	background: url("../images/arrow.svg") center center/cover no-repeat
+	
+
+body section.content .arrow-left:before, body section.content .arrow-right:after
+	width: 18px
+	height: 18px
+
+body section.content .arrow-left:before
+	margin-right: 5px
+	-webkit-transform: rotate(180deg)
+	-ms-transform: rotate(180deg)
+	-o-transform: rotate(180deg)
+	transform: rotate(180deg)
+
+body section.content .arrow-right:after
+	margin-right: 0px
+	margin-left: 5px
+
+body section.content .arrow-left:before, .arrow-right:after
+	width: 18px
+	height: 18px

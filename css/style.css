@@ -1177,7 +1177,7 @@ body[shopping-bag] section.content ul.items>li{
 @media screen and (max-width: 767px){
 	body[shopping-bag] section.content ul.items>li{
 		flex-direction: column;
-		padding: 10px 0 35px 0;
+		padding: 10px 0 25px 0;
 	}
 }
 body[shopping-bag] section.content ul.items>li:before{
@@ -1287,7 +1287,7 @@ body[shopping-bag] section.content ul.items>li ul.item-price li{
 		display: none;
 	}
 	body[shopping-bag] section.content ul.items>li ul.item-price li:last-child{
-		width: 30%;
+		width: 32%;
 	}
 }
 body[shopping-bag] section.content ul.items>li ul.item-price li:nth-child(2){
@@ -1398,8 +1398,8 @@ body[shopping-bag] section.content ul.items>li div.remove{
 @media screen and (max-width: 767px){
 	body[shopping-bag] section.content ul.items>li div.remove{
 		position: absolute;
-		right: -10px;
-		top: 19px;
+		right: 0px;
+		top: 30px;
 	}
 }
 body[shopping-bag] section.content ul.preorder-time{
@@ -1424,6 +1424,10 @@ body[shopping-bag] section.content ul.preorder-time{
 	}
 }
 
+body[shopping-bag] section.content ul.items{
+	position: relative;
+}
+
 body[shopping-bag] section.content ul.items>li:last-child{
 	margin-bottom: 90px;
 }
@@ -1443,7 +1447,7 @@ body[shopping-bag] section.content ul.items>li:last-child:after{
 }
 @media screen and (max-width: 767px){
 	body[shopping-bag] section.content ul.items>li:last-child:after{
-		height: 0;
+		height: 1px;
 	}
 }
 body[shopping-bag] section.content form ul.preorder-time li{
@@ -1855,7 +1859,7 @@ body[checkout] section.content div.right-content div.points-using input[type="ch
 		position: absolute;
 	}
 	body[checkout] section.content div.right-content div.points-using label{
-		width: 102px;
+		width: 120px;
 		line-height: 30px;
 		font-size: 13px;
 		margin-left: 0;
@@ -1923,6 +1927,7 @@ body[checkout] section.content div.left-content .breadcrumb>div{
 @media screen and (max-width: 991px){
 	body[checkout] section.content div.left-content .breadcrumb>div{
 		top: 30px;
+		padding: 0 22px;
 	}
 }
 body[checkout] section.content div.left-content .breadcrumb> li.active+div{
@@ -1992,8 +1997,125 @@ body[checkout] section.content div.left-content div.customer-info div.input.addr
 body[checkout] section.content div.left-content div.customer-info div.input select option:first-child{
 	color: #b6b6b8;
 }
+body[checkout] section.content div.left-content div.agree-policy{
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 26px;
+	-ms-text-align-last: auto;
+	text-align-last: auto;
+}
+body[checkout] section.content div.left-content div.agree-policy h5{
+	color: #ab8eda;
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 5px;
+	cursor: pointer;
+}
 
+body[checkout] #policy_box{
+	z-index: 9999;
+	display: none;
+	position: relative;
+	width: 80%;
+	height: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 15px 40px;
+	padding-top: 40px;
+	overflow: auto;
+	text-align: center;
+	background-color: #eee;
+	border-radius: 5px;
+}
+body[checkout] #policy_box h2{
+	margin-bottom: 30px;
+}
+body[checkout] #policy_box .content_wrap{
+	width: 100%;
+	height: calc(100% - 160px);
+	padding: 30px;
+	font-size: 16px;
+	text-align: left;
+	overflow: auto;
+	background-color: #fff;
+}
+body[checkout] #policy_box .content_box{
+	word-wrap:break-word;
+}
+body[checkout] #policy_box .light_box_close{
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	right: 20px;
+	top: 20px;
+	color: #eee;
+	background-color: transparent;
+	cursor: pointer;
+	transition: 0.3s;
+}
 
+body[checkout] #policy_box .light_box_close:after{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(45deg);
+	transition: 0.3s;
+}
+body[checkout] #policy_box .light_box_close:before{
+	content: "";
+	width: 21px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(-45deg);
+	transition: 0.3s;
+}
+body[checkout] #policy_box .light_box_close:hover:after,body[checkout] #policy_box .light_box_close:hover:before{
+	background-color: #fff;
+}
+body[checkout] #policy_box .conform{
+	margin-top: 30px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	width: 160px;
+	height: 45px;
+	border-radius: 3px;
+	background-color: #b99ee4;
+	color: #fff;
+	cursor: pointer;
+}
+@media screen and (max-width: 767px){
+	body[checkout] #policy_box{
+		width: 95%;
+		padding: 10px;
+		padding-top: 15px;
+	}
+	body[checkout] #policy_box h2{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	body[checkout] #policy_box .content_wrap{
+		height: calc(100% - 100px);
+		padding: 15px;
+	}
+	body[checkout] #policy_box .content_box{
+		padding: 0px;
+	}
+	body[checkout] #policy_box .conform{
+		margin-top: 15px;
+		height: 40px;
+	}
+	body[checkout] #policy_box .light_box_close{
+		top: 15px;
+		right: 15px;
+	}
+}
 
 body[checkout] section.content ul.titles{
 	display: -webkit-flex;
@@ -2575,10 +2697,12 @@ body[checkout] section.content div.left-content div.customer-info ul.receiver-de
 }
 body[checkout] section.content div.left-content div.customer-info ul.receiver-details li.td{
 	width: 70%;
+	padding: 0 10px;
 	font-size: 20px;
 	line-height: 40px;	
 	color: #9fa2a8;
 	text-align: left;
+	word-break: break-word;
 }
 body[checkout] section.content div.left-content div.customer-info ul.receiver-details li.td:last-child span{
 	margin-left: 15px;
