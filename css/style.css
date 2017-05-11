@@ -3120,6 +3120,10 @@ body[member-center] section.content ul.member_grade{
 	padding-top: 50px;
 }
 @media screen and (max-width: 768px){
+	body[member-center] section.content #membership{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 	body[member-center] section.content ul.member_grade{
 		padding: 0;
 	}
@@ -3146,6 +3150,11 @@ body[member-center] section.content ul.member_grade li .avator{
 body[member-center] section.content ul.member_grade li ul.qualification{
 	align-items: flex-start;
 	padding: 0 25px;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content ul.member_grade li ul.qualification{
+		display: none;
+	}
 }
 body[member-center] section.content ul.member_grade li ul.qualification li{
 	margin: 20px 0;

@@ -104,7 +104,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 							<!--  會員等級頁  -->
 							<div id="membership" class="tab-pane fade" v-show="membership_data">
 									<ul class="member_grade owl-membership owl-carousel owl-theme">
-										<li v-for="m in membership_data">
+										<li v-for="m in membership_data" :class="is_now_grade(m.grade)?'active center':''">
 											<div class="avator">
 												<img  v-if="is_now_grade(m.grade)" src="https://api.fnkr.net/testimg/200x200/b99ee4/FFF/?text=Liu">
 											</div>
