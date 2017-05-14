@@ -647,7 +647,11 @@ body[home] #light_box .content{
 	-ms-transform: translateY(50%);
 	-o-transform: translateY(50%);
 	transform: translateY(50%);
-	text-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+	text-shadow: 0px 0px 6px rgba(0,0,0,0.4);
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 body[home] #light_box .content h1 {
@@ -3111,6 +3115,209 @@ body[member-center] section.content .tab-content .input.address select+select{
 body[member-center] section.content .tab-content button.change-password{
 	margin-top: 50px;
 }
+
+body[member-center] section.content #membership h3{
+	color: #4e5156;
+}
+
+body[member-center] section.content h4 {
+/*	text-align: left;*/
+}
+body[member-center] section.content ul.member_grade{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 70px;
+	margin-bottom: 116px;
+	padding: 0 20px;
+	padding-top: 50px;
+}
+body[member-center] section.content div.user_grade_block{
+	margin: 40px 0 70px;
+	display: none;
+}
+body[member-center] section.content div.user_grade_block .avator{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+body[member-center] section.content div.user_grade_block  h5{
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+body[member-center] section.content div.user_grade_block  h5 span{
+	color: #ab8eda;
+	margin-left: 3px;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content #membership{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	body[member-center] section.content ul.member_grade{
+		padding: 0;
+	}
+	body[member-center] section.content div.user_grade_block{
+		display: block;
+	}
+}
+body[member-center] section.content ul.member_grade .owl-nav{
+	position: absolute;
+	width: 100%;
+	bottom: -20px;
+}
+
+body[member-center] section.content ul.member_grade li{
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+}
+body[member-center] section.content ul.member_grade li .link_box {
+	text-align: right;
+	width: 100%;
+	padding: 0 15px;
+}
+body[member-center] section.content .user_grade_block .link_box {
+	margin-top: 20px;
+	text-align: center;
+}
+body[member-center] section.content ul.member_grade li .link_box a, body[member-center] section.content .user_grade_block a{
+	color: #ab8edb;
+	margin-left: 5px;
+}
+body[member-center] section.content ul.member_grade li .link_box a i, body[member-center] section.content .user_grade_block a i{
+	margin-left: 5px;
+}
+
+body[member-center] section.content ul.member_grade li .avator{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 calc((100% - 50px) /2);
+	margin-bottom: 30px;
+}
+body[member-center] section.content ul.member_grade li ul.qualification{
+	width: 100%;
+	align-items: flex-start;
+	padding: 0 25px;
+}
+body[member-center] section.content #membership hr {
+	display: block;
+	width: 100%;
+	border-width: 2px;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content ul.member_grade{
+		display: none;
+	}
+	body[member-center] section.content ul.member_grade li{
+		align-items: flex-end;
+	}
+	body[member-center] section.content ul.member_grade li ul.qualification{
+		display: none;
+	}
+	body[member-center] section.content #membership hr {
+		display: none;
+	}
+}
+body[member-center] section.content ul.member_grade li ul.qualification li{
+	margin: 20px 0;
+	font-size: 18px;
+	letter-spacing: 1.1px;
+	line-height: 30px;
+	text-align: justify;
+}
+body[member-center] section.content ul.member_grade li ul.qualification li:first-child{
+	text-align: center;
+	width: 100%;
+}
+
+body[member-center] section.content ul.member_grade li ul.qualification li:after{
+	content: "or";
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+	width: 100%;
+}
+body[member-center] section.content ul.member_grade li ul.qualification li:last-child:after{
+	content: none;
+}
+body[member-center] section.content ul.point, body[member-center] section.content ul.interest{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin-top: 40px;
+}
+body[member-center] section.content ul.interest{
+	margin-bottom: 200px;
+}
+body[member-center] section.content ul.point li,body[member-center] section.content ul.interest li {
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th{
+	width: 10%;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	font-weight: 400;
+	margin-bottom: 18px;
+}
+body[member-center] section.content ul.point div.td, body[member-center] section.content ul.interest div.td{
+	width: 90%;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	color: #4e5156;
+}
+@media screen and (max-width: 768px){
+	body[member-center] section.content ul.point, body[member-center] section.content ul.interest{
+		padding: 0;
+		margin-top: 0;
+	}
+	body[member-center] section.content ul.point li.tr, body[member-center] section.content ul.interest li.tr{
+		margin-top: 0;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+	}
+	body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th, body[member-center] section.content ul.point div.td, body[member-center] section.content ul.interest div.td {
+		width: 100%;
+		font-size: 15px;
+		line-height: 30px;
+		letter-spacing: 0.8px;
+	}
+	body[member-center] section.content ul.point div.th, body[member-center] section.content ul.interest div.th {
+		margin-bottom: 5px;
+	}
+	body[member-center] section.content ul.interest {
+		margin-bottom: 70px;
+	}
+}
+
 body[member-center] .change-password-area{
 	width: 630px;
 	height: 590px;

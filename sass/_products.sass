@@ -16,11 +16,16 @@ body[products] header
 	&:after
 		height: 0
 	div.logo
-		-webkit-filter: invert(1)
-		filter: invert(1)
+		background-color: rgba(255,255,255,0)
+		+trans(.3s)
+		img
+			-webkit-filter: invert(1)
+			filter: invert(1)
 	&.scroll div.logo
-		-webkit-filter: invert(0)
-		filter: invert(0)
+		img
+			-webkit-filter: invert(0)
+			filter: invert(0)
+		background-color: rgba(255,255,255,1)
 	ul.menu > li
 		color: #fff
 		a
@@ -85,7 +90,7 @@ body[products] section.content
 				margin-bottom: 21px
 				color: #fff
 			p
-				font-weight: 100
+				font-weight: 300
 				font-size: 18px
 				line-height: 31px
 				letter-spacing: 2px
@@ -100,6 +105,7 @@ body[products] section.content
 			display: inline-block
 			vertical-align: middle
 			width: 49%
+			padding-right: 25px
 			h2
 				+ab_center()
 				font-size: 40px

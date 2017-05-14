@@ -325,7 +325,7 @@ body[checkout] section.content ul .preorder-time {
       display: block;
       height: 55px; } }
 
-/* line 68, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 74, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 .full_a {
   position: absolute;
   top: 0;
@@ -334,16 +334,16 @@ body[checkout] section.content ul .preorder-time {
   height: 100%;
   z-index: 10; }
 
-/* line 76, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 82, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 [v-cloak] {
   display: none;
   opacity: 0;
   transition: 0.5s; }
 
-/* line 81, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 87, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .owl-carousel .owl-nav {
   height: 20px; }
-  /* line 83, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+  /* line 89, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
   body section.content .owl-carousel .owl-nav .owl-prev, body section.content .owl-carousel .owl-nav .owl-next {
     background-color: transparent;
     color: #2f3031;
@@ -353,20 +353,20 @@ body section.content .owl-carousel .owl-nav {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: 0.6; }
-    /* line 89, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+    /* line 95, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
     body section.content .owl-carousel .owl-nav .owl-prev:hover, body section.content .owl-carousel .owl-nav .owl-next:hover {
       opacity: 0.8; }
-    /* line 91, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+    /* line 97, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
     body section.content .owl-carousel .owl-nav .owl-prev.disabled, body section.content .owl-carousel .owl-nav .owl-next.disabled {
       display: none; }
-  /* line 93, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+  /* line 99, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
   body section.content .owl-carousel .owl-nav .owl-prev {
     left: 30px; }
-  /* line 95, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+  /* line 101, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
   body section.content .owl-carousel .owl-nav .owl-next {
     right: 30px; }
 
-/* line 98, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 104, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .arrow-left:before, body section.content .arrow-right:after {
   content: "";
   display: inline-block;
@@ -376,12 +376,12 @@ body section.content .arrow-left:before, body section.content .arrow-right:after
   height: 20px;
   background: url("../images/arrow.svg") center center/cover no-repeat; }
 
-/* line 108, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 114, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .arrow-left:before, body section.content .arrow-right:after {
   width: 18px;
   height: 18px; }
 
-/* line 112, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 118, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .arrow-left:before {
   margin-right: 5px;
   -webkit-transform: rotate(180deg);
@@ -389,12 +389,12 @@ body section.content .arrow-left:before {
   -o-transform: rotate(180deg);
   transform: rotate(180deg); }
 
-/* line 119, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 125, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .arrow-right:after {
   margin-right: 0px;
   margin-left: 5px; }
 
-/* line 123, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
+/* line 129, /Users/mac/Documents/vece-website-f2e/sass/_mixin.sass */
 body section.content .arrow-left:before, .arrow-right:after {
   width: 18px;
   height: 18px; }

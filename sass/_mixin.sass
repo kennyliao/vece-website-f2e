@@ -64,7 +64,13 @@ $color_purple: #ab8eda
 	-webkit-border-radius: $value
 	-moz-border-radius: $value
 	border-radius: $value
-	
+
+@mixin user-select-none
+	-moz-user-select: none
+	-webkit-user-select: none
+	-ms-user-select: none
+	user-select: none
+
 .full_a
 	position: absolute
 	top: 0

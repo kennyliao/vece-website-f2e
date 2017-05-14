@@ -35,7 +35,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 		<header></header>
 		<section id="product_app" class="content" v-cloak>
 			<!--訂製日-->
-			<div class="container-fiuld date_wrap">
+			<div class="container-fiuld date_wrap" v-if="product">
 				<div class="date_box">
 					<h2>訂製日 {{product.pre_order_date.from}}～{{product.pre_order_date.to}}</h2>
 					<div class="date_block" v-for="p in product.pre_order_procedure">
@@ -45,7 +45,7 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 				</div>
 			</div>
 			<!--產品操作-->
-			<div class="container">
+			<div class="container" v-if="product">
 				<div class="row product_intro">
 					<div class="col-sm-5">
 						<img class="product_img" v-bind:src="product.image" alt="">
@@ -70,11 +70,13 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 							</a>
 						</div>
 						<div class="show_box">
+							<!--選單-->
 							<ul class="menu">
-								<li class="item" v-bind:class="(p.eng_name == app_data.active_page)?'active':''" v-for="p in app_data.page_item" v-bind:data-id="p.eng_name" v-on:click="changepage">{{p.cht_name}}</li>
+								<li class="item" v-bind:class="(p.eng_name == app_data.active_page)?'active':''" v-for="p in app_data.page_item" :data-id="p.eng_name" v-on:click="changepage">{{p.cht_name}}</li>
 							</ul>
-							<div class="page_wrap">
-								<div class="page_box application" data-id="application" style="display:block">
+							<!--分頁-->
+							<transition-group tag="div" name="pages-wrap-fade" class="page_wrap" mode="out-in">
+								<div class="page_box application" key="application" v-show="app_data.active_page == 'application'">
 									<div class="video_box">
 										<div class="poster" v-bind:style="{ 'background-image': 'url('+ product.application.video.img +')' }" v-on:click="hide()">
 											<div class="cover_icon">
@@ -89,16 +91,16 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 										<li v-for="(g,id) in product.application.guide">{{id+1}}. {{g}}</li>
 									</ol>
 								</div>
-								<div class="page_box ingredients" data-id="ingredients">
+								<div class="page_box ingredients" key="ingredients" v-show="app_data.active_page == 'ingredients'">
 									{{product.ingredients.main}}
 									<span>
 										{{product.ingredients.sub}}
 									</span>
 								</div>
-								<div class="page_box effect" data-id="effect">
+								<div class="page_box effect" key="effect" v-show="app_data.active_page == 'effect'">
 									{{product.effect}}
 								</div>
-							</div>
+							</transition-group>
 						</div>
 					</div>
 				</div>
