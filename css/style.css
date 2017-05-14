@@ -77,27 +77,43 @@ body[home] section.content div.hero-img .series-product{
 	bottom: 5%;
 }
 body[home] section.content div.hero-img div.title{
-/*	text-shadow: -1px 0 rgba(255,255,255,0.5), 0 1px rgba(255,255,255,0.5), 1px 0 rgba(255,255,255,0.5), 0 -1px rgba(255,255,255,0.5);*/
+	text-shadow: -1px 0 rgba(20,20,20,0.1), 0 1px rgba(20,20,20,0.1), 1px 0 rgba(20,20,20,0.1), 0 -1px rgba(20,20,20,0.1);
 	position: absolute;
+	/* color: #2f3031; */
 	color: #fff;
 	letter-spacing: 2px;
-	bottom: 65%;
-	left: 83px;
-	-webkit-transform: translateY(50%);
-	-ms-transform: translateY(50%);
-	-o-transform: translateY(50%);
-	transform: translateY(50%);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 250px;
+	height: 81px;
 }
 body[home] section.content div.hero-img div.title h1{
-	text-align: left;
+	text-align: center;
 	font-weight: normal;
-	font-size: 26px;
+	font-size: 30px;
+	color: #fff;
 }
 body[home] section.content div.hero-img div.title p{
+	text-align: center;
 	font-size: 18px;
+	color: #fff;
 }
 body[home] section.content div.hero-img div.title button{
 	font-size: 18px;
+	display: none;
+}
+body[home] section.content div.hero-img .series-product{
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	left: 66px;
+	bottom: 140px;
 }
 body[home] section.content div.hero-img .owl-dots{
 	position: absolute;
@@ -203,6 +219,7 @@ body[home] section.content div.preorder .owl-carousel .item{
 	margin: 10px;
 	padding: 43px 35px 90px;
 	box-shadow: -3px 7px 10px 0 rgba(142, 142, 142, 0.19);
+	border-radius: 4px;
 }
 
 body[home] section.content div.preorder .owl-carousel .item ul{
