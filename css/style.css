@@ -29,13 +29,23 @@ body .loading-page svg{
 	-ms-transform: translate(-50%,-50%);
 	-o-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
+	animation: rolling 5s ease infinite;
+	-moz-animation: rolling 5s ease infinite;
+	-o-animation: rolling 5s ease infinite;
+	-webkit-animation: rolling 5s ease infinite;
 }
 body .loading-page svg path{
 	fill: white;
 }
-@keyframes roll {
+@keyframes rolling {
 	0%{
-		trans
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	50%{
+		transform: translate(-50%,-50%) rotate(-180deg);
+	}
+	100%{
+		transform: translate(-50%,-50%) rotate(-360deg);
 	}
 }
 
