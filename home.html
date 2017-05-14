@@ -31,21 +31,33 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 		<title>LanVece</title>
 	</head>
 	<body home>
+		<div class="loading-page">
+			<?xml version="1.0" encoding="utf-8"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g><g><path d="M355.1,137.7C355.1,67.2,412.3,10,482.9,10c70.5,0,127.7,57.2,127.7,127.7c0,70.5-57.2,127.7-127.7,127.7C412.3,265.4,355.1,208.3,355.1,137.7z M761.3,520.9L761.3,520.9c0-57.9,46.9-104.8,104.8-104.8c57.9,0,104.8,46.9,104.8,104.8l0,0c0,57.9-46.9,104.8-104.8,104.8C808.2,625.7,761.3,578.8,761.3,520.9z M658.9,791.8c0-52.4,42.5-94.9,94.9-94.9c52.4,0,94.9,42.5,94.9,94.9c0,52.4-42.5,94.9-94.9,94.9C701.4,886.7,658.9,844.2,658.9,791.8z M396.9,904c0-47.5,38.5-86,86-86c47.5,0,85.9,38.5,85.9,86c0,47.5-38.5,86-85.9,86C435.4,990,396.9,951.5,396.9,904z M134.1,791.8c0-43,34.9-77.8,77.8-77.8c43,0,77.8,34.9,77.8,77.8s-34.9,77.8-77.8,77.8C168.9,869.7,134.1,834.8,134.1,791.8L134.1,791.8z M29.2,520.9c0-38.9,31.6-70.5,70.5-70.5c38.9,0,70.5,31.6,70.5,70.5s-31.6,70.5-70.5,70.5C60.8,591.4,29.2,559.8,29.2,520.9z M148.1,249.9L148.1,249.9c0-35.3,28.6-63.9,63.9-63.9c35.3,0,63.9,28.6,63.9,63.9l0,0c0,35.3-28.6,63.9-63.9,63.9C176.7,313.8,148.1,285.2,148.1,249.9z M869.5,249.9c0,63.9-51.8,115.7-115.7,115.7c-63.9,0-115.7-51.8-115.7-115.7c0-63.9,51.8-115.7,115.7-115.7C817.7,134.3,869.5,186.1,869.5,249.9z"/></g></g>
+</svg>
+		</div>
 		<header class=""></header>
 		
 		<section id="home" class="content">
+			<!--banner-->
 			<div class="hero-img">
 				<ul class="owl-hero owl-carousel owl-theme">
 					<li class="item" v-for="h in hero_data" v-bind:style="'background-image: url('+h.img+')'">
 						<div class="title">
+							
 							<h1>{{h.title}}</h1>
 							<p>{{h.content}}</p>
-							<button>訂製</button>
+<!--							<button>訂製</button>-->
 						</div>
-						<div class="series-product" v-bind:style="'background-image: url('+h.products_img+');width:300px;height:300px;'"></div>
+						<div class="series-product" v-bind:style="'background-image: url('+h.products_img+')'"></div>
+						<a :href="h.url"></a>
 					</li>
 				</ul>
 			</div>
+			<!--pre order date carousel-->
 			<div class="preorder">
 				<div class="texts">
 					<h1>訂製新鮮、高活性的保養品</h1>
@@ -54,21 +66,25 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 				<div class="order-date">
 					<ul class="owl-preorder owl-carousel owl-theme">
 						<li class="item" v-for="p in preorder_data">
-							<h2>訂製日：{{p[0]}} ~ {{p[p.length-1]}}</h2>
+							<h2>訂製日：{{p.date[0]}} ~ {{p.date[p.date.length-1]}}</h2>
 							<ul>
-								<li v-for="(d,id) in p">
+								<li v-for="(d,id) in p.date">
 									<h5 class="date">{{d}}</h5>
 									<div class="icon" v-bind:style="'background-image: url('+homepage_data.icon_url+'); background-position-x: '+ 20*(id+1) + '\%'">
 									</div>
 									<h4>{{homepage_data.procedure[id]}}</h4>
 								</li>
 							</ul>
-							<button>read more</button>
+							<a :href="p.url">
+								<button>read more</button>
+							</a>
+							
+							<a :href="p.url"></a>
 						</li>
 					</ul>
 				</div>
-				
 			</div>
+			<!--intro-->
 			<div class="environment container-fluid">
 				<div class="photo row" style="background-image: url('images/env.png');">
 					<div class="desc col-sm-push-7 col-sm-5">
@@ -90,7 +106,6 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 						<div class="photo" style="background-image: url('images/grey_block.png')"></div>
 					</div>
 				</div>
-
 			</div>
 			<div class="store container-fluid">
 				<div class="row">
@@ -103,7 +118,6 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 					</div>
 				</div>
 			</div>
-			
 		</section>
 
 		<footer></footer>
@@ -111,7 +125,6 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 		<div id="light_box">
 			<img src="images/20170418_FB_1024X550.jpg" alt="">
 			<img src="images/20170418_FB_mobile.jpg" alt="" >
-<!--			<span class="light_box_close"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>-->
 			<div class="message">5</div>
 			<div class="content">
 				<h1>母親節</h1>
@@ -119,7 +132,9 @@ navTextNext = '<span class="arrow-right">下一波訂製</span>';
 			</div>
 			<button class="search-close light_box_close">close</button>
 		</div>
-
+		
+	
+		
 		<script src="js/products.js"></script>
 		<script src="js/base.js"></script>
 		<script>

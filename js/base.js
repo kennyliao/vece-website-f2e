@@ -287,3 +287,7 @@ function set_store_info(CVSStoreID,CVSStoreName,CVSAddress,CVSTelephone) {
 	// $('.ecpaylogistic-warning').hide();
 	// $('.checkselectecpaylogistic').prop('value','selected');
 }
+
+$(window).load(function(){
+	$(".loading-page").fadeOut(500);
+})

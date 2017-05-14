@@ -9,6 +9,37 @@ overflow-y: scroll;
 -webkit-overflow-scrolling: touch;
 }
 
+body .loading-page{
+	z-index: 100000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #d1bfee;
+	transition: 0.3s;
+}
+body .loading-page svg{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+body .loading-page svg path{
+	fill: white;
+}
+@keyframes roll {
+	0%{
+		trans
+	}
+}
+
+
 body[home] section.content div.hero-img{
 	width: 100%;
 	height: 789px;
@@ -21,6 +52,14 @@ body[home] section.content div.hero-img .item{
 	background-position: 50% 0;
 	position: relative;
 }
+body[home] section.content div.hero-img .item a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
 @media screen and (max-width: 767px){
 	body[home] section.content div.hero-img{
 		height: 402px;
@@ -29,10 +68,18 @@ body[home] section.content div.hero-img .item{
 		height: 402px;
 	}
 }
-body[home] section.content div.hero-img div.title{
-	text-shadow: -1px 0 rgba(255,255,255,0.5), 0 1px rgba(255,255,255,0.5), 1px 0 rgba(255,255,255,0.5), 0 -1px rgba(255,255,255,0.5);
+body[home] section.content div.hero-img .series-product{
 	position: absolute;
-	color: #2f3031;
+	background: center bottom/ contain no-repeat;
+	width: 600px;
+	height: 400px;
+	left: 6%;
+	bottom: 5%;
+}
+body[home] section.content div.hero-img div.title{
+/*	text-shadow: -1px 0 rgba(255,255,255,0.5), 0 1px rgba(255,255,255,0.5), 1px 0 rgba(255,255,255,0.5), 0 -1px rgba(255,255,255,0.5);*/
+	position: absolute;
+	color: #fff;
 	letter-spacing: 2px;
 	bottom: 65%;
 	left: 83px;
@@ -246,6 +293,7 @@ body[home] section.content div.preorder .owl-carousel .item button{
 		-o-transform: scale(.55);
 		transform: scale(.55);
 		transition: 0.3s;
+		border-radius: 4px;
 	}
 	body[home] section.content div.preorder .owl-carousel .owl-item.active.center .item{
 		-webkit-transform: scale(1);
@@ -268,6 +316,25 @@ body[home] section.content div.preorder .owl-carousel .owl-nav .owl-next, body[h
 	border-radius: 0;
 	opacity: 0;
 	transition: 0.2s;
+}
+body[home] section.content div.preorder .owl-carousel .item a:first-child{
+	display: none;
+}
+body[home] section.content div.preorder .owl-carousel .item a:last-child{
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+@media screen and (max-width: 768px){
+	body[home] section.content div.preorder .owl-carousel .item a:first-child{
+		display: block;
+	}
+	body[home] section.content div.preorder .owl-carousel .item a:last-child{
+		display: none;
+	}
 }
 
 @media screen and (min-width: 768px){

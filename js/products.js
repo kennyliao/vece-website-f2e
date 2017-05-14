@@ -44,14 +44,15 @@ var home_app = new Vue({
 			procedure: ["採花","萃取","檢測","裝瓶","出貨"]
 		},
 		hero_data:[
-			{title:"逆齡時空肌系列1",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_rejuvenation.png",products_img:"./images/banner/banner_product_rejuvenation.png"},
-			{title:"逆齡時空肌系列2",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_rosacea.png",products_img:"./images/banner/banner_product_rosacea.png"},
-			{title:"逆齡時空肌系列3",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_whitening.png",products_img:"./images/banner/banner_product_whitening.png"}
+			{title:"逆齡時空肌系列1",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_rejuvenation.png",products_img:"./images/banner/banner_product_rejuvenation.png", url: "products.html"},
+			{title:"逆齡時空肌系列2",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_rosacea.png",products_img:"./images/banner/banner_product_rosacea.png", url: "products.html"},
+			{title:"逆齡時空肌系列3",content:"緊緻肌膚細緻、明亮、彈潤",img:"./images/banner/banner_model_whitening.png",products_img:"./images/banner/banner_product_whitening.png", url: "products.html"}
 		],
 		preorder_data: [
-			["3/1","3/4","3/14","3/24","4/1"],
-			["3/14","3/20","4/14","4/24","4/30"],
-			["3/31","4/4","4/14","4/24","5/1"]
+			{date:["3/1","3/4","3/14","3/24","4/1"], url:"pre-order.html"},
+			{date:["3/14","3/20","4/14","4/24","4/30"], url:"pre-order.html"},
+			{date:["3/31","4/4","4/14","4/24","5/1"], url:"pre-order.html"}
+		
 		]
 	},
 	created: function(){

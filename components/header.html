@@ -95,42 +95,106 @@
 	<div class="search-form">
 		<form action="">
 			<input type="text" id="searchInput" placeholder="Search" onblur="blurit('0',3000)" 
-			onfocus="blurit('1')"/>
+						 onfocus="blurit('1')"/>
 			<button type="submit">Search</button>
 		</form>
 	</div>
 	<button class="search-close" onclick="searchAreaToggle('0');">close</button>
 </div>
 <script>
-	$('.aboutus-menu-btn').click(function(){
-		var windowHeight = $(window).height();
-		var submenuHeight = windowHeight - 114;
-		if(windowWidth < 768){
-			$('.aboutus-menu').height(submenuHeight);
-		}
-		$('.aboutus-menu').toggleClass('active');
-		$('.product-menu').removeClass('active');
-		$('header').addClass('scroll');
-	});
-	$('.product-menu-btn').click(function(){
-		var windowHeight = $(window).height();
-		var submenuHeight = windowHeight - 114;
-		if(windowWidth < 768){
-			$('.product-menu').height(submenuHeight);
-		}
-		$('.product-menu').toggleClass('active');
-		$('.aboutus-menu').removeClass('active');
-		$('header').addClass('scroll');
-	});
-	$(window).resize(function(){
-		var submenuHeight = windowHeight - 114;
-		if(windowWidth < 768){
-			$('.product-menu').height(submenuHeight);
-		}
-	});
-
-	//searcharea_mobile_fixed_height
+$('.aboutus-menu-btn').click(function(){
+	var windowHeight = $(window).height();
+	var submenuHeight = windowHeight - 114;
 	if(windowWidth < 768){
-		$('.search-area').height(windowHeight + 44);
+		$('.aboutus-menu').height(submenuHeight);
 	}
+	$('.aboutus-menu').toggleClass('active');
+	$('.product-menu').removeClass('active');
+	$('header').addClass('scroll');
+});
+$('.product-menu-btn').click(function(){
+	var windowHeight = $(window).height();
+	var submenuHeight = windowHeight - 114;
+	if(windowWidth < 768){
+		$('.product-menu').height(submenuHeight);
+	}
+	$('.product-menu').toggleClass('active');
+	$('.aboutus-menu').removeClass('active');
+	$('header').addClass('scroll');
+});
+$(window).resize(function(){
+	var submenuHeight = windowHeight - 114;
+	if(windowWidth < 768){
+		$('.product-menu').height(submenuHeight);
+	}
+});
+
+//searcharea_mobile_fixed_height
+if(windowWidth < 768){
+	$('.search-area').height(windowHeight + 44);
+}
+
+//取得herf
+var herf_value = [["#account","#recipient","#membership","#newsletter"],["#order","#past-order"],["#traceability"]];
+
+function herf_direct(){
+	var now_hash = "";  //大標題
+	var now_main_page = ""; //副標題
+	herf_value.forEach(function(el,id){
+		var section = "";
+		el.forEach(function(ele,id){
+			if(location.hash == ele){
+				now_hash = id;
+				section = true;
+			}
+		})
+		if(section){
+			now_main_page = id;
+			!section;
+		}
+	})
+	
+	var big_container = $(".container> .tab-content > div "); //tap-pane fade
+	//大選單
+	$(".container> .nav-tabs > li").removeClass("active").eq(now_main_page).addClass("active");
+	//大內容
+	big_container.removeClass("active in").eq(now_main_page).addClass("active in");
+	//小選單
+	big_container.eq(now_main_page).children(".nav").children("li").removeClass("active").eq(now_hash).addClass("active");
+	//小內容
+	big_container.eq(now_main_page).children(".tab-content").children("div").removeClass("active in").eq(now_hash).addClass("active in");
+};
+herf_direct();
+
+$(".nav li").click(function(e){
+	var herf_name = $(this).children("a").attr("href");
+	
+	switch(herf_name){
+		case "#center-menu":
+			herf_name = "#account";
+			break;
+		case "#order-menuu":
+			herf_name = "#order";
+			break;
+		case "#traceability":
+			break;
+	}
+	if(location.hash == herf_name){
+		return false;
+	}else{
+		location.hash = herf_name;
+	}
+	herf_direct();
+})
+
+$(".member a").on('click',function(event){
+	var link_herf = "#"+$(this).attr('href').split('#')[1];
+	if(location.hash == link_herf){
+		event.preventDefault();
+	}
+	setTimeout(function(){
+		herf_direct();
+		$("html,body").animate({scrollTop: "0px"},300,"swing");
+	},200);
+})
 </script>
