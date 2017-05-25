@@ -5,6 +5,9 @@ $color_grey: #6b6f77
 $color_border: #9fa3a8
 $color_purple: #ab8eda
 
+$dark-gray: #2f3031
+$cool-grey: #9fa2a8
+
 //是否容許選取文字
 @mixin user-select($value: none)
 	-moz-user-select: $value
@@ -19,17 +22,19 @@ $color_purple: #ab8eda
 
 //transition
 @mixin trans($value...)
+	-webkit-transition: $value
 	-moz-transition: $value
 	-o-transition: $value
-	-webkit-transition: $value
 	transition: $value
 
 //背景置中
 @mixin bg_center()
 	background-color: transparent
+	-webkit-background-position: 50% 50%
 	background-position: 50% 50%
 	background-repeat: no-repeat
 
+//flex_box
 @mixin flex_box
 	display: -webkit-flex
 	display: -moz-flex
@@ -37,6 +42,23 @@ $color_purple: #ab8eda
 	display: -o-flex
 	display: flex
 
+@mixin inline-flex_box
+	display: -webkit-inline-flex
+	display: -moz-inline-flex
+	display: -ms-inline-flex
+	display: -o-inline-flex
+	display: inline-flex
+
+
+@mixin flex_position($direct: row,$just: center,$align: center)
+	-webkit-flex-direction: $direct
+	flex-direction: $direct
+	-webkit-justify-content: $just
+	justify-content: $just
+	-webkit-align-items: $align
+	align-items: $align
+
+//flex_box置中
 @mixin flex_center
 	+flex_box
 	-webkit-justify-content: center
@@ -44,14 +66,18 @@ $color_purple: #ab8eda
 	-webkit-align-items: center
 	align-items: center
 
+//元素陰影
 @mixin b-sh($value...)
 	-webkit-box-shadow: $value
 	-moz-box-shadow: $value
 	box-shadow: $value
 
+//
 @mixin transform($value)
-	-ms-transform: $value
 	-webkit-transform: $value
+	-moz-transform: $value
+	-ms-transform: $value
+	-o-transform: $value
 	transform: $value
 
 @mixin tf-origin($value)
@@ -59,6 +85,7 @@ $color_purple: #ab8eda
 	-moz-transform-origin: $value
 	-ms-transform-origin: $value
 	-o-transform-origin: $value
+	transform-origin: $value
 
 @mixin border-radius($value)
 	-webkit-border-radius: $value
@@ -129,3 +156,4 @@ body section.content .arrow-right:after
 body section.content .arrow-left:before, .arrow-right:after
 	width: 18px
 	height: 18px
+

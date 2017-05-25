@@ -1,0 +1,104 @@
+@import compass/css3
+@import mixin
+	
+body[join-team] section.content
+	margin-top: 70px
+	.container-fiuld
+		&:first-child
+			background-color: #fcfcfc
+			padding: 140px 0
+			text-align: center
+			h1
+				font-size: 36px
+				letter-spacing: 2px
+				color: $dark-gray
+				margin-bottom: 20px
+			p
+				margin: 0px auto
+				text-align: center
+				font-size: 17px
+				line-height: 33px
+				letter-spacing: 2px
+				max-width: 692px
+		&:last-child
+			background-color: #f2f1f1
+			padding: 144px 10px
+			h2
+				font-size: 28px
+				letter-spacing: 2px
+				color: #1f1f1f
+			& > ul.owl-join
+				width: 100%
+				padding: 0px 30px
+				max-width: 1280px
+				margin: 0px auto
+				text-align: center
+				.owl-stage
+					padding: 72px 0px
+					min-height: 400px
+				li.items
+					background-color: #fff
+					cursor: pointer
+					padding: 45px 0 57px
+					+trans(0.3s)
+					h3
+						font-size: 22px
+						letter-spacing: 2px
+						margin-bottom: 25px
+					& > p
+						font-size: 15px
+						line-height: 33px
+						color: $cool-grey
+					div.join_box
+						display: none
+						ul.position
+							padding: 40px 0 20px
+							overflow: hidden
+							+inline-flex_box
+							+flex_position(column,flex-start,flex-start)
+							&.active
+								+inline-flex_box
+							> li
+								padding: 0
+								margin: 17px 0
+								text-align: left
+								display: inline-block
+								h4
+									margin: 0
+									display: inline-block
+									line-height: 33px
+									text-align: left
+									letter-spacing: 2px
+									color: $dark-gray
+									+trans(0.3s)
+									cursor: pointer
+									&:hover
+										color: $color_purple
+							
+@media screen and (min-width: 992px)
+	body[join-team] section.content
+		.container-fiuld
+			&:last-child
+				& > ul.owl-join
+					li.items
+						&:hover
+							+transform(translate(0px,-5px))
+							+b-sh(-3px 7px 10px rgba(142,142,142, 0.19))
+				
+@media screen and (max-width: 767px)
+	body[join-team] section.content
+		margin-top: 55px
+		.container-fiuld
+			&:first-child
+				padding: 50px 25px
+				h1
+					font-size: 26px
+				p
+					line-height: 28px
+					text-align: justify
+			&:last-child
+				padding: 50px 0px
+				& > ul.owl-join
+					padding: 0
+					.owl-stage
+						padding: 50px 0 72px

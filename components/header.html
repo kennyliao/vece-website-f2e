@@ -134,13 +134,14 @@ if(windowWidth < 768){
 	$('.search-area').height(windowHeight + 44);
 }
 
-//取得herf
-var herf_value = [["#account","#recipient","#membership","#newsletter"],["#order","#past-order"],["#traceability"]];
+//取得href
+var href_value = [["#account","#recipient","#membership","#newsletter"],["#order","#past-order"],["#traceability"]];
 
-function herf_direct(){
+
+function href_direct(){
 	var now_hash = "";  //大標題
 	var now_main_page = ""; //副標題
-	herf_value.forEach(function(el,id){
+	href_value.forEach(function(el,id){
 		var section = "";
 		el.forEach(function(ele,id){
 			if(location.hash == ele){
@@ -164,36 +165,40 @@ function herf_direct(){
 	//小內容
 	big_container.eq(now_main_page).children(".tab-content").children("div").removeClass("active in").eq(now_hash).addClass("active in");
 };
-herf_direct();
 
+href_direct();
+
+//點擊頁籤對href進行轉換
 $(".nav li").click(function(e){
-	var herf_name = $(this).children("a").attr("href");
+	var href_name = $(this).children("a").attr("href");
 	
-	switch(herf_name){
+	switch(href_name){
 		case "#center-menu":
-			herf_name = "#account";
+			href_name = "#account";
 			break;
-		case "#order-menuu":
-			herf_name = "#order";
+		case "#order-menu":
+			href_name = "#order";
 			break;
 		case "#traceability":
 			break;
 	}
-	if(location.hash == herf_name){
+	if(location.hash == href_name){
 		return false;
 	}else{
-		location.hash = herf_name;
+		location.hash = href_name;
 	}
-	herf_direct();
+	href_direct();
 })
 
-$(".member a").on('click',function(event){
-	var link_herf = "#"+$(this).attr('href').split('#')[1];
-	if(location.hash == link_herf){
+//點擊桌面會員中心選單顯示頁籤
+$(".member a").click(function(event){
+	var link_href = "#"+$(this).attr('href').split('#')[1];
+	console.log(link_href);
+	if(location.hash == link_href){
 		event.preventDefault();
 	}
 	setTimeout(function(){
-		herf_direct();
+		href_direct();
 		$("html,body").animate({scrollTop: "0px"},300,"swing");
 	},200);
 })

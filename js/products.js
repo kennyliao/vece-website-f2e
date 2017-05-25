@@ -52,7 +52,7 @@ var home_app = new Vue({
 			{date:["3/1","3/4","3/14","3/24","4/1"], url:"pre-order.html"},
 			{date:["3/14","3/20","4/14","4/24","4/30"], url:"pre-order.html"},
 			{date:["3/31","4/4","4/14","4/24","5/1"], url:"pre-order.html"}
-		
+
 		]
 	},
 	created: function(){
@@ -180,6 +180,17 @@ var products = new Vue({
 	},
 	created: function () {
 		this.fetchData();
+	},
+	computed: {
+		series: function(){
+			var _this = this;
+			return this.products_data.series.filter(function(obj){
+				if(obj.name == _this.products_data.products.title)
+					return false;
+				else
+					return true;
+			})
+		}
 	},
 	methods:{
 		fetchData: function(){
@@ -423,8 +434,8 @@ var shopping_bag = new Vue({
 				return this.bag_data.products.reduce(function(sum, product){
 					return sum + parseInt(product.item_price)* parseInt(product.quantity);
 				},0)
-				else
-					return 0;
+			else
+				return 0;
 		},
 		//運費
 		trans_price: function(){
@@ -465,7 +476,7 @@ var shopping_bag = new Vue({
 			}else{
 				return false;
 			}
-			
+
 		}
 	}
 })
@@ -524,7 +535,7 @@ var checkout = new Vue({
 				default:
 					return "";
 					break;
-			}
+																			}
 		},
 		//運費
 		trans_price: function(){
@@ -647,7 +658,7 @@ var checkout = new Vue({
 			}else{
 				this.bag_data.discount_for += num;
 			}
-//			console.log(this.bag_data.discount_for);
+			//			console.log(this.bag_data.discount_for);
 		}
 	}
 })
@@ -717,10 +728,10 @@ var member_center = new Vue({
 				point_transfer: "消費1元1點，全額兌換正價商品及贈品。",
 				//2.升等條件
 				upgrade: [{
-						origin_level:"風雅會員", 
-						require:"會期內累計消費達10,000(入會消費金額不得累入計算)", 
-						special:"享尊榮升等禮乙份"
-					}], 
+					origin_level:"風雅會員", 
+					require:"會期內累計消費達10,000(入會消費金額不得累入計算)", 
+					special:"享尊榮升等禮乙份"
+				}], 
 				renewal: "於會期內再累積消費滿8,000(入會消費金額不得累入計算)* 續會獲續會禮3,000點",
 				//會員福利
 				interest: [
@@ -764,7 +775,7 @@ var member_center = new Vue({
 					{title:"節日同慶", content:"獨享母親節、週年慶尊寵預購會資格&頂級滿額好禮"},
 					{title:"生活講座", content:"不定期會員專屬活動資訊與邀請"},
 					{title:"第一優先", content:"限量新品優先預購"}
-					]
+				]
 			}
 		],
 		search_data: "",
@@ -786,7 +797,7 @@ var member_center = new Vue({
 				else{
 					return false;
 				}
-					
+
 			})[0];
 		},
 		//訂單查詢過濾結果
@@ -852,7 +863,7 @@ var member_center = new Vue({
 						}
 					});
 				});
-				
+
 			});
 			$.get("json/order_data.json", function(data){
 				_this.order_data = data;
@@ -977,100 +988,167 @@ var faq = new Vue({
 //search_result.html
 if( $("#search-result").length != 0){
 	var search_result = new Vue({
-	el: "#search-result",
-	data: {
-		search_data: "",
-		search_keyword: "逆齡",
-		series_data: ["逆齡時空系列","舒敏平衡肌系列","晶透綻白肌系列","導水瞬透肌系列","全效系列","其它"],
-		desktop_width: true
-	},
-	created: function(){
-		this.fetchData();
-	},
-	computed: {
-	},
-	mounted: function(){
-		this.$nextTick(function(){
-			window.addEventListener('resize', this.decide_width);
-			this.decide_width();
-		})
-	},
-	methods:{
-		//載入資料，初始化owl-carousel
-		fetchData: function(){
-			var _this = this;
-			$.get("json/search_result.json",function(data){
-				_this.search_data = data;
-				_this.$nextTick(function(){
-					_this.decide_width();
-				});
+		el: "#search-result",
+		data: {
+			search_data: "",
+			search_keyword: "逆齡",
+			series_data: ["逆齡時空系列","舒敏平衡肌系列","晶透綻白肌系列","導水瞬透肌系列","全效系列","其它"],
+			desktop_width: true
+		},
+		created: function(){
+			this.fetchData();
+		},
+		computed: {
+		},
+		mounted: function(){
+			this.$nextTick(function(){
+				window.addEventListener('resize', this.decide_width);
+				this.decide_width();
 			})
 		},
-		//分類資料
-		filter_data: function(series){
-			if(this.search_data){
-				if(series != "其它"){
-					return this.search_data.filter(function(obj){
-						if(obj["series"] == series){
-							return true;
-						}else{
-							return false;
-						};
+		methods:{
+			//載入資料，初始化owl-carousel
+			fetchData: function(){
+				var _this = this;
+				$.get("json/search_result.json",function(data){
+					_this.search_data = data;
+					_this.$nextTick(function(){
+						_this.decide_width();
 					});
-				}else{
-					return this.search_data.filter(function(obj){
-						if(!obj["series"]){
-							return true;
-						}else{
-							return false;
-						};
+				})
+			},
+			//分類資料
+			filter_data: function(series){
+				if(this.search_data){
+					if(series != "其它"){
+						return this.search_data.filter(function(obj){
+							if(obj["series"] == series){
+								return true;
+							}else{
+								return false;
+							};
+						});
+					}else{
+						return this.search_data.filter(function(obj){
+							if(!obj["series"]){
+								return true;
+							}else{
+								return false;
+							};
+						});
+					}
+
+				}
+			},
+			//判斷陣列是否為空陣列
+			decide_empty: function(item){
+				if(Array.isArray(item) && item.length > 0)
+					return true;
+				else
+					return false;
+			},
+			//判斷使用者視窗寬度
+			decide_width: function(){
+				if(window.innerWidth>=768){
+					this.desktop_width = true;
+					$(".owl-search").owlCarousel({
+						items: 1.1,
+						nav: true,
+						loop: false,
+						margin:0,
+						autoplay:false,
+						dots: false,
+						responsive:{
+							0:{
+								items: 1.5,
+								center: true,
+								margin: 20
+							},
+							768:{
+								items: 3,
+								center: false
+							}
+						}
 					});
+					console.log(this.desktop_width);
+				}
+				else{
+					this.desktop_width = false;
+					console.log(this.desktop_width);
 				}
 
 			}
-		},
-		//判斷陣列是否為空陣列
-		decide_empty: function(item){
-			if(Array.isArray(item) && item.length > 0)
-				return true;
-			else
-				return false;
-		},
-		//判斷使用者視窗寬度
-		decide_width: function(){
-			if(window.innerWidth>=768){
-				this.desktop_width = true;
-				$(".owl-search").owlCarousel({
-					items: 1.1,
-					nav: true,
-					loop: false,
-					margin:0,
-					autoplay:false,
-					dots: false,
-					responsive:{
-						0:{
-							items: 1.5,
-							center: true,
-							margin: 20
-						},
-						768:{
-							items: 3,
-							center: false
-						}
-					}
-				});
-				console.log(this.desktop_width);
-			}
-			else{
-				this.desktop_width = false;
-				console.log(this.desktop_width);
-			}
+		}
+	})
 
+	}
+
+
+var join_apply = new Vue({
+	el: "#join-apply",
+	data: {
+		join_apply_data: {
+			title: "行銷影片設計師",
+			job_content: ["PHP後台開發，會javascript＋jQuery","會MVC framework，bootstrap加分","重視團隊合作也能獨立作業"],
+			job_request: ["一年以上工作經驗","邏輯力強，要有發過後台經驗","具網站設計經驗佳"],
+			salary: "依能力條件面議"
+		},
+		resume_data: {
+			name: "",
+			mail: "",
+			tel: "",
+			gender: "",
+			online_portfolio: "",
+			know_lanvece: "",
+			introduce: ""
 		}
 	}
 })
 
-}
+var join_team = new Vue({
+	el: "#join-team",
+	data:{
+		join_team_data: {
+			job_open: [
+				{type:"行銷",location:"台北，松山區",position:[
+					{title:"廣告投放分析師", link:"join-apply.html"},
+					{title:"行銷影片設計師", link:"join-apply.html"},
+					{title:"活動企劃師", link:"join-apply.html"}
+				]},
+				{type:"設計",location:"台北，松山區",position:[
+					{title:"平面設計師", link:"join-apply.html"},
+					{title:"行銷影片設計師", link:"join-apply.html"},
+					{title:"包裝設計師", link:"join-apply.html"}
+				]},
+				{type:"服務",location:"台北，大安區",position:[
+					{title:"儲備幹部", link:"join-apply.html"},
+					{title:"駐店美容師", link:"join-apply.html"},]}
+			]
+		}
+	},
+	mounted: function(){
+		this.$nextTick(function(){
+			$(".owl-join").owlCarousel({
+				items: 1.2,
+				nav:false,
+				loop:false,
+				margin: 20,
+				autoplay:false,
+				dots: false,
+				responsive:{
+					0:{
+						items: 1.4,
+						center: true
+					},
+					768:{
+						items: 3,
+						center: false
+					}
+				}
+			});
+		})
+	}
+})
 
 
 //播放影片
@@ -1100,4 +1178,20 @@ $(window).resize(function(){
 			"transform": "translate(0, 0)"
 		});
 	}
+})
+
+
+//join team 展開
+$("body[join-team] section.content li.items").click(function(){
+	$(".join_box").not($(this).children(".join_box")).slideUp(300);
+	$(this).children(".join_box").slideToggle(300);
+})
+
+//取得上傳檔案之名稱
+var file = $("input[type='file']");
+file.each(function(){
+	$(this).change(function(e){
+		var fileName = "";
+		$(this).next("span").children("input").val(e.target.value.split( '\\' ).pop());
+	})
 })

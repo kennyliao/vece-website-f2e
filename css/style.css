@@ -125,6 +125,16 @@ body[home] section.content div.hero-img .series-product{
 	left: 66px;
 	bottom: 140px;
 }
+@media screen and (max-width: 768px){
+	body[home] section.content div.hero-img .series-product{
+		width: 50%;
+		min-width: 250px;
+		height: 300px;
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+	}
+}
 body[home] section.content div.hero-img .owl-dots{
 	position: absolute;
 	top: 65px;

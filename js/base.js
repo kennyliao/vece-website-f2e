@@ -1,5 +1,4 @@
-var windowHeight = $(window).height();
-var windowWidth = $(window).width();
+var windowHeight = $(window).height(); var windowWidth = $(window).width();
 
 //light_box
 if($.fn.lightbox_me != undefined){

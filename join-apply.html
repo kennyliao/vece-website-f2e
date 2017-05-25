@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。">
+		<meta name="author" content="LanVece">
+		<meta name="og:description" content="我們手工摘採新鮮花朵，以低溫、小量生產，搭配獨特的蒸餾冷凝萃取技術，做出最新鮮與高活性的保養品，讓肌膚好吸收，並喚醒肌膚自我修復力。" />
+		<meta property="og:title" content="【LanVece 新鮮保養】"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.lanvece.com"/>
+		<meta property="og:image" content="http://www.lanvece.com/images/lanvece_small.png"/>
+		<meta property="og:site_name" content="LanVece 最新鮮的保養品" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+navTextPrev = '<i class="fa fa-chevron-left" aria-hidden="true"></i> 上一個';
+navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>';
+		</script>
+		<script src="css/owlcarousel/owl.carousel.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/base.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+		<link rel="bookmark" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/product.css">
+		<title>LanVece</title>
+	</head>
+	<body join-apply>
+		<header></header>
+		<section id="join-apply" class="content" v-cloak>
+			<div class="container-fiuld" v-if="join_apply_data">
+				<h1>{{join_apply_data.title}}</h1>
+				<div class="job_condition">
+					<h2>工作內容</h2>
+					<ul>
+					<li v-for="(i,id) in join_apply_data.job_content">{{id+1}}. {{i}}</li>
+					</ul>
+					<h2>工作條件</h2>
+					<ul>
+						<li v-for="(i,id) in join_apply_data.job_request">{{id+1}}. {{i}}</li>
+					</ul>
+					<h2>薪資範圍</h2>
+						<p>{{join_apply_data.salary}}</p>
+				</div>
+			</div>
+			<div class="container-fiuld" v-if="join_apply_data">
+				<form action="">
+					<label for="inter_name"><span class="fill_require">姓名</span>
+						<input id="inter_name" v-model="resume_data.name" name="inter_name" type="text">
+					</label>
+					<label for="inter_mail"><span class="fill_require">信箱</span>
+						<input id="inter_mail" v-model="resume_data.mail" name="inter_mail" type="mail">
+					</label>
+					<label for="inter_tel"><span class="fill_require">電話</span>
+						<input id="inter_tel" v-model="resume_data.tel" name="inter_tel" type="text">
+					</label>
+					<label for=""><span class="fill_require">性別</span>
+						<label class="inside" for="inter_gender_male">
+							<input id="inter_gender_male" v-model="resume_data.gender" name="inter_gender" type="radio" value="male"><span>男</span>
+							
+						</label>
+						<label class="inside" for="inter_gender_female">
+							<input id="inter_gender_female" v-model="resume_data.gender" name="inter_gender" type="radio" value="female"><span>女</span>
+						</label>
+					</label>
+					<label for="inter_resume"><span>履歷表</span>
+						<input id="inter_resume" name="inter_resume" type="file">
+						<span class="file-block">
+							<span>上傳履歷表</span> <input type="text" disabled>
+						</span>
+					</label>
+					<label for="inter_portfolio"><span>作品集</span>
+						<input id="inter_portfolio" name="inter_portfolio" type="file">
+						<span class="file-block">
+							<span>上傳作品集</span> <input type="text" disabled>
+						</span>
+					</label>
+					<label for="inter_online_portfolio"><span>線上作品集</span>
+						<input id="inter_online_portfolio" v-model="resume_data.online_portfolio" name="inter_online_portfolio" type="text">
+					</label>
+					<label for="inter_know_lanvece"><span>對 LanVece 的認識</span>
+						<textarea name="inter_know_lanvece" id="inter_know_lanvece" v-model="resume_data.know_lanvece"></textarea>
+					</label>
+					<label for="inter_introduce"><span class="fill_require">自我推薦</span>
+						<textarea name="inter_introduce" id="inter_introduce" v-model="resume_data.introduce"></textarea>
+					</label>
+					<input class="fuc" type="submit" value="應徵">
+				</form>
+			</div>
+		</section>
+		<footer></footer>
+
+		<script src="js/products.js"></script>
+		<script>
+$.get("components/header.html", function(data, status){
+	$('header').html(data);
+});
+$.get("components/footer.html", function(data, status){
+	$('footer').html(data);
+});  
+		</script>
+	</body>
+</html>

@@ -31,52 +31,28 @@ navTextNext = '下一個 <i class="fa fa-chevron-right" aria-hidden="true"></i>'
 		<link rel="stylesheet" href="css/product.css">
 		<title>LanVece</title>
 	</head>
-	<body products>
+	<body join-team>
 		<header></header>
-		<section id="products" class="content" v-cloak>
-			<div class="container-fiuld" v-if="products_data">
-				<div class="head_img" v-bind:style="'background-image: url('+products_data.products.img+')'">
-					<div class="title">
-						<h1>{{products_data.products.title}}</h1>
-						<p>{{products_data.products.discript}}</p>
-					</div>
-				</div>
-				<div class="intro_wrap">
-					<div class="intro_box">
-						<h2>{{products_data.products.intro.title}}</h2>
-					</div>
-					<div class="intro_box">
-						<div class="intro_block" v-for="p in products_data.products.intro.item">
-							<h3>{{p.name}}</h3>
-							<p>{{p.content}}</p>
+		<section id="join-team" class="content" v-cloak>
+			<div class="container-fiuld" v-if="join_team_data">
+				<h1>加入LanVece團隊</h1>
+				<p>LanVece 是一家2016年成立的保養品牌，在這之前的20年深耕於培育蘭花，從育苗、種花、採花、萃取，每個環節都有深厚的經驗。為了想讓更多人知道蘭花對於保養肌膚的好，開始嘗試做品牌。</p>
+			</div>
+			<div class="container-fiuld" v-if="join_team_data">
+				<h2>職缺訊息</h2>
+				<ul class="owl-join owl-carousel owl-theme">
+					<li v-for="i in join_team_data.job_open" class="items">
+						<h3>{{i.type}}</h3>
+						<p>{{i.location}}</p>
+						<div class="join_box">
+							<ul class="position">
+								<li v-for="j in i.position">
+									<a :href="j.link"><h4>{{j.title}}</h4></a>
+								</li>
+							</ul>
 						</div>
-					</div>
-				</div>
-				<div class="procedure_wrap">
-					<div class="procedure_block" v-for="(p,id) in products_data.products.products_data">
-						<h5>步驟 {{id+1}}</h5>
-						<div class="procedure_box">
-							<img v-bind:src="p.img" alt="">
-							<h4>{{p.name}}</h4>
-							<p class="price">{{p.price}}</p>
-							<a v-bind:href="p.url" class="full_a"></a>
-						</div>
-					</div>
-				</div>
-				<div class="notice">
-					<h6>{{products_data.products.notice[0]}}</h6>
-					<p>{{products_data.products.notice[1]}}</p>
-				</div>
-				<div class="series">
-					<h2>其他系列</h2>
-					<ul class="owl-products owl-carousel owl-theme">
-						<li v-for="s in series" class="intro_block">
-							<div class="circle" v-bind:style="'background-color:'+s.color"></div>
-							<img v-bind:src="s.img" alt="">
-							<h3>{{s.name}}</h3>
-						</li>
-					</ul>
-				</div>
+					</li>
+				</ul>
 			</div>
 		</section>
 		<footer></footer>
